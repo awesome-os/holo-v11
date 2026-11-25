@@ -1,7 +1,7 @@
 {
   "schema": "awesome-os.v11-active-overrides.v1",
   "abiMagic": "0x33564742",
-  "generatedAt": "2026-11-25T19:19:53.955Z",
+  "generatedAt": "2026-11-25T20:54:17.186Z",
   "adoptedRepos": [
     {
       "repo": "awesome-os-desktop",
@@ -193,13 +193,6 @@
       "shadowedLegacyAssets": 1
     },
     {
-      "repo": "sectium-browser",
-      "tag": "v0.7.3",
-      "treeManifestUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/v11-tree.json",
-      "treeManifestSha512": "2b9da8aee836f9510dd43cf14dbd4372cd6530dfd88936c159bdccaf4935e97f2935fe734da7ceb372c3871d165adbb246b217d0fbc55970ec2e65358d3249c3",
-      "shadowedLegacyAssets": 1
-    },
-    {
       "repo": "sectium-devops",
       "tag": "v0.1.0",
       "treeManifestUrl": "https://github.com/awesome-os/sectium-devops/releases/download/v0.1.0/v11-tree.json",
@@ -277,7 +270,9 @@
       "shadowedLegacyAssets": 1
     }
   ],
-  "pendingTarRepos": [],
-  "adoptionCount": 39,
-  "legacyTarRepoCount": 0
+  "pendingTarRepos": [
+    "sectium-browser"
+  ],
+  "adoptionCount": 38,
+  "legacyTarRepoCount": 1
 }

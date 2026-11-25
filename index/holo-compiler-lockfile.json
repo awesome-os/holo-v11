@@ -2655,114 +2655,103 @@
       "downloadUrl": "https://github.com/awesome-os/rollup/releases/download/v0.1.0/v11-tree.json"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.3/install.ps1",
+      "id": "awesome-os/sectium-browser@v0.7.4/install.ps1",
       "repo": "sectium-browser",
-      "tag": "v0.7.3",
+      "tag": "v0.7.4",
       "filename": "install.ps1",
       "target": "any",
       "sha512": "39fc0dab9a85980de2bb02a654c30634f0271cce4154557e1af8f8a1b227ebf525ce3e5218ca0e2d7db02f29434e3b5a26470e646d2594d3a3c1057361a92e84",
       "size": 2361,
       "blobPath": "v11/files/39/39fc0dab9a85980de2bb02a654c30634f0271cce4154557e1af8f8a1b227ebf525ce3e5218ca0e2d7db02f29434e3b5a26470e646d2594d3a3c1057361a92e84",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/install.ps1"
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.4/install.ps1"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.3/install.sh",
+      "id": "awesome-os/sectium-browser@v0.7.4/install.sh",
       "repo": "sectium-browser",
-      "tag": "v0.7.3",
+      "tag": "v0.7.4",
       "filename": "install.sh",
       "target": "any",
       "sha512": "e07be7d2aedf3209990a86752ebc2acfb977007efc160a9804da01ce19948ee68ac4914b08b2151df96afedde3a31adfe97dd77c99b80391a8c251964dfaa0fc",
       "size": 2081,
       "blobPath": "v11/files/e0/e07be7d2aedf3209990a86752ebc2acfb977007efc160a9804da01ce19948ee68ac4914b08b2151df96afedde3a31adfe97dd77c99b80391a8c251964dfaa0fc-exec",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/install.sh"
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.4/install.sh"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.3/sectium-browser-app.tar.zst",
+      "id": "awesome-os/sectium-browser@v0.7.4/sectium-browser-app.tar.zst",
       "repo": "sectium-browser",
-      "tag": "v0.7.3",
+      "tag": "v0.7.4",
       "filename": "sectium-browser-app.tar.zst",
       "target": "any",
-      "sha512": "47abc58cfc3e6cc23ec42aa4535582dd4be2cffbd431689d7cb3d996c3e6f2d17d061aeef4e17b1780cb1abfae64401209f5432dad7b49618e0d4533284d0207",
-      "size": 24087,
-      "blobPath": "v11/files/47/47abc58cfc3e6cc23ec42aa4535582dd4be2cffbd431689d7cb3d996c3e6f2d17d061aeef4e17b1780cb1abfae64401209f5432dad7b49618e0d4533284d0207",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/sectium-browser-app.tar.zst"
+      "sha512": "77cd93b65351b595a662055818a043ed0689e2e92b7ef5051f09f40ed05755a2b274002dc2030d6490848d7a4553318dbedfd9f4c026c6f87d4bdc57ef3b99af",
+      "size": 24086,
+      "blobPath": "v11/files/77/77cd93b65351b595a662055818a043ed0689e2e92b7ef5051f09f40ed05755a2b274002dc2030d6490848d7a4553318dbedfd9f4c026c6f87d4bdc57ef3b99af",
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.4/sectium-browser-app.tar.zst"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.3/sectium-browser-linux-arm64",
+      "id": "awesome-os/sectium-browser@v0.7.4/sectium-browser-linux-arm64",
       "repo": "sectium-browser",
-      "tag": "v0.7.3",
+      "tag": "v0.7.4",
       "filename": "sectium-browser-linux-arm64",
       "target": "linux-arm64",
-      "sha512": "9875cd46c0097b0d0098e38c9462b5c56791e55e7e220db311743d97f8dfa7dd8d9a285645bd639783cd4f45091e495eae3356588cfa2a828707e0bac4b0ee46",
+      "sha512": "0910bb555cea53c6e7e7cb49aa453f9e11c81e9f2db161fa98bed4a3bb387a7850d1c231ebc9e8fda67c415cafc8ddd4b9afbd49731e7a8792740dcbec6dfe70",
       "size": 1222624,
-      "blobPath": "v11/files/98/9875cd46c0097b0d0098e38c9462b5c56791e55e7e220db311743d97f8dfa7dd8d9a285645bd639783cd4f45091e495eae3356588cfa2a828707e0bac4b0ee46-exec",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/sectium-browser-linux-arm64"
+      "blobPath": "v11/files/09/0910bb555cea53c6e7e7cb49aa453f9e11c81e9f2db161fa98bed4a3bb387a7850d1c231ebc9e8fda67c415cafc8ddd4b9afbd49731e7a8792740dcbec6dfe70-exec",
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.4/sectium-browser-linux-arm64"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.3/sectium-browser-linux-x64",
+      "id": "awesome-os/sectium-browser@v0.7.4/sectium-browser-linux-x64",
       "repo": "sectium-browser",
-      "tag": "v0.7.3",
+      "tag": "v0.7.4",
       "filename": "sectium-browser-linux-x64",
       "target": "linux-x64",
-      "sha512": "94c9129853f2179dec870443b40a394e296dcb1400008f4b6b394a47a6bcc0f3994c757faa4f4ce9bd81b555b3ab1b571683811707d390c4a157f02cef84ebaa",
+      "sha512": "21ba70719a5ca60f6cf222fec282879c04f254e0155d93a313f3d67c94b9a5cb02f7662459b12098a80630eaf70a4d3d2e8365ab6796370cf96583b11be6cd7e",
       "size": 1155968,
-      "blobPath": "v11/files/94/94c9129853f2179dec870443b40a394e296dcb1400008f4b6b394a47a6bcc0f3994c757faa4f4ce9bd81b555b3ab1b571683811707d390c4a157f02cef84ebaa-exec",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/sectium-browser-linux-x64"
+      "blobPath": "v11/files/21/21ba70719a5ca60f6cf222fec282879c04f254e0155d93a313f3d67c94b9a5cb02f7662459b12098a80630eaf70a4d3d2e8365ab6796370cf96583b11be6cd7e-exec",
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.4/sectium-browser-linux-x64"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.3/sectium-browser-macos-arm64",
+      "id": "awesome-os/sectium-browser@v0.7.4/sectium-browser-macos-arm64",
       "repo": "sectium-browser",
-      "tag": "v0.7.3",
+      "tag": "v0.7.4",
       "filename": "sectium-browser-macos-arm64",
       "target": "macos-arm64",
-      "sha512": "9fd1a6ee56d61a46243929d42d8a856f7500fa5ca2f77fdb2c260b26c79072c5cdd89f87699cc409f6a22fc80be0332f8aad68baf9e6dd5e00a7bba5f38dd836",
+      "sha512": "defc6ca1e74c98cccf3bc531c5fd2ec2e4d34e25a6a25816f3c34cb3bb22d5d723799c6c6d289cf465fed9e6efa15ebf0e8940c016f7230736005131fb4e5cb8",
       "size": 52520,
-      "blobPath": "v11/files/9f/9fd1a6ee56d61a46243929d42d8a856f7500fa5ca2f77fdb2c260b26c79072c5cdd89f87699cc409f6a22fc80be0332f8aad68baf9e6dd5e00a7bba5f38dd836-exec",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/sectium-browser-macos-arm64"
+      "blobPath": "v11/files/de/defc6ca1e74c98cccf3bc531c5fd2ec2e4d34e25a6a25816f3c34cb3bb22d5d723799c6c6d289cf465fed9e6efa15ebf0e8940c016f7230736005131fb4e5cb8-exec",
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.4/sectium-browser-macos-arm64"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.3/sectium-browser.exe",
+      "id": "awesome-os/sectium-browser@v0.7.4/sectium-browser.exe",
       "repo": "sectium-browser",
-      "tag": "v0.7.3",
+      "tag": "v0.7.4",
       "filename": "sectium-browser.exe",
       "target": "win64",
-      "sha512": "23e0118576067520e1d81afe1399895264012acf704f22f099ca425d08137a7024eb034546897c99a5ae80746437c92f866944b8bf8a07c75781bc823b76f4c5",
+      "sha512": "5ebc019eb1719d3d163c6f219b5e70badaa4762131fddc7542d83bae4bf51d09071f94f5e9ab0abb1180a67c4c05321ffb137f52aac98897e8bb5dcbb3e483b9",
       "size": 185856,
-      "blobPath": "v11/files/23/23e0118576067520e1d81afe1399895264012acf704f22f099ca425d08137a7024eb034546897c99a5ae80746437c92f866944b8bf8a07c75781bc823b76f4c5-exec",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/sectium-browser.exe"
+      "blobPath": "v11/files/5e/5ebc019eb1719d3d163c6f219b5e70badaa4762131fddc7542d83bae4bf51d09071f94f5e9ab0abb1180a67c4c05321ffb137f52aac98897e8bb5dcbb3e483b9-exec",
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.4/sectium-browser.exe"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.3/sectium-browser.pdb",
+      "id": "awesome-os/sectium-browser@v0.7.4/sectium-browser.pdb",
       "repo": "sectium-browser",
-      "tag": "v0.7.3",
+      "tag": "v0.7.4",
       "filename": "sectium-browser.pdb",
       "target": "any",
-      "sha512": "81459a2882d51f9915e4210089f46670ba04328e181527c80344a85fa7446d7fccf901de8509e40d7089c8d86bc8555d106588bc1ed1ddc9da66e7ee4beb73d5",
+      "sha512": "dbbb8ad53e01ef979868d1bb4d5d123f4159e90df8b63e46cdc84b9701e003681d43c55042ad2dda6762a311dd54a9189b1a3398df792e682fae1a9fda1aef32",
       "size": 1183744,
-      "blobPath": "v11/files/81/81459a2882d51f9915e4210089f46670ba04328e181527c80344a85fa7446d7fccf901de8509e40d7089c8d86bc8555d106588bc1ed1ddc9da66e7ee4beb73d5",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/sectium-browser.pdb"
+      "blobPath": "v11/files/db/dbbb8ad53e01ef979868d1bb4d5d123f4159e90df8b63e46cdc84b9701e003681d43c55042ad2dda6762a311dd54a9189b1a3398df792e682fae1a9fda1aef32",
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.4/sectium-browser.pdb"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.3/SHA256SUMS.txt",
+      "id": "awesome-os/sectium-browser@v0.7.4/SHA256SUMS.txt",
       "repo": "sectium-browser",
-      "tag": "v0.7.3",
+      "tag": "v0.7.4",
       "filename": "SHA256SUMS.txt",
       "target": "any",
-      "sha512": "cb467b0f393d59a8222eea2680e1a0214664b29d445e7bb272033a024a8273b6f6cdead6d9708363e59882870ad64b355a5324bfd22c444ac6b33d31ebca6fcd",
+      "sha512": "d8e77a906b396d34ee9d89c727e2d39fdc245d8d068c5889d2fb52754473cc8e95982839b55bde9f1ef7996c6f38f09e3cefe996d83f55b8054c8af12f10a70d",
       "size": 615,
-      "blobPath": "v11/files/cb/cb467b0f393d59a8222eea2680e1a0214664b29d445e7bb272033a024a8273b6f6cdead6d9708363e59882870ad64b355a5324bfd22c444ac6b33d31ebca6fcd",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/SHA256SUMS.txt"
-    },
-    {
-      "id": "awesome-os/sectium-browser@v0.7.3/v11-tree.json",
-      "repo": "sectium-browser",
-      "tag": "v0.7.3",
-      "filename": "v11-tree.json",
-      "target": "any",
-      "sha512": "2b9da8aee836f9510dd43cf14dbd4372cd6530dfd88936c159bdccaf4935e97f2935fe734da7ceb372c3871d165adbb246b217d0fbc55970ec2e65358d3249c3",
-      "size": 29994,
-      "blobPath": "v11/files/2b/2b9da8aee836f9510dd43cf14dbd4372cd6530dfd88936c159bdccaf4935e97f2935fe734da7ceb372c3871d165adbb246b217d0fbc55970ec2e65358d3249c3",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/v11-tree.json"
+      "blobPath": "v11/files/d8/d8e77a906b396d34ee9d89c727e2d39fdc245d8d068c5889d2fb52754473cc8e95982839b55bde9f1ef7996c6f38f09e3cefe996d83f55b8054c8af12f10a70d",
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.4/SHA256SUMS.txt"
     },
     {
       "id": "awesome-os/sectium-devops@v0.1.0/sectium-devops-v0.1.0.tar.zst",
