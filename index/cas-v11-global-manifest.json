@@ -2,13 +2,25 @@
   "schema": "awesome-os-cas-v11-manifest-v1",
   "abiMagic": "0x33564742",
   "version": "v11",
-  "generatedAt": "2026-11-25T08:31:09.970Z",
-  "totalRepos": 69,
-  "totalAssets": 579,
-  "uniqueBlobs": 520,
-  "totalBytes": 8305437155,
+  "generatedAt": "2026-11-25T09:53:42.427Z",
+  "totalRepos": 70,
+  "totalAssets": 590,
+  "uniqueBlobs": 531,
+  "totalBytes": 8437388573,
   "skippedLarge": 8,
   "entries": [
+    {
+      "id": "awesome-os/awesome-os-desktop@v0.1.0/awesome-os-desktop.exe",
+      "repo": "awesome-os-desktop",
+      "tag": "v0.1.0",
+      "filename": "awesome-os-desktop.exe",
+      "target": "win64",
+      "executable": true,
+      "sha512": "73612dc6b19f8723f4f39be254659697720537a55c2d2809c0611f842f45bc66fc8e38acce18fbd62b84eeb271ac879621b6dc555db5cfa9b5d91917fb2f26c0",
+      "size": 26624,
+      "blobPath": "v11/files/73/73612dc6b19f8723f4f39be254659697720537a55c2d2809c0611f842f45bc66fc8e38acce18fbd62b84eeb271ac879621b6dc555db5cfa9b5d91917fb2f26c0-exec",
+      "downloadUrl": "https://github.com/awesome-os/awesome-os-desktop/releases/download/v0.1.0/awesome-os-desktop.exe"
+    },
     {
       "id": "awesome-os/b8g-app-dedup@v0.3.0/app-paths.b8p",
       "repo": "b8g-app-dedup",
@@ -3058,6 +3070,18 @@
       "downloadUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/coreutils-macos-arm64"
     },
     {
+      "id": "awesome-os/coreutils@v0.1.0/coreutils-v0.1.0-aarch64-apple-darwin.tar.gz",
+      "repo": "coreutils",
+      "tag": "v0.1.0",
+      "filename": "coreutils-v0.1.0-aarch64-apple-darwin.tar.gz",
+      "target": "macos-arm64",
+      "executable": false,
+      "sha512": "a16e36105ddd1ed1fec391e83eb516a4f71e7fef71b6dbb13951a50acc4361640c7e965e56d4900c3bc0ec50b1894798a37cc9fb05c927986e9f898bd4483fd1",
+      "size": 6751287,
+      "blobPath": "v11/files/a1/a16e36105ddd1ed1fec391e83eb516a4f71e7fef71b6dbb13951a50acc4361640c7e965e56d4900c3bc0ec50b1894798a37cc9fb05c927986e9f898bd4483fd1",
+      "downloadUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/coreutils-v0.1.0-aarch64-apple-darwin.tar.gz"
+    },
+    {
       "id": "awesome-os/coreutils@v0.1.0/coreutils-v0.1.0-aarch64-pc-windows-msvc.zip",
       "repo": "coreutils",
       "tag": "v0.1.0",
@@ -3080,6 +3104,42 @@
       "size": 5872740,
       "blobPath": "v11/files/ed/ed981fd778bc93ed01dc70d877037d506944175f6e802103fb2a17e8f2f4c1829053f0d203c71aff96d95c690aff205bcbcd5aadb02f29daccde65f505ed9442",
       "downloadUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/coreutils-v0.1.0-aarch64-unknown-linux-gnu.tar.gz"
+    },
+    {
+      "id": "awesome-os/coreutils@v0.1.0/coreutils-v0.1.0-aarch64-unknown-linux-musl.tar.gz",
+      "repo": "coreutils",
+      "tag": "v0.1.0",
+      "filename": "coreutils-v0.1.0-aarch64-unknown-linux-musl.tar.gz",
+      "target": "linux-x64",
+      "executable": false,
+      "sha512": "2bfedce62469ddab7603080bf1f1784014af2c2a7631454065a4e57292a38fe532db70d0e77262d493d328da13beceac683e19dab1cefb34a351ddb8d1a10e77",
+      "size": 5393179,
+      "blobPath": "v11/files/2b/2bfedce62469ddab7603080bf1f1784014af2c2a7631454065a4e57292a38fe532db70d0e77262d493d328da13beceac683e19dab1cefb34a351ddb8d1a10e77",
+      "downloadUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/coreutils-v0.1.0-aarch64-unknown-linux-musl.tar.gz"
+    },
+    {
+      "id": "awesome-os/coreutils@v0.1.0/coreutils-v0.1.0-arm-unknown-linux-gnueabihf.tar.gz",
+      "repo": "coreutils",
+      "tag": "v0.1.0",
+      "filename": "coreutils-v0.1.0-arm-unknown-linux-gnueabihf.tar.gz",
+      "target": "linux-x64",
+      "executable": false,
+      "sha512": "4ff8803ab71aede4e272b4fb9b3a55600dafe0fdf6e0cec10c03c723d0f396988a9dd3892b916bb42e52111debe45f004dd683e372ffce7438c60aef45f01a22",
+      "size": 6243075,
+      "blobPath": "v11/files/4f/4ff8803ab71aede4e272b4fb9b3a55600dafe0fdf6e0cec10c03c723d0f396988a9dd3892b916bb42e52111debe45f004dd683e372ffce7438c60aef45f01a22",
+      "downloadUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/coreutils-v0.1.0-arm-unknown-linux-gnueabihf.tar.gz"
+    },
+    {
+      "id": "awesome-os/coreutils@v0.1.0/coreutils-v0.1.0-i686-pc-windows-msvc.zip",
+      "repo": "coreutils",
+      "tag": "v0.1.0",
+      "filename": "coreutils-v0.1.0-i686-pc-windows-msvc.zip",
+      "target": "win64",
+      "executable": false,
+      "sha512": "bf5675b057532e45dd3bf2fa96cc6a5b65a6c5e351d7fa9a9c48034359da07e9a8b06538228ac9e18fa3970a91dc5d415cf37700e8e52887372ca5c028497a46",
+      "size": 5061992,
+      "blobPath": "v11/files/bf/bf5675b057532e45dd3bf2fa96cc6a5b65a6c5e351d7fa9a9c48034359da07e9a8b06538228ac9e18fa3970a91dc5d415cf37700e8e52887372ca5c028497a46",
+      "downloadUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/coreutils-v0.1.0-i686-pc-windows-msvc.zip"
     },
     {
       "id": "awesome-os/coreutils@v0.1.0/coreutils-v0.1.0-i686-unknown-linux-gnu.tar.gz",
@@ -3106,6 +3166,18 @@
       "downloadUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/coreutils-v0.1.0-i686-unknown-linux-musl.tar.gz"
     },
     {
+      "id": "awesome-os/coreutils@v0.1.0/coreutils-v0.1.0-riscv64gc-unknown-linux-musl.tar.gz",
+      "repo": "coreutils",
+      "tag": "v0.1.0",
+      "filename": "coreutils-v0.1.0-riscv64gc-unknown-linux-musl.tar.gz",
+      "target": "linux-x64",
+      "executable": false,
+      "sha512": "0b349865cb64c9a0e573bf4c17a6a3e730a4d046dc9b54f38830608283ce02d1734e51d06354cd6ec72dec615da8b06c56f2166907ebd43594809cf5f8a73a82",
+      "size": 5776128,
+      "blobPath": "v11/files/0b/0b349865cb64c9a0e573bf4c17a6a3e730a4d046dc9b54f38830608283ce02d1734e51d06354cd6ec72dec615da8b06c56f2166907ebd43594809cf5f8a73a82",
+      "downloadUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/coreutils-v0.1.0-riscv64gc-unknown-linux-musl.tar.gz"
+    },
+    {
       "id": "awesome-os/coreutils@v0.1.0/coreutils-v0.1.0-wasm32-wasip1.tar.gz",
       "repo": "coreutils",
       "tag": "v0.1.0",
@@ -3116,6 +3188,66 @@
       "size": 3615063,
       "blobPath": "v11/files/28/2846e1e539a9ee14bcf8a4b9c6ea1570d8791bd462dfa7bdc17e4c3dc106d214deabbf165191f7d9e28c6eecd080c7647b8a2ed7ee4139a0639871463d013443",
       "downloadUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/coreutils-v0.1.0-wasm32-wasip1.tar.gz"
+    },
+    {
+      "id": "awesome-os/coreutils@v0.1.0/coreutils-v0.1.0-wasm32-wasip2.tar.gz",
+      "repo": "coreutils",
+      "tag": "v0.1.0",
+      "filename": "coreutils-v0.1.0-wasm32-wasip2.tar.gz",
+      "target": "wasm32-wasi",
+      "executable": false,
+      "sha512": "08d2a755b0639e05b1a8dee7778180e1f4cb6ba13f04fa2ed4d166e664fefc98910843f923957ae19e833924cb6060b3e697e9bab745bf61d7549b1a4c6828ab",
+      "size": 3664350,
+      "blobPath": "v11/files/08/08d2a755b0639e05b1a8dee7778180e1f4cb6ba13f04fa2ed4d166e664fefc98910843f923957ae19e833924cb6060b3e697e9bab745bf61d7549b1a4c6828ab",
+      "downloadUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/coreutils-v0.1.0-wasm32-wasip2.tar.gz"
+    },
+    {
+      "id": "awesome-os/coreutils@v0.1.0/coreutils-v0.1.0-x86_64-apple-darwin.tar.gz",
+      "repo": "coreutils",
+      "tag": "v0.1.0",
+      "filename": "coreutils-v0.1.0-x86_64-apple-darwin.tar.gz",
+      "target": "macos-arm64",
+      "executable": false,
+      "sha512": "56eefd9aa727fb197d511096ae8060f5f27bc3e83cf047fc6cb6ae52d3d6a68dafe1604d7ef611b519f2c54cdfc894d25dc8751e8510d9e14bbf4cdeb2c9be22",
+      "size": 5849756,
+      "blobPath": "v11/files/56/56eefd9aa727fb197d511096ae8060f5f27bc3e83cf047fc6cb6ae52d3d6a68dafe1604d7ef611b519f2c54cdfc894d25dc8751e8510d9e14bbf4cdeb2c9be22",
+      "downloadUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/coreutils-v0.1.0-x86_64-apple-darwin.tar.gz"
+    },
+    {
+      "id": "awesome-os/coreutils@v0.1.0/coreutils-v0.1.0-x86_64-pc-windows-msvc.zip",
+      "repo": "coreutils",
+      "tag": "v0.1.0",
+      "filename": "coreutils-v0.1.0-x86_64-pc-windows-msvc.zip",
+      "target": "win64",
+      "executable": false,
+      "sha512": "c3bb65692f16b754c5a6ba37ce29a604e77b678c036fabd02db84167f53a58df60f83cc35093cebdb11fc228d20d1dba30f921c503b5adbfe3ec8004a480c924",
+      "size": 71553941,
+      "blobPath": "v11/files/c3/c3bb65692f16b754c5a6ba37ce29a604e77b678c036fabd02db84167f53a58df60f83cc35093cebdb11fc228d20d1dba30f921c503b5adbfe3ec8004a480c924",
+      "downloadUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/coreutils-v0.1.0-x86_64-pc-windows-msvc.zip"
+    },
+    {
+      "id": "awesome-os/coreutils@v0.1.0/coreutils-v0.1.0-x86_64-unknown-linux-gnu.tar.gz",
+      "repo": "coreutils",
+      "tag": "v0.1.0",
+      "filename": "coreutils-v0.1.0-x86_64-unknown-linux-gnu.tar.gz",
+      "target": "linux-x64",
+      "executable": false,
+      "sha512": "8812f8ce42c159576ceec6257b9f9ab2397e29ce8d92e7a5ba726a73a969a726c4b24c57aaa21247292af145f6bfafc8d7839f51332f2c65bb416412ff505c38",
+      "size": 15782665,
+      "blobPath": "v11/files/88/8812f8ce42c159576ceec6257b9f9ab2397e29ce8d92e7a5ba726a73a969a726c4b24c57aaa21247292af145f6bfafc8d7839f51332f2c65bb416412ff505c38",
+      "downloadUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/coreutils-v0.1.0-x86_64-unknown-linux-gnu.tar.gz"
+    },
+    {
+      "id": "awesome-os/coreutils@v0.1.0/coreutils-v0.1.0-x86_64-unknown-linux-musl.tar.gz",
+      "repo": "coreutils",
+      "tag": "v0.1.0",
+      "filename": "coreutils-v0.1.0-x86_64-unknown-linux-musl.tar.gz",
+      "target": "linux-x64",
+      "executable": false,
+      "sha512": "7265087f2d0b2fcd656023c03b25769a670d7d1109adc83cecc703dc89867da3164523a1ac7216c0075ea4ab0995119a514ec09827046ca6eecda01fc7847137",
+      "size": 5840106,
+      "blobPath": "v11/files/72/7265087f2d0b2fcd656023c03b25769a670d7d1109adc83cecc703dc89867da3164523a1ac7216c0075ea4ab0995119a514ec09827046ca6eecda01fc7847137",
+      "downloadUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/coreutils-v0.1.0-x86_64-unknown-linux-musl.tar.gz"
     },
     {
       "id": "awesome-os/coreutils@v0.1.0/coreutils-windows-x64.exe",
@@ -3562,220 +3694,220 @@
       "downloadUrl": "https://github.com/awesome-os/godot/releases/download/v0.2.0/SHA256SUMS.txt"
     },
     {
-      "id": "awesome-os/holo-compiler@v0.6.0/b8g-shim-linux-arm64",
+      "id": "awesome-os/holo-compiler@v0.7.0/b8g-shim-linux-arm64",
       "repo": "holo-compiler",
-      "tag": "v0.6.0",
+      "tag": "v0.7.0",
       "filename": "b8g-shim-linux-arm64",
       "target": "linux-arm64",
       "executable": true,
       "sha512": "59c03564bff12d1af6c097f1e1cea048bb2a2c92a58dcb5605bd71086cff27e265d3eccf6fe147abd46428cd7d7ba80163ab24ee213d75f98d3e843fcd4e995c",
       "size": 44984,
       "blobPath": "v11/files/59/59c03564bff12d1af6c097f1e1cea048bb2a2c92a58dcb5605bd71086cff27e265d3eccf6fe147abd46428cd7d7ba80163ab24ee213d75f98d3e843fcd4e995c-exec",
-      "downloadUrl": "https://github.com/awesome-os/holo-compiler/releases/download/v0.6.0/b8g-shim-linux-arm64"
+      "downloadUrl": "https://github.com/awesome-os/holo-compiler/releases/download/v0.7.0/b8g-shim-linux-arm64"
     },
     {
-      "id": "awesome-os/holo-compiler@v0.6.0/b8g-shim-linux-x64",
+      "id": "awesome-os/holo-compiler@v0.7.0/b8g-shim-linux-x64",
       "repo": "holo-compiler",
-      "tag": "v0.6.0",
+      "tag": "v0.7.0",
       "filename": "b8g-shim-linux-x64",
       "target": "linux-x64",
       "executable": true,
       "sha512": "dab2b6f2ad5d1dc0a1b7fbfd5a3947481488767c70c83b865f1cc206bf2524c9f249ec19a2baf6b8b6a578c866db07c66876f2270d7e982130a49046b0218150",
       "size": 38024,
       "blobPath": "v11/files/da/dab2b6f2ad5d1dc0a1b7fbfd5a3947481488767c70c83b865f1cc206bf2524c9f249ec19a2baf6b8b6a578c866db07c66876f2270d7e982130a49046b0218150-exec",
-      "downloadUrl": "https://github.com/awesome-os/holo-compiler/releases/download/v0.6.0/b8g-shim-linux-x64"
+      "downloadUrl": "https://github.com/awesome-os/holo-compiler/releases/download/v0.7.0/b8g-shim-linux-x64"
     },
     {
-      "id": "awesome-os/holo-compiler@v0.6.0/b8g-shim-macos-arm64",
+      "id": "awesome-os/holo-compiler@v0.7.0/b8g-shim-macos-arm64",
       "repo": "holo-compiler",
-      "tag": "v0.6.0",
+      "tag": "v0.7.0",
       "filename": "b8g-shim-macos-arm64",
       "target": "macos-arm64",
       "executable": true,
       "sha512": "b915da5ce99ea12c6100e290eeb16184b3a5dd7dd5b106608ecbded0572bc20eb8a46aeba92d6d64392bfdd5461d2c72c0b882f5b5c27d882779e55ac61778a3",
       "size": 52040,
       "blobPath": "v11/files/b9/b915da5ce99ea12c6100e290eeb16184b3a5dd7dd5b106608ecbded0572bc20eb8a46aeba92d6d64392bfdd5461d2c72c0b882f5b5c27d882779e55ac61778a3-exec",
-      "downloadUrl": "https://github.com/awesome-os/holo-compiler/releases/download/v0.6.0/b8g-shim-macos-arm64"
+      "downloadUrl": "https://github.com/awesome-os/holo-compiler/releases/download/v0.7.0/b8g-shim-macos-arm64"
     },
     {
-      "id": "awesome-os/holo-compiler@v0.6.0/b8g-shim.exe",
+      "id": "awesome-os/holo-compiler@v0.7.0/b8g-shim.exe",
       "repo": "holo-compiler",
-      "tag": "v0.6.0",
+      "tag": "v0.7.0",
       "filename": "b8g-shim.exe",
       "target": "win64",
       "executable": true,
       "sha512": "23e314d7633f37e53b238d8b9ee811e5d0e47e921b9d42d012e65e6f489c16d7a3567ddbfc4f670631e15acc91125b07607662c2f222ec827fa36a92dfa6f140",
       "size": 29696,
       "blobPath": "v11/files/23/23e314d7633f37e53b238d8b9ee811e5d0e47e921b9d42d012e65e6f489c16d7a3567ddbfc4f670631e15acc91125b07607662c2f222ec827fa36a92dfa6f140-exec",
-      "downloadUrl": "https://github.com/awesome-os/holo-compiler/releases/download/v0.6.0/b8g-shim.exe"
+      "downloadUrl": "https://github.com/awesome-os/holo-compiler/releases/download/v0.7.0/b8g-shim.exe"
     },
     {
-      "id": "awesome-os/holo-compiler@v0.6.0/SHA256SUMS.txt",
+      "id": "awesome-os/holo-compiler@v0.7.0/SHA256SUMS.txt",
       "repo": "holo-compiler",
-      "tag": "v0.6.0",
+      "tag": "v0.7.0",
       "filename": "SHA256SUMS.txt",
       "target": "any",
       "executable": false,
       "sha512": "a23fdf9f433cbf2ecf088097f6ecaa771523d2e95f512937bc20b50595897480a18df159cdab88a916df2f1f865a34580ed39690a9eab65eaf26a0a3a5400b4c",
       "size": 358,
       "blobPath": "v11/files/a2/a23fdf9f433cbf2ecf088097f6ecaa771523d2e95f512937bc20b50595897480a18df159cdab88a916df2f1f865a34580ed39690a9eab65eaf26a0a3a5400b4c",
-      "downloadUrl": "https://github.com/awesome-os/holo-compiler/releases/download/v0.6.0/SHA256SUMS.txt"
+      "downloadUrl": "https://github.com/awesome-os/holo-compiler/releases/download/v0.7.0/SHA256SUMS.txt"
     },
     {
-      "id": "awesome-os/holo-pm@v0.1.0/holo-pm-linux-aarch64",
+      "id": "awesome-os/holo-pm@v0.2.0/holo-pm-linux-aarch64",
       "repo": "holo-pm",
-      "tag": "v0.1.0",
+      "tag": "v0.2.0",
       "filename": "holo-pm-linux-aarch64",
       "target": "linux-x64",
       "executable": true,
       "sha512": "13ed1afa66ee1cb0c1bd8ba887fadf2d70191cf735805b89f0cb72851ee4a058daece8d13c3bc4afc7226800b74ff3812b6bf202d6dbe6af7e4c8e3c65cf13ef",
       "size": 7352,
       "blobPath": "v11/files/13/13ed1afa66ee1cb0c1bd8ba887fadf2d70191cf735805b89f0cb72851ee4a058daece8d13c3bc4afc7226800b74ff3812b6bf202d6dbe6af7e4c8e3c65cf13ef-exec",
-      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.1.0/holo-pm-linux-aarch64"
+      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.2.0/holo-pm-linux-aarch64"
     },
     {
-      "id": "awesome-os/holo-pm@v0.1.0/holo-pm-linux-x86_64",
+      "id": "awesome-os/holo-pm@v0.2.0/holo-pm-linux-x86_64",
       "repo": "holo-pm",
-      "tag": "v0.1.0",
+      "tag": "v0.2.0",
       "filename": "holo-pm-linux-x86_64",
       "target": "linux-x64",
       "executable": true,
       "sha512": "2bdad50caa4062674f32979a492c6f5a64f9aebdc8c67cddec129a80563623c2717bb87ffb69125e93b1693a5de5845db404af62412b75edd53ea78c37cd1dc8",
       "size": 7176,
       "blobPath": "v11/files/2b/2bdad50caa4062674f32979a492c6f5a64f9aebdc8c67cddec129a80563623c2717bb87ffb69125e93b1693a5de5845db404af62412b75edd53ea78c37cd1dc8-exec",
-      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.1.0/holo-pm-linux-x86_64"
+      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.2.0/holo-pm-linux-x86_64"
     },
     {
-      "id": "awesome-os/holo-pm@v0.1.0/holo-pm-macos-aarch64",
+      "id": "awesome-os/holo-pm@v0.2.0/holo-pm-macos-aarch64",
       "repo": "holo-pm",
-      "tag": "v0.1.0",
+      "tag": "v0.2.0",
       "filename": "holo-pm-macos-aarch64",
       "target": "macos-arm64",
       "executable": true,
       "sha512": "a82696f994998f8fc02f12fd5772b65190ba408f5da06b3364a0e3284c0b7983219d90c8b40e3b5c08c584d0baa466e49a69389ebe0d76bf3710a1f252866bbc",
       "size": 51176,
       "blobPath": "v11/files/a8/a82696f994998f8fc02f12fd5772b65190ba408f5da06b3364a0e3284c0b7983219d90c8b40e3b5c08c584d0baa466e49a69389ebe0d76bf3710a1f252866bbc-exec",
-      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.1.0/holo-pm-macos-aarch64"
+      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.2.0/holo-pm-macos-aarch64"
     },
     {
-      "id": "awesome-os/holo-pm@v0.1.0/holo-pm-windows-x86_64.exe",
+      "id": "awesome-os/holo-pm@v0.2.0/holo-pm-windows-x86_64.exe",
       "repo": "holo-pm",
-      "tag": "v0.1.0",
+      "tag": "v0.2.0",
       "filename": "holo-pm-windows-x86_64.exe",
       "target": "win64",
       "executable": true,
       "sha512": "1dbc3ee65bd0937565031a144c96b4dab20c56b3def3795780b74ca953817a35df87e5d8768e12b4dd663c939bbc027e3122e7042b9b9e24514f648c5b85bf25",
       "size": 20480,
       "blobPath": "v11/files/1d/1dbc3ee65bd0937565031a144c96b4dab20c56b3def3795780b74ca953817a35df87e5d8768e12b4dd663c939bbc027e3122e7042b9b9e24514f648c5b85bf25-exec",
-      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.1.0/holo-pm-windows-x86_64.exe"
+      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.2.0/holo-pm-windows-x86_64.exe"
     },
     {
-      "id": "awesome-os/holo-pm@v0.1.0/libholo_pm.h",
+      "id": "awesome-os/holo-pm@v0.2.0/libholo_pm.h",
       "repo": "holo-pm",
-      "tag": "v0.1.0",
+      "tag": "v0.2.0",
       "filename": "libholo_pm.h",
       "target": "any",
       "executable": false,
       "sha512": "14ead66861453624c7bfb80af9167f9633e1262da97ef2823b6f11f24a98e7e3847b6b090bf04d1d8956d9aafa580bc3b547d34250decf4b1a73c1d60d27be81",
       "size": 2080,
       "blobPath": "v11/files/14/14ead66861453624c7bfb80af9167f9633e1262da97ef2823b6f11f24a98e7e3847b6b090bf04d1d8956d9aafa580bc3b547d34250decf4b1a73c1d60d27be81",
-      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.1.0/libholo_pm.h"
+      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.2.0/libholo_pm.h"
     },
     {
-      "id": "awesome-os/holo-pm@v0.1.0/libholo-pm-linux-aarch64.so",
+      "id": "awesome-os/holo-pm@v0.2.0/libholo-pm-linux-aarch64.so",
       "repo": "holo-pm",
-      "tag": "v0.1.0",
+      "tag": "v0.2.0",
       "filename": "libholo-pm-linux-aarch64.so",
       "target": "linux-x64",
       "executable": true,
       "sha512": "7e5a758a2164fc4bdc3d6451cf7e3fba4afbcd28d5417fcc2cc9e9ba11b944288bfc47f71af2465e72f1ec350cfa48faa57a21df88182830f2267798ccd245a6",
       "size": 4384,
       "blobPath": "v11/files/7e/7e5a758a2164fc4bdc3d6451cf7e3fba4afbcd28d5417fcc2cc9e9ba11b944288bfc47f71af2465e72f1ec350cfa48faa57a21df88182830f2267798ccd245a6-exec",
-      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.1.0/libholo-pm-linux-aarch64.so"
+      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.2.0/libholo-pm-linux-aarch64.so"
     },
     {
-      "id": "awesome-os/holo-pm@v0.1.0/libholo-pm-linux-x86_64.so",
+      "id": "awesome-os/holo-pm@v0.2.0/libholo-pm-linux-x86_64.so",
       "repo": "holo-pm",
-      "tag": "v0.1.0",
+      "tag": "v0.2.0",
       "filename": "libholo-pm-linux-x86_64.so",
       "target": "linux-x64",
       "executable": true,
       "sha512": "bccd4274af6d06d856af06ea71e210752bb38300ffcb1d06044143d6ef6b31929cf00338c3e9fa7fb0a34b057477e76de70dd89d8d9de49d76028949167ce73f",
       "size": 4368,
       "blobPath": "v11/files/bc/bccd4274af6d06d856af06ea71e210752bb38300ffcb1d06044143d6ef6b31929cf00338c3e9fa7fb0a34b057477e76de70dd89d8d9de49d76028949167ce73f-exec",
-      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.1.0/libholo-pm-linux-x86_64.so"
+      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.2.0/libholo-pm-linux-x86_64.so"
     },
     {
-      "id": "awesome-os/holo-pm@v0.1.0/libholo-pm-macos-aarch64.dylib",
+      "id": "awesome-os/holo-pm@v0.2.0/libholo-pm-macos-aarch64.dylib",
       "repo": "holo-pm",
-      "tag": "v0.1.0",
+      "tag": "v0.2.0",
       "filename": "libholo-pm-macos-aarch64.dylib",
       "target": "macos-arm64",
       "executable": true,
       "sha512": "f61c9df29e177010785b5c8171650eabf4532598fb6433bedf4c609d889dd7a3d60c175672c761a7fcd11e7176450289c21c664c1616fce1c317cb13f1e08839",
       "size": 50400,
       "blobPath": "v11/files/f6/f61c9df29e177010785b5c8171650eabf4532598fb6433bedf4c609d889dd7a3d60c175672c761a7fcd11e7176450289c21c664c1616fce1c317cb13f1e08839-exec",
-      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.1.0/libholo-pm-macos-aarch64.dylib"
+      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.2.0/libholo-pm-macos-aarch64.dylib"
     },
     {
-      "id": "awesome-os/holo-pm@v0.1.0/libholo-pm-windows-x86_64.dll",
+      "id": "awesome-os/holo-pm@v0.2.0/libholo-pm-windows-x86_64.dll",
       "repo": "holo-pm",
-      "tag": "v0.1.0",
+      "tag": "v0.2.0",
       "filename": "libholo-pm-windows-x86_64.dll",
       "target": "win64",
       "executable": true,
       "sha512": "b198e07350b91cdaa0edf5aff6017a1b6073994c26c2398a8bb4c87269aa9c035f35f968569bce6ebc282e22b39d7ebb8d969c196127c4f8ee3d7148371c8b79",
       "size": 16384,
       "blobPath": "v11/files/b1/b198e07350b91cdaa0edf5aff6017a1b6073994c26c2398a8bb4c87269aa9c035f35f968569bce6ebc282e22b39d7ebb8d969c196127c4f8ee3d7148371c8b79-exec",
-      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.1.0/libholo-pm-windows-x86_64.dll"
+      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.2.0/libholo-pm-windows-x86_64.dll"
     },
     {
-      "id": "awesome-os/holo-pm@v0.1.0/SHA256SUMS.txt",
+      "id": "awesome-os/holo-pm@v0.2.0/SHA256SUMS.txt",
       "repo": "holo-pm",
-      "tag": "v0.1.0",
+      "tag": "v0.2.0",
       "filename": "SHA256SUMS.txt",
       "target": "any",
       "executable": false,
       "sha512": "b5fead3f1a854107af4272469d5cd8390d867459a0dc75e513c4f6307b2188b0012fa694ac6760ee72938bcef94b16e449fddefc9989a87be62985019ce16cea",
       "size": 815,
       "blobPath": "v11/files/b5/b5fead3f1a854107af4272469d5cd8390d867459a0dc75e513c4f6307b2188b0012fa694ac6760ee72938bcef94b16e449fddefc9989a87be62985019ce16cea",
-      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.1.0/SHA256SUMS.txt"
+      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.2.0/SHA256SUMS.txt"
     },
     {
-      "id": "awesome-os/holo-pm@v0.1.0/SHA512SUMS.txt",
+      "id": "awesome-os/holo-pm@v0.2.0/SHA512SUMS.txt",
       "repo": "holo-pm",
-      "tag": "v0.1.0",
+      "tag": "v0.2.0",
       "filename": "SHA512SUMS.txt",
       "target": "any",
       "executable": false,
       "sha512": "1accd98218005ce37230713b2126c0a73aa8ac22ef6ee5df644554c45eec43bf3ccfe03a04bd056432ce5de398771d34b47029ef4a882e02de9441fa9272c92c",
       "size": 1536,
       "blobPath": "v11/files/1a/1accd98218005ce37230713b2126c0a73aa8ac22ef6ee5df644554c45eec43bf3ccfe03a04bd056432ce5de398771d34b47029ef4a882e02de9441fa9272c92c",
-      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.1.0/SHA512SUMS.txt"
+      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.2.0/SHA512SUMS.txt"
     },
     {
-      "id": "awesome-os/installer@v0.2.3/awesome-os-installer-catalog-v0.2.3.tar.zst",
+      "id": "awesome-os/installer@v0.2.4/awesome-os-installer-catalog-v0.2.4.tar.zst",
       "repo": "installer",
-      "tag": "v0.2.3",
-      "filename": "awesome-os-installer-catalog-v0.2.3.tar.zst",
+      "tag": "v0.2.4",
+      "filename": "awesome-os-installer-catalog-v0.2.4.tar.zst",
       "target": "any",
       "executable": false,
-      "sha512": "0699f0e0b988f38ac4772f8952a9b8047bd56849d98b44a331d524f25791006432e8dddb65779d08ac7652375ae6443e26fb33da1388e88becfafbabda6c60ef",
-      "size": 10655,
-      "blobPath": "v11/files/06/0699f0e0b988f38ac4772f8952a9b8047bd56849d98b44a331d524f25791006432e8dddb65779d08ac7652375ae6443e26fb33da1388e88becfafbabda6c60ef",
-      "downloadUrl": "https://github.com/awesome-os/installer/releases/download/v0.2.3/awesome-os-installer-catalog-v0.2.3.tar.zst"
+      "sha512": "5e6a3033dd91cf8c7f235eb64ceaf62990c02d8c8ff0b97e84ce8f4d97c65f1f8779cb118e9dc8395dd0101801a06f1d91eabde4228f5b2b57799b8ee9601025",
+      "size": 11753,
+      "blobPath": "v11/files/5e/5e6a3033dd91cf8c7f235eb64ceaf62990c02d8c8ff0b97e84ce8f4d97c65f1f8779cb118e9dc8395dd0101801a06f1d91eabde4228f5b2b57799b8ee9601025",
+      "downloadUrl": "https://github.com/awesome-os/installer/releases/download/v0.2.4/awesome-os-installer-catalog-v0.2.4.tar.zst"
     },
     {
-      "id": "awesome-os/installer@v0.2.3/SHA256SUMS.txt",
+      "id": "awesome-os/installer@v0.2.4/SHA256SUMS.txt",
       "repo": "installer",
-      "tag": "v0.2.3",
+      "tag": "v0.2.4",
       "filename": "SHA256SUMS.txt",
       "target": "any",
       "executable": false,
-      "sha512": "f08f81e63be375fb3ecfcd06eece8da863028015d96c836fc1e7db8fe8eac62bb0eb9d1988def0f0ae3ba35568c2d40c5de29f9e30587516252a9f31c0109dce",
+      "sha512": "a342eb470d5bc8e4dbe2b9be3448ffdd5725f111deac50ed513377448c58997a27bae2cd76abdb068088aa435112c2e136e8b3af7c6f51fb25bc93212f786744",
       "size": 110,
-      "blobPath": "v11/files/f0/f08f81e63be375fb3ecfcd06eece8da863028015d96c836fc1e7db8fe8eac62bb0eb9d1988def0f0ae3ba35568c2d40c5de29f9e30587516252a9f31c0109dce",
-      "downloadUrl": "https://github.com/awesome-os/installer/releases/download/v0.2.3/SHA256SUMS.txt"
+      "blobPath": "v11/files/a3/a342eb470d5bc8e4dbe2b9be3448ffdd5725f111deac50ed513377448c58997a27bae2cd76abdb068088aa435112c2e136e8b3af7c6f51fb25bc93212f786744",
+      "downloadUrl": "https://github.com/awesome-os/installer/releases/download/v0.2.4/SHA256SUMS.txt"
     },
     {
       "id": "awesome-os/just-js@v0.1.0/just-linux-arm64",
@@ -4786,112 +4918,112 @@
       "downloadUrl": "https://github.com/awesome-os/rollup/releases/download/v0.1.0/SHA512SUMS.txt"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.2/install.ps1",
+      "id": "awesome-os/sectium-browser@v0.7.3/install.ps1",
       "repo": "sectium-browser",
-      "tag": "v0.7.2",
+      "tag": "v0.7.3",
       "filename": "install.ps1",
       "target": "any",
       "executable": false,
       "sha512": "39fc0dab9a85980de2bb02a654c30634f0271cce4154557e1af8f8a1b227ebf525ce3e5218ca0e2d7db02f29434e3b5a26470e646d2594d3a3c1057361a92e84",
       "size": 2361,
       "blobPath": "v11/files/39/39fc0dab9a85980de2bb02a654c30634f0271cce4154557e1af8f8a1b227ebf525ce3e5218ca0e2d7db02f29434e3b5a26470e646d2594d3a3c1057361a92e84",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.2/install.ps1"
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/install.ps1"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.2/install.sh",
+      "id": "awesome-os/sectium-browser@v0.7.3/install.sh",
       "repo": "sectium-browser",
-      "tag": "v0.7.2",
+      "tag": "v0.7.3",
       "filename": "install.sh",
       "target": "any",
       "executable": true,
       "sha512": "e07be7d2aedf3209990a86752ebc2acfb977007efc160a9804da01ce19948ee68ac4914b08b2151df96afedde3a31adfe97dd77c99b80391a8c251964dfaa0fc",
       "size": 2081,
       "blobPath": "v11/files/e0/e07be7d2aedf3209990a86752ebc2acfb977007efc160a9804da01ce19948ee68ac4914b08b2151df96afedde3a31adfe97dd77c99b80391a8c251964dfaa0fc-exec",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.2/install.sh"
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/install.sh"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.2/sectium-browser-app.tar.zst",
+      "id": "awesome-os/sectium-browser@v0.7.3/sectium-browser-app.tar.zst",
       "repo": "sectium-browser",
-      "tag": "v0.7.2",
+      "tag": "v0.7.3",
       "filename": "sectium-browser-app.tar.zst",
       "target": "any",
       "executable": false,
-      "sha512": "f817a89cef92d4ac7b54ce52889e9b332ffa053e4e12f4e01bf5761dc8aba4b628997ee9d66c6bfa8b97a097c0dce2e708e97af4eaf8fada5b0baac323796565",
-      "size": 16870,
-      "blobPath": "v11/files/f8/f817a89cef92d4ac7b54ce52889e9b332ffa053e4e12f4e01bf5761dc8aba4b628997ee9d66c6bfa8b97a097c0dce2e708e97af4eaf8fada5b0baac323796565",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.2/sectium-browser-app.tar.zst"
+      "sha512": "47abc58cfc3e6cc23ec42aa4535582dd4be2cffbd431689d7cb3d996c3e6f2d17d061aeef4e17b1780cb1abfae64401209f5432dad7b49618e0d4533284d0207",
+      "size": 24087,
+      "blobPath": "v11/files/47/47abc58cfc3e6cc23ec42aa4535582dd4be2cffbd431689d7cb3d996c3e6f2d17d061aeef4e17b1780cb1abfae64401209f5432dad7b49618e0d4533284d0207",
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/sectium-browser-app.tar.zst"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.2/sectium-browser-linux-arm64",
+      "id": "awesome-os/sectium-browser@v0.7.3/sectium-browser-linux-arm64",
       "repo": "sectium-browser",
-      "tag": "v0.7.2",
+      "tag": "v0.7.3",
       "filename": "sectium-browser-linux-arm64",
       "target": "linux-arm64",
       "executable": true,
-      "sha512": "962bd60b736759afaa84eda922c77668c3a4cc636a6e331edb775f9bb2f91742cb0908ef306d7f59e154bc813f626c4f851a2a990b7d73d07dac32b361cf4026",
+      "sha512": "9875cd46c0097b0d0098e38c9462b5c56791e55e7e220db311743d97f8dfa7dd8d9a285645bd639783cd4f45091e495eae3356588cfa2a828707e0bac4b0ee46",
       "size": 1222624,
-      "blobPath": "v11/files/96/962bd60b736759afaa84eda922c77668c3a4cc636a6e331edb775f9bb2f91742cb0908ef306d7f59e154bc813f626c4f851a2a990b7d73d07dac32b361cf4026-exec",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.2/sectium-browser-linux-arm64"
+      "blobPath": "v11/files/98/9875cd46c0097b0d0098e38c9462b5c56791e55e7e220db311743d97f8dfa7dd8d9a285645bd639783cd4f45091e495eae3356588cfa2a828707e0bac4b0ee46-exec",
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/sectium-browser-linux-arm64"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.2/sectium-browser-linux-x64",
+      "id": "awesome-os/sectium-browser@v0.7.3/sectium-browser-linux-x64",
       "repo": "sectium-browser",
-      "tag": "v0.7.2",
+      "tag": "v0.7.3",
       "filename": "sectium-browser-linux-x64",
       "target": "linux-x64",
       "executable": true,
-      "sha512": "98ee98b815c82b5372c14a197c8a32d282797fff45ea5da697bd4a2faebd3d6be26c257ea492edc625a9a4ecfee5a8b2fea2dd0c424398587596faa3adc9f0bc",
+      "sha512": "94c9129853f2179dec870443b40a394e296dcb1400008f4b6b394a47a6bcc0f3994c757faa4f4ce9bd81b555b3ab1b571683811707d390c4a157f02cef84ebaa",
       "size": 1155968,
-      "blobPath": "v11/files/98/98ee98b815c82b5372c14a197c8a32d282797fff45ea5da697bd4a2faebd3d6be26c257ea492edc625a9a4ecfee5a8b2fea2dd0c424398587596faa3adc9f0bc-exec",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.2/sectium-browser-linux-x64"
+      "blobPath": "v11/files/94/94c9129853f2179dec870443b40a394e296dcb1400008f4b6b394a47a6bcc0f3994c757faa4f4ce9bd81b555b3ab1b571683811707d390c4a157f02cef84ebaa-exec",
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/sectium-browser-linux-x64"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.2/sectium-browser-macos-arm64",
+      "id": "awesome-os/sectium-browser@v0.7.3/sectium-browser-macos-arm64",
       "repo": "sectium-browser",
-      "tag": "v0.7.2",
+      "tag": "v0.7.3",
       "filename": "sectium-browser-macos-arm64",
       "target": "macos-arm64",
       "executable": true,
-      "sha512": "7052bc4a1621692aab44e258de78a504df2325ddabf5c08832b1a30aac40a9c4b336557e6f1870fa268fd3969d4738a6c279f26b43c060a44a3c2677075b380e",
+      "sha512": "9fd1a6ee56d61a46243929d42d8a856f7500fa5ca2f77fdb2c260b26c79072c5cdd89f87699cc409f6a22fc80be0332f8aad68baf9e6dd5e00a7bba5f38dd836",
       "size": 52520,
-      "blobPath": "v11/files/70/7052bc4a1621692aab44e258de78a504df2325ddabf5c08832b1a30aac40a9c4b336557e6f1870fa268fd3969d4738a6c279f26b43c060a44a3c2677075b380e-exec",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.2/sectium-browser-macos-arm64"
+      "blobPath": "v11/files/9f/9fd1a6ee56d61a46243929d42d8a856f7500fa5ca2f77fdb2c260b26c79072c5cdd89f87699cc409f6a22fc80be0332f8aad68baf9e6dd5e00a7bba5f38dd836-exec",
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/sectium-browser-macos-arm64"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.2/sectium-browser.exe",
+      "id": "awesome-os/sectium-browser@v0.7.3/sectium-browser.exe",
       "repo": "sectium-browser",
-      "tag": "v0.7.2",
+      "tag": "v0.7.3",
       "filename": "sectium-browser.exe",
       "target": "win64",
       "executable": true,
-      "sha512": "bbc6a143a276cf6e56bb5a35f17a0c02be45f51e6b84e46a5bf6b62cd0a7ecedf17c0a78246072c22191811d79fe7bca20d243cebf5239d002411d81b9cce7d8",
+      "sha512": "23e0118576067520e1d81afe1399895264012acf704f22f099ca425d08137a7024eb034546897c99a5ae80746437c92f866944b8bf8a07c75781bc823b76f4c5",
       "size": 185856,
-      "blobPath": "v11/files/bb/bbc6a143a276cf6e56bb5a35f17a0c02be45f51e6b84e46a5bf6b62cd0a7ecedf17c0a78246072c22191811d79fe7bca20d243cebf5239d002411d81b9cce7d8-exec",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.2/sectium-browser.exe"
+      "blobPath": "v11/files/23/23e0118576067520e1d81afe1399895264012acf704f22f099ca425d08137a7024eb034546897c99a5ae80746437c92f866944b8bf8a07c75781bc823b76f4c5-exec",
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/sectium-browser.exe"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.2/sectium-browser.pdb",
+      "id": "awesome-os/sectium-browser@v0.7.3/sectium-browser.pdb",
       "repo": "sectium-browser",
-      "tag": "v0.7.2",
+      "tag": "v0.7.3",
       "filename": "sectium-browser.pdb",
       "target": "any",
       "executable": false,
-      "sha512": "6b5b669640f0f2b58b442dd1d5b42f6243143a2b562f7ad8f77b0ee11fd7cff50f60f4e7bc132c57415d634087f70ca20c4e11f98521e1b800e2d71a7afbc552",
+      "sha512": "81459a2882d51f9915e4210089f46670ba04328e181527c80344a85fa7446d7fccf901de8509e40d7089c8d86bc8555d106588bc1ed1ddc9da66e7ee4beb73d5",
       "size": 1183744,
-      "blobPath": "v11/files/6b/6b5b669640f0f2b58b442dd1d5b42f6243143a2b562f7ad8f77b0ee11fd7cff50f60f4e7bc132c57415d634087f70ca20c4e11f98521e1b800e2d71a7afbc552",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.2/sectium-browser.pdb"
+      "blobPath": "v11/files/81/81459a2882d51f9915e4210089f46670ba04328e181527c80344a85fa7446d7fccf901de8509e40d7089c8d86bc8555d106588bc1ed1ddc9da66e7ee4beb73d5",
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/sectium-browser.pdb"
     },
     {
-      "id": "awesome-os/sectium-browser@v0.7.2/SHA256SUMS.txt",
+      "id": "awesome-os/sectium-browser@v0.7.3/SHA256SUMS.txt",
       "repo": "sectium-browser",
-      "tag": "v0.7.2",
+      "tag": "v0.7.3",
       "filename": "SHA256SUMS.txt",
       "target": "any",
       "executable": false,
-      "sha512": "e10825bde6014776d5100e51aaa5ea2c8a35b74c1f9831578dbd8796f4fe19675d674702d1dcc22aea9e41c0ad5827fc7f3c2c180ba2e020e0c5daf9cf839166",
+      "sha512": "cb467b0f393d59a8222eea2680e1a0214664b29d445e7bb272033a024a8273b6f6cdead6d9708363e59882870ad64b355a5324bfd22c444ac6b33d31ebca6fcd",
       "size": 615,
-      "blobPath": "v11/files/e1/e10825bde6014776d5100e51aaa5ea2c8a35b74c1f9831578dbd8796f4fe19675d674702d1dcc22aea9e41c0ad5827fc7f3c2c180ba2e020e0c5daf9cf839166",
-      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.2/SHA256SUMS.txt"
+      "blobPath": "v11/files/cb/cb467b0f393d59a8222eea2680e1a0214664b29d445e7bb272033a024a8273b6f6cdead6d9708363e59882870ad64b355a5324bfd22c444ac6b33d31ebca6fcd",
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/SHA256SUMS.txt"
     },
     {
       "id": "awesome-os/sectium-devops@v0.1.0/sectium-devops-v0.1.0.tar.zst",
