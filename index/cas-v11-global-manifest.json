@@ -2,11 +2,11 @@
   "schema": "awesome-os-cas-v11-manifest-v1",
   "abiMagic": "0x33564742",
   "version": "v11",
-  "generatedAt": "2026-11-25T09:53:42.427Z",
+  "generatedAt": "2026-11-25T18:59:19.673Z",
   "totalRepos": 70,
-  "totalAssets": 590,
-  "uniqueBlobs": 531,
-  "totalBytes": 8437388573,
+  "totalAssets": 598,
+  "uniqueBlobs": 539,
+  "totalBytes": 8762524580,
   "skippedLarge": 8,
   "entries": [
     {
@@ -104,6 +104,18 @@
       "size": 1764934,
       "blobPath": "v11/files/7d/7de8b39ed8aeda15d85fe9039dc109dc055b337cb922258b0a142c9ff3fc737cdbecfc545c59356591ee54b1f130f85721836896bb05a5677b015241e7661191-exec",
       "downloadUrl": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1/0d02fd5d632ba5ca4ab1a82708a58cc9a24b7bf10aa177de4887bb494acca119"
+    },
+    {
+      "id": "awesome-os/b8g-ghost@cas-v1/0d1f72ae850cb0e9ca846d52600aab0dd19416f45c7cda5f0f2d4eef9b76c229",
+      "repo": "b8g-ghost",
+      "tag": "cas-v1",
+      "filename": "0d1f72ae850cb0e9ca846d52600aab0dd19416f45c7cda5f0f2d4eef9b76c229",
+      "target": "any",
+      "executable": true,
+      "sha512": "29a7f1046e732bd3542c100337eca0fd95abb41e647b9e1f2539aa0ada7824426346719872d042934791671dc980954f37e22d08f8f03d42169f64e3627fce9d",
+      "size": 35728980,
+      "blobPath": "v11/files/29/29a7f1046e732bd3542c100337eca0fd95abb41e647b9e1f2539aa0ada7824426346719872d042934791671dc980954f37e22d08f8f03d42169f64e3627fce9d-exec",
+      "downloadUrl": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1/0d1f72ae850cb0e9ca846d52600aab0dd19416f45c7cda5f0f2d4eef9b76c229"
     },
     {
       "id": "awesome-os/b8g-ghost@cas-v1/0ef951f1f9904563e5b7619336390cd163a8a7c6b4f103b35de3fe2de073d943",
@@ -310,6 +322,18 @@
       "downloadUrl": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1/2d84eba0c002ba329d19e672889f22617595a1aad2a37eef0626f2145114ee95"
     },
     {
+      "id": "awesome-os/b8g-ghost@cas-v1/31cc61f3f6804ddbf834026bd75f04ad907efce6d484df61f521a1240a5596f1",
+      "repo": "b8g-ghost",
+      "tag": "cas-v1",
+      "filename": "31cc61f3f6804ddbf834026bd75f04ad907efce6d484df61f521a1240a5596f1",
+      "target": "any",
+      "executable": true,
+      "sha512": "2254cc737779dc610bbdcb3ca9b23eddc2715e281038287b16de5191898d1cf3ba6c2472e04d1e8d9cd1d4e9b397464d71ee48723a55d9240bfecddc8132372b",
+      "size": 42917071,
+      "blobPath": "v11/files/22/2254cc737779dc610bbdcb3ca9b23eddc2715e281038287b16de5191898d1cf3ba6c2472e04d1e8d9cd1d4e9b397464d71ee48723a55d9240bfecddc8132372b-exec",
+      "downloadUrl": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1/31cc61f3f6804ddbf834026bd75f04ad907efce6d484df61f521a1240a5596f1"
+    },
+    {
       "id": "awesome-os/b8g-ghost@cas-v1/32f706660826092ea5a6af454660cdc7d096708e9cea3f224f1f67034ed6e750",
       "repo": "b8g-ghost",
       "tag": "cas-v1",
@@ -320,6 +344,18 @@
       "size": 966448,
       "blobPath": "v11/files/16/16c7c36ddec93856f80844d08f43f3719453f4b78a2b7acbb3252a590272fe008913c7ea96bd0a4251fac3c3f5324b658ffededf83366396d7240b2b199b245a-exec",
       "downloadUrl": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1/32f706660826092ea5a6af454660cdc7d096708e9cea3f224f1f67034ed6e750"
+    },
+    {
+      "id": "awesome-os/b8g-ghost@cas-v1/332f644183f7360d0631fea55d9f66f8416aac279aa413f7cfc50f42666c4008",
+      "repo": "b8g-ghost",
+      "tag": "cas-v1",
+      "filename": "332f644183f7360d0631fea55d9f66f8416aac279aa413f7cfc50f42666c4008",
+      "target": "any",
+      "executable": true,
+      "sha512": "baa819b41c326adfa19dfce40d59986cf9fe18a60c53351e4b81779fa6e5a06adff2a326798225727e3623020694ca4bb0986b24cc8f26563b7058b858404c66",
+      "size": 40572521,
+      "blobPath": "v11/files/ba/baa819b41c326adfa19dfce40d59986cf9fe18a60c53351e4b81779fa6e5a06adff2a326798225727e3623020694ca4bb0986b24cc8f26563b7058b858404c66-exec",
+      "downloadUrl": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1/332f644183f7360d0631fea55d9f66f8416aac279aa413f7cfc50f42666c4008"
     },
     {
       "id": "awesome-os/b8g-ghost@cas-v1/35b456bf1d7bd53a30eeaccfdd3c6c6940b98ad07108e8f32249238d8c21349c",
@@ -488,6 +524,18 @@
       "size": 49091960,
       "blobPath": "v11/files/21/2166574c63d0a80320e6c25b4d048475fb89150f35431be26316198a3d0d0010f8d01b385b0c990c37d5debc01367d4b27f72f769f8ee6e4a2f25e87f22f88f6-exec",
       "downloadUrl": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1/473ec26806133cf4d1918caf1a410f8403a13d979726a9045b421b685031a982"
+    },
+    {
+      "id": "awesome-os/b8g-ghost@cas-v1/47825b34616c70239c659d70c563a16553b3703e1539ff1df6efa4eb324634b4",
+      "repo": "b8g-ghost",
+      "tag": "cas-v1",
+      "filename": "47825b34616c70239c659d70c563a16553b3703e1539ff1df6efa4eb324634b4",
+      "target": "any",
+      "executable": true,
+      "sha512": "509a488db3205580f798a89f3df9c71d53d78f62dddc2bdc199dfb2555a3749a48b39e0c0a61f2780089bc0cb6af8ca6346948a25d0f0165310f9a8353e6fd19",
+      "size": 42649323,
+      "blobPath": "v11/files/50/509a488db3205580f798a89f3df9c71d53d78f62dddc2bdc199dfb2555a3749a48b39e0c0a61f2780089bc0cb6af8ca6346948a25d0f0165310f9a8353e6fd19-exec",
+      "downloadUrl": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1/47825b34616c70239c659d70c563a16553b3703e1539ff1df6efa4eb324634b4"
     },
     {
       "id": "awesome-os/b8g-ghost@cas-v1/48b4c64e4e3c029dc543594e9347bfbd5dfd9f923682fd6462644fd7b2bce71c",
@@ -692,6 +740,18 @@
       "size": 190584,
       "blobPath": "v11/files/80/80957dc4fffee81b80281bd9ab3b446f7cdd48f084564d8330981f148a1be500714ffeb74d602d387fa5554588dabce049116afd738d99648a56bff5371f52bc-exec",
       "downloadUrl": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1/59dce4774c93e867d840b9c861b970a2071219b4c595bc8ae1b4a0a11b5ae60b"
+    },
+    {
+      "id": "awesome-os/b8g-ghost@cas-v1/5ad97a98dda94402cb1d3627841424499b11a502879ab9e3c1b4d3be17009576",
+      "repo": "b8g-ghost",
+      "tag": "cas-v1",
+      "filename": "5ad97a98dda94402cb1d3627841424499b11a502879ab9e3c1b4d3be17009576",
+      "target": "any",
+      "executable": true,
+      "sha512": "ef8d3571f5878a4680d9a96d34a6cbc162d9db2aa78aeb6c2f627b8239b5fb7dfb60331f39800aa233056758caad0b3d3560ac2faf846dde4493fc49f7c38ccb",
+      "size": 44808546,
+      "blobPath": "v11/files/ef/ef8d3571f5878a4680d9a96d34a6cbc162d9db2aa78aeb6c2f627b8239b5fb7dfb60331f39800aa233056758caad0b3d3560ac2faf846dde4493fc49f7c38ccb-exec",
+      "downloadUrl": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1/5ad97a98dda94402cb1d3627841424499b11a502879ab9e3c1b4d3be17009576"
     },
     {
       "id": "awesome-os/b8g-ghost@cas-v1/5bb066b7a1898a5a0d62ba9f39da539415e47cf10f198032b6f4f63aac2b9bc1",
@@ -1690,6 +1750,18 @@
       "downloadUrl": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1/b960789446f4d5cbf6e7d65108fa3eada07f1da6c5ca95bf5747663f833c9c26"
     },
     {
+      "id": "awesome-os/b8g-ghost@cas-v1/baa115e5a2ef4b7300e97c2f6f19aa06db5037f43211e65c9e8f9af97d30b357",
+      "repo": "b8g-ghost",
+      "tag": "cas-v1",
+      "filename": "baa115e5a2ef4b7300e97c2f6f19aa06db5037f43211e65c9e8f9af97d30b357",
+      "target": "any",
+      "executable": true,
+      "sha512": "4f0eef0b54ce294af6d0409cf79c211133ed52ef3e0c4715c325edfa4721e34f590a0ff4fcd5b752c38d4bba27a9ae8e320d212888b42ad9f25b238f56b92887",
+      "size": 44372316,
+      "blobPath": "v11/files/4f/4f0eef0b54ce294af6d0409cf79c211133ed52ef3e0c4715c325edfa4721e34f590a0ff4fcd5b752c38d4bba27a9ae8e320d212888b42ad9f25b238f56b92887-exec",
+      "downloadUrl": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1/baa115e5a2ef4b7300e97c2f6f19aa06db5037f43211e65c9e8f9af97d30b357"
+    },
+    {
       "id": "awesome-os/b8g-ghost@cas-v1/bb11dfe372811d208871804b16add6f1139610e9f66060425cf1fd913960d68d",
       "repo": "b8g-ghost",
       "tag": "cas-v1",
@@ -2218,6 +2290,18 @@
       "downloadUrl": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1/f05aad0e70cd83ede39293fa30212f111d2b707d492f351af6fc183d95166d7e"
     },
     {
+      "id": "awesome-os/b8g-ghost@cas-v1/f141868f52e7f94f270c3414f40ad528972f8af622e22c7adc7666be99c818ee",
+      "repo": "b8g-ghost",
+      "tag": "cas-v1",
+      "filename": "f141868f52e7f94f270c3414f40ad528972f8af622e22c7adc7666be99c818ee",
+      "target": "any",
+      "executable": true,
+      "sha512": "380b8dd61f15b88396e2048f09a078ca651e04ec6d9dfd82b374eeb65171ca6fcd9338fbb349e08c9a2f1e536e1f05b84fbcf9348dd483b274b2ad98516d08ea",
+      "size": 34979813,
+      "blobPath": "v11/files/38/380b8dd61f15b88396e2048f09a078ca651e04ec6d9dfd82b374eeb65171ca6fcd9338fbb349e08c9a2f1e536e1f05b84fbcf9348dd483b274b2ad98516d08ea-exec",
+      "downloadUrl": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1/f141868f52e7f94f270c3414f40ad528972f8af622e22c7adc7666be99c818ee"
+    },
+    {
       "id": "awesome-os/b8g-ghost@cas-v1/f2f391384268e6736743495e38041f3e3517e667ee0b05e8e3d36c98708ae966",
       "repo": "b8g-ghost",
       "tag": "cas-v1",
@@ -2360,6 +2444,18 @@
       "size": 39106868,
       "blobPath": "v11/files/cc/ccfaf11fea4e461e8b6ad92af7d2f9ced24693a849706a1c0d978b208e16d015ee943335dd63d56bff57613bae3af891738a4ce6193de67aaef5bf50526466fb-exec",
       "downloadUrl": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1/f937a862ba0e6ac913e9e7900ac06aa12c675fdc560e5f9db15b3f44d0ea2d9d"
+    },
+    {
+      "id": "awesome-os/b8g-ghost@cas-v1/fc9f185ca3b4f51ac8fc791cd58d329347d892b642da951c594faf6c3ff69219",
+      "repo": "b8g-ghost",
+      "tag": "cas-v1",
+      "filename": "fc9f185ca3b4f51ac8fc791cd58d329347d892b642da951c594faf6c3ff69219",
+      "target": "any",
+      "executable": true,
+      "sha512": "65c0883a619b99a3ad22c018a941e7a1727ddee928b9a46763bd6aa62d7a29d45f80d84bb552eb5cbf8e1a501157dcd760dea920b8effa8478e5b6532e448e94",
+      "size": 39106852,
+      "blobPath": "v11/files/65/65c0883a619b99a3ad22c018a941e7a1727ddee928b9a46763bd6aa62d7a29d45f80d84bb552eb5cbf8e1a501157dcd760dea920b8effa8478e5b6532e448e94-exec",
+      "downloadUrl": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1/fc9f185ca3b4f51ac8fc791cd58d329347d892b642da951c594faf6c3ff69219"
     },
     {
       "id": "awesome-os/b8g-ghost@cas-v1/fcf6818f1d3854e0a4e4a366e96380d5de538ba81f397b5bd29cd8e48ddbc98a",
@@ -3296,6 +3392,30 @@
       "size": 99,
       "blobPath": "v11/files/1a/1a7a8fffc513da0288d949491941f7471790c112124544b36ed04d842cd086acc2a0141361e6a544f83f66e8324fac397ca000961d56c4efbe5c212e4b1c1f03",
       "downloadUrl": "https://github.com/awesome-os/dawn/releases/download/dawn-cas-20261124/libwebgpu_dawn-linux-x64.so.sha256"
+    },
+    {
+      "id": "awesome-os/desktop-omarchy@v0.1.0/SHA256SUMS.txt",
+      "repo": "desktop-omarchy",
+      "tag": "v0.1.0",
+      "filename": "SHA256SUMS.txt",
+      "target": "any",
+      "executable": false,
+      "sha512": "545164eeb049144fb2ea65693bd9234218942195e9241b92c5c38c3e78ff842cd5a4354dbd9855522fcc40fc4b95ce24f41d859607e02abc068e3061e6ef8ae0",
+      "size": 99,
+      "blobPath": "v11/files/54/545164eeb049144fb2ea65693bd9234218942195e9241b92c5c38c3e78ff842cd5a4354dbd9855522fcc40fc4b95ce24f41d859607e02abc068e3061e6ef8ae0",
+      "downloadUrl": "https://github.com/awesome-os/desktop-omarchy/releases/download/v0.1.0/SHA256SUMS.txt"
+    },
+    {
+      "id": "awesome-os/desktop-omarchy@v0.1.0/t2desktop-omarchy-v0.1.0.tar.zst",
+      "repo": "desktop-omarchy",
+      "tag": "v0.1.0",
+      "filename": "t2desktop-omarchy-v0.1.0.tar.zst",
+      "target": "any",
+      "executable": false,
+      "sha512": "4cb33b1a0c24b54c625421305ca00ec82dbb9c731bcc7bb583a49dc878da3e856491b3feee9b182604e1ca10b8454d2c4bc81825104044c2c637666a5de0762d",
+      "size": 84083690,
+      "blobPath": "v11/files/4c/4cb33b1a0c24b54c625421305ca00ec82dbb9c731bcc7bb583a49dc878da3e856491b3feee9b182604e1ca10b8454d2c4bc81825104044c2c637666a5de0762d",
+      "downloadUrl": "https://github.com/awesome-os/desktop-omarchy/releases/download/v0.1.0/t2desktop-omarchy-v0.1.0.tar.zst"
     },
     {
       "id": "awesome-os/dotnet@v0.1.0/dotnet-linux-arm64",
@@ -4414,100 +4534,100 @@
       "downloadUrl": "https://github.com/awesome-os/obs-vscode/releases/download/v0.2.0/SHA256SUMS.txt"
     },
     {
-      "id": "awesome-os/obs@v0.2.0/install.ps1",
+      "id": "awesome-os/obs@v0.3.0/install.ps1",
       "repo": "obs",
-      "tag": "v0.2.0",
+      "tag": "v0.3.0",
       "filename": "install.ps1",
       "target": "any",
       "executable": false,
       "sha512": "eb72bd05094e70c81ebea48f421bdaf71578053c3e6c0ec6bce7ecba054f02241f0c93427d03fd577324168f32d9071e4a8ca388ef3954bc7c0a9017d0f61ade",
       "size": 348,
       "blobPath": "v11/files/eb/eb72bd05094e70c81ebea48f421bdaf71578053c3e6c0ec6bce7ecba054f02241f0c93427d03fd577324168f32d9071e4a8ca388ef3954bc7c0a9017d0f61ade",
-      "downloadUrl": "https://github.com/awesome-os/obs/releases/download/v0.2.0/install.ps1"
+      "downloadUrl": "https://github.com/awesome-os/obs/releases/download/v0.3.0/install.ps1"
     },
     {
-      "id": "awesome-os/obs@v0.2.0/install.sh",
+      "id": "awesome-os/obs@v0.3.0/install.sh",
       "repo": "obs",
-      "tag": "v0.2.0",
+      "tag": "v0.3.0",
       "filename": "install.sh",
       "target": "any",
       "executable": true,
       "sha512": "9d4b099c453c3b83fb99aca241f8aff29cb7a7b0bf33b2b9bc0874b7f371df1ed95711169395d7eb156e2ba0f41fc06fb90a01f127ec09585b07e5c0f7085e94",
       "size": 517,
       "blobPath": "v11/files/9d/9d4b099c453c3b83fb99aca241f8aff29cb7a7b0bf33b2b9bc0874b7f371df1ed95711169395d7eb156e2ba0f41fc06fb90a01f127ec09585b07e5c0f7085e94-exec",
-      "downloadUrl": "https://github.com/awesome-os/obs/releases/download/v0.2.0/install.sh"
+      "downloadUrl": "https://github.com/awesome-os/obs/releases/download/v0.3.0/install.sh"
     },
     {
-      "id": "awesome-os/obs@v0.2.0/obs-linux-arm64",
+      "id": "awesome-os/obs@v0.3.0/obs-linux-arm64",
       "repo": "obs",
-      "tag": "v0.2.0",
+      "tag": "v0.3.0",
       "filename": "obs-linux-arm64",
       "target": "linux-arm64",
       "executable": true,
-      "sha512": "c966c834d9298ecde9581f17df5cfe35c50db3a4240aaadabf946505054a73528a162bfb543ca11e489cf82be8bc55b3821dee47083b7d34f2055ff46b21ccba",
+      "sha512": "d46ad46348ca1c2daeb7c3c66ab7a919d1daae8ccea4371c98c7aa2104e53a5af1b721cf56b21863aa718919011c7e0086b994094be5f0d81eeb15142c41cefd",
       "size": 1176048,
-      "blobPath": "v11/files/c9/c966c834d9298ecde9581f17df5cfe35c50db3a4240aaadabf946505054a73528a162bfb543ca11e489cf82be8bc55b3821dee47083b7d34f2055ff46b21ccba-exec",
-      "downloadUrl": "https://github.com/awesome-os/obs/releases/download/v0.2.0/obs-linux-arm64"
+      "blobPath": "v11/files/d4/d46ad46348ca1c2daeb7c3c66ab7a919d1daae8ccea4371c98c7aa2104e53a5af1b721cf56b21863aa718919011c7e0086b994094be5f0d81eeb15142c41cefd-exec",
+      "downloadUrl": "https://github.com/awesome-os/obs/releases/download/v0.3.0/obs-linux-arm64"
     },
     {
-      "id": "awesome-os/obs@v0.2.0/obs-linux-x64",
+      "id": "awesome-os/obs@v0.3.0/obs-linux-x64",
       "repo": "obs",
-      "tag": "v0.2.0",
+      "tag": "v0.3.0",
       "filename": "obs-linux-x64",
       "target": "linux-x64",
       "executable": true,
-      "sha512": "64794bb87ebc143e9191305041cb1baba67235da4ac8f8c68e7ac1a03400b9e6804578db1a3ac49bad5b534dcb796ebe40c0d6489a53705c855e3d7c83123f0a",
+      "sha512": "4187185ebd1ae4da86c873d04642ab2ebb307d6fec42e6fe12911aeb3563417b650abcaca397a3b28469781eb5c6124b6f9030130b1a525792b39738990c025b",
       "size": 1119824,
-      "blobPath": "v11/files/64/64794bb87ebc143e9191305041cb1baba67235da4ac8f8c68e7ac1a03400b9e6804578db1a3ac49bad5b534dcb796ebe40c0d6489a53705c855e3d7c83123f0a-exec",
-      "downloadUrl": "https://github.com/awesome-os/obs/releases/download/v0.2.0/obs-linux-x64"
+      "blobPath": "v11/files/41/4187185ebd1ae4da86c873d04642ab2ebb307d6fec42e6fe12911aeb3563417b650abcaca397a3b28469781eb5c6124b6f9030130b1a525792b39738990c025b-exec",
+      "downloadUrl": "https://github.com/awesome-os/obs/releases/download/v0.3.0/obs-linux-x64"
     },
     {
-      "id": "awesome-os/obs@v0.2.0/obs-macos-arm64",
+      "id": "awesome-os/obs@v0.3.0/obs-macos-arm64",
       "repo": "obs",
-      "tag": "v0.2.0",
+      "tag": "v0.3.0",
       "filename": "obs-macos-arm64",
       "target": "macos-arm64",
       "executable": true,
-      "sha512": "33030ce331b8e04bee6034c34db6921201724cb1df0e9fb35e2732eaa9e83c634815de9bb94f652d7ff2819c013f591ae1cc7d9e9584e555a301a1fa934e0f64",
+      "sha512": "32ef950d2b950ce4b373434964c8b4534d5b6253d3a66543aae3f9759dd15a2ad439d1502e549082acb92291335063655a663fe0755186ac5910bae943c98964",
       "size": 52176,
-      "blobPath": "v11/files/33/33030ce331b8e04bee6034c34db6921201724cb1df0e9fb35e2732eaa9e83c634815de9bb94f652d7ff2819c013f591ae1cc7d9e9584e555a301a1fa934e0f64-exec",
-      "downloadUrl": "https://github.com/awesome-os/obs/releases/download/v0.2.0/obs-macos-arm64"
+      "blobPath": "v11/files/32/32ef950d2b950ce4b373434964c8b4534d5b6253d3a66543aae3f9759dd15a2ad439d1502e549082acb92291335063655a663fe0755186ac5910bae943c98964-exec",
+      "downloadUrl": "https://github.com/awesome-os/obs/releases/download/v0.3.0/obs-macos-arm64"
     },
     {
-      "id": "awesome-os/obs@v0.2.0/obs.exe",
+      "id": "awesome-os/obs@v0.3.0/obs.exe",
       "repo": "obs",
-      "tag": "v0.2.0",
+      "tag": "v0.3.0",
       "filename": "obs.exe",
       "target": "win64",
       "executable": true,
-      "sha512": "2883258cd73eb1de0592b9daf99365446b88b17144cf105d3c98abf8b0edd30b8c192e78dd912cd022b86d54a3d69b3e0e0000bb54251b11acd532d785cd4f43",
+      "sha512": "daa100c9aa76a3584a62b7a217c457e310e1efb1d57e46da40a9c07266bbe639ba80e09d773bfb298f8785a5b757958e0d4a753202f67908184fa8499350af3a",
       "size": 186880,
-      "blobPath": "v11/files/28/2883258cd73eb1de0592b9daf99365446b88b17144cf105d3c98abf8b0edd30b8c192e78dd912cd022b86d54a3d69b3e0e0000bb54251b11acd532d785cd4f43-exec",
-      "downloadUrl": "https://github.com/awesome-os/obs/releases/download/v0.2.0/obs.exe"
+      "blobPath": "v11/files/da/daa100c9aa76a3584a62b7a217c457e310e1efb1d57e46da40a9c07266bbe639ba80e09d773bfb298f8785a5b757958e0d4a753202f67908184fa8499350af3a-exec",
+      "downloadUrl": "https://github.com/awesome-os/obs/releases/download/v0.3.0/obs.exe"
     },
     {
-      "id": "awesome-os/obs@v0.2.0/obs.pdb",
+      "id": "awesome-os/obs@v0.3.0/obs.pdb",
       "repo": "obs",
-      "tag": "v0.2.0",
+      "tag": "v0.3.0",
       "filename": "obs.pdb",
       "target": "any",
       "executable": false,
-      "sha512": "1a122b2610465796de13187e3c013927205af44ae4101332960e670c65b6b6646577b2dc01870c8d233ad0e411b21fc669577b33bb42b22256c460ae8f5abdee",
+      "sha512": "afd1d5277ba7426a232cb8d50401b7ec494935c8d1a8600cb7a3c072f583cb693a009b8bd41e210d4d43b6e10c6243f299dac7b356ab524b8198d1276ecd651b",
       "size": 1187840,
-      "blobPath": "v11/files/1a/1a122b2610465796de13187e3c013927205af44ae4101332960e670c65b6b6646577b2dc01870c8d233ad0e411b21fc669577b33bb42b22256c460ae8f5abdee",
-      "downloadUrl": "https://github.com/awesome-os/obs/releases/download/v0.2.0/obs.pdb"
+      "blobPath": "v11/files/af/afd1d5277ba7426a232cb8d50401b7ec494935c8d1a8600cb7a3c072f583cb693a009b8bd41e210d4d43b6e10c6243f299dac7b356ab524b8198d1276ecd651b",
+      "downloadUrl": "https://github.com/awesome-os/obs/releases/download/v0.3.0/obs.pdb"
     },
     {
-      "id": "awesome-os/obs@v0.2.0/SHA256SUMS.txt",
+      "id": "awesome-os/obs@v0.3.0/SHA256SUMS.txt",
       "repo": "obs",
-      "tag": "v0.2.0",
+      "tag": "v0.3.0",
       "filename": "SHA256SUMS.txt",
       "target": "any",
       "executable": false,
-      "sha512": "9311f983b99750e2378fc08392f740cbae609b68fd97e4905ec27c887ffeed1935259fbab511038a1aab1f7a6935d930f299b547b5dd8459fd31d009b7a8e0a4",
+      "sha512": "1c9a078bb6e2816ba232f94138df334ac82a065a619fbd2bafa3d004a455ca4130df08f9ee44fe1363380ef9757b99bf492ac97b4548adbe49498cc41223cfdc",
       "size": 547,
-      "blobPath": "v11/files/93/9311f983b99750e2378fc08392f740cbae609b68fd97e4905ec27c887ffeed1935259fbab511038a1aab1f7a6935d930f299b547b5dd8459fd31d009b7a8e0a4",
-      "downloadUrl": "https://github.com/awesome-os/obs/releases/download/v0.2.0/SHA256SUMS.txt"
+      "blobPath": "v11/files/1c/1c9a078bb6e2816ba232f94138df334ac82a065a619fbd2bafa3d004a455ca4130df08f9ee44fe1363380ef9757b99bf492ac97b4548adbe49498cc41223cfdc",
+      "downloadUrl": "https://github.com/awesome-os/obs/releases/download/v0.3.0/SHA256SUMS.txt"
     },
     {
       "id": "awesome-os/ory-polis@v26.2.0-awesome-os.1/ory-polis-v26.2.0-awesome-os.1.tar.zst",
@@ -5626,30 +5746,6 @@
       "downloadUrl": "https://github.com/awesome-os/t2desktop-noctalia/releases/download/v0.1.0/t2desktop-noctalia-v0.1.0.tar.zst"
     },
     {
-      "id": "awesome-os/t2desktop-omarchy@v0.1.0/SHA256SUMS.txt",
-      "repo": "t2desktop-omarchy",
-      "tag": "v0.1.0",
-      "filename": "SHA256SUMS.txt",
-      "target": "any",
-      "executable": false,
-      "sha512": "545164eeb049144fb2ea65693bd9234218942195e9241b92c5c38c3e78ff842cd5a4354dbd9855522fcc40fc4b95ce24f41d859607e02abc068e3061e6ef8ae0",
-      "size": 99,
-      "blobPath": "v11/files/54/545164eeb049144fb2ea65693bd9234218942195e9241b92c5c38c3e78ff842cd5a4354dbd9855522fcc40fc4b95ce24f41d859607e02abc068e3061e6ef8ae0",
-      "downloadUrl": "https://github.com/awesome-os/t2desktop-omarchy/releases/download/v0.1.0/SHA256SUMS.txt"
-    },
-    {
-      "id": "awesome-os/t2desktop-omarchy@v0.1.0/t2desktop-omarchy-v0.1.0.tar.zst",
-      "repo": "t2desktop-omarchy",
-      "tag": "v0.1.0",
-      "filename": "t2desktop-omarchy-v0.1.0.tar.zst",
-      "target": "any",
-      "executable": false,
-      "sha512": "4cb33b1a0c24b54c625421305ca00ec82dbb9c731bcc7bb583a49dc878da3e856491b3feee9b182604e1ca10b8454d2c4bc81825104044c2c637666a5de0762d",
-      "size": 84083690,
-      "blobPath": "v11/files/4c/4cb33b1a0c24b54c625421305ca00ec82dbb9c731bcc7bb583a49dc878da3e856491b3feee9b182604e1ca10b8454d2c4bc81825104044c2c637666a5de0762d",
-      "downloadUrl": "https://github.com/awesome-os/t2desktop-omarchy/releases/download/v0.1.0/t2desktop-omarchy-v0.1.0.tar.zst"
-    },
-    {
       "id": "awesome-os/t2linux@v0.1.0/init-aarch64",
       "repo": "t2linux",
       "tag": "v0.1.0",
@@ -5692,9 +5788,9 @@
       "filename": "initramfs-aarch64.cpio.zst",
       "target": "any",
       "executable": false,
-      "sha512": "384c25a50b96acb842b08c40935de663990061d77beabb25970fefe9ad2311fcb61bdf41611ee2d3edb869c47d781536ace0ad5fe216f1137a47b381f38a4c12",
-      "size": 1044647,
-      "blobPath": "v11/files/38/384c25a50b96acb842b08c40935de663990061d77beabb25970fefe9ad2311fcb61bdf41611ee2d3edb869c47d781536ace0ad5fe216f1137a47b381f38a4c12",
+      "sha512": "e427a8fd6b85f4a171689bafd5ec33b0bae6475d181ad06f45e9ac3d4fd44e2fbce2751bd0445ef67f1bf29cfa5a99d11ced4a9def880573808beedc9770126d",
+      "size": 1044671,
+      "blobPath": "v11/files/e4/e427a8fd6b85f4a171689bafd5ec33b0bae6475d181ad06f45e9ac3d4fd44e2fbce2751bd0445ef67f1bf29cfa5a99d11ced4a9def880573808beedc9770126d",
       "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/initramfs-aarch64.cpio.zst"
     },
     {
@@ -5704,9 +5800,9 @@
       "filename": "initramfs-x86_64.cpio.zst",
       "target": "any",
       "executable": false,
-      "sha512": "6efeedff1e4071c8d5bbe7a00e1b5cf65a93791e83006b9e12ecb36e31d649bfb90fcb532f6b77688eee4b466c0bc6168736c7fbf3dcd63cb1b79349fe347d01",
-      "size": 1163139,
-      "blobPath": "v11/files/6e/6efeedff1e4071c8d5bbe7a00e1b5cf65a93791e83006b9e12ecb36e31d649bfb90fcb532f6b77688eee4b466c0bc6168736c7fbf3dcd63cb1b79349fe347d01",
+      "sha512": "a7a9a6af493ef5d73c45575a23ac491e0a129708a67bad93d08d7dae878f31406cb1f8745a62ae292716a254bd404a2338bdd29865d1891e24289f38b3e2028a",
+      "size": 1163145,
+      "blobPath": "v11/files/a7/a7a9a6af493ef5d73c45575a23ac491e0a129708a67bad93d08d7dae878f31406cb1f8745a62ae292716a254bd404a2338bdd29865d1891e24289f38b3e2028a",
       "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/initramfs-x86_64.cpio.zst"
     },
     {
@@ -5716,9 +5812,9 @@
       "filename": "SHA256SUMS.txt",
       "target": "any",
       "executable": false,
-      "sha512": "c7d9fda3d714b23c9aa3276570e215388f14568ba5f84a3b1c53cb92e6240cd89726bdf0f2f596e164f742a5e9cad54abf740898d52bf1c14b72e440f7e23946",
+      "sha512": "4093d5cfe3791552a0b90caa32bbb68a9886bc756509425bd5a9d37ca57b758828c23fac85153d8e6ceded3e134b2d2133c5f581ed926da864f244ea130749a5",
       "size": 930,
-      "blobPath": "v11/files/c7/c7d9fda3d714b23c9aa3276570e215388f14568ba5f84a3b1c53cb92e6240cd89726bdf0f2f596e164f742a5e9cad54abf740898d52bf1c14b72e440f7e23946",
+      "blobPath": "v11/files/40/4093d5cfe3791552a0b90caa32bbb68a9886bc756509425bd5a9d37ca57b758828c23fac85153d8e6ceded3e134b2d2133c5f581ed926da864f244ea130749a5",
       "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/SHA256SUMS.txt"
     },
     {
@@ -5728,9 +5824,9 @@
       "filename": "t2linux-aarch64.iso",
       "target": "linux-x64",
       "executable": false,
-      "sha512": "eed3c5408d6d67d258fe9c8bbf0c98ed7f41a606164a9aa244a96695284b6431ade74bb83422d3f924a7db53d10a98a5472f441856ae754d04de4c323e0e0bfd",
+      "sha512": "403f50320a70a29c1079e1a6168c21f4fc20cf85e69d79d1a4f4236f37c655abb2d12ed2efa62bb158b83c44a5febb663a5589e9bab495e467702a501ce01232",
       "size": 27873280,
-      "blobPath": "v11/files/ee/eed3c5408d6d67d258fe9c8bbf0c98ed7f41a606164a9aa244a96695284b6431ade74bb83422d3f924a7db53d10a98a5472f441856ae754d04de4c323e0e0bfd",
+      "blobPath": "v11/files/40/403f50320a70a29c1079e1a6168c21f4fc20cf85e69d79d1a4f4236f37c655abb2d12ed2efa62bb158b83c44a5febb663a5589e9bab495e467702a501ce01232",
       "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/t2linux-aarch64.iso"
     },
     {
@@ -5740,9 +5836,9 @@
       "filename": "t2linux-aarch64.qcow2",
       "target": "linux-x64",
       "executable": false,
-      "sha512": "e4883ae58fa9fbe0c4b9f5017ba2026a025192672672f55798d33d8558fc58b62a47d0044dc8419164fca85e0ade0eabd0dd845fe11b515bdc511c98c25154ee",
+      "sha512": "63b5f7ac724ab3e8bb47a5f9e782e8eec7a6f594e69b3442ed0026c407602cec97ca37ec6955e9a7798a0f1c0a0801564c483db8a39fd571a80de567084574cc",
       "size": 23460864,
-      "blobPath": "v11/files/e4/e4883ae58fa9fbe0c4b9f5017ba2026a025192672672f55798d33d8558fc58b62a47d0044dc8419164fca85e0ade0eabd0dd845fe11b515bdc511c98c25154ee",
+      "blobPath": "v11/files/63/63b5f7ac724ab3e8bb47a5f9e782e8eec7a6f594e69b3442ed0026c407602cec97ca37ec6955e9a7798a0f1c0a0801564c483db8a39fd571a80de567084574cc",
       "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/t2linux-aarch64.qcow2"
     },
     {
@@ -5752,9 +5848,9 @@
       "filename": "t2linux-x86_64.iso",
       "target": "linux-x64",
       "executable": false,
-      "sha512": "211969b2af2e4ac64e6257cdb1466c80837195b5c2d8be5ce8b2c36e738abefe63e32888b52f81ae41b81adf47920b3171465863d1ad94dea248d89f7d3bebb9",
+      "sha512": "7a05394b3224114e9d06df525fbbc00409853b2594da2cd8c2f8ab7d240176923b7e05456b479dbb3f5c6d2d656dd26b2fbe50b8162e40fa364601e53adc58cb",
       "size": 22523904,
-      "blobPath": "v11/files/21/211969b2af2e4ac64e6257cdb1466c80837195b5c2d8be5ce8b2c36e738abefe63e32888b52f81ae41b81adf47920b3171465863d1ad94dea248d89f7d3bebb9",
+      "blobPath": "v11/files/7a/7a05394b3224114e9d06df525fbbc00409853b2594da2cd8c2f8ab7d240176923b7e05456b479dbb3f5c6d2d656dd26b2fbe50b8162e40fa364601e53adc58cb",
       "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/t2linux-x86_64.iso"
     },
     {
@@ -5764,9 +5860,9 @@
       "filename": "t2linux-x86_64.qcow2",
       "target": "linux-x64",
       "executable": false,
-      "sha512": "471c50e3a0c973cda7f9640960104d26b5256b9528a30796a350380041bcb8ffb2dac2546578e477b69a82721dd1f292d532a6e023bf16d875ff743193959cbb",
-      "size": 19117056,
-      "blobPath": "v11/files/47/471c50e3a0c973cda7f9640960104d26b5256b9528a30796a350380041bcb8ffb2dac2546578e477b69a82721dd1f292d532a6e023bf16d875ff743193959cbb",
+      "sha512": "afed3bad329d30463d8735c29430a52b0ed4270b5bf0b05fa2053a3be0e3e796bb40bf2ce16aa5dabf63c43bb4a21cefeebb9e3e09b8e31737394b9f669eee73",
+      "size": 19117568,
+      "blobPath": "v11/files/af/afed3bad329d30463d8735c29430a52b0ed4270b5bf0b05fa2053a3be0e3e796bb40bf2ce16aa5dabf63c43bb4a21cefeebb9e3e09b8e31737394b9f669eee73",
       "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/t2linux-x86_64.qcow2"
     },
     {
@@ -5812,9 +5908,9 @@
       "filename": "initramfs-aarch64.cpio.zst",
       "target": "any",
       "executable": false,
-      "sha512": "ca46759824fd667322698a03660b29f6cf3831c63b86efc5582cf89efcd1b8d83a22c798610e2eb8618f1a4e3a5b4372d14909f08c574376388c36ab5dd3c6da",
-      "size": 1045410,
-      "blobPath": "v11/files/ca/ca46759824fd667322698a03660b29f6cf3831c63b86efc5582cf89efcd1b8d83a22c798610e2eb8618f1a4e3a5b4372d14909f08c574376388c36ab5dd3c6da",
+      "sha512": "954b0434da44c1dd053a9351463604591e019ed0d024b4df4d9be4b8ecde669a5167eea9868dc04ef34fcbbd882d4e293b9261799fdbfc89676dadf0a732f2dd",
+      "size": 1045453,
+      "blobPath": "v11/files/95/954b0434da44c1dd053a9351463604591e019ed0d024b4df4d9be4b8ecde669a5167eea9868dc04ef34fcbbd882d4e293b9261799fdbfc89676dadf0a732f2dd",
       "downloadUrl": "https://github.com/awesome-os/t2xnu/releases/download/v0.1.0/initramfs-aarch64.cpio.zst"
     },
     {
@@ -5824,9 +5920,9 @@
       "filename": "SHA256SUMS.txt",
       "target": "any",
       "executable": false,
-      "sha512": "f40df7bf2b961e48f8e94b7db33152d3a0a7dd3c51c3dc3d4d71c392a1fd4adf7ea6762d144c7713c6d1241ba1d0a9fe1ab77c05c616c6d9d6216c364497fb3e",
+      "sha512": "868e04c9f295ee1c065bae12c4f18aedae32b7aa867527cbb4be04075b08bb19f4f80e7b64aea51776a3715cc27ef47ab74d14a62d5430c31244918429282ef7",
       "size": 424,
-      "blobPath": "v11/files/f4/f40df7bf2b961e48f8e94b7db33152d3a0a7dd3c51c3dc3d4d71c392a1fd4adf7ea6762d144c7713c6d1241ba1d0a9fe1ab77c05c616c6d9d6216c364497fb3e",
+      "blobPath": "v11/files/86/868e04c9f295ee1c065bae12c4f18aedae32b7aa867527cbb4be04075b08bb19f4f80e7b64aea51776a3715cc27ef47ab74d14a62d5430c31244918429282ef7",
       "downloadUrl": "https://github.com/awesome-os/t2xnu/releases/download/v0.1.0/SHA256SUMS.txt"
     },
     {
@@ -5836,9 +5932,9 @@
       "filename": "t2xnu-aarch64.iso",
       "target": "any",
       "executable": false,
-      "sha512": "2b713194280d2b8fe90d0f6377930b190255638aba257286a37a96ebde33730078f9d78726b4857104bfbfa9256178984373109bae93ab132642c5dbb3de9afd",
+      "sha512": "637eb8f0d635987b3a329888313b1c331df7cb82284801dce7124ce4ad8a94ef7957b7755ffe817b5481cac65045491860b75651b1e7fdf8ed446cbdaa0b2d41",
       "size": 27873280,
-      "blobPath": "v11/files/2b/2b713194280d2b8fe90d0f6377930b190255638aba257286a37a96ebde33730078f9d78726b4857104bfbfa9256178984373109bae93ab132642c5dbb3de9afd",
+      "blobPath": "v11/files/63/637eb8f0d635987b3a329888313b1c331df7cb82284801dce7124ce4ad8a94ef7957b7755ffe817b5481cac65045491860b75651b1e7fdf8ed446cbdaa0b2d41",
       "downloadUrl": "https://github.com/awesome-os/t2xnu/releases/download/v0.1.0/t2xnu-aarch64.iso"
     },
     {
@@ -5848,9 +5944,9 @@
       "filename": "t2xnu-aarch64.qcow2",
       "target": "any",
       "executable": false,
-      "sha512": "f18525763f882641bdd109be6a22e52984f05de9d1aa2a47415fc9ac6889d6a11f7465a55e18946623f6ca576764231b7ade3d801baf8486d3d1e4fcbec96182",
+      "sha512": "3c0e42a78d51bf1069fd3cfcb3a3611ef3d1a144feed99d19e71b3b4370be9cec0bf0d3a22d1e3a9942b8c8d92604ac1a2c861c7afd2b819b3f61fc05a4b7afa",
       "size": 23461376,
-      "blobPath": "v11/files/f1/f18525763f882641bdd109be6a22e52984f05de9d1aa2a47415fc9ac6889d6a11f7465a55e18946623f6ca576764231b7ade3d801baf8486d3d1e4fcbec96182",
+      "blobPath": "v11/files/3c/3c0e42a78d51bf1069fd3cfcb3a3611ef3d1a144feed99d19e71b3b4370be9cec0bf0d3a22d1e3a9942b8c8d92604ac1a2c861c7afd2b819b3f61fc05a4b7afa",
       "downloadUrl": "https://github.com/awesome-os/t2xnu/releases/download/v0.1.0/t2xnu-aarch64.qcow2"
     },
     {
