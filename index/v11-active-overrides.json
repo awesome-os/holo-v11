@@ -1,0 +1,60 @@
+{
+  "schema": "awesome-os.v11-active-overrides.v1",
+  "abiMagic": "0x33564742",
+  "generatedAt": "2026-11-25T19:08:23.463Z",
+  "adoptedRepos": [
+    {
+      "repo": "awesome-os-desktop",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/awesome-os-desktop/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "10bb4024ed9019a20c621f8a74629b28ad35d2a68795e626d7a41ac879d3f7396b622e823de4789d90c6a169f2b5f266d13de0ede1c44659edabdf01b24a60c9",
+      "shadowedLegacyAssets": 0
+    },
+    {
+      "repo": "obs",
+      "tag": "v0.3.0",
+      "treeManifestUrl": "https://github.com/awesome-os/obs/releases/download/v0.3.0/v11-tree.json",
+      "treeManifestSha512": "e038c7c85079931c785f4a8b9a8ad9358202ed88e1519a39b2444ff37e145dde1bf14d580b805e35e41c0c406ff10ff10143ee481cd248ef84f25a6bb086691e",
+      "shadowedLegacyAssets": 0
+    }
+  ],
+  "pendingTarRepos": [
+    "b8g-ide",
+    "b8g-production-rack",
+    "blink",
+    "bun-neon",
+    "coreutils",
+    "desktop-omarchy",
+    "electron",
+    "explorer",
+    "ghost-100",
+    "ghost-cpp",
+    "ghost-jvm",
+    "ghost-py",
+    "installer",
+    "just",
+    "libv8_monolith",
+    "modern-picomatch",
+    "noctalia",
+    "nodeman",
+    "ory-polis",
+    "pinokio",
+    "pouchdb",
+    "qt",
+    "rollup",
+    "sectium-browser",
+    "sectium-devops",
+    "sectium-devtools",
+    "sectium-electron",
+    "sectium-es",
+    "sectium-jvm",
+    "t2desktop-noctalia",
+    "theia",
+    "ts-morph",
+    "universal-git",
+    "wry",
+    "ws"
+  ],
+  "adoptionCount": 2,
+  "legacyTarRepoCount": 35
+}
