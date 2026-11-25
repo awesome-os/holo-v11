@@ -1,0 +1,16 @@
+{
+  "name": "@awesome-os/holo-v11",
+  "version": "11.0.0",
+  "description": "Global Auditable Awesome-OS Holo v11 CAS Registry — Git-versioned SHA-512 lockfiles, unified ecosystem pins, and CAS Q-Self proofs",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awesome-os/holo-v11.git"
+  },
+  "scripts": {
+    "test": "node --test pins/holo-overrides.test.mts bootstrap/selfhost-fixedpoint.test.mts",
+    "warm": "node scripts/warm-global-cas.mts",
+    "verify-fixedpoint": "node bootstrap/selfhost-fixedpoint.mts"
+  }
+}

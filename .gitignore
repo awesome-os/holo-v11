@@ -1,0 +1,14 @@
+dist/
+build/
+*.exe
+*.dll
+*.so
+*.dylib
+*.lib
+*.a
+*.o
+*.obj
+*.pdb
+*.ilk
+SHA256SUMS.txt
+SHA512SUMS.txt

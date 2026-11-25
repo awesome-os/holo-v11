@@ -1,0 +1,44 @@
+name: Sync Global Holo v11 Registry
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-holo-v11-registry:
+    name: Sync Global v11 CAS Manifest & Lockfile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout holo-v11
+        uses: actions/checkout@v4
+
+      - name: Setup Node 22+
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Stream-hash all awesome-os/* releases into Global v11 CAS manifest
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AWESOME_OS_ORG: awesome-os
+          MAX_ASSET_MB: '250'
+        run: node scripts/warm-global-cas.mts
+
+      - name: Commit updated v11 index manifests to main (only on lockfile diff)
+        run: |
+          mkdir -p index
+          cp dist/cas-v11-global-manifest.json index/cas-v11-global-manifest.json
+          cp dist/holo-compiler-lockfile.json index/holo-compiler-lockfile.json
+          git config user.name "awesome-os-cas-bot"
+          git config user.email "cas@awesome-os.com"
+          if ! git diff --quiet -- index/holo-compiler-lockfile.json 2>/dev/null || [ -n "$(git status --porcelain index/holo-compiler-lockfile.json)" ]; then
+            git add index/cas-v11-global-manifest.json index/holo-compiler-lockfile.json
+            git commit -m "chore(v11-index): sync global holo v11 CAS manifests"
+            git push origin HEAD:main
+          else
+            echo "index/holo-compiler-lockfile.json unchanged — skipping empty commit."
+          fi
