@@ -81,6 +81,17 @@
       "downloadUrl": "https://github.com/awesome-os/b8g-ide/releases/download/v0.1.0/SHA256SUMS.txt"
     },
     {
+      "id": "awesome-os/b8g-ide@v0.1.0/v11-tree.json",
+      "repo": "b8g-ide",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "0be89bb7a3d81a4be8ea1bafda56f01d040072b851fa735c13707d51414f51b4a6a94e6fb39308e6875f1e063f26b4bc17ae69dc6261998847f6afa73f9cab64",
+      "size": 4390,
+      "blobPath": "v11/files/0b/0be89bb7a3d81a4be8ea1bafda56f01d040072b851fa735c13707d51414f51b4a6a94e6fb39308e6875f1e063f26b4bc17ae69dc6261998847f6afa73f9cab64",
+      "downloadUrl": "https://github.com/awesome-os/b8g-ide/releases/download/v0.1.0/v11-tree.json"
+    },
+    {
       "id": "awesome-os/b8g-micro-moe@v0.3.1/algebra-router.b8p",
       "repo": "b8g-micro-moe",
       "tag": "v0.3.1",
@@ -189,6 +200,17 @@
       "size": 575,
       "blobPath": "v11/files/6f/6fc927db5118c017be35b15a15147f75366a72650b0dae228d35cdc73112a1c4eddfbabcf832cba719940d59204775d531edcf14c40a7950e553946f008c93e4",
       "downloadUrl": "https://github.com/awesome-os/b8g-production-rack/releases/download/v0.3.0/SHA256SUMS.txt"
+    },
+    {
+      "id": "awesome-os/b8g-production-rack@v0.3.0/v11-tree.json",
+      "repo": "b8g-production-rack",
+      "tag": "v0.3.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "0d969f3d0bd28e8eb447f7d74bf8a54f39d312157a37f2e3e1f2843dff452801c055bedb6f1f3a7ba1b2939eb870cc0e3edad1c3ae8b4fdfb241c6f8a18b5e6e",
+      "size": 5537,
+      "blobPath": "v11/files/0d/0d969f3d0bd28e8eb447f7d74bf8a54f39d312157a37f2e3e1f2843dff452801c055bedb6f1f3a7ba1b2939eb870cc0e3edad1c3ae8b4fdfb241c6f8a18b5e6e",
+      "downloadUrl": "https://github.com/awesome-os/b8g-production-rack/releases/download/v0.3.0/v11-tree.json"
     },
     {
       "id": "awesome-os/blender-vscode@v0.2.0/blender-ghost-0.2.0.vsix",
@@ -334,6 +356,17 @@
       "downloadUrl": "https://github.com/awesome-os/blink/releases/download/v0.2.0/SHA512SUMS.txt"
     },
     {
+      "id": "awesome-os/blink@v0.2.0/v11-tree.json",
+      "repo": "blink",
+      "tag": "v0.2.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "b66d705dbef943e1e7ae2d8202ae9ddec98a1cf3a951ff890aaf8e8e45bc31324f9a4ec717b882bcfaea15a1da4a25f2ad757b5c47b68a2b149d5b644b7dcdc1",
+      "size": 5141,
+      "blobPath": "v11/files/b6/b66d705dbef943e1e7ae2d8202ae9ddec98a1cf3a951ff890aaf8e8e45bc31324f9a4ec717b882bcfaea15a1da4a25f2ad757b5c47b68a2b149d5b644b7dcdc1",
+      "downloadUrl": "https://github.com/awesome-os/blink/releases/download/v0.2.0/v11-tree.json"
+    },
+    {
       "id": "awesome-os/brave@v0.2.0/brave-linux-arm64",
       "repo": "brave",
       "tag": "v0.2.0",
@@ -442,6 +475,17 @@
       "size": 82,
       "blobPath": "v11/files/05/05b13ac7f6cbd8376b26c5bc2ac83dab72e53bec6b46591b8dbeb4b06e213dd170f20863f3b6109551961d6956840367864c2efc453736a27e618998cf2af59d",
       "downloadUrl": "https://github.com/awesome-os/bun-neon/releases/download/v0.1.0/SHA256SUMS.txt"
+    },
+    {
+      "id": "awesome-os/bun-neon@v0.1.0/v11-tree.json",
+      "repo": "bun-neon",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "b66f44997ec0ef18ea7adaef55882f1b2c0b3da0626eaa67fc3a73b6a25f7aaea4cecc220fdb7776242f54430c4d241a56c40a0bdc1fb91f218f4e1f364ec02f",
+      "size": 5113,
+      "blobPath": "v11/files/b6/b66f44997ec0ef18ea7adaef55882f1b2c0b3da0626eaa67fc3a73b6a25f7aaea4cecc220fdb7776242f54430c4d241a56c40a0bdc1fb91f218f4e1f364ec02f",
+      "downloadUrl": "https://github.com/awesome-os/bun-neon/releases/download/v0.1.0/v11-tree.json"
     },
     {
       "id": "awesome-os/cargo@v0.1.0/cargo-linux-x86_64",
@@ -840,6 +884,17 @@
       "downloadUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/SHA512SUMS.txt"
     },
     {
+      "id": "awesome-os/coreutils@v0.1.0/v11-tree.json",
+      "repo": "coreutils",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "be2f718c88d00d03d9c4444fdab9bc1fd4e6dde39102d9843339726eab937e233be80f5c6f39a5dc4c126c4924abb2e40cbbe6b27b584294829094fb67eb322a",
+      "size": 857333,
+      "blobPath": "v11/files/be/be2f718c88d00d03d9c4444fdab9bc1fd4e6dde39102d9843339726eab937e233be80f5c6f39a5dc4c126c4924abb2e40cbbe6b27b584294829094fb67eb322a",
+      "downloadUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/v11-tree.json"
+    },
+    {
       "id": "awesome-os/dawn@dawn-cas-20261124/libwebgpu_dawn-linux-x64.so",
       "repo": "dawn",
       "tag": "dawn-cas-20261124",
@@ -882,6 +937,17 @@
       "size": 84083690,
       "blobPath": "v11/files/4c/4cb33b1a0c24b54c625421305ca00ec82dbb9c731bcc7bb583a49dc878da3e856491b3feee9b182604e1ca10b8454d2c4bc81825104044c2c637666a5de0762d",
       "downloadUrl": "https://github.com/awesome-os/desktop-omarchy/releases/download/v0.1.0/t2desktop-omarchy-v0.1.0.tar.zst"
+    },
+    {
+      "id": "awesome-os/desktop-omarchy@v0.1.0/v11-tree.json",
+      "repo": "desktop-omarchy",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "97a3623ba3055c476ad11296fff0bbe56d7440f898bf9e76ac5479c0ffaf4df6d535e0d41aa836204c390bb993103b61361927bf1908d1e985733a33b1a1178f",
+      "size": 2359365,
+      "blobPath": "v11/files/97/97a3623ba3055c476ad11296fff0bbe56d7440f898bf9e76ac5479c0ffaf4df6d535e0d41aa836204c390bb993103b61361927bf1908d1e985733a33b1a1178f",
+      "downloadUrl": "https://github.com/awesome-os/desktop-omarchy/releases/download/v0.1.0/v11-tree.json"
     },
     {
       "id": "awesome-os/dotnet@v0.1.0/dotnet-linux-arm64",
@@ -972,6 +1038,17 @@
       "downloadUrl": "https://github.com/awesome-os/electron/releases/download/v0.2.0/SHA512SUMS.txt"
     },
     {
+      "id": "awesome-os/electron@v0.2.0/v11-tree.json",
+      "repo": "electron",
+      "tag": "v0.2.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "1f83c5039ba239520f8f35daa994ec7c42c6b97e16d3a3ae6530902ae3e5e1d93730c8f6ea37922cfb2ffe3c0cddbff053fe7da315c4c511fa296c9fa908bfef",
+      "size": 5130,
+      "blobPath": "v11/files/1f/1f83c5039ba239520f8f35daa994ec7c42c6b97e16d3a3ae6530902ae3e5e1d93730c8f6ea37922cfb2ffe3c0cddbff053fe7da315c4c511fa296c9fa908bfef",
+      "downloadUrl": "https://github.com/awesome-os/electron/releases/download/v0.2.0/v11-tree.json"
+    },
+    {
       "id": "awesome-os/explorer@v0.1.0/explorer-linux-x64.tar.zst",
       "repo": "explorer",
       "tag": "v0.1.0",
@@ -992,6 +1069,17 @@
       "size": 93,
       "blobPath": "v11/files/86/8600ba4f755df698f7245b7824dda7c6408b0078dc9810690b74aa3d81945661ac455331faf4ec3de6d6e6498a42329a3d85c9f94f51795c529bfffe8ed9d3fa",
       "downloadUrl": "https://github.com/awesome-os/explorer/releases/download/v0.1.0/SHA256SUMS.txt"
+    },
+    {
+      "id": "awesome-os/explorer@v0.1.0/v11-tree.json",
+      "repo": "explorer",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "2d13e73deef9a3165c0bd75cb95101546f179680161ff40ac0b117053a5c8b1be4d75c96e61b9219efc83378222f940cfb0e8f577059c4859f8f9aff5b8131b5",
+      "size": 344646,
+      "blobPath": "v11/files/2d/2d13e73deef9a3165c0bd75cb95101546f179680161ff40ac0b117053a5c8b1be4d75c96e61b9219efc83378222f940cfb0e8f577059c4859f8f9aff5b8131b5",
+      "downloadUrl": "https://github.com/awesome-os/explorer/releases/download/v0.1.0/v11-tree.json"
     },
     {
       "id": "awesome-os/ghost-100@v0.2.0/ghost-100-v0.2.0.tar.zst",
@@ -1027,6 +1115,17 @@
       "downloadUrl": "https://github.com/awesome-os/ghost-100/releases/download/v0.2.0/SHA512SUMS.txt"
     },
     {
+      "id": "awesome-os/ghost-100@v0.2.0/v11-tree.json",
+      "repo": "ghost-100",
+      "tag": "v0.2.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "c09fe0cf00d7a5b03a263668f6098b245fbc43d3a06b65c3d71742a16296c4f72cdd05c326c3d27f8239a0ca0bf34fd78bfcfd5a736a1541e0054add99acb8ba",
+      "size": 3140,
+      "blobPath": "v11/files/c0/c09fe0cf00d7a5b03a263668f6098b245fbc43d3a06b65c3d71742a16296c4f72cdd05c326c3d27f8239a0ca0bf34fd78bfcfd5a736a1541e0054add99acb8ba",
+      "downloadUrl": "https://github.com/awesome-os/ghost-100/releases/download/v0.2.0/v11-tree.json"
+    },
+    {
       "id": "awesome-os/ghost-cpp@v0.2.0/ghost-cpp-v0.2.0.tar.zst",
       "repo": "ghost-cpp",
       "tag": "v0.2.0",
@@ -1058,6 +1157,17 @@
       "size": 155,
       "blobPath": "v11/files/ef/efedf20c1e59c93e0fe53e44d10b0765af609405aae790cf5fcf7b6723e9c18431198b89ef3e112bcc377143505102677a32a68aa0df429bccc144032793f5c1",
       "downloadUrl": "https://github.com/awesome-os/ghost-cpp/releases/download/v0.2.0/SHA512SUMS.txt"
+    },
+    {
+      "id": "awesome-os/ghost-cpp@v0.2.0/v11-tree.json",
+      "repo": "ghost-cpp",
+      "tag": "v0.2.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "95066c3baa8bf2cc56795fc9390c9c99c9283c309e4358e5c6af28a002e33bfbe1f9e3b5f3eae3bd4b381112132826f094598dd7fb341b8fa72ff88bf8604424",
+      "size": 3144,
+      "blobPath": "v11/files/95/95066c3baa8bf2cc56795fc9390c9c99c9283c309e4358e5c6af28a002e33bfbe1f9e3b5f3eae3bd4b381112132826f094598dd7fb341b8fa72ff88bf8604424",
+      "downloadUrl": "https://github.com/awesome-os/ghost-cpp/releases/download/v0.2.0/v11-tree.json"
     },
     {
       "id": "awesome-os/ghost-jvm@v0.2.0/ghost-jvm-v0.2.0.tar.zst",
@@ -1093,6 +1203,17 @@
       "downloadUrl": "https://github.com/awesome-os/ghost-jvm/releases/download/v0.2.0/SHA512SUMS.txt"
     },
     {
+      "id": "awesome-os/ghost-jvm@v0.2.0/v11-tree.json",
+      "repo": "ghost-jvm",
+      "tag": "v0.2.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "fb06e5ac8a17c6067b22687fcf9517c994cd1140274bf201faff4b998db5489b16a37545b7f77644657bf13194f65f3d5bf037e39cf164b6e1e32eee75224849",
+      "size": 2323,
+      "blobPath": "v11/files/fb/fb06e5ac8a17c6067b22687fcf9517c994cd1140274bf201faff4b998db5489b16a37545b7f77644657bf13194f65f3d5bf037e39cf164b6e1e32eee75224849",
+      "downloadUrl": "https://github.com/awesome-os/ghost-jvm/releases/download/v0.2.0/v11-tree.json"
+    },
+    {
       "id": "awesome-os/ghost-py@v0.2.0/ghost-py-v0.2.0.tar.zst",
       "repo": "ghost-py",
       "tag": "v0.2.0",
@@ -1124,6 +1245,17 @@
       "size": 154,
       "blobPath": "v11/files/24/24f6d8359223a3f61dbfdb4dad256a9710a2b41f2466669e2087c9101fec77d5bb1b55b429fcb4704e39d34d76d21e28a75a85e8724fc7e3d2309d88df3ada94",
       "downloadUrl": "https://github.com/awesome-os/ghost-py/releases/download/v0.2.0/SHA512SUMS.txt"
+    },
+    {
+      "id": "awesome-os/ghost-py@v0.2.0/v11-tree.json",
+      "repo": "ghost-py",
+      "tag": "v0.2.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "1bcddfa3471b77067546a61be468976615a4d7041b0e5a3b334192cb931ec21f95c366c7263fbe52e1a7e52189202a4b3222298f09ede45ea9b55ad3cfb54c69",
+      "size": 2321,
+      "blobPath": "v11/files/1b/1bcddfa3471b77067546a61be468976615a4d7041b0e5a3b334192cb931ec21f95c366c7263fbe52e1a7e52189202a4b3222298f09ede45ea9b55ad3cfb54c69",
+      "downloadUrl": "https://github.com/awesome-os/ghost-py/releases/download/v0.2.0/v11-tree.json"
     },
     {
       "id": "awesome-os/godot-vscode@v0.2.0/godot-ghost-0.2.0.vsix",
@@ -1302,6 +1434,17 @@
       "downloadUrl": "https://github.com/awesome-os/holo-compiler/releases/download/v0.7.0/SHA256SUMS.txt"
     },
     {
+      "id": "awesome-os/holo-compiler@v0.7.0/v11-tree.json",
+      "repo": "holo-compiler",
+      "tag": "v0.7.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "db63ce0930c861803603b727f5c925a9bb2888260b95581215bd60db79694bcfc34ce0dea69af43378c6d9f4ec6a67d2c4eb21fef4f42a9e8ee22a0774eefbee",
+      "size": 18842,
+      "blobPath": "v11/files/db/db63ce0930c861803603b727f5c925a9bb2888260b95581215bd60db79694bcfc34ce0dea69af43378c6d9f4ec6a67d2c4eb21fef4f42a9e8ee22a0774eefbee",
+      "downloadUrl": "https://github.com/awesome-os/holo-compiler/releases/download/v0.7.0/v11-tree.json"
+    },
+    {
       "id": "awesome-os/holo-pm@v0.2.0/holo-pm-linux-aarch64",
       "repo": "holo-pm",
       "tag": "v0.2.0",
@@ -1423,6 +1566,17 @@
       "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.2.0/SHA512SUMS.txt"
     },
     {
+      "id": "awesome-os/holo-pm@v0.2.0/v11-tree.json",
+      "repo": "holo-pm",
+      "tag": "v0.2.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "6f287c47c73fd247447a820893308dfa11803e180a413c0e743af7a6677342793b51a50297247ca6e424dd56227c9ff747a335157468979d8866c61e898b6cf9",
+      "size": 13094,
+      "blobPath": "v11/files/6f/6f287c47c73fd247447a820893308dfa11803e180a413c0e743af7a6677342793b51a50297247ca6e424dd56227c9ff747a335157468979d8866c61e898b6cf9",
+      "downloadUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.2.0/v11-tree.json"
+    },
+    {
       "id": "awesome-os/installer@v0.2.4/awesome-os-installer-catalog-v0.2.4.tar.zst",
       "repo": "installer",
       "tag": "v0.2.4",
@@ -1443,6 +1597,17 @@
       "size": 110,
       "blobPath": "v11/files/a3/a342eb470d5bc8e4dbe2b9be3448ffdd5725f111deac50ed513377448c58997a27bae2cd76abdb068088aa435112c2e136e8b3af7c6f51fb25bc93212f786744",
       "downloadUrl": "https://github.com/awesome-os/installer/releases/download/v0.2.4/SHA256SUMS.txt"
+    },
+    {
+      "id": "awesome-os/installer@v0.2.4/v11-tree.json",
+      "repo": "installer",
+      "tag": "v0.2.4",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "bbceccd12f9cd57f2128b25e2aa06e27d4ce6613874370d41dcbee181df2806c3082dcc2d3cae3af8581c11c1ad8cc2bd955976947726ebdc321951a3c5fea8a",
+      "size": 4720,
+      "blobPath": "v11/files/bb/bbceccd12f9cd57f2128b25e2aa06e27d4ce6613874370d41dcbee181df2806c3082dcc2d3cae3af8581c11c1ad8cc2bd955976947726ebdc321951a3c5fea8a",
+      "downloadUrl": "https://github.com/awesome-os/installer/releases/download/v0.2.4/v11-tree.json"
     },
     {
       "id": "awesome-os/just-js@v0.1.0/just-linux-arm64",
@@ -1520,6 +1685,17 @@
       "size": 150,
       "blobPath": "v11/files/41/417dea9db0611c46525b00ba0409c1c186347208a194cef2798753df9f3c526a100aa94c5f47de58b2bd84812b403e40913a3dfb20601ddaa44156cec750315f",
       "downloadUrl": "https://github.com/awesome-os/just/releases/download/v0.1.0/SHA512SUMS.txt"
+    },
+    {
+      "id": "awesome-os/just@v0.1.0/v11-tree.json",
+      "repo": "just",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "36331870b4195f73ad6b6f4808940dabf07e1eda5da2c8421cf8e15df77b641122394f6f077ea333842c852dd62d7da905ce15d6d78466f42b37a4f9667597e1",
+      "size": 14352,
+      "blobPath": "v11/files/36/36331870b4195f73ad6b6f4808940dabf07e1eda5da2c8421cf8e15df77b641122394f6f077ea333842c852dd62d7da905ce15d6d78466f42b37a4f9667597e1",
+      "downloadUrl": "https://github.com/awesome-os/just/releases/download/v0.1.0/v11-tree.json"
     },
     {
       "id": "awesome-os/libuv@v0.1.0/libuv-linux-arm64.so",
@@ -1619,6 +1795,17 @@
       "size": 160,
       "blobPath": "v11/files/4c/4c3c6d44494cf14254f33d60f56cf8b76aa55951878f04e072c90fa0860363aef368fce92ff108a665a016e347b24a6a4bff1076b98e7f3172df42f6700016be",
       "downloadUrl": "https://github.com/awesome-os/libv8_monolith/releases/download/v0.2.1/SHA512SUMS.txt"
+    },
+    {
+      "id": "awesome-os/libv8_monolith@v0.2.1/v11-tree.json",
+      "repo": "libv8_monolith",
+      "tag": "v0.2.1",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "f67dab60bf6ff8fce38d170f57fb4ac56dcd0e958dc1365a31075cee1983eb6793a24e2e8fc10c4ca0e350c475e04e24c8c7b9811b42806d82aca2ec4b4f9ef0",
+      "size": 2327,
+      "blobPath": "v11/files/f6/f67dab60bf6ff8fce38d170f57fb4ac56dcd0e958dc1365a31075cee1983eb6793a24e2e8fc10c4ca0e350c475e04e24c8c7b9811b42806d82aca2ec4b4f9ef0",
+      "downloadUrl": "https://github.com/awesome-os/libv8_monolith/releases/download/v0.2.1/v11-tree.json"
     },
     {
       "id": "awesome-os/lo@v0.2.0/install.ps1",
@@ -1742,6 +1929,17 @@
       "downloadUrl": "https://github.com/awesome-os/modern-picomatch/releases/download/v0.1.0/SHA512SUMS.txt"
     },
     {
+      "id": "awesome-os/modern-picomatch@v0.1.0/v11-tree.json",
+      "repo": "modern-picomatch",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "93ca1618c04544c2e62ced5ee94ba7330a039e9429e8606eeb02790734832b1c65333291266fbe80a22f21eeafa964f91e0da035d8e849a8d88e76877f472fc3",
+      "size": 34413,
+      "blobPath": "v11/files/93/93ca1618c04544c2e62ced5ee94ba7330a039e9429e8606eeb02790734832b1c65333291266fbe80a22f21eeafa964f91e0da035d8e849a8d88e76877f472fc3",
+      "downloadUrl": "https://github.com/awesome-os/modern-picomatch/releases/download/v0.1.0/v11-tree.json"
+    },
+    {
       "id": "awesome-os/noctalia@v0.1.0/noctalia-linux-x64.tar.zst",
       "repo": "noctalia",
       "tag": "v0.1.0",
@@ -1762,6 +1960,17 @@
       "size": 93,
       "blobPath": "v11/files/04/0484ebc637f5479068121268ecd3cf4a66fc7a4e713db09415aa7db1c1a355e9f01daaa63a35077e56cac39315f7c4db6e4c762064c77f6033c42877be3a320f",
       "downloadUrl": "https://github.com/awesome-os/noctalia/releases/download/v0.1.0/SHA256SUMS.txt"
+    },
+    {
+      "id": "awesome-os/noctalia@v0.1.0/v11-tree.json",
+      "repo": "noctalia",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "bb20ac2f5fbbba4097505e3e5503178ab932501edfc56a37b141e87847a69519e7b399d9f3f3f0bbce86ac40b204e7cfca2cc6801ee9a465d642fda7ee87ed4e",
+      "size": 921231,
+      "blobPath": "v11/files/bb/bb20ac2f5fbbba4097505e3e5503178ab932501edfc56a37b141e87847a69519e7b399d9f3f3f0bbce86ac40b204e7cfca2cc6801ee9a465d642fda7ee87ed4e",
+      "downloadUrl": "https://github.com/awesome-os/noctalia/releases/download/v0.1.0/v11-tree.json"
     },
     {
       "id": "awesome-os/node@v0.4.0/install.ps1",
@@ -1883,6 +2092,17 @@
       "size": 153,
       "blobPath": "v11/files/63/6380ee042be4963693f8596ff39ff85ec29ec108f6893382351bd956537a117d36ae06dbe09b6bc08136c6ffd2860283bd3b4ff2b7d6d76c582b7424b77a78a7",
       "downloadUrl": "https://github.com/awesome-os/nodeman/releases/download/v0.1.0/SHA512SUMS.txt"
+    },
+    {
+      "id": "awesome-os/nodeman@v0.1.0/v11-tree.json",
+      "repo": "nodeman",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "d97992d85e930054384920a9aa3c8b254b90a28e7c20240cae0d03c8af453869a9f297266febd67bbbda81367333ebfebf22c009ab3b1d77bf6180ea577d5a69",
+      "size": 2314,
+      "blobPath": "v11/files/d9/d97992d85e930054384920a9aa3c8b254b90a28e7c20240cae0d03c8af453869a9f297266febd67bbbda81367333ebfebf22c009ab3b1d77bf6180ea577d5a69",
+      "downloadUrl": "https://github.com/awesome-os/nodeman/releases/download/v0.1.0/v11-tree.json"
     },
     {
       "id": "awesome-os/obs-vscode@v0.2.0/obs-ghost-0.2.0.vsix",
@@ -2039,6 +2259,17 @@
       "downloadUrl": "https://github.com/awesome-os/ory-polis/releases/download/v26.2.0-awesome-os.1/SHA512SUMS.txt"
     },
     {
+      "id": "awesome-os/ory-polis@v26.2.0-awesome-os.1/v11-tree.json",
+      "repo": "ory-polis",
+      "tag": "v26.2.0-awesome-os.1",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "43c233d4e31faea3ca2e4007526fb94758bae49e2bb5da6a03c1d066dd59e597379e7232304d17826c2d4403e04770fa1f8691ff07783ecddd8e445864c93e17",
+      "size": 277489,
+      "blobPath": "v11/files/43/43c233d4e31faea3ca2e4007526fb94758bae49e2bb5da6a03c1d066dd59e597379e7232304d17826c2d4403e04770fa1f8691ff07783ecddd8e445864c93e17",
+      "downloadUrl": "https://github.com/awesome-os/ory-polis/releases/download/v26.2.0-awesome-os.1/v11-tree.json"
+    },
+    {
       "id": "awesome-os/pinokio@v0.2.0/pinokio-v0.2.0.tar.zst",
       "repo": "pinokio",
       "tag": "v0.2.0",
@@ -2070,6 +2301,17 @@
       "size": 153,
       "blobPath": "v11/files/71/71a49a808ff8e51b7208915c2739b81282eda10290d574f613a4058c2d1fcf4d1390d77783514a1f257529bffc68b5adfe6862381ab8f3774954aff8be3ecbde",
       "downloadUrl": "https://github.com/awesome-os/pinokio/releases/download/v0.2.0/SHA512SUMS.txt"
+    },
+    {
+      "id": "awesome-os/pinokio@v0.2.0/v11-tree.json",
+      "repo": "pinokio",
+      "tag": "v0.2.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "8331e764ba256106cf49ed408310ccab60ae08bcbf9c3ffb09f0c1e7c94227ac7c392d114f5d42a42e3ae8780886a87f46a0e8f003834301e03dd5aab40da7d9",
+      "size": 6377,
+      "blobPath": "v11/files/83/8331e764ba256106cf49ed408310ccab60ae08bcbf9c3ffb09f0c1e7c94227ac7c392d114f5d42a42e3ae8780886a87f46a0e8f003834301e03dd5aab40da7d9",
+      "downloadUrl": "https://github.com/awesome-os/pinokio/releases/download/v0.2.0/v11-tree.json"
     },
     {
       "id": "awesome-os/pnpm@v12.23.0-cas.1/libpnpm-linux-arm64.so",
@@ -2259,6 +2501,17 @@
       "downloadUrl": "https://github.com/awesome-os/pouchdb/releases/download/v0.1.0/SHA512SUMS.txt"
     },
     {
+      "id": "awesome-os/pouchdb@v0.1.0/v11-tree.json",
+      "repo": "pouchdb",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "6a675d8bb0eb4dd2a50129c8d38c6f6c68b6e8709101527c13a019aedf6477f4d1bc39998e90a69897c7d0767c9621ef872af94d602990883bb291c00912e6c7",
+      "size": 355620,
+      "blobPath": "v11/files/6a/6a675d8bb0eb4dd2a50129c8d38c6f6c68b6e8709101527c13a019aedf6477f4d1bc39998e90a69897c7d0767c9621ef872af94d602990883bb291c00912e6c7",
+      "downloadUrl": "https://github.com/awesome-os/pouchdb/releases/download/v0.1.0/v11-tree.json"
+    },
+    {
       "id": "awesome-os/powershell@v0.1.0/pwsh-linux-arm64",
       "repo": "powershell",
       "tag": "v0.1.0",
@@ -2347,6 +2600,17 @@
       "downloadUrl": "https://github.com/awesome-os/qt/releases/download/v0.2.0/SHA512SUMS.txt"
     },
     {
+      "id": "awesome-os/qt@v0.2.0/v11-tree.json",
+      "repo": "qt",
+      "tag": "v0.2.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "c605ee46925bff28cf99b8966222276f89cb12684c6d2924f90eb5b234db46ecb597c6ec10fe1b41ccc47f2d484a31e9184395d8a61c1cf08bf8770b5352ad5b",
+      "size": 5119,
+      "blobPath": "v11/files/c6/c605ee46925bff28cf99b8966222276f89cb12684c6d2924f90eb5b234db46ecb597c6ec10fe1b41ccc47f2d484a31e9184395d8a61c1cf08bf8770b5352ad5b",
+      "downloadUrl": "https://github.com/awesome-os/qt/releases/download/v0.2.0/v11-tree.json"
+    },
+    {
       "id": "awesome-os/rollup@v0.1.0/rollup-v0.1.0.tar.zst",
       "repo": "rollup",
       "tag": "v0.1.0",
@@ -2378,6 +2642,17 @@
       "size": 152,
       "blobPath": "v11/files/f3/f3261da3f6293a3e5160659bf4212ad91b59cdfc34f4b494fde9c1d0ed02b4812235db564f2ff4e31e50a60ddc1484da108654125a31aed2cfc277f6fc93e8ef",
       "downloadUrl": "https://github.com/awesome-os/rollup/releases/download/v0.1.0/SHA512SUMS.txt"
+    },
+    {
+      "id": "awesome-os/rollup@v0.1.0/v11-tree.json",
+      "repo": "rollup",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "e04a5715ccd85264382a47d545e2720698c658697aa3d5287f91b5e9c1a380d6e7c25eb3177facdfe93dbca042fa88560b91cdb03d49b8f46216f04e8f88fc3e",
+      "size": 5836628,
+      "blobPath": "v11/files/e0/e04a5715ccd85264382a47d545e2720698c658697aa3d5287f91b5e9c1a380d6e7c25eb3177facdfe93dbca042fa88560b91cdb03d49b8f46216f04e8f88fc3e",
+      "downloadUrl": "https://github.com/awesome-os/rollup/releases/download/v0.1.0/v11-tree.json"
     },
     {
       "id": "awesome-os/sectium-browser@v0.7.3/install.ps1",
@@ -2479,6 +2754,17 @@
       "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/SHA256SUMS.txt"
     },
     {
+      "id": "awesome-os/sectium-browser@v0.7.3/v11-tree.json",
+      "repo": "sectium-browser",
+      "tag": "v0.7.3",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "2b9da8aee836f9510dd43cf14dbd4372cd6530dfd88936c159bdccaf4935e97f2935fe734da7ceb372c3871d165adbb246b217d0fbc55970ec2e65358d3249c3",
+      "size": 29994,
+      "blobPath": "v11/files/2b/2b9da8aee836f9510dd43cf14dbd4372cd6530dfd88936c159bdccaf4935e97f2935fe734da7ceb372c3871d165adbb246b217d0fbc55970ec2e65358d3249c3",
+      "downloadUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/v11-tree.json"
+    },
+    {
       "id": "awesome-os/sectium-devops@v0.1.0/sectium-devops-v0.1.0.tar.zst",
       "repo": "sectium-devops",
       "tag": "v0.1.0",
@@ -2512,6 +2798,17 @@
       "downloadUrl": "https://github.com/awesome-os/sectium-devops/releases/download/v0.1.0/SHA512SUMS.txt"
     },
     {
+      "id": "awesome-os/sectium-devops@v0.1.0/v11-tree.json",
+      "repo": "sectium-devops",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "698c026117ea82c1a82d3695ab59f74cc5fe68dbbe530e85a88c0e9807b7faaefc70f20736e65baaf36e3a28b2f1f4c6783b695859bb53ddc92113cb4342f46c",
+      "size": 4544,
+      "blobPath": "v11/files/69/698c026117ea82c1a82d3695ab59f74cc5fe68dbbe530e85a88c0e9807b7faaefc70f20736e65baaf36e3a28b2f1f4c6783b695859bb53ddc92113cb4342f46c",
+      "downloadUrl": "https://github.com/awesome-os/sectium-devops/releases/download/v0.1.0/v11-tree.json"
+    },
+    {
       "id": "awesome-os/sectium-devtools@v0.1.0/sectium-devtools-v0.1.0.tar.zst",
       "repo": "sectium-devtools",
       "tag": "v0.1.0",
@@ -2543,6 +2840,17 @@
       "size": 162,
       "blobPath": "v11/files/30/30dc39b14cbc215c1c7d64fa21bf73102f8f7465fe9fc6551bf2dced87ecce640b41dde45a19caf4379da5cc86f6c4f803c17f68bf8aefd6549ec12fe009c0d1",
       "downloadUrl": "https://github.com/awesome-os/sectium-devtools/releases/download/v0.1.0/SHA512SUMS.txt"
+    },
+    {
+      "id": "awesome-os/sectium-devtools@v0.1.0/v11-tree.json",
+      "repo": "sectium-devtools",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "7ae2b9a34851ea0f66af62deed488db9f58679272cfaea1e68048cc7da63d99cbeb33d285138bb735de979ae5c40b71bf5681d52c2cd6fd8ee55ce9727f5e1bd",
+      "size": 6026,
+      "blobPath": "v11/files/7a/7ae2b9a34851ea0f66af62deed488db9f58679272cfaea1e68048cc7da63d99cbeb33d285138bb735de979ae5c40b71bf5681d52c2cd6fd8ee55ce9727f5e1bd",
+      "downloadUrl": "https://github.com/awesome-os/sectium-devtools/releases/download/v0.1.0/v11-tree.json"
     },
     {
       "id": "awesome-os/sectium-display@v0.4.0/01-browser-split-shell.exe",
@@ -2897,6 +3205,17 @@
       "downloadUrl": "https://github.com/awesome-os/sectium-electron/releases/download/v0.2.0/SHA512SUMS.txt"
     },
     {
+      "id": "awesome-os/sectium-electron@v0.2.0/v11-tree.json",
+      "repo": "sectium-electron",
+      "tag": "v0.2.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "fd3191ed921733642dc3a7a3335f5ffa0d1194f3668d11a5cf36c33f8548529ffa8e5ef175d0737420690648d3d211fc882b602000d43b468fd1dc7c96fe728f",
+      "size": 13774,
+      "blobPath": "v11/files/fd/fd3191ed921733642dc3a7a3335f5ffa0d1194f3668d11a5cf36c33f8548529ffa8e5ef175d0737420690648d3d211fc882b602000d43b468fd1dc7c96fe728f",
+      "downloadUrl": "https://github.com/awesome-os/sectium-electron/releases/download/v0.2.0/v11-tree.json"
+    },
+    {
       "id": "awesome-os/sectium-es@v0.1.0/sectium-es-v0.1.0.tar.zst",
       "repo": "sectium-es",
       "tag": "v0.1.0",
@@ -2930,6 +3249,17 @@
       "downloadUrl": "https://github.com/awesome-os/sectium-es/releases/download/v0.1.0/SHA512SUMS.txt"
     },
     {
+      "id": "awesome-os/sectium-es@v0.1.0/v11-tree.json",
+      "repo": "sectium-es",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "7c3277253704f62a3e295bf67925b17589aad9f5ed85e84fb8a768759b389259bb56fed515b3a9b8e9a8ab4105b8315416e050f826ef96e345f4965183f3e307",
+      "size": 4739,
+      "blobPath": "v11/files/7c/7c3277253704f62a3e295bf67925b17589aad9f5ed85e84fb8a768759b389259bb56fed515b3a9b8e9a8ab4105b8315416e050f826ef96e345f4965183f3e307",
+      "downloadUrl": "https://github.com/awesome-os/sectium-es/releases/download/v0.1.0/v11-tree.json"
+    },
+    {
       "id": "awesome-os/sectium-jvm@v0.1.0/sectium-jvm-v0.1.0.tar.zst",
       "repo": "sectium-jvm",
       "tag": "v0.1.0",
@@ -2961,6 +3291,17 @@
       "size": 157,
       "blobPath": "v11/files/cd/cd91634acf15d52abfc9f82a13e8a52ad6e6fdb125526b104bbe60742260c497da697a1d28985d802f7f68c5e2575654abc7b09f2f741463c48057a32ee0ff25",
       "downloadUrl": "https://github.com/awesome-os/sectium-jvm/releases/download/v0.1.0/SHA512SUMS.txt"
+    },
+    {
+      "id": "awesome-os/sectium-jvm@v0.1.0/v11-tree.json",
+      "repo": "sectium-jvm",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "60419bb65522bac61d7f97aafda601868d6b74662c1b6ed94da578071fa5bee62dc3b60c6251915e1a3ac6e5c1bc5b69d02f77d3c845b2998b8685fd00cccb78",
+      "size": 5158,
+      "blobPath": "v11/files/60/60419bb65522bac61d7f97aafda601868d6b74662c1b6ed94da578071fa5bee62dc3b60c6251915e1a3ac6e5c1bc5b69d02f77d3c845b2998b8685fd00cccb78",
+      "downloadUrl": "https://github.com/awesome-os/sectium-jvm/releases/download/v0.1.0/v11-tree.json"
     },
     {
       "id": "awesome-os/skia@skia-cas-20261124/libskia-linux-x64.so",
@@ -3027,6 +3368,17 @@
       "size": 2586,
       "blobPath": "v11/files/7a/7a1fa5dcf657f4de3f57e76a361f1f69902d3bf6e1c89026c7a65fdb1049ba79fd5d7ae2725e13845199f5a0044a5e2209ebd25d8f763479f8e1a28840c86098",
       "downloadUrl": "https://github.com/awesome-os/t2desktop-noctalia/releases/download/v0.1.0/t2desktop-noctalia-v0.1.0.tar.zst"
+    },
+    {
+      "id": "awesome-os/t2desktop-noctalia@v0.1.0/v11-tree.json",
+      "repo": "t2desktop-noctalia",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "bcd35df22ce4536484e1cb96489bf63382a61160cd3800777f21662b9bf0864274db56f2049707e9c07e04425a1aa060f46c0c8444db49d619bc9b3b48875dcf",
+      "size": 3951,
+      "blobPath": "v11/files/bc/bcd35df22ce4536484e1cb96489bf63382a61160cd3800777f21662b9bf0864274db56f2049707e9c07e04425a1aa060f46c0c8444db49d619bc9b3b48875dcf",
+      "downloadUrl": "https://github.com/awesome-os/t2desktop-noctalia/releases/download/v0.1.0/v11-tree.json"
     },
     {
       "id": "awesome-os/t2linux@v0.1.0/init-aarch64",
@@ -3260,6 +3612,17 @@
       "downloadUrl": "https://github.com/awesome-os/theia/releases/download/v0.2.1/theia-v0.2.1.tar.zst"
     },
     {
+      "id": "awesome-os/theia@v0.2.1/v11-tree.json",
+      "repo": "theia",
+      "tag": "v0.2.1",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "feaf072fc416399ba214555cace8384ade13842ea5697ff9d1f17c1408c2b3b69047c2dd69a39a4b183f7b3843e1835a5a27b857dd75f839c19e305d9723e3b6",
+      "size": 5127,
+      "blobPath": "v11/files/fe/feaf072fc416399ba214555cace8384ade13842ea5697ff9d1f17c1408c2b3b69047c2dd69a39a4b183f7b3843e1835a5a27b857dd75f839c19e305d9723e3b6",
+      "downloadUrl": "https://github.com/awesome-os/theia/releases/download/v0.2.1/v11-tree.json"
+    },
+    {
       "id": "awesome-os/ts-morph@v0.1.0/SHA256SUMS.txt",
       "repo": "ts-morph",
       "tag": "v0.1.0",
@@ -3291,6 +3654,17 @@
       "size": 1684943,
       "blobPath": "v11/files/f1/f16635c6fcb09001f9a7bb0ac2606a9b28a8854e0b8c56e9ce65750bcfcb360ded89d886e09f518ae3a0cf9a744d3289a4ac722dffa8ba3977c67a3b11f49d04",
       "downloadUrl": "https://github.com/awesome-os/ts-morph/releases/download/v0.1.0/ts-morph-v0.1.0.tar.zst"
+    },
+    {
+      "id": "awesome-os/ts-morph@v0.1.0/v11-tree.json",
+      "repo": "ts-morph",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "acb6fd0452461d497446fb23f5b321f0b9033c21f7867598a416a78691ce196f0cb7171f48ba89f82890324388e11e9ca3911c03da7c0837601463b787365152",
+      "size": 578505,
+      "blobPath": "v11/files/ac/acb6fd0452461d497446fb23f5b321f0b9033c21f7867598a416a78691ce196f0cb7171f48ba89f82890324388e11e9ca3911c03da7c0837601463b787365152",
+      "downloadUrl": "https://github.com/awesome-os/ts-morph/releases/download/v0.1.0/v11-tree.json"
     },
     {
       "id": "awesome-os/unity-vscode@v0.1.0/SHA256SUMS.txt",
@@ -3346,6 +3720,17 @@
       "size": 10782816,
       "blobPath": "v11/files/9e/9ee693299b90cb5329cfaf7ab68ec32dd1aa223d98bb8d363157472667747eca8f3f2169736cfb1482e7435b9d8fc5543ba775199eac8de7501a9348bb63309f",
       "downloadUrl": "https://github.com/awesome-os/universal-git/releases/download/v0.1.0/universal-git-v0.1.0.tar.zst"
+    },
+    {
+      "id": "awesome-os/universal-git@v0.1.0/v11-tree.json",
+      "repo": "universal-git",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "7b6a1f636a05ff9a1b672d1ad5961e1e614a08dfad2d019f7c3719cfb6a73dbe844e53a25ee2e5f166383f1e5c94e7bca0ed9a54cca121451c54a48d771b52ea",
+      "size": 2540970,
+      "blobPath": "v11/files/7b/7b6a1f636a05ff9a1b672d1ad5961e1e614a08dfad2d019f7c3719cfb6a73dbe844e53a25ee2e5f166383f1e5c94e7bca0ed9a54cca121451c54a48d771b52ea",
+      "downloadUrl": "https://github.com/awesome-os/universal-git/releases/download/v0.1.0/v11-tree.json"
     },
     {
       "id": "awesome-os/unreal-vscode@v0.2.0/SHA256SUMS.txt",
@@ -4305,6 +4690,17 @@
       "downloadUrl": "https://github.com/awesome-os/wry/releases/download/v0.1.1/SHA512SUMS.txt"
     },
     {
+      "id": "awesome-os/wry@v0.1.1/v11-tree.json",
+      "repo": "wry",
+      "tag": "v0.1.1",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "511fa9d2770dcc88b247bb03fc6639875c1519535f91581573554b19651d5d5c4f94b8497298700daf5475f6693fb461d586f6b12966ed5cf814ab0bdbf4c16b",
+      "size": 47460,
+      "blobPath": "v11/files/51/511fa9d2770dcc88b247bb03fc6639875c1519535f91581573554b19651d5d5c4f94b8497298700daf5475f6693fb461d586f6b12966ed5cf814ab0bdbf4c16b",
+      "downloadUrl": "https://github.com/awesome-os/wry/releases/download/v0.1.1/v11-tree.json"
+    },
+    {
       "id": "awesome-os/wry@v0.1.1/wry-v0.1.1.tar.zst",
       "repo": "wry",
       "tag": "v0.1.1",
@@ -4336,6 +4732,17 @@
       "size": 148,
       "blobPath": "v11/files/1b/1bf4de8fb93446c70e91733f393d4080e1c0129bdcf7c74cee88716f4dd22cbd546b119afaca533dac617eee6ca345e54fcec3cdab97dfc0ee688d7056499ed2",
       "downloadUrl": "https://github.com/awesome-os/ws/releases/download/v0.1.0/SHA512SUMS.txt"
+    },
+    {
+      "id": "awesome-os/ws@v0.1.0/v11-tree.json",
+      "repo": "ws",
+      "tag": "v0.1.0",
+      "filename": "v11-tree.json",
+      "target": "any",
+      "sha512": "a0ea482a042c1bfcf3a7a9340a71619b887fb5fd60ccf3e13097090607f101228324c2d4c4ad9fe8ac994282f48e95ac3e870a411552298c8c942d6a887304fa",
+      "size": 26923,
+      "blobPath": "v11/files/a0/a0ea482a042c1bfcf3a7a9340a71619b887fb5fd60ccf3e13097090607f101228324c2d4c4ad9fe8ac994282f48e95ac3e870a411552298c8c942d6a887304fa",
+      "downloadUrl": "https://github.com/awesome-os/ws/releases/download/v0.1.0/v11-tree.json"
     },
     {
       "id": "awesome-os/ws@v0.1.0/ws-v0.1.0.tar.zst",

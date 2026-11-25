@@ -1,7 +1,7 @@
 {
   "schema": "awesome-os.v11-active-overrides.v1",
   "abiMagic": "0x33564742",
-  "generatedAt": "2026-11-25T19:08:23.463Z",
+  "generatedAt": "2026-11-25T19:19:53.955Z",
   "adoptedRepos": [
     {
       "repo": "awesome-os-desktop",
@@ -11,50 +11,273 @@
       "shadowedLegacyAssets": 0
     },
     {
+      "repo": "b8g-ide",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/b8g-ide/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "0be89bb7a3d81a4be8ea1bafda56f01d040072b851fa735c13707d51414f51b4a6a94e6fb39308e6875f1e063f26b4bc17ae69dc6261998847f6afa73f9cab64",
+      "shadowedLegacyAssets": 2
+    },
+    {
+      "repo": "b8g-production-rack",
+      "tag": "v0.3.0",
+      "treeManifestUrl": "https://github.com/awesome-os/b8g-production-rack/releases/download/v0.3.0/v11-tree.json",
+      "treeManifestSha512": "0d969f3d0bd28e8eb447f7d74bf8a54f39d312157a37f2e3e1f2843dff452801c055bedb6f1f3a7ba1b2939eb870cc0e3edad1c3ae8b4fdfb241c6f8a18b5e6e",
+      "shadowedLegacyAssets": 3
+    },
+    {
+      "repo": "blink",
+      "tag": "v0.2.0",
+      "treeManifestUrl": "https://github.com/awesome-os/blink/releases/download/v0.2.0/v11-tree.json",
+      "treeManifestSha512": "b66d705dbef943e1e7ae2d8202ae9ddec98a1cf3a951ff890aaf8e8e45bc31324f9a4ec717b882bcfaea15a1da4a25f2ad757b5c47b68a2b149d5b644b7dcdc1",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "bun-neon",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/bun-neon/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "b66f44997ec0ef18ea7adaef55882f1b2c0b3da0626eaa67fc3a73b6a25f7aaea4cecc220fdb7776242f54430c4d241a56c40a0bdc1fb91f218f4e1f364ec02f",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "coreutils",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/coreutils/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "be2f718c88d00d03d9c4444fdab9bc1fd4e6dde39102d9843339726eab937e233be80f5c6f39a5dc4c126c4924abb2e40cbbe6b27b584294829094fb67eb322a",
+      "shadowedLegacyAssets": 15
+    },
+    {
+      "repo": "desktop-omarchy",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/desktop-omarchy/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "97a3623ba3055c476ad11296fff0bbe56d7440f898bf9e76ac5479c0ffaf4df6d535e0d41aa836204c390bb993103b61361927bf1908d1e985733a33b1a1178f",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "electron",
+      "tag": "v0.2.0",
+      "treeManifestUrl": "https://github.com/awesome-os/electron/releases/download/v0.2.0/v11-tree.json",
+      "treeManifestSha512": "1f83c5039ba239520f8f35daa994ec7c42c6b97e16d3a3ae6530902ae3e5e1d93730c8f6ea37922cfb2ffe3c0cddbff053fe7da315c4c511fa296c9fa908bfef",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "explorer",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/explorer/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "2d13e73deef9a3165c0bd75cb95101546f179680161ff40ac0b117053a5c8b1be4d75c96e61b9219efc83378222f940cfb0e8f577059c4859f8f9aff5b8131b5",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "ghost-100",
+      "tag": "v0.2.0",
+      "treeManifestUrl": "https://github.com/awesome-os/ghost-100/releases/download/v0.2.0/v11-tree.json",
+      "treeManifestSha512": "c09fe0cf00d7a5b03a263668f6098b245fbc43d3a06b65c3d71742a16296c4f72cdd05c326c3d27f8239a0ca0bf34fd78bfcfd5a736a1541e0054add99acb8ba",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "ghost-cpp",
+      "tag": "v0.2.0",
+      "treeManifestUrl": "https://github.com/awesome-os/ghost-cpp/releases/download/v0.2.0/v11-tree.json",
+      "treeManifestSha512": "95066c3baa8bf2cc56795fc9390c9c99c9283c309e4358e5c6af28a002e33bfbe1f9e3b5f3eae3bd4b381112132826f094598dd7fb341b8fa72ff88bf8604424",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "ghost-jvm",
+      "tag": "v0.2.0",
+      "treeManifestUrl": "https://github.com/awesome-os/ghost-jvm/releases/download/v0.2.0/v11-tree.json",
+      "treeManifestSha512": "fb06e5ac8a17c6067b22687fcf9517c994cd1140274bf201faff4b998db5489b16a37545b7f77644657bf13194f65f3d5bf037e39cf164b6e1e32eee75224849",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "ghost-py",
+      "tag": "v0.2.0",
+      "treeManifestUrl": "https://github.com/awesome-os/ghost-py/releases/download/v0.2.0/v11-tree.json",
+      "treeManifestSha512": "1bcddfa3471b77067546a61be468976615a4d7041b0e5a3b334192cb931ec21f95c366c7263fbe52e1a7e52189202a4b3222298f09ede45ea9b55ad3cfb54c69",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "holo-compiler",
+      "tag": "v0.7.0",
+      "treeManifestUrl": "https://github.com/awesome-os/holo-compiler/releases/download/v0.7.0/v11-tree.json",
+      "treeManifestSha512": "db63ce0930c861803603b727f5c925a9bb2888260b95581215bd60db79694bcfc34ce0dea69af43378c6d9f4ec6a67d2c4eb21fef4f42a9e8ee22a0774eefbee",
+      "shadowedLegacyAssets": 0
+    },
+    {
+      "repo": "holo-pm",
+      "tag": "v0.2.0",
+      "treeManifestUrl": "https://github.com/awesome-os/holo-pm/releases/download/v0.2.0/v11-tree.json",
+      "treeManifestSha512": "6f287c47c73fd247447a820893308dfa11803e180a413c0e743af7a6677342793b51a50297247ca6e424dd56227c9ff747a335157468979d8866c61e898b6cf9",
+      "shadowedLegacyAssets": 0
+    },
+    {
+      "repo": "installer",
+      "tag": "v0.2.4",
+      "treeManifestUrl": "https://github.com/awesome-os/installer/releases/download/v0.2.4/v11-tree.json",
+      "treeManifestSha512": "bbceccd12f9cd57f2128b25e2aa06e27d4ce6613874370d41dcbee181df2806c3082dcc2d3cae3af8581c11c1ad8cc2bd955976947726ebdc321951a3c5fea8a",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "just",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/just/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "36331870b4195f73ad6b6f4808940dabf07e1eda5da2c8421cf8e15df77b641122394f6f077ea333842c852dd62d7da905ce15d6d78466f42b37a4f9667597e1",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "libv8_monolith",
+      "tag": "v0.2.1",
+      "treeManifestUrl": "https://github.com/awesome-os/libv8_monolith/releases/download/v0.2.1/v11-tree.json",
+      "treeManifestSha512": "f67dab60bf6ff8fce38d170f57fb4ac56dcd0e958dc1365a31075cee1983eb6793a24e2e8fc10c4ca0e350c475e04e24c8c7b9811b42806d82aca2ec4b4f9ef0",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "modern-picomatch",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/modern-picomatch/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "93ca1618c04544c2e62ced5ee94ba7330a039e9429e8606eeb02790734832b1c65333291266fbe80a22f21eeafa964f91e0da035d8e849a8d88e76877f472fc3",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "noctalia",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/noctalia/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "bb20ac2f5fbbba4097505e3e5503178ab932501edfc56a37b141e87847a69519e7b399d9f3f3f0bbce86ac40b204e7cfca2cc6801ee9a465d642fda7ee87ed4e",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "nodeman",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/nodeman/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "d97992d85e930054384920a9aa3c8b254b90a28e7c20240cae0d03c8af453869a9f297266febd67bbbda81367333ebfebf22c009ab3b1d77bf6180ea577d5a69",
+      "shadowedLegacyAssets": 1
+    },
+    {
       "repo": "obs",
       "tag": "v0.3.0",
       "treeManifestUrl": "https://github.com/awesome-os/obs/releases/download/v0.3.0/v11-tree.json",
       "treeManifestSha512": "e038c7c85079931c785f4a8b9a8ad9358202ed88e1519a39b2444ff37e145dde1bf14d580b805e35e41c0c406ff10ff10143ee481cd248ef84f25a6bb086691e",
       "shadowedLegacyAssets": 0
+    },
+    {
+      "repo": "ory-polis",
+      "tag": "v26.2.0-awesome-os.1",
+      "treeManifestUrl": "https://github.com/awesome-os/ory-polis/releases/download/v26.2.0-awesome-os.1/v11-tree.json",
+      "treeManifestSha512": "43c233d4e31faea3ca2e4007526fb94758bae49e2bb5da6a03c1d066dd59e597379e7232304d17826c2d4403e04770fa1f8691ff07783ecddd8e445864c93e17",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "pinokio",
+      "tag": "v0.2.0",
+      "treeManifestUrl": "https://github.com/awesome-os/pinokio/releases/download/v0.2.0/v11-tree.json",
+      "treeManifestSha512": "8331e764ba256106cf49ed408310ccab60ae08bcbf9c3ffb09f0c1e7c94227ac7c392d114f5d42a42e3ae8780886a87f46a0e8f003834301e03dd5aab40da7d9",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "pouchdb",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/pouchdb/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "6a675d8bb0eb4dd2a50129c8d38c6f6c68b6e8709101527c13a019aedf6477f4d1bc39998e90a69897c7d0767c9621ef872af94d602990883bb291c00912e6c7",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "qt",
+      "tag": "v0.2.0",
+      "treeManifestUrl": "https://github.com/awesome-os/qt/releases/download/v0.2.0/v11-tree.json",
+      "treeManifestSha512": "c605ee46925bff28cf99b8966222276f89cb12684c6d2924f90eb5b234db46ecb597c6ec10fe1b41ccc47f2d484a31e9184395d8a61c1cf08bf8770b5352ad5b",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "rollup",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/rollup/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "e04a5715ccd85264382a47d545e2720698c658697aa3d5287f91b5e9c1a380d6e7c25eb3177facdfe93dbca042fa88560b91cdb03d49b8f46216f04e8f88fc3e",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "sectium-browser",
+      "tag": "v0.7.3",
+      "treeManifestUrl": "https://github.com/awesome-os/sectium-browser/releases/download/v0.7.3/v11-tree.json",
+      "treeManifestSha512": "2b9da8aee836f9510dd43cf14dbd4372cd6530dfd88936c159bdccaf4935e97f2935fe734da7ceb372c3871d165adbb246b217d0fbc55970ec2e65358d3249c3",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "sectium-devops",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/sectium-devops/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "698c026117ea82c1a82d3695ab59f74cc5fe68dbbe530e85a88c0e9807b7faaefc70f20736e65baaf36e3a28b2f1f4c6783b695859bb53ddc92113cb4342f46c",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "sectium-devtools",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/sectium-devtools/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "7ae2b9a34851ea0f66af62deed488db9f58679272cfaea1e68048cc7da63d99cbeb33d285138bb735de979ae5c40b71bf5681d52c2cd6fd8ee55ce9727f5e1bd",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "sectium-electron",
+      "tag": "v0.2.0",
+      "treeManifestUrl": "https://github.com/awesome-os/sectium-electron/releases/download/v0.2.0/v11-tree.json",
+      "treeManifestSha512": "fd3191ed921733642dc3a7a3335f5ffa0d1194f3668d11a5cf36c33f8548529ffa8e5ef175d0737420690648d3d211fc882b602000d43b468fd1dc7c96fe728f",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "sectium-es",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/sectium-es/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "7c3277253704f62a3e295bf67925b17589aad9f5ed85e84fb8a768759b389259bb56fed515b3a9b8e9a8ab4105b8315416e050f826ef96e345f4965183f3e307",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "sectium-jvm",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/sectium-jvm/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "60419bb65522bac61d7f97aafda601868d6b74662c1b6ed94da578071fa5bee62dc3b60c6251915e1a3ac6e5c1bc5b69d02f77d3c845b2998b8685fd00cccb78",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "t2desktop-noctalia",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/t2desktop-noctalia/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "bcd35df22ce4536484e1cb96489bf63382a61160cd3800777f21662b9bf0864274db56f2049707e9c07e04425a1aa060f46c0c8444db49d619bc9b3b48875dcf",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "theia",
+      "tag": "v0.2.1",
+      "treeManifestUrl": "https://github.com/awesome-os/theia/releases/download/v0.2.1/v11-tree.json",
+      "treeManifestSha512": "feaf072fc416399ba214555cace8384ade13842ea5697ff9d1f17c1408c2b3b69047c2dd69a39a4b183f7b3843e1835a5a27b857dd75f839c19e305d9723e3b6",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "ts-morph",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/ts-morph/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "acb6fd0452461d497446fb23f5b321f0b9033c21f7867598a416a78691ce196f0cb7171f48ba89f82890324388e11e9ca3911c03da7c0837601463b787365152",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "universal-git",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/universal-git/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "7b6a1f636a05ff9a1b672d1ad5961e1e614a08dfad2d019f7c3719cfb6a73dbe844e53a25ee2e5f166383f1e5c94e7bca0ed9a54cca121451c54a48d771b52ea",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "wry",
+      "tag": "v0.1.1",
+      "treeManifestUrl": "https://github.com/awesome-os/wry/releases/download/v0.1.1/v11-tree.json",
+      "treeManifestSha512": "511fa9d2770dcc88b247bb03fc6639875c1519535f91581573554b19651d5d5c4f94b8497298700daf5475f6693fb461d586f6b12966ed5cf814ab0bdbf4c16b",
+      "shadowedLegacyAssets": 1
+    },
+    {
+      "repo": "ws",
+      "tag": "v0.1.0",
+      "treeManifestUrl": "https://github.com/awesome-os/ws/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "a0ea482a042c1bfcf3a7a9340a71619b887fb5fd60ccf3e13097090607f101228324c2d4c4ad9fe8ac994282f48e95ac3e870a411552298c8c942d6a887304fa",
+      "shadowedLegacyAssets": 1
     }
   ],
-  "pendingTarRepos": [
-    "b8g-ide",
-    "b8g-production-rack",
-    "blink",
-    "bun-neon",
-    "coreutils",
-    "desktop-omarchy",
-    "electron",
-    "explorer",
-    "ghost-100",
-    "ghost-cpp",
-    "ghost-jvm",
-    "ghost-py",
-    "installer",
-    "just",
-    "libv8_monolith",
-    "modern-picomatch",
-    "noctalia",
-    "nodeman",
-    "ory-polis",
-    "pinokio",
-    "pouchdb",
-    "qt",
-    "rollup",
-    "sectium-browser",
-    "sectium-devops",
-    "sectium-devtools",
-    "sectium-electron",
-    "sectium-es",
-    "sectium-jvm",
-    "t2desktop-noctalia",
-    "theia",
-    "ts-morph",
-    "universal-git",
-    "wry",
-    "ws"
-  ],
-  "adoptionCount": 2,
-  "legacyTarRepoCount": 35
+  "pendingTarRepos": [],
+  "adoptionCount": 39,
+  "legacyTarRepoCount": 0
 }
