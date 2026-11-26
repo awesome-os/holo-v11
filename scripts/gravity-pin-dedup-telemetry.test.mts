@@ -5,6 +5,7 @@ import {
   buildGravityTelemetryReport,
   compareVersions,
   computeDedupMetrics,
+  computeMaterializationMetrics,
   computePercentile,
   computePinningMetrics,
   serializeGravityNdjson,
@@ -49,11 +50,75 @@ test('computePinningMetrics flags drifted and bumped libraries accurately', () =
     { aheadOfChromePins: { openssl: { version: '4.1.0' }, harfbuzz: { version: '15.2.0' } } },
   );
   assert.equal(pinning.trackedUpstreamLibs, 3);
-  assert.equal(pinning.atMaxCount, 1);
+  assert.equal(pinning.atMaxCount, 2);
   assert.equal(pinning.bumpedCount, 1);
   assert.equal(pinning.aheadOfChromeCount, 17);
   assert.equal(pinning.v11UniversePackages, 5070);
-  assert.equal(pinning.driftedLibs.length, 2);
+  assert.equal(pinning.driftedLibs.length, 1);
+  assert.equal(pinning.driftedLibs[0]?.pkg, 'zstd');
+});
+
+test('computePinningMetrics Bug #1 fix: universe version & bumped flag eliminate false drift on fresh bumps', () => {
+  const freshBump = computePinningMetrics(
+    {
+      totalTracked: 1,
+      libraries: [
+        { pkg: 'libpng', repo: 'pnggroup/libpng', upstreamVersion: '1.6.59', previousV11: '1.6.58', bumped: true },
+      ],
+    },
+    {},
+    { totalPackages: 5078, packages: [{ name: 'libpng', version: '1.6.59' }] },
+    {},
+  );
+  assert.deepEqual(freshBump.driftedLibs, []);
+  assert.equal(freshBump.atMaxCount, 1);
+  assert.equal(freshBump.bumpedCount, 1);
+
+  const laggingUnbumped = computePinningMetrics(
+    {
+      totalTracked: 1,
+      libraries: [
+        { pkg: 'libpng', repo: 'pnggroup/libpng', upstreamVersion: '1.6.59', previousV11: '1.6.58', bumped: false },
+      ],
+    },
+    {},
+    { totalPackages: 5078, packages: [{ name: 'libpng', version: '1.6.58' }] },
+    {},
+  );
+  assert.equal(laggingUnbumped.driftedLibs.length, 1);
+  assert.equal(laggingUnbumped.driftedLibs[0]?.pkg, 'libpng');
+  assert.equal(laggingUnbumped.driftedLibs[0]?.pinned, '1.6.58');
+  assert.equal(laggingUnbumped.atMaxCount, 0);
+});
+
+test('computeMaterializationMetrics distinguishes real compiled binaries from metadata assets', () => {
+  const mat = computeMaterializationMetrics(
+    {
+      totalTracked: 5,
+      libraries: [
+        { pkg: 'brotli', upstreamVersion: '1.2.1' },
+        { pkg: 'zlib', upstreamVersion: '1.4' },
+        { pkg: 'ada', upstreamVersion: '4.1.1' },
+        { pkg: 'openssl', upstreamVersion: '4.1.0' },
+        { pkg: 'limine', upstreamVersion: '12.11.1' },
+      ],
+    },
+    [
+      { repo: 'upstream-mirrors', filename: 'libbrotli-linux-x64.so' },
+      { repo: 'upstream-mirrors', filename: 'libz-win64.dll' },
+      { repo: 'upstream-mirrors', filename: 'libada-wasm32-wasi.wasm' },
+      { repo: 'upstream-mirrors', filename: 'SHA512SUMS-openssl.txt' },
+      { repo: 'upstream-mirrors', filename: 'openssl-manifest.json' },
+      { repo: 'awesome-os', filename: 'limine.conf' },
+      { repo: 'awesome-os', filename: 'README.md' },
+    ],
+  );
+  assert.equal(mat.totalTracked, 5);
+  assert.equal(mat.realCompiledCount, 3);
+  assert.equal(mat.virtualPinOnlyCount, 2);
+  assert.equal(mat.realMaterializationPct, 60);
+  assert.deepEqual(mat.realCompiledLibs, ['brotli', 'zlib', 'ada']);
+  assert.deepEqual(mat.virtualPinOnlyLibs, ['openssl', 'limine']);
 });
 
 test('compareVersions & computePinningMetrics treat pinned >= upstream (e.g. linux 7.3.6 vs 7.3) as at-max', () => {
@@ -87,10 +152,26 @@ test('compareVersions & computePinningMetrics treat pinned >= upstream (e.g. lin
   assert.equal(behindPinning.driftedLibs[0]?.pkg, 'linux');
 });
 
-test('CORE_ACTIVE_REPOS tracks active stack without archived ladybird', () => {
+test('CORE_ACTIVE_REPOS tracks the 12 active flat-org engineering repos without archived repos', () => {
   const repos: readonly string[] = CORE_ACTIVE_REPOS;
-  assert.equal(repos.includes('ladybird'), false);
-  for (const required of ['devtools', 'llama.cpp', 'colibri', 'firecracker']) {
+  assert.equal(repos.length, 12);
+  for (const archived of ['ladybird', 'llama.cpp', 'colibri', 'firecracker', 'desktop', 'holo-compiler']) {
+    assert.equal(repos.includes(archived), false, `Expected archived ${archived} to be excluded`);
+  }
+  for (const required of [
+    'awesome-os',
+    't2linux-baseline',
+    'chromium-baseline',
+    'agent-platform',
+    'devtools',
+    'wordpress-ecosystem',
+    'holo-v11',
+    'maintenance-workflows',
+    'upstream-mirrors',
+    'dockerimages',
+    'installer',
+    'deployment',
+  ]) {
     assert.equal(repos.includes(required), true, `Expected ${required} in CORE_ACTIVE_REPOS`);
   }
 });
@@ -173,13 +254,13 @@ test('latestFleetPassRatePct reflects head health independently of rolling histo
       ],
     ],
     [
-      'llama.cpp',
+      'awesome-os',
       [
         { name: 'CI', status: 'completed', conclusion: 'success', run_started_at: '2026-11-26T18:10:00Z', updated_at: '2026-11-26T18:10:30Z' },
       ],
     ],
     [
-      'colibri',
+      'devtools',
       [
         { name: 'CI', status: 'in_progress', conclusion: null, run_started_at: '2026-11-26T18:15:00Z', updated_at: '2026-11-26T18:15:10Z' },
       ],
@@ -201,7 +282,7 @@ test('latestFleetPassRatePct reflects head health independently of rolling histo
   assert.equal(allHeadGreen.gravityDamper.latestFleetPassRatePct, 100);
   assert.equal(allHeadGreen.gravityDamper.overallPassRatePct, 66.7);
 
-  runsByRepo.set('firecracker', [
+  runsByRepo.set('t2linux-baseline', [
     { name: 'CI', status: 'completed', conclusion: 'failure', run_started_at: '2026-11-26T18:20:00Z', updated_at: '2026-11-26T18:20:10Z' },
   ]);
   const partialHead = buildGravityTelemetryReport({

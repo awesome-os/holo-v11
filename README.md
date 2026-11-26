@@ -34,13 +34,14 @@ Every `repository://` and `project://` URI resolves to an immutable SHA-512 dige
 
 | Metric | Live Value | Source |
 | :--- | :--- | :--- |
-| **Indexed Repositories** | `60` repos (active `awesome-os/*` + `37`-repo `CONSOLIDATED_ARCHIVE_ALLOWLIST` in [`scripts/warm-global-cas.mts`](scripts/warm-global-cas.mts), including `v11-chromium-baseline-latest` and `v11-devtools-launchers-latest`) | [`index/cas-v11-global-manifest.json`](index/cas-v11-global-manifest.json) |
-| **Indexed Release Assets** | `413` assets | [`index/cas-v11-global-manifest.json`](index/cas-v11-global-manifest.json) |
-| **Unique SHA-512 Blobs** | `402` unique blobs (`80.79` MB saved · `5.56%` CAS dedup) | [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) |
-| **Total CAS Volume** | `1454` MB raw (`1373.21` MB unique) | [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) |
-| **Upstream Version Pinning** | `60/60` tracked upstreams at max (`0` drifted · `17` ahead-of-Chrome · `5075` `v11` universe packages) | [`scripts/gravity-pin-dedup-telemetry.mts`](scripts/gravity-pin-dedup-telemetry.mts) |
+| **Indexed Repositories** | `61` repos (active `awesome-os/*` + `74`-repo `CONSOLIDATED_ARCHIVE_ALLOWLIST` in [`scripts/warm-global-cas.mts`](scripts/warm-global-cas.mts), including `v11-chromium-baseline-latest`, `v11-devtools-launchers-latest`, `v11-max-5os-latest`, and `v11-oci-latest`) | [`index/cas-v11-global-manifest.json`](index/cas-v11-global-manifest.json) |
+| **Indexed Release Assets** | `461` assets | [`index/cas-v11-global-manifest.json`](index/cas-v11-global-manifest.json) |
+| **Unique SHA-512 Blobs** | `450` unique blobs (`80.79` MB saved · `4.7%` CAS dedup) | [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) |
+| **Total CAS Volume** | `1717.15` MB raw (`1636.36` MB unique) | [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) |
+| **Upstream Version Pinning** | `68/68` tracked upstreams at max (`0` drifted · `18` ahead-of-Chrome · `5078` `v11` universe packages) | [`scripts/gravity-pin-dedup-telemetry.mts`](scripts/gravity-pin-dedup-telemetry.mts) |
+| **CAS Binary Materialization** | `15/68` (`22.06%`) real compiled CAS binaries vs `53/68` virtual-pin only | [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) |
 | **Zero-Duplication & Cleanliness** | `dup_v8 = 0 B` · `b8g-ghost` remnants `= 0` | [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) |
-| **Fleet Head Health** | `100%` (`20/20` monitored repos passing latest CI) | [`dashboard/oversight.html`](dashboard/oversight.html) |
+| **Fleet Head Health** | `100%` (`12/12` core active flat-org repos passing latest CI) | [`dashboard/oversight.html`](dashboard/oversight.html) |
 
 ---
 

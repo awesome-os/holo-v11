@@ -13,6 +13,7 @@
  * Strictly `erasableSyntaxOnly: true`, Node 22+ built-ins only.
  */
 
+import { execFileSync } from 'node:child_process';
 import { createHash, createPrivateKey, createPublicKey, sign } from 'node:crypto';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -77,8 +78,21 @@ async function resolveManifestSigner(): Promise<
 
 const signManifestEd25519 = await resolveManifestSigner();
 
+function resolveGithubToken(): string {
+  const envTok = process.env.GH_TOKEN || process.env.GITHUB_TOKEN || '';
+  if (envTok) return envTok;
+  try {
+    return execFileSync('gh', ['auth', 'token'], {
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+  } catch {
+    return '';
+  }
+}
+
 const ORG = process.env.AWESOME_OS_ORG || 'awesome-os';
-const TOKEN = process.env.GH_TOKEN || process.env.GITHUB_TOKEN || '';
+const TOKEN = resolveGithubToken();
 const MAX_ASSET_BYTES = Number(process.env.MAX_ASSET_MB || '250') * 1024 * 1024;
 const WARM_DISK_MAX_BYTES = Number(process.env.WARM_DISK_MAX_MB || '32') * 1024 * 1024;
 const WRITE_LOCAL_CAS = process.argv.includes('--write-local-cas');
@@ -88,7 +102,7 @@ const OUT_DIR = path.resolve(process.cwd(), 'index');
 
 /**
  * Consolidated standalone repositories that were archived after folding into the
- * 5 canonical monorepos, but still host live GitHub Release blobs referenced by
+ * canonical monorepos, but still host live GitHub Release blobs referenced by
  * downstream Holo v11 consumers (e.g. `devtools` Theia/IDE hydration).
  * Dead legacy forks (`pouchdb`, `rollup`, `modern-picomatch`, `ws`, `experiments`)
  * and `b8g-ghost` repos remain excluded.
@@ -131,6 +145,44 @@ const CONSOLIDATED_ARCHIVE_ALLOWLIST = new Set<string>([
   'bootloader',
   'holo-ffi',
   'b8g-production-rack',
+  // Spin-Wave Flat Gravity Collapse (37 absorbed repos)
+  'desktop',
+  'desktop-omarchy',
+  'noctalia',
+  'chonkstep',
+  'explorer',
+  'host-manager',
+  'holo-compiler',
+  'holo-pm',
+  'holo-sdk',
+  'maclab',
+  'siliconforest',
+  'siliconforest-m1n1',
+  'wry',
+  'webui',
+  'sectium-browser',
+  'libuv',
+  'lo',
+  'typescript',
+  'ts-morph',
+  'ts-sema',
+  'universal-git',
+  'coreutils',
+  'cargo',
+  'pnpm',
+  'uv',
+  'go-lang',
+  'dart',
+  'firecracker',
+  'ory-polis',
+  'gitlab-foss',
+  'gitaly',
+  'gitlab-runner',
+  'gitlab-shell',
+  'gitlab-pages',
+  'llama.cpp',
+  'colibri',
+  'vllm',
 ]);
 
 const apiHeaders: Record<string, string> = {
@@ -191,16 +243,34 @@ function isExecutableAsset(filename: string): boolean {
   );
 }
 
+class GitHubRateLimitError extends Error {
+  constructor(url: string, status: number, remaining: string | null, reset: string | null) {
+    super(
+      `GitHub API rate limit hit (HTTP ${status}, remaining=${remaining ?? 'unknown'}, reset=${reset ?? 'unknown'}) on ${url}`,
+    );
+    this.name = 'GitHubRateLimitError';
+  }
+}
+
+async function ghFetchJson<T>(url: string, allow404 = false): Promise<T | null> {
+  const res = await fetch(url, { headers: apiHeaders });
+  const remaining = res.headers.get('x-ratelimit-remaining');
+  const reset = res.headers.get('x-ratelimit-reset');
+  if (res.status === 403 || res.status === 429 || remaining === '0') {
+    throw new GitHubRateLimitError(url, res.status, remaining, reset);
+  }
+  if (allow404 && res.status === 404) return null;
+  if (!res.ok) throw new Error(`GitHub API HTTP ${res.status} on ${url}`);
+  return (await res.json()) as T;
+}
+
 async function listOrgRepos(): Promise<string[]> {
   const names: string[] = [];
   for (let page = 1; page <= 5; page++) {
-    const res = await fetch(
+    const batch = await ghFetchJson<GhRepo[]>(
       `https://api.github.com/orgs/${ORG}/repos?per_page=100&page=${page}&type=public`,
-      { headers: apiHeaders },
     );
-    if (!res.ok) throw new Error(`GitHub repos API HTTP ${res.status}`);
-    const batch = (await res.json()) as GhRepo[];
-    if (batch.length === 0) break;
+    if (!batch || batch.length === 0) break;
     for (const r of batch) {
       if (r.name === 'holo-sdk') continue;
       if (!r.archived || CONSOLIDATED_ARCHIVE_ALLOWLIST.has(r.name)) {
@@ -257,12 +327,11 @@ async function worker(): Promise<void> {
   while (idx < repos.length) {
     const repo = repos[idx++]!;
     try {
-      const relRes = await fetch(`https://api.github.com/repos/${ORG}/${repo}/releases/latest`, {
-        headers: apiHeaders,
-      });
-      if (!relRes.ok) continue;
-      const rel = (await relRes.json()) as GhRelease;
-      if (!rel.tag_name || !Array.isArray(rel.assets) || rel.assets.length === 0) continue;
+      const rel = await ghFetchJson<GhRelease>(
+        `https://api.github.com/repos/${ORG}/${repo}/releases/latest`,
+        true,
+      );
+      if (!rel || !rel.tag_name || !Array.isArray(rel.assets) || rel.assets.length === 0) continue;
 
       for (const asset of rel.assets) {
         if (/^b8g-ghost/i.test(asset.name)) continue;
@@ -290,11 +359,13 @@ async function worker(): Promise<void> {
             blobPath: `v11/files/${sha512.slice(0, 2)}/${blobName}`,
             downloadUrl: asset.browser_download_url,
           });
-        } catch {
+        } catch (err) {
+          if (err instanceof GitHubRateLimitError) throw err;
           // non-fatal single asset failure
         }
       }
-    } catch {
+    } catch (err) {
+      if (err instanceof GitHubRateLimitError) throw err;
       // non-fatal repo failure
     }
   }

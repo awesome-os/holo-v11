@@ -13,24 +13,17 @@ import { fileURLToPath } from 'node:url';
 
 const REPOS = [
   'awesome-os/awesome-os',
-  'awesome-os/agent-platform',
-  'awesome-os/chromium-baseline',
-  'awesome-os/sectium-browser',
-  'awesome-os/lo',
-  'awesome-os/holo-v11',
-  'awesome-os/holo-compiler',
-  'awesome-os/holo-pm',
-  'awesome-os/desktop',
   'awesome-os/t2linux-baseline',
+  'awesome-os/chromium-baseline',
+  'awesome-os/agent-platform',
   'awesome-os/devtools',
+  'awesome-os/wordpress-ecosystem',
+  'awesome-os/holo-v11',
   'awesome-os/maintenance-workflows',
+  'awesome-os/upstream-mirrors',
+  'awesome-os/dockerimages',
   'awesome-os/installer',
   'awesome-os/deployment',
-  'awesome-os/host-manager',
-  'awesome-os/colibri',
-  'awesome-os/pnpm',
-  'awesome-os/cargo',
-  'awesome-os/uv',
 ] as const;
 
 interface RunnerEntry {
@@ -167,6 +160,7 @@ const gravityRaw = readJsonIfExists<{
   generatedAt?: string;
   abiMagic?: string;
   pinning?: Record<string, unknown>;
+  materialization?: Record<string, unknown>;
   dedup?: Record<string, unknown>;
   gravityDamper?: Record<string, unknown>;
 } | null>(join(repoRoot, 'reports', 'gravity-telemetry.json'), null);
@@ -212,6 +206,7 @@ const telemetry = {
         generatedAt: gravityRaw.generatedAt ?? new Date().toISOString(),
         abiMagic: gravityRaw.abiMagic ?? '0x33564742',
         pinning: gravityRaw.pinning ?? null,
+        materialization: gravityRaw.materialization ?? null,
         dedup: gravityRaw.dedup ?? null,
         gravityDamper: gravityRaw.gravityDamper ?? null,
       }

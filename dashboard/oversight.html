@@ -230,6 +230,7 @@
 
     const dedup = g.dedup || {};
     const pin = g.pinning || {};
+    const mat = g.materialization || null;
     const damper = g.gravityDamper || {};
     const dupV8 = dedup.dupV8Bytes ?? 0;
     const ghosts = dedup.b8gGhostRemnants ?? 0;
@@ -245,10 +246,15 @@
     const headHealthPct = damper.latestFleetPassRatePct ?? (completedLatest > 0 ? Number(((passingLatest / completedLatest) * 100).toFixed(1)) : 0);
     const headHealthColor = headHealthPct >= 100 ? 'var(--ok)' : headHealthPct >= 80 ? 'var(--warn)' : 'var(--err)';
 
+    const matHtml = mat
+      ? `<div class="gravity-stat"><div class="gv" style="color:var(--info);">${mat.realCompiledCount ?? 0} / ${mat.totalTracked ?? 0} (${mat.realMaterializationPct ?? 0}%)</div><div class="gk">Real Compiled CAS Binaries (${mat.virtualPinOnlyCount ?? 0} virtual-pin only)</div></div>`
+      : '';
+
     kpisEl.innerHTML = `
       <div class="gravity-stat"><div class="gv" style="color:var(--ok);">${dedup.savedMb ?? 0} MB (${dedup.dedupRatioPct ?? 0}%)</div><div class="gk">SHA-512 CAS Dedup Savings (${dedup.dedupedBlobs ?? 0} deduped blobs)</div></div>
       <div class="gravity-stat"><div class="gv">${dedup.uniqueSha512Blobs ?? 0} / ${dedup.totalAssets ?? 0}</div><div class="gk">Unique SHA-512 Blobs / Total Assets</div></div>
       <div class="gravity-stat"><div class="gv" style="color:var(--accent);">${pin.atMaxCount ?? 0} / ${pin.trackedUpstreamLibs ?? 0}</div><div class="gk">Pinned Libs at Max (${pin.aheadOfChromeCount ?? 0} ahead-of-Chrome)</div></div>
+      ${matHtml}
       <div class="gravity-stat"><div class="gv" style="color:${headHealthColor};">${headHealthPct}%</div><div class="gk">Head Health (${passingLatest}/${completedLatest} GREEN)</div></div>
       <div class="gravity-stat"><div class="gv" style="color:var(--ok);">${damper.overallPassRatePct ?? 0}%</div><div class="gk">Rolling Fleet Pass Rate (${damper.runnerFleet?.totalSampledRuns ?? 0} sampled runs)</div></div>
     `;

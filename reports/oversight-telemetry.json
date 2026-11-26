@@ -1,14 +1,14 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T20:57:46.370Z",
+  "generatedAt": "2026-11-26T22:19:09.987Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
-    "totalReposMonitored": 19,
-    "passingRuns": 19,
+    "totalReposMonitored": 12,
+    "passingRuns": 12,
     "activeRuns": 0,
     "failingRuns": 0,
-    "upstreamLibsTracked": 60,
+    "upstreamLibsTracked": 68,
     "bigBoysCount": 22,
     "standaloneDiskSavedMb": 13987
   },
@@ -19,94 +19,22 @@
     "v8Hash": "a12d1e5662b8"
   },
   "casGlobal": {
-    "totalRepos": 60,
-    "totalAssets": 413,
-    "uniqueBlobs": 402,
-    "totalMb": 1454,
-    "warmedAt": "2026-11-26T20:57:30.303Z",
+    "totalRepos": 61,
+    "totalAssets": 461,
+    "uniqueBlobs": 450,
+    "totalMb": 1717.2,
+    "warmedAt": "2026-11-26T22:18:59.503Z",
     "planetaryEndpoint": "https://awesome-os.com/cas/v11/manifest.json"
   },
   "runners": [
     {
       "repo": "awesome-os/awesome-os",
-      "workflowName": "Holo-CI",
+      "workflowName": "Holo-E2E",
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:53:22Z",
-      "url": "https://github.com/awesome-os/awesome-os/actions/runs/45894224170"
-    },
-    {
-      "repo": "awesome-os/agent-platform",
-      "workflowName": "Holo-CI",
-      "status": "completed",
-      "conclusion": "success",
-      "branch": "main",
-      "updatedAt": "2026-11-26T20:19:45Z",
-      "url": "https://github.com/awesome-os/agent-platform/actions/runs/45890213608"
-    },
-    {
-      "repo": "awesome-os/chromium-baseline",
-      "workflowName": "Holo-CI",
-      "status": "completed",
-      "conclusion": "success",
-      "branch": "main",
-      "updatedAt": "2026-11-26T20:49:01Z",
-      "url": "https://github.com/awesome-os/chromium-baseline/actions/runs/45893726961"
-    },
-    {
-      "repo": "awesome-os/sectium-browser",
-      "workflowName": "Holo-CI",
-      "status": "completed",
-      "conclusion": "success",
-      "branch": "main",
-      "updatedAt": "2026-11-26T20:50:45Z",
-      "url": "https://github.com/awesome-os/sectium-browser/actions/runs/45893943188"
-    },
-    {
-      "repo": "awesome-os/lo",
-      "workflowName": "Holo-CI",
-      "status": "completed",
-      "conclusion": "success",
-      "branch": "main",
-      "updatedAt": "2026-11-26T20:51:01Z",
-      "url": "https://github.com/awesome-os/lo/actions/runs/45893968840"
-    },
-    {
-      "repo": "awesome-os/holo-v11",
-      "workflowName": "Sync Global Holo v11 Registry",
-      "status": "completed",
-      "conclusion": "success",
-      "branch": "main",
-      "updatedAt": "2026-11-26T20:45:34Z",
-      "url": "https://github.com/awesome-os/holo-v11/actions/runs/45893228880"
-    },
-    {
-      "repo": "awesome-os/holo-compiler",
-      "workflowName": "Holo-CI",
-      "status": "completed",
-      "conclusion": "success",
-      "branch": "main",
-      "updatedAt": "2026-11-26T20:50:48Z",
-      "url": "https://github.com/awesome-os/holo-compiler/actions/runs/45893950245"
-    },
-    {
-      "repo": "awesome-os/holo-pm",
-      "workflowName": "Warm Global v11 CAS CDN",
-      "status": "completed",
-      "conclusion": "success",
-      "branch": "main",
-      "updatedAt": "2026-11-26T20:52:35Z",
-      "url": "https://github.com/awesome-os/holo-pm/actions/runs/45894126387"
-    },
-    {
-      "repo": "awesome-os/desktop",
-      "workflowName": "Holo-CI",
-      "status": "completed",
-      "conclusion": "success",
-      "branch": "main",
-      "updatedAt": "2026-11-26T20:50:46Z",
-      "url": "https://github.com/awesome-os/desktop/actions/runs/45893938585"
+      "updatedAt": "2026-11-26T21:58:52Z",
+      "url": "https://github.com/awesome-os/awesome-os/actions/runs/45901710822"
     },
     {
       "repo": "awesome-os/t2linux-baseline",
@@ -114,17 +42,53 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:33:16Z",
-      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45891857055"
+      "updatedAt": "2026-11-26T21:52:45Z",
+      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45901069035"
+    },
+    {
+      "repo": "awesome-os/chromium-baseline",
+      "workflowName": "Holo-E2E",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T21:58:56Z",
+      "url": "https://github.com/awesome-os/chromium-baseline/actions/runs/45901700983"
+    },
+    {
+      "repo": "awesome-os/agent-platform",
+      "workflowName": "Holo-E2E",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T21:59:01Z",
+      "url": "https://github.com/awesome-os/agent-platform/actions/runs/45901714933"
     },
     {
       "repo": "awesome-os/devtools",
+      "workflowName": "Holo-E2E",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T21:58:55Z",
+      "url": "https://github.com/awesome-os/devtools/actions/runs/45901696416"
+    },
+    {
+      "repo": "awesome-os/wordpress-ecosystem",
+      "workflowName": "Holo-E2E",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T21:58:53Z",
+      "url": "https://github.com/awesome-os/wordpress-ecosystem/actions/runs/45901705848"
+    },
+    {
+      "repo": "awesome-os/holo-v11",
       "workflowName": "Holo-CI",
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:49:27Z",
-      "url": "https://github.com/awesome-os/devtools/actions/runs/45893785440"
+      "updatedAt": "2026-11-26T20:59:02Z",
+      "url": "https://github.com/awesome-os/holo-v11/actions/runs/45894878026"
     },
     {
       "repo": "awesome-os/maintenance-workflows",
@@ -132,17 +96,35 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:51:54Z",
-      "url": "https://github.com/awesome-os/maintenance-workflows/actions/runs/45894072660"
+      "updatedAt": "2026-11-26T21:51:11Z",
+      "url": "https://github.com/awesome-os/maintenance-workflows/actions/runs/45900901956"
     },
     {
-      "repo": "awesome-os/installer",
+      "repo": "awesome-os/upstream-mirrors",
       "workflowName": "Holo-CI",
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:52:31Z",
-      "url": "https://github.com/awesome-os/installer/actions/runs/45894134844"
+      "updatedAt": "2026-11-26T21:44:22Z",
+      "url": "https://github.com/awesome-os/upstream-mirrors/actions/runs/45900159764"
+    },
+    {
+      "repo": "awesome-os/dockerimages",
+      "workflowName": "Holo-CI",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T21:52:22Z",
+      "url": "https://github.com/awesome-os/dockerimages/actions/runs/45901038840"
+    },
+    {
+      "repo": "awesome-os/installer",
+      "workflowName": "Holo-E2E",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T22:07:10Z",
+      "url": "https://github.com/awesome-os/installer/actions/runs/45902630110"
     },
     {
       "repo": "awesome-os/deployment",
@@ -152,51 +134,6 @@
       "branch": "main",
       "updatedAt": "2026-11-26T19:09:14Z",
       "url": "https://github.com/awesome-os/deployment/actions/runs/45881384630"
-    },
-    {
-      "repo": "awesome-os/host-manager",
-      "workflowName": "Holo-CI",
-      "status": "completed",
-      "conclusion": "success",
-      "branch": "main",
-      "updatedAt": "2026-11-26T20:25:42Z",
-      "url": "https://github.com/awesome-os/host-manager/actions/runs/45890935368"
-    },
-    {
-      "repo": "awesome-os/colibri",
-      "workflowName": "CI — Awesome-OS Colibri (v11 CAS Bridge & LumiBERT 2.8ms)",
-      "status": "completed",
-      "conclusion": "success",
-      "branch": "main",
-      "updatedAt": "2026-11-26T19:32:39Z",
-      "url": "https://github.com/awesome-os/colibri/actions/runs/45884313942"
-    },
-    {
-      "repo": "awesome-os/pnpm",
-      "workflowName": "Release awesome-os CAS pnpm",
-      "status": "completed",
-      "conclusion": "success",
-      "branch": "main",
-      "updatedAt": "2026-11-26T18:58:40Z",
-      "url": "https://github.com/awesome-os/pnpm/actions/runs/45876318538"
-    },
-    {
-      "repo": "awesome-os/cargo",
-      "workflowName": "Release CAS Cargo & libcargo",
-      "status": "completed",
-      "conclusion": "success",
-      "branch": "v0.1.0",
-      "updatedAt": "2026-11-24T21:01:07Z",
-      "url": "https://github.com/awesome-os/cargo/actions/runs/45484353512"
-    },
-    {
-      "repo": "awesome-os/uv",
-      "workflowName": "Release Awesome-OS CAS uv + libuvpy",
-      "status": "completed",
-      "conclusion": "success",
-      "branch": "main",
-      "updatedAt": "2026-11-25T08:29:14Z",
-      "url": "https://github.com/awesome-os/uv/actions/runs/45573282355"
     }
   ],
   "upstreams": [
@@ -206,6 +143,7 @@
       "upstreamTag": "v7.3",
       "upstreamVersion": "7.3",
       "previousV11": "7.3.6",
+      "currentV11": "7.3.6",
       "bumped": false
     },
     {
@@ -214,6 +152,7 @@
       "upstreamTag": "v12.11.1",
       "upstreamVersion": "12.11.1",
       "previousV11": "12.11.1",
+      "currentV11": "12.11.1",
       "bumped": false
     },
     {
@@ -222,6 +161,7 @@
       "upstreamTag": "v1.53.0",
       "upstreamVersion": "1.53.0",
       "previousV11": "1.53.0",
+      "currentV11": "1.53.0",
       "bumped": false
     },
     {
@@ -230,6 +170,7 @@
       "upstreamTag": "openssl-4.1.0",
       "upstreamVersion": "4.1.0",
       "previousV11": "4.1.0",
+      "currentV11": "4.1.0",
       "bumped": false
     },
     {
@@ -238,6 +179,7 @@
       "upstreamTag": "mbedtls-4.3.0",
       "upstreamVersion": "4.3.0",
       "previousV11": "4.3.0",
+      "currentV11": "4.3.0",
       "bumped": false
     },
     {
@@ -246,6 +188,7 @@
       "upstreamTag": "v1.6.0",
       "upstreamVersion": "1.6.0",
       "previousV11": "1.6.0",
+      "currentV11": "1.6.0",
       "bumped": false
     },
     {
@@ -254,6 +197,7 @@
       "upstreamTag": "v1.4",
       "upstreamVersion": "1.4",
       "previousV11": "1.4",
+      "currentV11": "1.4",
       "bumped": false
     },
     {
@@ -262,6 +206,7 @@
       "upstreamTag": "2.3.3",
       "upstreamVersion": "2.3.3",
       "previousV11": "2.3.3",
+      "currentV11": "2.3.3",
       "bumped": false
     },
     {
@@ -270,6 +215,7 @@
       "upstreamTag": "v1.2.1",
       "upstreamVersion": "1.2.1",
       "previousV11": "1.2.1",
+      "currentV11": "1.2.1",
       "bumped": false
     },
     {
@@ -278,6 +224,7 @@
       "upstreamTag": "v1.11.1",
       "upstreamVersion": "1.11.1",
       "previousV11": "1.11.1",
+      "currentV11": "1.11.1",
       "bumped": false
     },
     {
@@ -286,6 +233,7 @@
       "upstreamTag": "v1.26",
       "upstreamVersion": "1.26",
       "previousV11": "1.26",
+      "currentV11": "1.26",
       "bumped": false
     },
     {
@@ -294,6 +242,7 @@
       "upstreamTag": "v3.8.11",
       "upstreamVersion": "3.8.11",
       "previousV11": "3.8.11",
+      "currentV11": "3.8.11",
       "bumped": false
     },
     {
@@ -302,6 +251,7 @@
       "upstreamTag": "v3.7.1",
       "upstreamVersion": "3.7.1",
       "previousV11": "3.7.1",
+      "currentV11": "3.7.1",
       "bumped": false
     },
     {
@@ -310,6 +260,7 @@
       "upstreamTag": "liburing-2.15",
       "upstreamVersion": "2.15",
       "previousV11": "2.15",
+      "currentV11": "2.15",
       "bumped": false
     },
     {
@@ -318,6 +269,7 @@
       "upstreamTag": "v3.8.2",
       "upstreamVersion": "3.8.2",
       "previousV11": "3.8.2",
+      "currentV11": "3.8.2",
       "bumped": false
     },
     {
@@ -326,6 +278,7 @@
       "upstreamTag": "curl-8_23_0",
       "upstreamVersion": "8.23.0",
       "previousV11": "8.23.0",
+      "currentV11": "8.23.0",
       "bumped": false
     },
     {
@@ -334,6 +287,7 @@
       "upstreamTag": "v1.71.0",
       "upstreamVersion": "1.71.0",
       "previousV11": "1.71.0",
+      "currentV11": "1.71.0",
       "bumped": false
     },
     {
@@ -342,6 +296,7 @@
       "upstreamTag": "v1.19.0",
       "upstreamVersion": "1.19.0",
       "previousV11": "1.19.0",
+      "currentV11": "1.19.0",
       "bumped": false
     },
     {
@@ -350,6 +305,7 @@
       "upstreamTag": "v1.26.0",
       "upstreamVersion": "1.26.0",
       "previousV11": "1.26.0",
+      "currentV11": "1.26.0",
       "bumped": false
     },
     {
@@ -358,6 +314,7 @@
       "upstreamTag": "v1.34.9",
       "upstreamVersion": "1.34.9",
       "previousV11": "1.34.9",
+      "currentV11": "1.34.9",
       "bumped": false
     },
     {
@@ -366,6 +323,7 @@
       "upstreamTag": "release/v9.4.4",
       "upstreamVersion": "9.4.4",
       "previousV11": "9.4.4",
+      "currentV11": "9.4.4",
       "bumped": false
     },
     {
@@ -374,6 +332,7 @@
       "upstreamTag": "v4.1.1",
       "upstreamVersion": "4.1.1",
       "previousV11": null,
+      "currentV11": null,
       "bumped": false
     },
     {
@@ -382,6 +341,7 @@
       "upstreamTag": "R_2_11_0",
       "upstreamVersion": "2.11.0",
       "previousV11": "2.11.0",
+      "currentV11": "2.11.0",
       "bumped": false
     },
     {
@@ -390,6 +350,7 @@
       "upstreamTag": "v5.3.0",
       "upstreamVersion": "5.3.0",
       "previousV11": "5.3.0",
+      "currentV11": "5.3.0",
       "bumped": false
     },
     {
@@ -398,6 +359,7 @@
       "upstreamTag": "v9.5.0",
       "upstreamVersion": "9.5.0",
       "previousV11": "9.5.0",
+      "currentV11": "9.5.0",
       "bumped": false
     },
     {
@@ -406,6 +368,7 @@
       "upstreamTag": "v8.4.0",
       "upstreamVersion": "8.4.0",
       "previousV11": "8.4.0",
+      "currentV11": "8.4.0",
       "bumped": false
     },
     {
@@ -414,6 +377,7 @@
       "upstreamTag": "2025-11-05",
       "upstreamVersion": "2025-11-05",
       "previousV11": "2025-11-05",
+      "currentV11": "2025-11-05",
       "bumped": false
     },
     {
@@ -422,6 +386,7 @@
       "upstreamTag": "v0.6.0",
       "upstreamVersion": "0.6.0",
       "previousV11": "0.6.0",
+      "currentV11": "0.6.0",
       "bumped": false
     },
     {
@@ -430,6 +395,7 @@
       "upstreamTag": "v36.2",
       "upstreamVersion": "36.2",
       "previousV11": "36.2",
+      "currentV11": "36.2",
       "bumped": false
     },
     {
@@ -438,6 +404,7 @@
       "upstreamTag": "release-79.1",
       "upstreamVersion": "79.1",
       "previousV11": "79.1",
+      "currentV11": "79.1",
       "bumped": false
     },
     {
@@ -446,222 +413,7 @@
       "upstreamTag": "version-3.54.1",
       "upstreamVersion": "3.54.1",
       "previousV11": "3.54.1",
-      "bumped": false
-    },
-    {
-      "pkg": "harfbuzz",
-      "repo": "harfbuzz/harfbuzz",
-      "upstreamTag": "15.2.0",
-      "upstreamVersion": "15.2.0",
-      "previousV11": null,
-      "bumped": false
-    },
-    {
-      "pkg": "woff2",
-      "repo": "google/woff2",
-      "upstreamTag": "v1.0.2",
-      "upstreamVersion": "1.0.2",
-      "previousV11": "1.0.2",
-      "bumped": false
-    },
-    {
-      "pkg": "vulkan-headers",
-      "repo": "KhronosGroup/Vulkan-Headers",
-      "upstreamTag": "v1.4.369",
-      "upstreamVersion": "1.4.369",
-      "previousV11": "1.4.369",
-      "bumped": false
-    },
-    {
-      "pkg": "vulkan-loader",
-      "repo": "KhronosGroup/Vulkan-Loader",
-      "upstreamTag": "v1.4.369",
-      "upstreamVersion": "1.4.369",
-      "previousV11": "1.4.369",
-      "bumped": false
-    },
-    {
-      "pkg": "glslang",
-      "repo": "KhronosGroup/glslang",
-      "upstreamTag": "16.6.0",
-      "upstreamVersion": "16.6.0",
-      "previousV11": "16.6.0",
-      "bumped": false
-    },
-    {
-      "pkg": "libsdl3",
-      "repo": "libsdl-org/SDL",
-      "upstreamTag": "release-3.4.20",
-      "upstreamVersion": "3.4.20",
-      "previousV11": "3.4.20",
-      "bumped": false
-    },
-    {
-      "pkg": "libjpeg-turbo",
-      "repo": "libjpeg-turbo/libjpeg-turbo",
-      "upstreamTag": "3.2.1",
-      "upstreamVersion": "3.2.1",
-      "previousV11": "3.2.1",
-      "bumped": false
-    },
-    {
-      "pkg": "libwebp",
-      "repo": "webmproject/libwebp",
-      "upstreamTag": "v1.6.0",
-      "upstreamVersion": "1.6.0",
-      "previousV11": "1.6.0",
-      "bumped": false
-    },
-    {
-      "pkg": "libavif",
-      "repo": "AOMediaCodec/libavif",
-      "upstreamTag": "v1.4.2",
-      "upstreamVersion": "1.4.2",
-      "previousV11": "1.4.2",
-      "bumped": false
-    },
-    {
-      "pkg": "dav1d",
-      "repo": "videolan/dav1d",
-      "upstreamTag": "1.5.5",
-      "upstreamVersion": "1.5.5",
-      "previousV11": "1.5.5",
-      "bumped": false
-    },
-    {
-      "pkg": "ffmpeg",
-      "repo": "FFmpeg/FFmpeg",
-      "upstreamTag": "n9.1",
-      "upstreamVersion": "9.1",
-      "previousV11": "9.1",
-      "bumped": false
-    },
-    {
-      "pkg": "openblas",
-      "repo": "OpenMathLib/OpenBLAS",
-      "upstreamTag": "v0.3.34",
-      "upstreamVersion": "0.3.34",
-      "previousV11": "0.3.34",
-      "bumped": false
-    },
-    {
-      "pkg": "nccl",
-      "repo": "NVIDIA/nccl",
-      "upstreamTag": "v2.32.7-1",
-      "upstreamVersion": "2.32.7",
-      "previousV11": null,
-      "bumped": false
-    },
-    {
-      "pkg": "cutlass",
-      "repo": "NVIDIA/cutlass",
-      "upstreamTag": "v4.9.0dev",
-      "upstreamVersion": "4.9.0",
-      "previousV11": null,
-      "bumped": false
-    },
-    {
-      "pkg": "cccl",
-      "repo": "NVIDIA/cccl",
-      "upstreamTag": "v3.5.0",
-      "upstreamVersion": "3.5.0",
-      "previousV11": null,
-      "bumped": false
-    },
-    {
-      "pkg": "triton",
-      "repo": "triton-lang/triton",
-      "upstreamTag": "v3.9.0",
-      "upstreamVersion": "3.9.0",
-      "previousV11": "3.9.0",
-      "bumped": false
-    },
-    {
-      "pkg": "flash-attention",
-      "repo": "Dao-AILab/flash-attention",
-      "upstreamTag": "v2.8.3.post2",
-      "upstreamVersion": "2.8.3",
-      "previousV11": null,
-      "bumped": false
-    },
-    {
-      "pkg": "rocm",
-      "repo": "ROCm/ROCm",
-      "upstreamTag": "rocm-7.14.0",
-      "upstreamVersion": "7.14.0",
-      "previousV11": null,
-      "bumped": false
-    },
-    {
-      "pkg": "onednn",
-      "repo": "oneapi-src/oneDNN",
-      "upstreamTag": "v3.15-pc",
-      "upstreamVersion": "3.15",
-      "previousV11": null,
-      "bumped": false
-    },
-    {
-      "pkg": "spirv-tools",
-      "repo": "KhronosGroup/SPIRV-Tools",
-      "upstreamTag": "v2026.4",
-      "upstreamVersion": "2026.4",
-      "previousV11": "2026.4",
-      "bumped": false
-    },
-    {
-      "pkg": "spirv-headers",
-      "repo": "KhronosGroup/SPIRV-Headers",
-      "upstreamTag": "vulkan-sdk-1.4.363.0",
-      "upstreamVersion": "1.4.363.0",
-      "previousV11": "1.4.363.0",
-      "bumped": false
-    },
-    {
-      "pkg": "xdna-driver",
-      "repo": "amd/xdna-driver",
-      "upstreamTag": "2.21.75",
-      "upstreamVersion": "2.21.75",
-      "previousV11": null,
-      "bumped": false
-    },
-    {
-      "pkg": "cmake",
-      "repo": "Kitware/CMake",
-      "upstreamTag": "v4.5.1",
-      "upstreamVersion": "4.5.1",
-      "previousV11": "4.5.1",
-      "bumped": false
-    },
-    {
-      "pkg": "ninja",
-      "repo": "ninja-build/ninja",
-      "upstreamTag": "v1.13.2",
-      "upstreamVersion": "1.13.2",
-      "previousV11": "1.13.2",
-      "bumped": false
-    },
-    {
-      "pkg": "meson",
-      "repo": "mesonbuild/meson",
-      "upstreamTag": "1.12.1",
-      "upstreamVersion": "1.12.1",
-      "previousV11": "1.12.1",
-      "bumped": false
-    },
-    {
-      "pkg": "pixman",
-      "repo": "gitlab.freedesktop.org/pixman/pixman",
-      "upstreamTag": "pixman-0.46.4",
-      "upstreamVersion": "0.46.4",
-      "previousV11": "0.46.4",
-      "bumped": false
-    },
-    {
-      "pkg": "cairo",
-      "repo": "gitlab.freedesktop.org/cairo/cairo",
-      "upstreamTag": "1.18.6",
-      "upstreamVersion": "1.18.6",
-      "previousV11": "1.18.6",
+      "currentV11": "3.54.1",
       "bumped": false
     },
     {
@@ -670,6 +422,322 @@
       "upstreamTag": "v2.15.4",
       "upstreamVersion": "2.15.4",
       "previousV11": "2.15.4",
+      "currentV11": "2.15.4",
+      "bumped": false
+    },
+    {
+      "pkg": "libxslt",
+      "repo": "GNOME/libxslt",
+      "upstreamTag": "v1.1.45",
+      "upstreamVersion": "1.1.45",
+      "previousV11": "1.1.45",
+      "currentV11": "1.1.45",
+      "bumped": false
+    },
+    {
+      "pkg": "onig",
+      "repo": "kkos/oniguruma",
+      "upstreamTag": "v6.9.10",
+      "upstreamVersion": "6.9.10",
+      "previousV11": "6.9.10",
+      "currentV11": "6.9.10",
+      "bumped": false
+    },
+    {
+      "pkg": "libgit2",
+      "repo": "libgit2/libgit2",
+      "upstreamTag": "v1.9.7",
+      "upstreamVersion": "1.9.7",
+      "previousV11": "1.9.7",
+      "currentV11": "1.9.7",
+      "bumped": false
+    },
+    {
+      "pkg": "librdkafka",
+      "repo": "confluentinc/librdkafka",
+      "upstreamTag": "v2.16.0",
+      "upstreamVersion": "2.16.0",
+      "previousV11": "2.16.0",
+      "currentV11": "2.16.0",
+      "bumped": false
+    },
+    {
+      "pkg": "mariadb-connector-c",
+      "repo": "mariadb-corporation/mariadb-connector-c",
+      "upstreamTag": "v3.4.11",
+      "upstreamVersion": "3.4.11",
+      "previousV11": "3.4.11",
+      "currentV11": "3.4.11",
+      "bumped": false
+    },
+    {
+      "pkg": "freetype",
+      "repo": "freetype/freetype",
+      "upstreamTag": "VER-2-15-0",
+      "upstreamVersion": "2.15.0",
+      "previousV11": "2.15.0",
+      "currentV11": "2.15.0",
+      "bumped": false
+    },
+    {
+      "pkg": "harfbuzz",
+      "repo": "harfbuzz/harfbuzz",
+      "upstreamTag": "15.2.0",
+      "upstreamVersion": "15.2.0",
+      "previousV11": null,
+      "currentV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "woff2",
+      "repo": "google/woff2",
+      "upstreamTag": "v1.0.2",
+      "upstreamVersion": "1.0.2",
+      "previousV11": "1.0.2",
+      "currentV11": "1.0.2",
+      "bumped": false
+    },
+    {
+      "pkg": "vips",
+      "repo": "libvips/libvips",
+      "upstreamTag": "v8.18.7",
+      "upstreamVersion": "8.18.7",
+      "previousV11": "8.18.7",
+      "currentV11": "8.18.7",
+      "bumped": false
+    },
+    {
+      "pkg": "vulkan-headers",
+      "repo": "KhronosGroup/Vulkan-Headers",
+      "upstreamTag": "v1.4.369",
+      "upstreamVersion": "1.4.369",
+      "previousV11": "1.4.369",
+      "currentV11": "1.4.369",
+      "bumped": false
+    },
+    {
+      "pkg": "vulkan-loader",
+      "repo": "KhronosGroup/Vulkan-Loader",
+      "upstreamTag": "v1.4.369",
+      "upstreamVersion": "1.4.369",
+      "previousV11": "1.4.369",
+      "currentV11": "1.4.369",
+      "bumped": false
+    },
+    {
+      "pkg": "glslang",
+      "repo": "KhronosGroup/glslang",
+      "upstreamTag": "16.6.0",
+      "upstreamVersion": "16.6.0",
+      "previousV11": "16.6.0",
+      "currentV11": "16.6.0",
+      "bumped": false
+    },
+    {
+      "pkg": "libsdl3",
+      "repo": "libsdl-org/SDL",
+      "upstreamTag": "release-3.4.20",
+      "upstreamVersion": "3.4.20",
+      "previousV11": "3.4.20",
+      "currentV11": "3.4.20",
+      "bumped": false
+    },
+    {
+      "pkg": "libpng",
+      "repo": "pnggroup/libpng",
+      "upstreamTag": "v1.6.59",
+      "upstreamVersion": "1.6.59",
+      "previousV11": "1.6.59",
+      "currentV11": "1.6.59",
+      "bumped": false
+    },
+    {
+      "pkg": "libjpeg-turbo",
+      "repo": "libjpeg-turbo/libjpeg-turbo",
+      "upstreamTag": "3.2.1",
+      "upstreamVersion": "3.2.1",
+      "previousV11": "3.2.1",
+      "currentV11": "3.2.1",
+      "bumped": false
+    },
+    {
+      "pkg": "libwebp",
+      "repo": "webmproject/libwebp",
+      "upstreamTag": "v1.6.0",
+      "upstreamVersion": "1.6.0",
+      "previousV11": "1.6.0",
+      "currentV11": "1.6.0",
+      "bumped": false
+    },
+    {
+      "pkg": "libavif",
+      "repo": "AOMediaCodec/libavif",
+      "upstreamTag": "v1.4.2",
+      "upstreamVersion": "1.4.2",
+      "previousV11": "1.4.2",
+      "currentV11": "1.4.2",
+      "bumped": false
+    },
+    {
+      "pkg": "dav1d",
+      "repo": "videolan/dav1d",
+      "upstreamTag": "1.5.5",
+      "upstreamVersion": "1.5.5",
+      "previousV11": "1.5.5",
+      "currentV11": "1.5.5",
+      "bumped": false
+    },
+    {
+      "pkg": "ffmpeg",
+      "repo": "FFmpeg/FFmpeg",
+      "upstreamTag": "n9.1",
+      "upstreamVersion": "9.1",
+      "previousV11": "9.1",
+      "currentV11": "9.1",
+      "bumped": false
+    },
+    {
+      "pkg": "openblas",
+      "repo": "OpenMathLib/OpenBLAS",
+      "upstreamTag": "v0.3.34",
+      "upstreamVersion": "0.3.34",
+      "previousV11": "0.3.34",
+      "currentV11": "0.3.34",
+      "bumped": false
+    },
+    {
+      "pkg": "nccl",
+      "repo": "NVIDIA/nccl",
+      "upstreamTag": "v2.32.7-1",
+      "upstreamVersion": "2.32.7.1",
+      "previousV11": null,
+      "currentV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "cutlass",
+      "repo": "NVIDIA/cutlass",
+      "upstreamTag": "v4.9.0dev",
+      "upstreamVersion": "4.9.0",
+      "previousV11": null,
+      "currentV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "cccl",
+      "repo": "NVIDIA/cccl",
+      "upstreamTag": "v3.5.0",
+      "upstreamVersion": "3.5.0",
+      "previousV11": null,
+      "currentV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "triton",
+      "repo": "triton-lang/triton",
+      "upstreamTag": "v3.9.0",
+      "upstreamVersion": "3.9.0",
+      "previousV11": "3.9.0",
+      "currentV11": "3.9.0",
+      "bumped": false
+    },
+    {
+      "pkg": "flash-attention",
+      "repo": "Dao-AILab/flash-attention",
+      "upstreamTag": "v2.8.3.post2",
+      "upstreamVersion": "2.8.3",
+      "previousV11": null,
+      "currentV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "rocm",
+      "repo": "ROCm/ROCm",
+      "upstreamTag": "rocm-7.14.0",
+      "upstreamVersion": "7.14.0",
+      "previousV11": null,
+      "currentV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "onednn",
+      "repo": "oneapi-src/oneDNN",
+      "upstreamTag": "v3.15-pc",
+      "upstreamVersion": "3.15",
+      "previousV11": null,
+      "currentV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "spirv-tools",
+      "repo": "KhronosGroup/SPIRV-Tools",
+      "upstreamTag": "v2026.4",
+      "upstreamVersion": "2026.4",
+      "previousV11": "2026.4",
+      "currentV11": "2026.4",
+      "bumped": false
+    },
+    {
+      "pkg": "spirv-headers",
+      "repo": "KhronosGroup/SPIRV-Headers",
+      "upstreamTag": "vulkan-sdk-1.4.363.0",
+      "upstreamVersion": "1.4.363.0",
+      "previousV11": "1.4.363.0",
+      "currentV11": "1.4.363.0",
+      "bumped": false
+    },
+    {
+      "pkg": "xdna-driver",
+      "repo": "amd/xdna-driver",
+      "upstreamTag": "2.21.75",
+      "upstreamVersion": "2.21.75",
+      "previousV11": null,
+      "currentV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "cmake",
+      "repo": "Kitware/CMake",
+      "upstreamTag": "v4.5.1",
+      "upstreamVersion": "4.5.1",
+      "previousV11": "4.5.1",
+      "currentV11": "4.5.1",
+      "bumped": false
+    },
+    {
+      "pkg": "ninja",
+      "repo": "ninja-build/ninja",
+      "upstreamTag": "v1.13.2",
+      "upstreamVersion": "1.13.2",
+      "previousV11": "1.13.2",
+      "currentV11": "1.13.2",
+      "bumped": false
+    },
+    {
+      "pkg": "meson",
+      "repo": "mesonbuild/meson",
+      "upstreamTag": "1.12.1",
+      "upstreamVersion": "1.12.1",
+      "previousV11": "1.12.1",
+      "currentV11": "1.12.1",
+      "bumped": false
+    },
+    {
+      "pkg": "pixman",
+      "repo": "gitlab.freedesktop.org/pixman/pixman",
+      "upstreamTag": "pixman-0.46.4",
+      "upstreamVersion": "0.46.4",
+      "previousV11": "0.46.4",
+      "currentV11": "0.46.4",
+      "bumped": false
+    },
+    {
+      "pkg": "cairo",
+      "repo": "gitlab.freedesktop.org/cairo/cairo",
+      "upstreamTag": "1.18.6",
+      "upstreamVersion": "1.18.6",
+      "previousV11": "1.18.6",
+      "currentV11": "1.18.6",
       "bumped": false
     },
     {
@@ -678,6 +746,7 @@
       "upstreamTag": "giflib-6.1.3",
       "upstreamVersion": "6.1.3",
       "previousV11": "6.1.3",
+      "currentV11": "6.1.3",
       "bumped": false
     }
   ],
@@ -900,292 +969,306 @@
   },
   "gravityTelemetry": {
     "schema": "awesome-os.gravity-telemetry.v1",
-    "generatedAt": "2026-11-26T20:57:32.706Z",
+    "generatedAt": "2026-11-26T22:19:01.133Z",
     "abiMagic": "0x33564742",
     "pinning": {
-      "trackedUpstreamLibs": 60,
-      "atMaxCount": 60,
+      "trackedUpstreamLibs": 68,
+      "atMaxCount": 68,
       "bumpedCount": 0,
-      "aheadOfChromeCount": 17,
+      "aheadOfChromeCount": 18,
       "driftedLibs": [],
-      "v11UniversePackages": 5075,
+      "v11UniversePackages": 5078,
       "maxVersionLock": {
         "totalLadybirdDeps": 49,
-        "coveredInV11": 33,
-        "overlapPercent": 67.35,
-        "raisedFromV11": 17,
-        "raisedFromLadybird": 1,
-        "equalAtMax": 15,
-        "ladybirdCustomPins": 16
+        "coveredInV11": 34,
+        "overlapPercent": 69.39,
+        "raisedFromV11": 18,
+        "raisedFromLadybird": 0,
+        "equalAtMax": 16,
+        "ladybirdCustomPins": 15
       }
     },
+    "materialization": {
+      "totalTracked": 68,
+      "realCompiledCount": 15,
+      "virtualPinOnlyCount": 53,
+      "realMaterializationPct": 22.06,
+      "realCompiledLibs": [
+        "linux",
+        "libuv",
+        "zstd",
+        "zlib",
+        "brotli",
+        "lz4",
+        "libdeflate",
+        "mimalloc",
+        "ada",
+        "expat",
+        "simdjson",
+        "simdutf",
+        "md4c",
+        "sqlite",
+        "libwebp"
+      ],
+      "virtualPinOnlyLibs": [
+        "limine",
+        "openssl",
+        "mbedtls",
+        "zlib-ng",
+        "libarchive",
+        "liburing",
+        "libffi",
+        "curl",
+        "nghttp2",
+        "nghttp3",
+        "ngtcp2",
+        "c-ares",
+        "llhttp",
+        "fast_float",
+        "re2",
+        "protobuf",
+        "icu4c",
+        "libxml2",
+        "libxslt",
+        "onig",
+        "libgit2",
+        "librdkafka",
+        "mariadb-connector-c",
+        "freetype",
+        "harfbuzz",
+        "woff2",
+        "vips",
+        "vulkan-headers",
+        "vulkan-loader",
+        "glslang",
+        "libsdl3",
+        "libpng",
+        "libjpeg-turbo",
+        "libavif",
+        "dav1d",
+        "ffmpeg",
+        "openblas",
+        "nccl",
+        "cutlass",
+        "cccl",
+        "triton",
+        "flash-attention",
+        "rocm",
+        "onednn",
+        "spirv-tools",
+        "spirv-headers",
+        "xdna-driver",
+        "cmake",
+        "ninja",
+        "meson",
+        "pixman",
+        "cairo",
+        "giflib"
+      ]
+    },
     "dedup": {
-      "totalAssets": 413,
-      "uniqueSha512Blobs": 402,
+      "totalAssets": 461,
+      "uniqueSha512Blobs": 450,
       "dedupedBlobs": 11,
-      "rawTotalMb": 1454,
-      "uniqueTotalMb": 1373.21,
+      "rawTotalMb": 1717.15,
+      "uniqueTotalMb": 1636.36,
       "savedMb": 80.79,
-      "dedupRatioPct": 5.56,
+      "dedupRatioPct": 4.7,
       "dupV8Bytes": 0,
       "b8gGhostRemnants": 0
     },
     "gravityDamper": {
       "dampingFactor": 0.65,
       "runnerFleet": {
-        "reposMonitored": 20,
+        "reposMonitored": 12,
         "activeRepos": 0,
-        "passingLatestRepos": 20,
+        "passingLatestRepos": 12,
         "failingLatestRepos": 0,
-        "completedLatestRepos": 20,
-        "totalSampledRuns": 163
+        "completedLatestRepos": 12,
+        "totalSampledRuns": 105
       },
-      "p50DurationSec": 23,
-      "p95DurationSec": 887,
-      "overallPassRatePct": 84.7,
+      "p50DurationSec": 20,
+      "p95DurationSec": 225,
+      "overallPassRatePct": 91.4,
       "latestFleetPassRatePct": 100,
-      "apiRateRemaining": 4279,
+      "apiRateRemaining": 4980,
       "apiRateLimit": 5000,
       "perRepoTelemetry": [
         {
           "repo": "awesome-os",
           "latestStatus": "completed",
           "latestConclusion": "success",
-          "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/awesome-os/actions/runs/45894224170",
-          "latestUpdatedAt": "2026-11-26T20:53:22Z",
+          "latestWorkflow": "Holo-E2E",
+          "latestUrl": "https://github.com/awesome-os/awesome-os/actions/runs/45901710822",
+          "latestUpdatedAt": "2026-11-26T21:58:52Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 9,
           "failingCount": 1,
           "passRatePct": 90,
-          "p50DurationSec": 15,
-          "p95DurationSec": 21,
-          "lastDurationSec": 20
-        },
-        {
-          "repo": "agent-platform",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
-          "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/agent-platform/actions/runs/45890213608",
-          "latestUpdatedAt": "2026-11-26T20:19:45Z",
-          "sampleCount": 9,
-          "completedCount": 9,
-          "passingCount": 6,
-          "failingCount": 3,
-          "passRatePct": 66.7,
-          "p50DurationSec": 44,
-          "p95DurationSec": 54,
-          "lastDurationSec": 11
-        },
-        {
-          "repo": "chromium-baseline",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
-          "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/chromium-baseline/actions/runs/45893726961",
-          "latestUpdatedAt": "2026-11-26T20:49:01Z",
-          "sampleCount": 10,
-          "completedCount": 10,
-          "passingCount": 9,
-          "failingCount": 1,
-          "passRatePct": 90,
-          "p50DurationSec": 20,
-          "p95DurationSec": 39,
-          "lastDurationSec": 15
-        },
-        {
-          "repo": "desktop",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
-          "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/desktop/actions/runs/45893938585",
-          "latestUpdatedAt": "2026-11-26T20:50:46Z",
-          "sampleCount": 10,
-          "completedCount": 10,
-          "passingCount": 7,
-          "failingCount": 3,
-          "passRatePct": 70,
-          "p50DurationSec": 53,
-          "p95DurationSec": 71,
-          "lastDurationSec": 12
+          "p50DurationSec": 16,
+          "p95DurationSec": 25,
+          "lastDurationSec": 24
         },
         {
           "repo": "t2linux-baseline",
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45891857055",
-          "latestUpdatedAt": "2026-11-26T20:33:16Z",
+          "latestUrl": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45901069035",
+          "latestUpdatedAt": "2026-11-26T21:52:45Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 10,
           "failingCount": 0,
           "passRatePct": 100,
-          "p50DurationSec": 45,
-          "p95DurationSec": 2051,
-          "lastDurationSec": 9
-        },
-        {
-          "repo": "holo-v11",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
-          "latestWorkflow": "Sync Global Holo v11 Registry",
-          "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/45893228880",
-          "latestUpdatedAt": "2026-11-26T20:45:34Z",
-          "sampleCount": 10,
-          "completedCount": 10,
-          "passingCount": 10,
-          "failingCount": 0,
-          "passRatePct": 100,
-          "p50DurationSec": 25,
+          "p50DurationSec": 41,
           "p95DurationSec": 58,
-          "lastDurationSec": 58
+          "lastDurationSec": 17
         },
         {
-          "repo": "holo-compiler",
+          "repo": "chromium-baseline",
           "latestStatus": "completed",
           "latestConclusion": "success",
-          "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/holo-compiler/actions/runs/45893950245",
-          "latestUpdatedAt": "2026-11-26T20:50:48Z",
-          "sampleCount": 10,
-          "completedCount": 10,
-          "passingCount": 10,
-          "failingCount": 0,
-          "passRatePct": 100,
-          "p50DurationSec": 10,
-          "p95DurationSec": 483,
-          "lastDurationSec": 9
-        },
-        {
-          "repo": "holo-pm",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
-          "latestWorkflow": "Warm Global v11 CAS CDN",
-          "latestUrl": "https://github.com/awesome-os/holo-pm/actions/runs/45894126387",
-          "latestUpdatedAt": "2026-11-26T20:52:35Z",
-          "sampleCount": 10,
-          "completedCount": 10,
-          "passingCount": 10,
-          "failingCount": 0,
-          "passRatePct": 100,
-          "p50DurationSec": 37,
-          "p95DurationSec": 52,
-          "lastDurationSec": 24
-        },
-        {
-          "repo": "sectium-browser",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
-          "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/sectium-browser/actions/runs/45893943188",
-          "latestUpdatedAt": "2026-11-26T20:50:45Z",
-          "sampleCount": 10,
-          "completedCount": 10,
-          "passingCount": 10,
-          "failingCount": 0,
-          "passRatePct": 100,
-          "p50DurationSec": 671,
-          "p95DurationSec": 1065,
-          "lastDurationSec": 9
-        },
-        {
-          "repo": "devtools",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
-          "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/devtools/actions/runs/45893785440",
-          "latestUpdatedAt": "2026-11-26T20:49:27Z",
-          "sampleCount": 9,
-          "completedCount": 9,
-          "passingCount": 7,
-          "failingCount": 2,
-          "passRatePct": 77.8,
-          "p50DurationSec": 12,
-          "p95DurationSec": 21,
-          "lastDurationSec": 10
-        },
-        {
-          "repo": "llama.cpp",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
-          "latestWorkflow": "Holo v11 Check & Native Release",
-          "latestUrl": "https://github.com/awesome-os/llama.cpp/actions/runs/45883945291",
-          "latestUpdatedAt": "2026-11-26T19:32:16Z",
-          "sampleCount": 2,
-          "completedCount": 2,
-          "passingCount": 1,
-          "failingCount": 1,
-          "passRatePct": 50,
-          "p50DurationSec": 14,
-          "p95DurationSec": 204,
-          "lastDurationSec": 204
-        },
-        {
-          "repo": "colibri",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
-          "latestWorkflow": "CI — Awesome-OS Colibri (v11 CAS Bridge & LumiBERT 2.8ms)",
-          "latestUrl": "https://github.com/awesome-os/colibri/actions/runs/45884313942",
-          "latestUpdatedAt": "2026-11-26T19:32:39Z",
-          "sampleCount": 6,
-          "completedCount": 6,
-          "passingCount": 5,
-          "failingCount": 1,
-          "passRatePct": 83.3,
-          "p50DurationSec": 51,
-          "p95DurationSec": 6314,
-          "lastDurationSec": 51
-        },
-        {
-          "repo": "firecracker",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
-          "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/firecracker/actions/runs/45890369946",
-          "latestUpdatedAt": "2026-11-26T20:21:03Z",
-          "sampleCount": 3,
-          "completedCount": 3,
-          "passingCount": 2,
-          "failingCount": 1,
-          "passRatePct": 66.7,
-          "p50DurationSec": 8,
-          "p95DurationSec": 13,
-          "lastDurationSec": 13
-        },
-        {
-          "repo": "installer",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
-          "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/installer/actions/runs/45894134844",
-          "latestUpdatedAt": "2026-11-26T20:52:31Z",
+          "latestWorkflow": "Holo-E2E",
+          "latestUrl": "https://github.com/awesome-os/chromium-baseline/actions/runs/45901700983",
+          "latestUpdatedAt": "2026-11-26T21:58:56Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 9,
           "failingCount": 1,
           "passRatePct": 90,
-          "p50DurationSec": 10,
-          "p95DurationSec": 20,
-          "lastDurationSec": 16
+          "p50DurationSec": 21,
+          "p95DurationSec": 34,
+          "lastDurationSec": 34
         },
         {
-          "repo": "host-manager",
+          "repo": "agent-platform",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
+          "latestWorkflow": "Holo-E2E",
+          "latestUrl": "https://github.com/awesome-os/agent-platform/actions/runs/45901714933",
+          "latestUpdatedAt": "2026-11-26T21:59:01Z",
+          "sampleCount": 10,
+          "completedCount": 10,
+          "passingCount": 9,
+          "failingCount": 1,
+          "passRatePct": 90,
+          "p50DurationSec": 31,
+          "p95DurationSec": 54,
+          "lastDurationSec": 31
+        },
+        {
+          "repo": "devtools",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
+          "latestWorkflow": "Holo-E2E",
+          "latestUrl": "https://github.com/awesome-os/devtools/actions/runs/45901696416",
+          "latestUpdatedAt": "2026-11-26T21:58:55Z",
+          "sampleCount": 10,
+          "completedCount": 10,
+          "passingCount": 9,
+          "failingCount": 1,
+          "passRatePct": 90,
+          "p50DurationSec": 12,
+          "p95DurationSec": 35,
+          "lastDurationSec": 35
+        },
+        {
+          "repo": "wordpress-ecosystem",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
+          "latestWorkflow": "Holo-E2E",
+          "latestUrl": "https://github.com/awesome-os/wordpress-ecosystem/actions/runs/45901705848",
+          "latestUpdatedAt": "2026-11-26T21:58:53Z",
+          "sampleCount": 4,
+          "completedCount": 4,
+          "passingCount": 3,
+          "failingCount": 1,
+          "passRatePct": 75,
+          "p50DurationSec": 13,
+          "p95DurationSec": 28,
+          "lastDurationSec": 28
+        },
+        {
+          "repo": "holo-v11",
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/host-manager/actions/runs/45890935368",
-          "latestUpdatedAt": "2026-11-26T20:25:42Z",
+          "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/45894878026",
+          "latestUpdatedAt": "2026-11-26T20:59:02Z",
+          "sampleCount": 10,
+          "completedCount": 10,
+          "passingCount": 10,
+          "failingCount": 0,
+          "passRatePct": 100,
+          "p50DurationSec": 23,
+          "p95DurationSec": 58,
+          "lastDurationSec": 11
+        },
+        {
+          "repo": "maintenance-workflows",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
+          "latestWorkflow": "CI",
+          "latestUrl": "https://github.com/awesome-os/maintenance-workflows/actions/runs/45900901956",
+          "latestUpdatedAt": "2026-11-26T21:51:11Z",
           "sampleCount": 7,
           "completedCount": 7,
           "passingCount": 7,
           "failingCount": 0,
           "passRatePct": 100,
-          "p50DurationSec": 10,
-          "p95DurationSec": 18,
-          "lastDurationSec": 13
+          "p50DurationSec": 12,
+          "p95DurationSec": 14,
+          "lastDurationSec": 14
+        },
+        {
+          "repo": "upstream-mirrors",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
+          "latestWorkflow": "Holo-CI",
+          "latestUrl": "https://github.com/awesome-os/upstream-mirrors/actions/runs/45900159764",
+          "latestUpdatedAt": "2026-11-26T21:44:22Z",
+          "sampleCount": 10,
+          "completedCount": 10,
+          "passingCount": 8,
+          "failingCount": 2,
+          "passRatePct": 80,
+          "p50DurationSec": 65,
+          "p95DurationSec": 368,
+          "lastDurationSec": 9
+        },
+        {
+          "repo": "dockerimages",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
+          "latestWorkflow": "Holo-CI",
+          "latestUrl": "https://github.com/awesome-os/dockerimages/actions/runs/45901038840",
+          "latestUpdatedAt": "2026-11-26T21:52:22Z",
+          "sampleCount": 10,
+          "completedCount": 10,
+          "passingCount": 9,
+          "failingCount": 1,
+          "passRatePct": 90,
+          "p50DurationSec": 21,
+          "p95DurationSec": 283,
+          "lastDurationSec": 10
+        },
+        {
+          "repo": "installer",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
+          "latestWorkflow": "Holo-E2E",
+          "latestUrl": "https://github.com/awesome-os/installer/actions/runs/45902630110",
+          "latestUpdatedAt": "2026-11-26T22:07:10Z",
+          "sampleCount": 10,
+          "completedCount": 10,
+          "passingCount": 9,
+          "failingCount": 1,
+          "passRatePct": 90,
+          "p50DurationSec": 14,
+          "p95DurationSec": 34,
+          "lastDurationSec": 27
         },
         {
           "repo": "deployment",
@@ -1202,70 +1285,6 @@
           "p50DurationSec": 22,
           "p95DurationSec": 40,
           "lastDurationSec": 40
-        },
-        {
-          "repo": "pnpm",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
-          "latestWorkflow": "Release awesome-os CAS pnpm",
-          "latestUrl": "https://github.com/awesome-os/pnpm/actions/runs/45876318538",
-          "latestUpdatedAt": "2026-11-26T18:58:40Z",
-          "sampleCount": 3,
-          "completedCount": 3,
-          "passingCount": 2,
-          "failingCount": 1,
-          "passRatePct": 66.7,
-          "p50DurationSec": 1949,
-          "p95DurationSec": 2315,
-          "lastDurationSec": 1757
-        },
-        {
-          "repo": "lo",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
-          "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/lo/actions/runs/45893968840",
-          "latestUpdatedAt": "2026-11-26T20:51:01Z",
-          "sampleCount": 10,
-          "completedCount": 10,
-          "passingCount": 10,
-          "failingCount": 0,
-          "passRatePct": 100,
-          "p50DurationSec": 10,
-          "p95DurationSec": 96,
-          "lastDurationSec": 12
-        },
-        {
-          "repo": "awesome-os.github.io",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
-          "latestWorkflow": "Deploy Static Site to GitHub Pages",
-          "latestUrl": "https://github.com/awesome-os/awesome-os.github.io/actions/runs/45876872210",
-          "latestUpdatedAt": "2026-11-26T18:33:55Z",
-          "sampleCount": 10,
-          "completedCount": 10,
-          "passingCount": 8,
-          "failingCount": 2,
-          "passRatePct": 80,
-          "p50DurationSec": 23,
-          "p95DurationSec": 37,
-          "lastDurationSec": 30
-        },
-        {
-          "repo": "ory-polis",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
-          "latestWorkflow": "CI",
-          "latestUrl": "https://github.com/awesome-os/ory-polis/actions/runs/45879337911",
-          "latestUpdatedAt": "2026-11-26T19:31:29Z",
-          "sampleCount": 10,
-          "completedCount": 10,
-          "passingCount": 2,
-          "failingCount": 6,
-          "passRatePct": 20,
-          "p50DurationSec": 282,
-          "p95DurationSec": 2341,
-          "lastDurationSec": 2341
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
   "schema": "awesome-os.v11-active-overrides.v1",
   "abiMagic": "0x33564742",
-  "generatedAt": "2026-11-26T20:57:30.406Z",
+  "generatedAt": "2026-11-26T22:18:59.612Z",
   "adoptedRepos": [
     {
       "repo": "b8g-ide",
@@ -169,10 +169,11 @@
     "chromium-baseline",
     "colibri",
     "devtools",
+    "dockerimages",
     "libv8_monolith",
     "llama.cpp",
     "sectium-browser"
   ],
   "adoptionCount": 23,
-  "legacyTarRepoCount": 6
+  "legacyTarRepoCount": 7
 }

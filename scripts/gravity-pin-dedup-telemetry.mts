@@ -18,25 +18,17 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 export const CORE_ACTIVE_REPOS = [
   'awesome-os',
-  'agent-platform',
-  'chromium-baseline',
-  'desktop',
   't2linux-baseline',
-  'holo-v11',
-  'holo-compiler',
-  'holo-pm',
-  'sectium-browser',
+  'chromium-baseline',
+  'agent-platform',
   'devtools',
-  'llama.cpp',
-  'colibri',
-  'firecracker',
+  'wordpress-ecosystem',
+  'holo-v11',
+  'maintenance-workflows',
+  'upstream-mirrors',
+  'dockerimages',
   'installer',
-  'host-manager',
   'deployment',
-  'pnpm',
-  'lo',
-  'awesome-os.github.io',
-  'ory-polis',
 ] as const;
 
 export interface CasManifestEntryLike {
@@ -55,6 +47,7 @@ export interface UpstreamLibLike {
   readonly upstreamTag?: string;
   readonly upstreamVersion?: string;
   readonly previousV11?: string | null;
+  readonly currentV11?: string | null;
   readonly bumped?: boolean;
 }
 
@@ -114,6 +107,15 @@ export interface PinningTelemetry {
   readonly maxVersionLock: MaxVersionLockLike['summary'] | null;
 }
 
+export interface MaterializationTelemetry {
+  readonly totalTracked: number;
+  readonly realCompiledCount: number;
+  readonly virtualPinOnlyCount: number;
+  readonly realMaterializationPct: number;
+  readonly realCompiledLibs: readonly string[];
+  readonly virtualPinOnlyLibs: readonly string[];
+}
+
 export interface DedupTelemetry {
   readonly totalAssets: number;
   readonly uniqueSha512Blobs: number;
@@ -167,6 +169,7 @@ export interface GravityTelemetryReport {
   readonly abiMagic: '0x33564742';
   readonly generatedAt: string;
   readonly pinning: PinningTelemetry;
+  readonly materialization: MaterializationTelemetry;
   readonly dedup: DedupTelemetry;
   readonly gravityDamper: GravityDamperTelemetry;
 }
@@ -257,11 +260,22 @@ export function computePinningMetrics(
   let atMaxCount = 0;
   let bumpedCount = 0;
 
+  const universeMap = new Map<string, string>();
+  for (const pkg of universe.packages ?? []) {
+    if (pkg.name && pkg.version) {
+      universeMap.set(pkg.name.toLowerCase(), pkg.version);
+    }
+  }
+
   for (const lib of libs) {
     const bumped = Boolean(lib.bumped);
     if (bumped) bumpedCount++;
     const upstream = lib.upstreamVersion ?? '';
-    const pinned = lib.previousV11 ?? null;
+    const pinned =
+      universeMap.get(lib.pkg.toLowerCase()) ??
+      lib.currentV11 ??
+      (bumped ? lib.upstreamVersion : lib.previousV11) ??
+      null;
     const isDrifted = pinned !== null && upstream !== '' && compareVersions(pinned, upstream) < 0;
     if (isDrifted) {
       driftedLibs.push({
@@ -287,6 +301,99 @@ export function computePinningMetrics(
     driftedLibs,
     v11UniversePackages: universe.totalPackages ?? (universe.packages?.length ?? 0),
     maxVersionLock: lock.summary ?? null,
+  };
+}
+
+const NON_BINARY_ASSET_RE =
+  /\.(json|txt|md|conf|svg|bmp|ico|html|ipxe|sh|ps1|h|gn|sha256|pdb|vsix|tar\.gz|tar\.zst|tar\.xz|tgz|zip|iso|qcow2|yaml|yml|toml|b8p)$/i;
+const COMPILED_BINARY_EXT_RE = /\.(so|dll|dylib|wasm|a|ko|lib|elf|o|exe)$/i;
+
+const LIB_BINARY_STEM_ALIASES: Readonly<Record<string, readonly string[]>> = {
+  zlib: ['zlib', 'libz', 'z'],
+  sqlite: ['sqlite', 'sqlite3', 'libsqlite3'],
+  'libjpeg-turbo': ['libjpeg-turbo', 'jpeg', 'libjpeg', 'turbojpeg', 'libturbojpeg'],
+  libsdl3: ['libsdl3', 'sdl3'],
+  icu4c: ['icu4c', 'icu', 'icudata', 'icuuc', 'icui18n'],
+  onig: ['onig', 'oniguruma', 'libonig'],
+  'vulkan-loader': ['vulkan-loader', 'vulkan', 'libvulkan'],
+  libxml2: ['libxml2', 'xml2'],
+  libxslt: ['libxslt', 'xslt'],
+  'c-ares': ['c-ares', 'cares', 'libcares'],
+};
+
+export function isRealCompiledBinaryAsset(filename: string): boolean {
+  const f = filename.trim();
+  if (!f) return false;
+  if (NON_BINARY_ASSET_RE.test(f)) return false;
+  if (/^os-release$/i.test(f) || /sums/i.test(f)) return false;
+  if (COMPILED_BINARY_EXT_RE.test(f)) return true;
+  if (/^vmlinuz/i.test(f) || /^init-/i.test(f)) return true;
+  if (!f.includes('.')) return true;
+  return false;
+}
+
+export function extractCompiledBinaryStem(filename: string): string {
+  return filename
+    .trim()
+    .toLowerCase()
+    .replace(/-(linux|win64|windows|macos|darwin|wasm32|x86_64|aarch64|x64|arm64).*$/i, '')
+    .replace(/\.(so|dll|dylib|wasm|a|ko|lib|elf|o|exe).*$/i, '');
+}
+
+export function computeMaterializationMetrics(
+  tracker: LiveUpstreamTrackerLike,
+  lockfileEntries: readonly CasManifestEntryLike[],
+): MaterializationTelemetry {
+  const compiledStems = new Set<string>();
+  for (const entry of lockfileEntries) {
+    const filename = String(entry.filename ?? '');
+    if (!isRealCompiledBinaryAsset(filename)) continue;
+    const stem = extractCompiledBinaryStem(filename);
+    if (stem) compiledStems.add(stem);
+  }
+
+  const libs = tracker.libraries ?? [];
+  const realCompiledLibs: string[] = [];
+  const virtualPinOnlyLibs: string[] = [];
+
+  for (const lib of libs) {
+    const pkgLower = lib.pkg.toLowerCase();
+    let matched = false;
+    if (pkgLower === 'linux') {
+      for (const stem of compiledStems) {
+        if (stem === 'b8g_abi' || stem.startsWith('vmlinuz')) {
+          matched = true;
+          break;
+        }
+      }
+    } else {
+      const aliases = LIB_BINARY_STEM_ALIASES[pkgLower] ?? [
+        pkgLower,
+        pkgLower.startsWith('lib') ? pkgLower.slice(3) : `lib${pkgLower}`,
+      ];
+      matched = aliases.some((cand) => compiledStems.has(cand));
+    }
+
+    if (matched) {
+      realCompiledLibs.push(lib.pkg);
+    } else {
+      virtualPinOnlyLibs.push(lib.pkg);
+    }
+  }
+
+  const totalTracked = tracker.totalTracked ?? libs.length;
+  const realCompiledCount = realCompiledLibs.length;
+  const virtualPinOnlyCount = virtualPinOnlyLibs.length;
+  const realMaterializationPct =
+    totalTracked > 0 ? Number(((realCompiledCount / totalTracked) * 100).toFixed(2)) : 0;
+
+  return {
+    totalTracked,
+    realCompiledCount,
+    virtualPinOnlyCount,
+    realMaterializationPct,
+    realCompiledLibs,
+    virtualPinOnlyLibs,
   };
 }
 
@@ -331,6 +438,7 @@ export function summarizeRepoRuns(repo: string, runs: readonly WorkflowRunLike[]
 export function buildGravityTelemetryReport(input: {
   readonly generatedAt?: string;
   readonly entries: readonly CasManifestEntryLike[];
+  readonly lockfileEntries?: readonly CasManifestEntryLike[];
   readonly tracker: LiveUpstreamTrackerLike;
   readonly lock: MaxVersionLockLike;
   readonly universe: V11UniverseLike;
@@ -377,6 +485,7 @@ export function buildGravityTelemetryReport(input: {
     abiMagic: '0x33564742',
     generatedAt: input.generatedAt ?? new Date().toISOString(),
     pinning: computePinningMetrics(input.tracker, input.lock, input.universe, input.aheadPins),
+    materialization: computeMaterializationMetrics(input.tracker, input.lockfileEntries ?? input.entries),
     dedup: computeDedupMetrics(input.entries),
     gravityDamper: {
       dampingFactor: input.dampingFactor ?? 0.65,
@@ -402,7 +511,12 @@ export function buildGravityTelemetryReport(input: {
 export function serializeGravityNdjson(
   report: GravityTelemetryReport,
   tracker?: LiveUpstreamTrackerLike,
+  universe?: V11UniverseLike,
 ): string {
+  const universeMap = new Map<string, string>();
+  for (const pkg of universe?.packages ?? []) {
+    if (pkg.name && pkg.version) universeMap.set(pkg.name.toLowerCase(), pkg.version);
+  }
   const lines: string[] = [
     JSON.stringify({
       schema: report.schema,
@@ -410,6 +524,7 @@ export function serializeGravityNdjson(
       kind: 'summary',
       generatedAt: report.generatedAt,
       pinning: report.pinning,
+      materialization: report.materialization,
       dedup: report.dedup,
       gravityDamper: {
         dampingFactor: report.gravityDamper.dampingFactor,
@@ -436,6 +551,12 @@ export function serializeGravityNdjson(
   }
 
   for (const lib of tracker?.libraries ?? []) {
+    const bumped = Boolean(lib.bumped);
+    const pinned =
+      universeMap.get(lib.pkg.toLowerCase()) ??
+      lib.currentV11 ??
+      (bumped ? lib.upstreamVersion : lib.previousV11) ??
+      null;
     lines.push(
       JSON.stringify({
         schema: report.schema,
@@ -443,9 +564,9 @@ export function serializeGravityNdjson(
         kind: 'pinned-subsystem',
         pkg: lib.pkg,
         repo: lib.repo ?? '',
-        pinned: lib.previousV11 ?? null,
+        pinned,
         upstream: lib.upstreamVersion ?? '',
-        bumped: Boolean(lib.bumped),
+        bumped,
       }),
     );
   }
@@ -578,6 +699,11 @@ async function main(): Promise<void> {
     { entries: [] },
   );
 
+  const lockfile = readJsonIfExists<{ readonly dependencies?: readonly CasManifestEntryLike[] }>(
+    join(repoRoot, 'index', 'holo-compiler-lockfile.json'),
+    { dependencies: [] },
+  );
+
   const tracker = await fetchJsonWithFallback<LiveUpstreamTrackerLike>(
     [join(mirrorRoot, 't2linux-baseline', 'catalog', 'live-upstream-tracker.json')],
     offline ? null : 'https://raw.githubusercontent.com/awesome-os/t2linux-baseline/main/catalog/live-upstream-tracker.json',
@@ -611,6 +737,7 @@ async function main(): Promise<void> {
 
   const report = buildGravityTelemetryReport({
     entries: manifest.entries ?? [],
+    lockfileEntries: lockfile.dependencies ?? manifest.entries ?? [],
     tracker,
     lock,
     universe,
@@ -625,11 +752,12 @@ async function main(): Promise<void> {
   const jsonPath = join(reportsDir, 'gravity-telemetry.json');
   const ndjsonPath = join(reportsDir, 'gravity-telemetry.ndjson');
   writeFileSync(jsonPath, JSON.stringify(report, null, 2) + '\n', 'utf8');
-  writeFileSync(ndjsonPath, serializeGravityNdjson(report, tracker), 'utf8');
+  writeFileSync(ndjsonPath, serializeGravityNdjson(report, tracker, universe), 'utf8');
 
   console.log(
     `[GRAVITY TELEMETRY] Wrote ${jsonPath} & ${ndjsonPath} ` +
       `(pinning=${report.pinning.atMaxCount}/${report.pinning.trackedUpstreamLibs}, ` +
+      `materialization=${report.materialization.realCompiledCount}/${report.materialization.totalTracked} (${report.materialization.realMaterializationPct}%), ` +
       `dedup=${report.dedup.uniqueSha512Blobs}/${report.dedup.totalAssets} saved=${report.dedup.savedMb}MB, ` +
       `dup_v8=${report.dedup.dupV8Bytes}B, p50=${report.gravityDamper.p50DurationSec}s, p95=${report.gravityDamper.p95DurationSec}s, ` +
       `rate=${apiRateRemaining}/${apiRateLimit})`,
