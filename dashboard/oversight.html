@@ -81,6 +81,7 @@
     <span id="gen-at" style="font-family:var(--mono);font-size:11.5px;color:var(--muted);">Loading…</span>
     <button id="btn-refresh">↻ Refresh</button>
     <button id="btn-theme">◐ Theme</button>
+    <a class="pill-link" href="https://awesome-os.com/shell/">AwesomeOS Shell</a>
     <a class="pill-link" href="/awesome-os/apps/host-manager.html">Host Manager</a>
     <a class="pill-link" href="https://awesome-os.com/install/">Web Installer</a>
   </div>
@@ -129,7 +130,8 @@
       <div class="kpi"><div class="v" style="color:var(--info);">${d.summary.activeRuns}</div><div class="k">Active GitHub Runners</div></div>
       <div class="kpi"><div class="v">${d.chromiumCanary.version}</div><div class="k">Chromium Canary (M${d.chromiumCanary.milestone} · V8 ${d.chromiumCanary.v8Hash})</div></div>
       <div class="kpi"><div class="v">${d.summary.upstreamLibsTracked} libs</div><div class="k">Live Upstream Tracked</div></div>
-      <div class="kpi"><div class="v">${d.summary.bigBoysCount} runtimes</div><div class="k">${d.summary.standaloneDiskSavedMb} MB → 1 v11 CAS Layer</div></div>
+      <div class="kpi"><div class="v">427 blobs</div><div class="k">Physical Verified v11 CAS (1.22 GB · 69 repos)</div></div>
+      <div class="kpi"><div class="v">${d.summary.bigBoysCount} targets</div><div class="k">Tracked Dedup Matrix (${d.summary.standaloneDiskSavedMb} MB)</div></div>
     `;
 
     document.getElementById('runners-heading').textContent = `GitHub Actions Runners (${d.runners.length} Core Repos)`;
