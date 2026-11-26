@@ -31,9 +31,6 @@ const REPOS = [
   'awesome-os/pnpm',
   'awesome-os/cargo',
   'awesome-os/uv',
-  'awesome-os/obs',
-  'awesome-os/godot',
-  'awesome-os/blender',
 ] as const;
 
 interface RunnerEntry {

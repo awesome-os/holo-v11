@@ -1,11 +1,11 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T19:21:46.030Z",
+  "generatedAt": "2026-11-26T19:41:03.120Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
-    "totalReposMonitored": 22,
-    "passingRuns": 20,
+    "totalReposMonitored": 19,
+    "passingRuns": 18,
     "activeRuns": 0,
     "failingRuns": 0,
     "upstreamLibsTracked": 56,
@@ -33,8 +33,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T19:08:41Z",
-      "url": "https://github.com/awesome-os/awesome-os/actions/runs/45881366525"
+      "updatedAt": "2026-11-26T19:22:39Z",
+      "url": "https://github.com/awesome-os/awesome-os/actions/runs/45883163366"
     },
     {
       "repo": "awesome-os/agent-platform",
@@ -42,8 +42,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T18:45:02Z",
-      "url": "https://github.com/awesome-os/agent-platform/actions/runs/45878311865"
+      "updatedAt": "2026-11-26T19:27:11Z",
+      "url": "https://github.com/awesome-os/agent-platform/actions/runs/45883651982"
     },
     {
       "repo": "awesome-os/chromium-baseline",
@@ -51,8 +51,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T18:47:52Z",
-      "url": "https://github.com/awesome-os/chromium-baseline/actions/runs/45878719461"
+      "updatedAt": "2026-11-26T19:23:52Z",
+      "url": "https://github.com/awesome-os/chromium-baseline/actions/runs/45883304102"
     },
     {
       "repo": "awesome-os/sectium-browser",
@@ -119,12 +119,12 @@
     },
     {
       "repo": "awesome-os/devtools",
-      "workflowName": "—",
-      "status": "idle",
-      "conclusion": "no-runs",
+      "workflowName": "DevTools CI",
+      "status": "completed",
+      "conclusion": "success",
       "branch": "main",
-      "updatedAt": "",
-      "url": "https://github.com/awesome-os/devtools/actions"
+      "updatedAt": "2026-11-26T19:31:35Z",
+      "url": "https://github.com/awesome-os/devtools/actions/runs/45884260991"
     },
     {
       "repo": "awesome-os/maintenance-workflows",
@@ -141,8 +141,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T19:18:33Z",
-      "url": "https://github.com/awesome-os/installer/actions/runs/45882653931"
+      "updatedAt": "2026-11-26T19:26:11Z",
+      "url": "https://github.com/awesome-os/installer/actions/runs/45883613646"
     },
     {
       "repo": "awesome-os/deployment",
@@ -168,8 +168,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T19:09:41Z",
-      "url": "https://github.com/awesome-os/colibri/actions/runs/45881505653"
+      "updatedAt": "2026-11-26T19:32:39Z",
+      "url": "https://github.com/awesome-os/colibri/actions/runs/45884313942"
     },
     {
       "repo": "awesome-os/pnpm",
@@ -197,33 +197,6 @@
       "branch": "main",
       "updatedAt": "2026-11-25T08:29:14Z",
       "url": "https://github.com/awesome-os/uv/actions/runs/45573282355"
-    },
-    {
-      "repo": "awesome-os/obs",
-      "workflowName": "Release 5-OS Matrix (Maintenance Workflows)",
-      "status": "completed",
-      "conclusion": "success",
-      "branch": "v0.3.0",
-      "updatedAt": "2026-11-25T18:51:47Z",
-      "url": "https://github.com/awesome-os/obs/actions/runs/45679232658"
-    },
-    {
-      "repo": "awesome-os/godot",
-      "workflowName": "Awesome-OS Godot 4 CAS CI",
-      "status": "completed",
-      "conclusion": "success",
-      "branch": "main",
-      "updatedAt": "2026-11-25T08:06:32Z",
-      "url": "https://github.com/awesome-os/godot/actions/runs/45573210242"
-    },
-    {
-      "repo": "awesome-os/blender",
-      "workflowName": "Awesome-OS Blender CAS CI",
-      "status": "completed",
-      "conclusion": "success",
-      "branch": "main",
-      "updatedAt": "2026-11-25T08:04:58Z",
-      "url": "https://github.com/awesome-os/blender/actions/runs/45573177888"
     }
   ],
   "upstreams": [
@@ -910,7 +883,7 @@
   },
   "gravityTelemetry": {
     "schema": "awesome-os.gravity-telemetry.v1",
-    "generatedAt": "2026-11-26T19:21:31.211Z",
+    "generatedAt": "2026-11-26T19:40:48.979Z",
     "abiMagic": "0x33564742",
     "pinning": {
       "trackedUpstreamLibs": 56,
@@ -952,15 +925,15 @@
       "dampingFactor": 0.65,
       "runnerFleet": {
         "reposMonitored": 17,
-        "activeRepos": 1,
-        "passingLatestRepos": 15,
+        "activeRepos": 0,
+        "passingLatestRepos": 16,
         "failingLatestRepos": 0,
-        "totalSampledRuns": 132
+        "totalSampledRuns": 134
       },
       "p50DurationSec": 27,
-      "p95DurationSec": 1065,
-      "overallPassRatePct": 77.1,
-      "apiRateRemaining": 4520,
+      "p95DurationSec": 1091,
+      "overallPassRatePct": 77.6,
+      "apiRateRemaining": 3851,
       "apiRateLimit": 5000,
       "perRepoTelemetry": [
         {
@@ -968,8 +941,8 @@
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "CI — AwesomeOS Monorepo (Verified Boot, Holo-Linux 7.3.6, UEFI Splash & Holo-FFI)",
-          "latestUrl": "https://github.com/awesome-os/awesome-os/actions/runs/45881366525",
-          "latestUpdatedAt": "2026-11-26T19:08:41Z",
+          "latestUrl": "https://github.com/awesome-os/awesome-os/actions/runs/45883163366",
+          "latestUpdatedAt": "2026-11-26T19:22:39Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 9,
@@ -977,39 +950,39 @@
           "passRatePct": 90,
           "p50DurationSec": 15,
           "p95DurationSec": 59,
-          "lastDurationSec": 15
+          "lastDurationSec": 14
         },
         {
           "repo": "agent-platform",
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "AwesomeOS Agent Platform CI",
-          "latestUrl": "https://github.com/awesome-os/agent-platform/actions/runs/45878311865",
-          "latestUpdatedAt": "2026-11-26T18:45:02Z",
-          "sampleCount": 3,
-          "completedCount": 3,
-          "passingCount": 1,
+          "latestUrl": "https://github.com/awesome-os/agent-platform/actions/runs/45883651982",
+          "latestUpdatedAt": "2026-11-26T19:27:11Z",
+          "sampleCount": 4,
+          "completedCount": 4,
+          "passingCount": 2,
           "failingCount": 2,
-          "passRatePct": 33.3,
+          "passRatePct": 50,
           "p50DurationSec": 40,
           "p95DurationSec": 51,
-          "lastDurationSec": 34
+          "lastDurationSec": 50
         },
         {
           "repo": "chromium-baseline",
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "chromium-baseline CI",
-          "latestUrl": "https://github.com/awesome-os/chromium-baseline/actions/runs/45878719461",
-          "latestUpdatedAt": "2026-11-26T18:47:52Z",
-          "sampleCount": 1,
-          "completedCount": 1,
-          "passingCount": 1,
+          "latestUrl": "https://github.com/awesome-os/chromium-baseline/actions/runs/45883304102",
+          "latestUpdatedAt": "2026-11-26T19:23:52Z",
+          "sampleCount": 2,
+          "completedCount": 2,
+          "passingCount": 2,
           "failingCount": 0,
           "passRatePct": 100,
           "p50DurationSec": 17,
-          "p95DurationSec": 17,
-          "lastDurationSec": 17
+          "p95DurationSec": 19,
+          "lastDurationSec": 19
         },
         {
           "repo": "desktop",
@@ -1128,8 +1101,8 @@
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "CI & Release",
-          "latestUrl": "https://github.com/awesome-os/installer/actions/runs/45882653931",
-          "latestUpdatedAt": "2026-11-26T19:18:33Z",
+          "latestUrl": "https://github.com/awesome-os/installer/actions/runs/45883613646",
+          "latestUpdatedAt": "2026-11-26T19:26:11Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 10,
@@ -1137,7 +1110,7 @@
           "passRatePct": 100,
           "p50DurationSec": 9,
           "p95DurationSec": 19,
-          "lastDurationSec": 7
+          "lastDurationSec": 9
         },
         {
           "repo": "host-manager",
@@ -1221,19 +1194,19 @@
         },
         {
           "repo": "ory-polis",
-          "latestStatus": "in_progress",
-          "latestConclusion": "running",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
           "latestWorkflow": "CI",
           "latestUrl": "https://github.com/awesome-os/ory-polis/actions/runs/45879337911",
-          "latestUpdatedAt": "2026-11-26T19:03:36Z",
+          "latestUpdatedAt": "2026-11-26T19:31:29Z",
           "sampleCount": 10,
-          "completedCount": 9,
-          "passingCount": 1,
+          "completedCount": 10,
+          "passingCount": 2,
           "failingCount": 6,
-          "passRatePct": 11.1,
+          "passRatePct": 20,
           "p50DurationSec": 282,
-          "p95DurationSec": 887,
-          "lastDurationSec": 668
+          "p95DurationSec": 2341,
+          "lastDurationSec": 2341
         }
       ]
     }
