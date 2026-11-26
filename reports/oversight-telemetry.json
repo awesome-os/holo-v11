@@ -1,12 +1,12 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T08:49:40.534Z",
+  "generatedAt": "2026-11-26T08:56:27.535Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
     "totalReposMonitored": 12,
     "passingRuns": 9,
-    "activeRuns": 1,
+    "activeRuns": 3,
     "failingRuns": 0,
     "upstreamLibsTracked": 21,
     "bigBoysCount": 12,
@@ -25,8 +25,8 @@
       "status": "in_progress",
       "conclusion": "running",
       "branch": "main",
-      "updatedAt": "2026-11-26T08:42:55Z",
-      "url": "https://github.com/awesome-os/sectium-browser/actions/runs/45785490169"
+      "updatedAt": "2026-11-26T08:54:28Z",
+      "url": "https://github.com/awesome-os/sectium-browser/actions/runs/45787134996"
     },
     {
       "repo": "awesome-os/libv8_monolith",
@@ -102,12 +102,12 @@
     },
     {
       "repo": "awesome-os/host-manager",
-      "workflowName": "—",
-      "status": "idle",
-      "conclusion": "no-runs",
+      "workflowName": "CI — Awesome-OS Host Manager (Fleet, A/B Slots, Workspaces & MCP)",
+      "status": "in_progress",
+      "conclusion": "running",
       "branch": "main",
-      "updatedAt": "",
-      "url": "https://github.com/awesome-os/host-manager/actions"
+      "updatedAt": "2026-11-26T08:56:23Z",
+      "url": "https://github.com/awesome-os/host-manager/actions/runs/45787415182"
     },
     {
       "repo": "awesome-os/ladybird",
@@ -120,12 +120,12 @@
     },
     {
       "repo": "awesome-os/colibri",
-      "workflowName": "—",
-      "status": "idle",
-      "conclusion": "no-runs",
+      "workflowName": "CI — Awesome-OS Colibri (v11 CAS Bridge & LumiBERT 2.8ms)",
+      "status": "in_progress",
+      "conclusion": "running",
       "branch": "main",
-      "updatedAt": "",
-      "url": "https://github.com/awesome-os/colibri/actions"
+      "updatedAt": "2026-11-26T08:56:27Z",
+      "url": "https://github.com/awesome-os/colibri/actions/runs/45787421635"
     }
   ],
   "upstreams": [
