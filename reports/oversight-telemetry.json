@@ -1,12 +1,12 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T09:56:08.178Z",
+  "generatedAt": "2026-11-26T15:51:35.119Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
-    "totalReposMonitored": 24,
-    "passingRuns": 20,
-    "activeRuns": 2,
+    "totalReposMonitored": 26,
+    "passingRuns": 25,
+    "activeRuns": 1,
     "failingRuns": 0,
     "upstreamLibsTracked": 56,
     "bigBoysCount": 22,
@@ -20,13 +20,31 @@
   },
   "runners": [
     {
+      "repo": "awesome-os/awesome-os",
+      "workflowName": "CI — AwesomeOS Monorepo (Verified Boot, Holo-Linux 7.3.6, UEFI Splash & Holo-FFI)",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T15:49:54Z",
+      "url": "https://github.com/awesome-os/awesome-os/actions/runs/45852901873"
+    },
+    {
+      "repo": "awesome-os/bootloader",
+      "workflowName": "CI — Awesome-OS Bootloader & UEFI GOP Splash",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T10:29:03Z",
+      "url": "https://github.com/awesome-os/bootloader/actions/runs/45801717328"
+    },
+    {
       "repo": "awesome-os/sectium-browser",
       "workflowName": "V8 Upstream — Real Damped Gravity Compile-Release-Bounce (Free Cloud Runner)",
-      "status": "in_progress",
-      "conclusion": "running",
+      "status": "completed",
+      "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T09:47:56Z",
-      "url": "https://github.com/awesome-os/sectium-browser/actions/runs/45795293954"
+      "updatedAt": "2026-11-26T10:12:03Z",
+      "url": "https://github.com/awesome-os/sectium-browser/actions/runs/45797112899"
     },
     {
       "repo": "awesome-os/libv8_monolith",
@@ -34,8 +52,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T08:46:32Z",
-      "url": "https://github.com/awesome-os/libv8_monolith/actions/runs/45785990036"
+      "updatedAt": "2026-11-26T15:50:15Z",
+      "url": "https://github.com/awesome-os/libv8_monolith/actions/runs/45852955769"
     },
     {
       "repo": "awesome-os/lo",
@@ -43,8 +61,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T08:46:39Z",
-      "url": "https://github.com/awesome-os/lo/actions/runs/45785983260"
+      "updatedAt": "2026-11-26T15:50:10Z",
+      "url": "https://github.com/awesome-os/lo/actions/runs/45852967315"
     },
     {
       "repo": "awesome-os/bun-neon",
@@ -84,12 +102,12 @@
     },
     {
       "repo": "awesome-os/holo-ffi",
-      "workflowName": "—",
-      "status": "idle",
-      "conclusion": "no-runs",
+      "workflowName": "CI — Holo-FFI (v11 CAS Loader & Hardlink Projector)",
+      "status": "completed",
+      "conclusion": "success",
       "branch": "main",
-      "updatedAt": "",
-      "url": "https://github.com/awesome-os/holo-ffi/actions"
+      "updatedAt": "2026-11-26T15:50:04Z",
+      "url": "https://github.com/awesome-os/holo-ffi/actions/runs/45852931774"
     },
     {
       "repo": "awesome-os/desktop",
@@ -111,12 +129,12 @@
     },
     {
       "repo": "awesome-os/t2linux-baseline",
-      "workflowName": "Build & Boot T2Linux Baseline (Original T2 SDE + v11 CAS)",
-      "status": "queued",
-      "conclusion": "none",
+      "workflowName": "Release — Compile & QEMU-Boot Real Holo-Linux 7.3 Kernel + b8g_abi.ko",
+      "status": "in_progress",
+      "conclusion": "running",
       "branch": "main",
-      "updatedAt": "2026-11-26T09:55:49Z",
-      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45796531953"
+      "updatedAt": "2026-11-26T15:48:04Z",
+      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45852645638"
     },
     {
       "repo": "awesome-os/installer",
@@ -124,17 +142,17 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T08:49:30Z",
-      "url": "https://github.com/awesome-os/installer/actions/runs/45786417930"
+      "updatedAt": "2026-11-26T15:49:48Z",
+      "url": "https://github.com/awesome-os/installer/actions/runs/45852912257"
     },
     {
       "repo": "awesome-os/deployment",
-      "workflowName": "—",
-      "status": "idle",
-      "conclusion": "no-runs",
+      "workflowName": "CI — AwesomeOS Deployment & Virtual Domain Manager",
+      "status": "completed",
+      "conclusion": "success",
       "branch": "main",
-      "updatedAt": "",
-      "url": "https://github.com/awesome-os/deployment/actions"
+      "updatedAt": "2026-11-26T15:50:13Z",
+      "url": "https://github.com/awesome-os/deployment/actions/runs/45852937654"
     },
     {
       "repo": "awesome-os/host-manager",
