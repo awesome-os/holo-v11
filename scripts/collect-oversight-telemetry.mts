@@ -84,8 +84,9 @@ function fetchLiveChromiumCanary(): {
   v8Hash: string;
 } {
   try {
+    const curlBin = process.platform === 'win32' ? 'curl.exe' : 'curl';
     const out = execFileSync(
-      'curl.exe',
+      curlBin,
       ['-s', 'https://chromiumdash.appspot.com/fetch_releases?channel=Canary&platform=Windows&num=1'],
       { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] },
     ).trim();

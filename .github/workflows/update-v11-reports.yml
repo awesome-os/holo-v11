@@ -22,7 +22,11 @@ jobs:
           node-version: '22'
 
       - name: Sync all ecosystem analysis reports & generate scoreboard
-        run: node scripts/sync-ecosystem-reports.mts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node scripts/sync-ecosystem-reports.mts
+          node scripts/collect-oversight-telemetry.mts
 
       - name: Commit & push updated reports if changed
         run: |
