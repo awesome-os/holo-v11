@@ -319,6 +319,7 @@ const LIB_BINARY_STEM_ALIASES: Readonly<Record<string, readonly string[]>> = {
   libxml2: ['libxml2', 'xml2'],
   libxslt: ['libxslt', 'xslt'],
   'c-ares': ['c-ares', 'cares', 'libcares'],
+  'zlib-ng': ['zlib-ng', 'zlibng', 'libzng'],
 };
 
 export function isRealCompiledBinaryAsset(filename: string): boolean {
