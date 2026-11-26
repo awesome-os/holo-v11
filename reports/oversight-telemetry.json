@@ -1,12 +1,12 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T19:41:29.747Z",
+  "generatedAt": "2026-11-26T20:06:30.179Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
     "totalReposMonitored": 19,
-    "passingRuns": 17,
-    "activeRuns": 1,
+    "passingRuns": 18,
+    "activeRuns": 0,
     "failingRuns": 0,
     "upstreamLibsTracked": 56,
     "bigBoysCount": 22,
@@ -19,11 +19,11 @@
     "v8Hash": "679a3fce0314"
   },
   "casGlobal": {
-    "totalRepos": 61,
-    "totalAssets": 409,
-    "uniqueBlobs": 399,
-    "totalMb": 1218.6,
-    "warmedAt": "2026-11-26T17:52:57.475Z",
+    "totalRepos": 24,
+    "totalAssets": 245,
+    "uniqueBlobs": 239,
+    "totalMb": 1288.2,
+    "warmedAt": "2026-11-26T20:06:04.634Z",
     "planetaryEndpoint": "https://awesome-os.com/cas/v11/manifest.json"
   },
   "runners": [
@@ -33,8 +33,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T19:22:39Z",
-      "url": "https://github.com/awesome-os/awesome-os/actions/runs/45883163366"
+      "updatedAt": "2026-11-26T20:05:53Z",
+      "url": "https://github.com/awesome-os/awesome-os/actions/runs/45888460919"
     },
     {
       "repo": "awesome-os/agent-platform",
@@ -42,8 +42,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T19:27:11Z",
-      "url": "https://github.com/awesome-os/agent-platform/actions/runs/45883651982"
+      "updatedAt": "2026-11-26T20:06:13Z",
+      "url": "https://github.com/awesome-os/agent-platform/actions/runs/45888473129"
     },
     {
       "repo": "awesome-os/chromium-baseline",
@@ -51,8 +51,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T19:23:52Z",
-      "url": "https://github.com/awesome-os/chromium-baseline/actions/runs/45883304102"
+      "updatedAt": "2026-11-26T20:06:00Z",
+      "url": "https://github.com/awesome-os/chromium-baseline/actions/runs/45888467308"
     },
     {
       "repo": "awesome-os/sectium-browser",
@@ -75,10 +75,10 @@
     {
       "repo": "awesome-os/holo-v11",
       "workflowName": "Update Awesome-OS v11 Ecosystem Reports",
-      "status": "in_progress",
-      "conclusion": "running",
+      "status": "completed",
+      "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T19:41:13Z",
+      "updatedAt": "2026-11-26T19:41:34Z",
       "url": "https://github.com/awesome-os/holo-v11/actions/runs/45885471314"
     },
     {
@@ -110,12 +110,12 @@
     },
     {
       "repo": "awesome-os/t2linux-baseline",
-      "workflowName": "Build & Boot T2Linux Baseline (Original T2 SDE + v11 CAS)",
+      "workflowName": "Damped-Gravity Upstream Version Bump (v11)",
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T18:45:23Z",
-      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45878321388"
+      "updatedAt": "2026-11-26T20:04:59Z",
+      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45888270949"
     },
     {
       "repo": "awesome-os/devtools",
@@ -123,8 +123,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T19:31:35Z",
-      "url": "https://github.com/awesome-os/devtools/actions/runs/45884260991"
+      "updatedAt": "2026-11-26T20:06:02Z",
+      "url": "https://github.com/awesome-os/devtools/actions/runs/45888480058"
     },
     {
       "repo": "awesome-os/maintenance-workflows",
@@ -883,22 +883,14 @@
   },
   "gravityTelemetry": {
     "schema": "awesome-os.gravity-telemetry.v1",
-    "generatedAt": "2026-11-26T19:41:19.280Z",
+    "generatedAt": "2026-11-26T20:06:16.395Z",
     "abiMagic": "0x33564742",
     "pinning": {
       "trackedUpstreamLibs": 56,
-      "atMaxCount": 55,
+      "atMaxCount": 56,
       "bumpedCount": 0,
       "aheadOfChromeCount": 17,
-      "driftedLibs": [
-        {
-          "pkg": "linux",
-          "repo": "torvalds/linux",
-          "pinned": "7.3.6",
-          "upstream": "7.3",
-          "bumped": false
-        }
-      ],
+      "driftedLibs": [],
       "v11UniversePackages": 5070,
       "maxVersionLock": {
         "totalLadybirdDeps": 49,
@@ -911,29 +903,31 @@
       }
     },
     "dedup": {
-      "totalAssets": 409,
-      "uniqueSha512Blobs": 399,
-      "dedupedBlobs": 10,
-      "rawTotalMb": 1218.61,
-      "uniqueTotalMb": 1184.93,
-      "savedMb": 33.68,
-      "dedupRatioPct": 2.76,
+      "totalAssets": 245,
+      "uniqueSha512Blobs": 239,
+      "dedupedBlobs": 6,
+      "rawTotalMb": 1288.17,
+      "uniqueTotalMb": 1224.21,
+      "savedMb": 63.95,
+      "dedupRatioPct": 4.96,
       "dupV8Bytes": 0,
       "b8gGhostRemnants": 0
     },
     "gravityDamper": {
       "dampingFactor": 0.65,
       "runnerFleet": {
-        "reposMonitored": 17,
-        "activeRepos": 1,
-        "passingLatestRepos": 15,
+        "reposMonitored": 20,
+        "activeRepos": 0,
+        "passingLatestRepos": 20,
         "failingLatestRepos": 0,
-        "totalSampledRuns": 135
+        "completedLatestRepos": 20,
+        "totalSampledRuns": 141
       },
-      "p50DurationSec": 27,
-      "p95DurationSec": 1091,
-      "overallPassRatePct": 77.6,
-      "apiRateRemaining": 4910,
+      "p50DurationSec": 36,
+      "p95DurationSec": 1757,
+      "overallPassRatePct": 83,
+      "latestFleetPassRatePct": 100,
+      "apiRateRemaining": 4919,
       "apiRateLimit": 5000,
       "perRepoTelemetry": [
         {
@@ -941,8 +935,8 @@
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "CI — AwesomeOS Monorepo (Verified Boot, Holo-Linux 7.3.6, UEFI Splash & Holo-FFI)",
-          "latestUrl": "https://github.com/awesome-os/awesome-os/actions/runs/45883163366",
-          "latestUpdatedAt": "2026-11-26T19:22:39Z",
+          "latestUrl": "https://github.com/awesome-os/awesome-os/actions/runs/45888460919",
+          "latestUpdatedAt": "2026-11-26T20:05:53Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 9,
@@ -950,39 +944,39 @@
           "passRatePct": 90,
           "p50DurationSec": 15,
           "p95DurationSec": 59,
-          "lastDurationSec": 14
+          "lastDurationSec": 21
         },
         {
           "repo": "agent-platform",
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "AwesomeOS Agent Platform CI",
-          "latestUrl": "https://github.com/awesome-os/agent-platform/actions/runs/45883651982",
-          "latestUpdatedAt": "2026-11-26T19:27:11Z",
-          "sampleCount": 4,
-          "completedCount": 4,
-          "passingCount": 2,
-          "failingCount": 2,
-          "passRatePct": 50,
-          "p50DurationSec": 40,
+          "latestUrl": "https://github.com/awesome-os/agent-platform/actions/runs/45888473129",
+          "latestUpdatedAt": "2026-11-26T20:06:13Z",
+          "sampleCount": 7,
+          "completedCount": 7,
+          "passingCount": 4,
+          "failingCount": 3,
+          "passRatePct": 57.1,
+          "p50DurationSec": 44,
           "p95DurationSec": 51,
-          "lastDurationSec": 50
+          "lastDurationSec": 36
         },
         {
           "repo": "chromium-baseline",
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "chromium-baseline CI",
-          "latestUrl": "https://github.com/awesome-os/chromium-baseline/actions/runs/45883304102",
-          "latestUpdatedAt": "2026-11-26T19:23:52Z",
-          "sampleCount": 2,
-          "completedCount": 2,
-          "passingCount": 2,
+          "latestUrl": "https://github.com/awesome-os/chromium-baseline/actions/runs/45888467308",
+          "latestUpdatedAt": "2026-11-26T20:06:00Z",
+          "sampleCount": 3,
+          "completedCount": 3,
+          "passingCount": 3,
           "failingCount": 0,
           "passRatePct": 100,
-          "p50DurationSec": 17,
-          "p95DurationSec": 19,
-          "lastDurationSec": 19
+          "p50DurationSec": 19,
+          "p95DurationSec": 25,
+          "lastDurationSec": 25
         },
         {
           "repo": "desktop",
@@ -1004,33 +998,33 @@
           "repo": "t2linux-baseline",
           "latestStatus": "completed",
           "latestConclusion": "success",
-          "latestWorkflow": "Build & Boot T2Linux Baseline (Original T2 SDE + v11 CAS)",
-          "latestUrl": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45878321388",
-          "latestUpdatedAt": "2026-11-26T18:45:23Z",
+          "latestWorkflow": "Damped-Gravity Upstream Version Bump (v11)",
+          "latestUrl": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45888270949",
+          "latestUpdatedAt": "2026-11-26T20:04:59Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 8,
           "failingCount": 2,
           "passRatePct": 80,
-          "p50DurationSec": 48,
+          "p50DurationSec": 49,
           "p95DurationSec": 2051,
-          "lastDurationSec": 51
+          "lastDurationSec": 59
         },
         {
           "repo": "holo-v11",
-          "latestStatus": "in_progress",
-          "latestConclusion": "running",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
           "latestWorkflow": "Update Awesome-OS v11 Ecosystem Reports",
           "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/45885471314",
-          "latestUpdatedAt": "2026-11-26T19:41:13Z",
+          "latestUpdatedAt": "2026-11-26T19:41:34Z",
           "sampleCount": 9,
-          "completedCount": 8,
-          "passingCount": 8,
+          "completedCount": 9,
+          "passingCount": 9,
           "failingCount": 0,
           "passRatePct": 100,
           "p50DurationSec": 27,
           "p95DurationSec": 215,
-          "lastDurationSec": 4
+          "lastDurationSec": 25
         },
         {
           "repo": "holo-compiler",
@@ -1081,20 +1075,68 @@
           "lastDurationSec": 739
         },
         {
-          "repo": "ladybird",
+          "repo": "devtools",
           "latestStatus": "completed",
-          "latestConclusion": "skipped",
-          "latestWorkflow": "PR benchmarks",
-          "latestUrl": "https://github.com/awesome-os/ladybird/actions/runs/45880075286",
-          "latestUpdatedAt": "2026-11-26T18:58:30Z",
-          "sampleCount": 10,
-          "completedCount": 10,
-          "passingCount": 0,
+          "latestConclusion": "success",
+          "latestWorkflow": "DevTools CI",
+          "latestUrl": "https://github.com/awesome-os/devtools/actions/runs/45888480058",
+          "latestUpdatedAt": "2026-11-26T20:06:02Z",
+          "sampleCount": 2,
+          "completedCount": 2,
+          "passingCount": 2,
           "failingCount": 0,
-          "passRatePct": 0,
-          "p50DurationSec": 2,
-          "p95DurationSec": 9,
-          "lastDurationSec": 2
+          "passRatePct": 100,
+          "p50DurationSec": 13,
+          "p95DurationSec": 21,
+          "lastDurationSec": 21
+        },
+        {
+          "repo": "llama.cpp",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
+          "latestWorkflow": "Holo v11 Check & Native Release",
+          "latestUrl": "https://github.com/awesome-os/llama.cpp/actions/runs/45883945291",
+          "latestUpdatedAt": "2026-11-26T19:32:16Z",
+          "sampleCount": 2,
+          "completedCount": 2,
+          "passingCount": 1,
+          "failingCount": 1,
+          "passRatePct": 50,
+          "p50DurationSec": 14,
+          "p95DurationSec": 204,
+          "lastDurationSec": 204
+        },
+        {
+          "repo": "colibri",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
+          "latestWorkflow": "CI — Awesome-OS Colibri (v11 CAS Bridge & LumiBERT 2.8ms)",
+          "latestUrl": "https://github.com/awesome-os/colibri/actions/runs/45884313942",
+          "latestUpdatedAt": "2026-11-26T19:32:39Z",
+          "sampleCount": 6,
+          "completedCount": 6,
+          "passingCount": 5,
+          "failingCount": 1,
+          "passRatePct": 83.3,
+          "p50DurationSec": 51,
+          "p95DurationSec": 6314,
+          "lastDurationSec": 51
+        },
+        {
+          "repo": "firecracker",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
+          "latestWorkflow": "Holo v11 Check",
+          "latestUrl": "https://github.com/awesome-os/firecracker/actions/runs/45883956605",
+          "latestUpdatedAt": "2026-11-26T19:29:06Z",
+          "sampleCount": 2,
+          "completedCount": 2,
+          "passingCount": 1,
+          "failingCount": 1,
+          "passRatePct": 50,
+          "p50DurationSec": 8,
+          "p95DurationSec": 8,
+          "lastDurationSec": 8
         },
         {
           "repo": "installer",

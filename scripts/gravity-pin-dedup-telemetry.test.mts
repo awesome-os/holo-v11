@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   CORE_ACTIVE_REPOS,
   buildGravityTelemetryReport,
+  compareVersions,
   computeDedupMetrics,
   computePercentile,
   computePinningMetrics,
@@ -55,6 +56,45 @@ test('computePinningMetrics flags drifted and bumped libraries accurately', () =
   assert.equal(pinning.driftedLibs.length, 2);
 });
 
+test('compareVersions & computePinningMetrics treat pinned >= upstream (e.g. linux 7.3.6 vs 7.3) as at-max', () => {
+  assert.equal(compareVersions('7.3.6', '7.3') > 0, true);
+  assert.equal(compareVersions('7.2', '7.3') < 0, true);
+  assert.equal(compareVersions('7.3.0', '7.3'), 0);
+
+  const aheadPinning = computePinningMetrics(
+    {
+      totalTracked: 1,
+      libraries: [{ pkg: 'linux', repo: 'torvalds/linux', upstreamVersion: '7.3', previousV11: '7.3.6', bumped: false }],
+    },
+    {},
+    { totalPackages: 5070 },
+    {},
+  );
+  assert.equal(aheadPinning.driftedLibs.length, 0);
+  assert.equal(aheadPinning.atMaxCount, 1);
+
+  const behindPinning = computePinningMetrics(
+    {
+      totalTracked: 1,
+      libraries: [{ pkg: 'linux', repo: 'torvalds/linux', upstreamVersion: '7.3', previousV11: '7.2', bumped: false }],
+    },
+    {},
+    { totalPackages: 5070 },
+    {},
+  );
+  assert.equal(behindPinning.driftedLibs.length, 1);
+  assert.equal(behindPinning.atMaxCount, 0);
+  assert.equal(behindPinning.driftedLibs[0]?.pkg, 'linux');
+});
+
+test('CORE_ACTIVE_REPOS tracks active stack without archived ladybird', () => {
+  const repos: readonly string[] = CORE_ACTIVE_REPOS;
+  assert.equal(repos.includes('ladybird'), false);
+  for (const required of ['devtools', 'llama.cpp', 'colibri', 'firecracker']) {
+    assert.equal(repos.includes(required), true, `Expected ${required} in CORE_ACTIVE_REPOS`);
+  }
+});
+
 test('buildGravityTelemetryReport & serializeGravityNdjson emit valid v1 schema & ABI magic', () => {
   const runsByRepo = new Map<string, ReturnType<typeof Array.prototype.slice>>([
     [
@@ -102,6 +142,8 @@ test('buildGravityTelemetryReport & serializeGravityNdjson emit valid v1 schema 
   assert.equal(report.gravityDamper.p50DurationSec, 40);
   assert.equal(report.gravityDamper.p95DurationSec, 100);
   assert.equal(report.gravityDamper.overallPassRatePct, 100);
+  assert.equal(report.gravityDamper.latestFleetPassRatePct, 100);
+  assert.equal(report.gravityDamper.runnerFleet.completedLatestRepos, 1);
   assert.equal(report.gravityDamper.apiRateRemaining, 4850);
 
   const ndjson = serializeGravityNdjson(report, {
@@ -119,4 +161,60 @@ test('buildGravityTelemetryReport & serializeGravityNdjson emit valid v1 schema 
   const singleRepo = summarizeRepoRuns('holo-v11', runsByRepo.get('holo-v11')!);
   assert.equal(singleRepo.passRatePct, 100);
   assert.equal(singleRepo.p50DurationSec, 40);
+});
+
+test('latestFleetPassRatePct reflects head health independently of rolling history', () => {
+  const runsByRepo = new Map([
+    [
+      'holo-v11',
+      [
+        { name: 'CI', status: 'completed', conclusion: 'success', run_started_at: '2026-11-26T18:00:00Z', updated_at: '2026-11-26T18:00:20Z' },
+        { name: 'CI', status: 'completed', conclusion: 'failure', run_started_at: '2026-11-26T17:00:00Z', updated_at: '2026-11-26T17:00:20Z' },
+      ],
+    ],
+    [
+      'llama.cpp',
+      [
+        { name: 'CI', status: 'completed', conclusion: 'success', run_started_at: '2026-11-26T18:10:00Z', updated_at: '2026-11-26T18:10:30Z' },
+      ],
+    ],
+    [
+      'colibri',
+      [
+        { name: 'CI', status: 'in_progress', conclusion: null, run_started_at: '2026-11-26T18:15:00Z', updated_at: '2026-11-26T18:15:10Z' },
+      ],
+    ],
+  ]);
+
+  const allHeadGreen = buildGravityTelemetryReport({
+    entries: [],
+    tracker: { totalTracked: 0, libraries: [] },
+    lock: {},
+    universe: { totalPackages: 5070 },
+    aheadPins: {},
+    runsByRepo,
+    apiRateRemaining: 5000,
+    apiRateLimit: 5000,
+  });
+  assert.equal(allHeadGreen.gravityDamper.runnerFleet.completedLatestRepos, 2);
+  assert.equal(allHeadGreen.gravityDamper.runnerFleet.passingLatestRepos, 2);
+  assert.equal(allHeadGreen.gravityDamper.latestFleetPassRatePct, 100);
+  assert.equal(allHeadGreen.gravityDamper.overallPassRatePct, 66.7);
+
+  runsByRepo.set('firecracker', [
+    { name: 'CI', status: 'completed', conclusion: 'failure', run_started_at: '2026-11-26T18:20:00Z', updated_at: '2026-11-26T18:20:10Z' },
+  ]);
+  const partialHead = buildGravityTelemetryReport({
+    entries: [],
+    tracker: { totalTracked: 0, libraries: [] },
+    lock: {},
+    universe: { totalPackages: 5070 },
+    aheadPins: {},
+    runsByRepo,
+    apiRateRemaining: 5000,
+    apiRateLimit: 5000,
+  });
+  assert.equal(partialHead.gravityDamper.runnerFleet.completedLatestRepos, 3);
+  assert.equal(partialHead.gravityDamper.runnerFleet.passingLatestRepos, 2);
+  assert.equal(partialHead.gravityDamper.latestFleetPassRatePct, 66.7);
 });

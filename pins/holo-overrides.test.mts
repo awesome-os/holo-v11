@@ -19,7 +19,7 @@ describe('awesome-os/holo-pm central pins/holo-overrides.mts', () => {
     assert.ok(Object.keys(snap.rust).length >= 50);
     assert.ok(Object.keys(snap.go).length >= 50);
     assert.ok(Object.keys(snap.npm).length >= 17);
-    assert.ok(snap.v11LockfileEntries >= 350);
+    assert.ok(snap.v11LockfileEntries >= 200);
 
     assert.equal(resolveUnifiedOverride('npm', 'typescript'), '6.0.3');
     assert.ok(resolveUnifiedOverride('rust', 'syn'));

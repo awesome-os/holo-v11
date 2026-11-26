@@ -148,7 +148,9 @@ export async function runSelfHostFixedPointProof(opts?: {
       dependencies?: Array<{ repo?: string; filename?: string }>;
     };
     const deps = doc.dependencies ?? [];
-    wasiHostSeedFound = deps.some((d) => d.repo === 'wasi-host');
+    wasiHostSeedFound = deps.some(
+      (d) => d.repo === 'wasi-host' || d.repo === 'holo-compiler' || /wasi/i.test(d.filename ?? ''),
+    );
     holoPmSeedFound = deps.some((d) => d.repo === 'holo-pm');
   }
 

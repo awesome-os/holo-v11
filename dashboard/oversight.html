@@ -97,7 +97,7 @@
   .gravity-stat { background: var(--surface-2); border: 1px solid var(--line-soft); border-radius: 10px; padding: 10px 12px; }
   .gravity-stat .gv { font-size: 17px; font-weight: 800; font-variant-numeric: tabular-nums; }
   .gravity-stat .gk { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
-  .lat-row { display: grid; grid-template-columns: 155px 1fr 120px 64px; gap: 10px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--line-soft); font-size: 12.5px; }
+  .lat-row { display: grid; grid-template-columns: 165px 1fr 185px 72px; gap: 10px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--line-soft); font-size: 12.5px; }
   .lat-row:last-child { border-bottom: 0; }
   .lat-bars { display: flex; flex-direction: column; gap: 3px; }
   .lat-track { height: 5px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
@@ -240,16 +240,24 @@
     document.getElementById('gravity-damping-badge').textContent =
       `damping ${damper.dampingFactor ?? 0.65} · p50 ${damper.p50DurationSec ?? 0}s · p95 ${damper.p95DurationSec ?? 0}s`;
 
+    const passingLatest = damper.runnerFleet?.passingLatestRepos ?? 0;
+    const completedLatest = damper.runnerFleet?.completedLatestRepos ?? (passingLatest + (damper.runnerFleet?.failingLatestRepos ?? 0));
+    const headHealthPct = damper.latestFleetPassRatePct ?? (completedLatest > 0 ? Number(((passingLatest / completedLatest) * 100).toFixed(1)) : 0);
+    const headHealthColor = headHealthPct >= 100 ? 'var(--ok)' : headHealthPct >= 80 ? 'var(--warn)' : 'var(--err)';
+
     kpisEl.innerHTML = `
       <div class="gravity-stat"><div class="gv" style="color:var(--ok);">${dedup.savedMb ?? 0} MB (${dedup.dedupRatioPct ?? 0}%)</div><div class="gk">SHA-512 CAS Dedup Savings (${dedup.dedupedBlobs ?? 0} deduped blobs)</div></div>
       <div class="gravity-stat"><div class="gv">${dedup.uniqueSha512Blobs ?? 0} / ${dedup.totalAssets ?? 0}</div><div class="gk">Unique SHA-512 Blobs / Total Assets</div></div>
       <div class="gravity-stat"><div class="gv" style="color:var(--accent);">${pin.atMaxCount ?? 0} / ${pin.trackedUpstreamLibs ?? 0}</div><div class="gk">Pinned Libs at Max (${pin.aheadOfChromeCount ?? 0} ahead-of-Chrome)</div></div>
-      <div class="gravity-stat"><div class="gv" style="color:var(--ok);">${damper.overallPassRatePct ?? 0}%</div><div class="gk">Runner Fleet Pass Rate (${damper.runnerFleet?.totalSampledRuns ?? 0} sampled runs)</div></div>
+      <div class="gravity-stat"><div class="gv" style="color:${headHealthColor};">${headHealthPct}%</div><div class="gk">Head Health (${passingLatest}/${completedLatest} GREEN)</div></div>
+      <div class="gravity-stat"><div class="gv" style="color:var(--ok);">${damper.overallPassRatePct ?? 0}%</div><div class="gk">Rolling Fleet Pass Rate (${damper.runnerFleet?.totalSampledRuns ?? 0} sampled runs)</div></div>
     `;
 
     const drifted = Array.isArray(pin.driftedLibs) ? pin.driftedLibs : [];
+    const atMax = pin.atMaxCount ?? 0;
+    const tracked = pin.trackedUpstreamLibs ?? 0;
     driftEl.innerHTML = drifted.length === 0
-      ? '<span class="badge ok">0 drifted libs</span> All tracked upstream libraries match pinned Holo v11 lock.'
+      ? `<span class="badge ok">0 drifted · ${atMax}/${tracked} at max</span> All tracked upstream libraries match or exceed pinned Holo v11 lock.`
       : `<span class="badge warn">${drifted.length} drifted</span> ` + drifted.map((x) => `<code>${x.pkg}: ${x.pinned || '?'} → ${x.upstream}</code>`).join(' · ');
 
     const rows = Array.isArray(damper.perRepoTelemetry) ? damper.perRepoTelemetry : [];
@@ -265,7 +273,7 @@
             <div class="lat-track"><div class="bar-fill" style="width:${p50w}%;"></div></div>
             <div class="lat-track"><div class="bar-fill p95" style="width:${p95w}%;"></div></div>
           </div>
-          <div style="font-family:var(--mono);font-size:11.5px;color:var(--muted);">p50 ${r.p50DurationSec}s · p95 ${r.p95DurationSec}s</div>
+          <div style="font-family:var(--mono);font-size:11.5px;color:var(--muted);"><span style="white-space:nowrap;">p50 ${r.p50DurationSec}s · p95 ${r.p95DurationSec}s</span></div>
           <div><span class="badge ${cls}">${r.passRatePct}%</span></div>
         </div>
       `;

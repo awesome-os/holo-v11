@@ -26,7 +26,10 @@ export const CORE_ACTIVE_REPOS = [
   'holo-compiler',
   'holo-pm',
   'sectium-browser',
-  'ladybird',
+  'devtools',
+  'llama.cpp',
+  'colibri',
+  'firecracker',
   'installer',
   'host-manager',
   'deployment',
@@ -147,11 +150,13 @@ export interface GravityDamperTelemetry {
     readonly activeRepos: number;
     readonly passingLatestRepos: number;
     readonly failingLatestRepos: number;
+    readonly completedLatestRepos: number;
     readonly totalSampledRuns: number;
   };
   readonly p50DurationSec: number;
   readonly p95DurationSec: number;
   readonly overallPassRatePct: number;
+  readonly latestFleetPassRatePct: number;
   readonly apiRateRemaining: number;
   readonly apiRateLimit: number;
   readonly perRepoTelemetry: readonly RepoRunnerTelemetry[];
@@ -220,6 +225,27 @@ export function computeDedupMetrics(entries: readonly CasManifestEntryLike[]): D
   };
 }
 
+export function compareVersions(a: string, b: string): number {
+  const parseSegments = (v: string): readonly number[] =>
+    v
+      .trim()
+      .replace(/^v/i, '')
+      .split(/[.\-_]+/)
+      .map((seg) => {
+        const m = /^(\d+)/.exec(seg);
+        return m ? Number(m[1]) : 0;
+      });
+  const pa = parseSegments(a);
+  const pb = parseSegments(b);
+  const len = Math.max(pa.length, pb.length);
+  for (let i = 0; i < len; i++) {
+    const av = pa[i] ?? 0;
+    const bv = pb[i] ?? 0;
+    if (av !== bv) return av < bv ? -1 : 1;
+  }
+  return 0;
+}
+
 export function computePinningMetrics(
   tracker: LiveUpstreamTrackerLike,
   lock: MaxVersionLockLike,
@@ -236,7 +262,7 @@ export function computePinningMetrics(
     if (bumped) bumpedCount++;
     const upstream = lib.upstreamVersion ?? '';
     const pinned = lib.previousV11 ?? null;
-    const isDrifted = bumped || (pinned !== null && upstream !== '' && pinned !== upstream);
+    const isDrifted = pinned !== null && upstream !== '' && compareVersions(pinned, upstream) < 0;
     if (isDrifted) {
       driftedLibs.push({
         pkg: lib.pkg,
@@ -322,6 +348,7 @@ export function buildGravityTelemetryReport(input: {
   let activeRepos = 0;
   let passingLatestRepos = 0;
   let failingLatestRepos = 0;
+  let completedLatestRepos = 0;
 
   for (const repo of CORE_ACTIVE_REPOS) {
     const runs = input.runsByRepo.get(repo) ?? [];
@@ -329,6 +356,7 @@ export function buildGravityTelemetryReport(input: {
     perRepoTelemetry.push(summary);
     totalSampledRuns += runs.length;
     if (summary.latestStatus === 'in_progress' || summary.latestStatus === 'queued') activeRepos++;
+    if (summary.latestStatus === 'completed') completedLatestRepos++;
     if (summary.latestConclusion === 'success') passingLatestRepos++;
     if (summary.latestConclusion === 'failure') failingLatestRepos++;
     for (const run of runs) {
@@ -340,6 +368,9 @@ export function buildGravityTelemetryReport(input: {
       }
     }
   }
+
+  const latestFleetPassRatePct =
+    completedLatestRepos > 0 ? Number(((passingLatestRepos / completedLatestRepos) * 100).toFixed(1)) : 0;
 
   return {
     schema: 'awesome-os.gravity-telemetry.v1',
@@ -354,11 +385,13 @@ export function buildGravityTelemetryReport(input: {
         activeRepos,
         passingLatestRepos,
         failingLatestRepos,
+        completedLatestRepos,
         totalSampledRuns,
       },
       p50DurationSec: computePercentile(allDurations, 0.5),
       p95DurationSec: computePercentile(allDurations, 0.95),
       overallPassRatePct: totalCompleted > 0 ? Number(((totalPassing / totalCompleted) * 100).toFixed(1)) : 0,
+      latestFleetPassRatePct,
       apiRateRemaining: input.apiRateRemaining,
       apiRateLimit: input.apiRateLimit,
       perRepoTelemetry,
@@ -384,6 +417,7 @@ export function serializeGravityNdjson(
         p50DurationSec: report.gravityDamper.p50DurationSec,
         p95DurationSec: report.gravityDamper.p95DurationSec,
         overallPassRatePct: report.gravityDamper.overallPassRatePct,
+        latestFleetPassRatePct: report.gravityDamper.latestFleetPassRatePct,
         apiRateRemaining: report.gravityDamper.apiRateRemaining,
         apiRateLimit: report.gravityDamper.apiRateLimit,
       },
