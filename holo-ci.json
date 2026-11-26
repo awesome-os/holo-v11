@@ -1,0 +1,16 @@
+{
+  "schema": "holo-ci.v1",
+  "name": "holo-v11",
+  "kind": "control-plane",
+  "tests": [
+    "node --test scripts/gravity-pin-dedup-telemetry.test.mts",
+    "node --test pins/holo-overrides.test.mts"
+  ],
+  "docs": [
+    "README.md"
+  ],
+  "guards": {
+    "zeroGhost": true,
+    "zeroCasV1": true
+  }
+}
