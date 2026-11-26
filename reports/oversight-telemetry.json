@@ -1,0 +1,414 @@
+{
+  "schema": "awesome-os.oversight-telemetry.v1",
+  "generatedAt": "2026-11-26T08:31:50.817Z",
+  "abiMagic": "0x33564742",
+  "casLayout": "v11",
+  "summary": {
+    "totalReposMonitored": 11,
+    "passingRuns": 7,
+    "activeRuns": 1,
+    "failingRuns": 1,
+    "upstreamLibsTracked": 21,
+    "bigBoysCount": 12,
+    "standaloneDiskSavedMb": 2597
+  },
+  "chromiumCanary": {
+    "milestone": 160,
+    "version": "160.0.8184.0",
+    "branchPosition": 1754429,
+    "v8Hash": "0239d7c3d8e3"
+  },
+  "runners": [
+    {
+      "repo": "awesome-os/sectium-browser",
+      "workflowName": "V8 Upstream — Real Damped Gravity Compile-Release-Bounce (Free Cloud Runner)",
+      "status": "in_progress",
+      "conclusion": "running",
+      "branch": "main",
+      "updatedAt": "2026-11-26T08:21:58Z",
+      "url": "https://github.com/awesome-os/sectium-browser/actions/runs/45782530287"
+    },
+    {
+      "repo": "awesome-os/libv8_monolith",
+      "workflowName": "Release Tarball",
+      "status": "completed",
+      "conclusion": "failure",
+      "branch": "main",
+      "updatedAt": "2026-11-26T07:49:02Z",
+      "url": "https://github.com/awesome-os/libv8_monolith/actions/runs/45778114598"
+    },
+    {
+      "repo": "awesome-os/lo",
+      "workflowName": "CI — awesome-os/lo (Ghost CAS Dynamic V8 + Native Libs)",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T07:48:33Z",
+      "url": "https://github.com/awesome-os/lo/actions/runs/45778045514"
+    },
+    {
+      "repo": "awesome-os/holo-v11",
+      "workflowName": "Update Awesome-OS v11 Ecosystem Reports",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T07:24:26Z",
+      "url": "https://github.com/awesome-os/holo-v11/actions/runs/45775030839"
+    },
+    {
+      "repo": "awesome-os/desktop",
+      "workflowName": "Build and Boot Awesome-OS Desktop (Multi-Arch UEFI ISO & Netboot)",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T06:16:25Z",
+      "url": "https://github.com/awesome-os/desktop/actions/runs/45766960387"
+    },
+    {
+      "repo": "awesome-os/posix",
+      "workflowName": "Build and Boot Awesome-OS POSIX (Headless UEFI/BIOS ISO & Netboot)",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T06:16:31Z",
+      "url": "https://github.com/awesome-os/posix/actions/runs/45766966038"
+    },
+    {
+      "repo": "awesome-os/t2linux-baseline",
+      "workflowName": "Build & Boot T2Linux Baseline (Original T2 SDE + v11 CAS)",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T08:15:29Z",
+      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45781536645"
+    },
+    {
+      "repo": "awesome-os/installer",
+      "workflowName": "CI & Release",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T08:15:40Z",
+      "url": "https://github.com/awesome-os/installer/actions/runs/45781612679"
+    },
+    {
+      "repo": "awesome-os/host-manager",
+      "workflowName": "—",
+      "status": "idle",
+      "conclusion": "no-runs",
+      "branch": "main",
+      "updatedAt": "",
+      "url": "https://github.com/awesome-os/host-manager/actions"
+    },
+    {
+      "repo": "awesome-os/ladybird",
+      "workflowName": "Dependabot Updates",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T06:43:50Z",
+      "url": "https://github.com/awesome-os/ladybird/actions/runs/45769664585"
+    },
+    {
+      "repo": "awesome-os/colibri",
+      "workflowName": "—",
+      "status": "idle",
+      "conclusion": "no-runs",
+      "branch": "main",
+      "updatedAt": "",
+      "url": "https://github.com/awesome-os/colibri/actions"
+    }
+  ],
+  "upstreams": [
+    {
+      "pkg": "libuv",
+      "repo": "libuv/libuv",
+      "upstreamTag": "v1.53.0",
+      "upstreamVersion": "1.53.0",
+      "previousV11": "1.53.0",
+      "bumped": false
+    },
+    {
+      "pkg": "openssl",
+      "repo": "openssl/openssl",
+      "upstreamTag": "openssl-4.1.0",
+      "upstreamVersion": "4.1.0",
+      "previousV11": "4.1.0",
+      "bumped": false
+    },
+    {
+      "pkg": "harfbuzz",
+      "repo": "harfbuzz/harfbuzz",
+      "upstreamTag": "15.2.0",
+      "upstreamVersion": "15.2.0",
+      "previousV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "zstd",
+      "repo": "facebook/zstd",
+      "upstreamTag": "v1.6.0",
+      "upstreamVersion": "1.6.0",
+      "previousV11": "1.6.0",
+      "bumped": false
+    },
+    {
+      "pkg": "mimalloc",
+      "repo": "microsoft/mimalloc",
+      "upstreamTag": "v3.7.1",
+      "upstreamVersion": "3.7.1",
+      "previousV11": "3.7.1",
+      "bumped": false
+    },
+    {
+      "pkg": "zlib-ng",
+      "repo": "zlib-ng/zlib-ng",
+      "upstreamTag": "2.3.3",
+      "upstreamVersion": "2.3.3",
+      "previousV11": "2.3.3",
+      "bumped": false
+    },
+    {
+      "pkg": "expat",
+      "repo": "libexpat/libexpat",
+      "upstreamTag": "R_2_11_0",
+      "upstreamVersion": "2.11.0",
+      "previousV11": "2.11.0",
+      "bumped": false
+    },
+    {
+      "pkg": "ada",
+      "repo": "ada-url/ada",
+      "upstreamTag": "v4.1.1",
+      "upstreamVersion": "4.1.1",
+      "previousV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "curl",
+      "repo": "curl/curl",
+      "upstreamTag": "curl-8_23_0",
+      "upstreamVersion": "8.23.0",
+      "previousV11": "8.23.0",
+      "bumped": false
+    },
+    {
+      "pkg": "vulkan-headers",
+      "repo": "KhronosGroup/Vulkan-Headers",
+      "upstreamTag": "vulkan-sdk-1.4.363.0",
+      "upstreamVersion": "1.4.363.0",
+      "previousV11": "1.4.369",
+      "bumped": false
+    },
+    {
+      "pkg": "vulkan-loader",
+      "repo": "KhronosGroup/Vulkan-Loader",
+      "upstreamTag": "windows-rt-1.0.8.1",
+      "upstreamVersion": "1.0.8.1",
+      "previousV11": "1.4.369",
+      "bumped": false
+    },
+    {
+      "pkg": "glslang",
+      "repo": "KhronosGroup/glslang",
+      "upstreamTag": "16.6.0",
+      "upstreamVersion": "16.6.0",
+      "previousV11": "16.6.0",
+      "bumped": false
+    },
+    {
+      "pkg": "brotli",
+      "repo": "google/brotli",
+      "upstreamTag": "v1.2.1",
+      "upstreamVersion": "1.2.1",
+      "previousV11": "1.2.1",
+      "bumped": false
+    },
+    {
+      "pkg": "simdjson",
+      "repo": "simdjson/simdjson",
+      "upstreamTag": "v5.3.0",
+      "upstreamVersion": "5.3.0",
+      "previousV11": "5.3.0",
+      "bumped": false
+    },
+    {
+      "pkg": "simdutf",
+      "repo": "simdutf/simdutf",
+      "upstreamTag": "v9.5.0",
+      "upstreamVersion": "9.5.0",
+      "previousV11": "9.4.0",
+      "bumped": true
+    },
+    {
+      "pkg": "protobuf",
+      "repo": "protocolbuffers/protobuf",
+      "upstreamTag": "v36.2",
+      "upstreamVersion": "36.2",
+      "previousV11": "36.2",
+      "bumped": false
+    },
+    {
+      "pkg": "liburing",
+      "repo": "axboe/liburing",
+      "upstreamTag": "liburing-2.15",
+      "upstreamVersion": "2.15",
+      "previousV11": "2.15",
+      "bumped": false
+    },
+    {
+      "pkg": "openblas",
+      "repo": "OpenMathLib/OpenBLAS",
+      "upstreamTag": "v0.3.34",
+      "upstreamVersion": "0.3.34",
+      "previousV11": "0.3.34",
+      "bumped": false
+    },
+    {
+      "pkg": "cmake",
+      "repo": "Kitware/CMake",
+      "upstreamTag": "v4.5.1",
+      "upstreamVersion": "4.5.1",
+      "previousV11": "4.5.1",
+      "bumped": false
+    },
+    {
+      "pkg": "ninja",
+      "repo": "ninja-build/ninja",
+      "upstreamTag": "v1.13.2",
+      "upstreamVersion": "1.13.2",
+      "previousV11": "1.13.2",
+      "bumped": false
+    },
+    {
+      "pkg": "nghttp2",
+      "repo": "nghttp2/nghttp2",
+      "upstreamTag": "v1.71.0",
+      "upstreamVersion": "1.71.0",
+      "previousV11": "1.71.0",
+      "bumped": false
+    }
+  ],
+  "bigBoys": [
+    {
+      "id": "chromium",
+      "name": "Chromium 160 Canary / Sectium Browser",
+      "totalLibs": 27,
+      "coveredInV11": 26,
+      "coveragePercent": 96.3,
+      "missing": [
+        "libxml2"
+      ],
+      "standaloneDiskMb": 420
+    },
+    {
+      "id": "firefox",
+      "name": "Firefox (Gecko / SpiderMonkey)",
+      "totalLibs": 24,
+      "coveredInV11": 22,
+      "coveragePercent": 91.7,
+      "missing": [
+        "pixman",
+        "cairo"
+      ],
+      "standaloneDiskMb": 340
+    },
+    {
+      "id": "electron",
+      "name": "Electron (awesome-os/sectium-electron)",
+      "totalLibs": 20,
+      "coveredInV11": 20,
+      "coveragePercent": 100,
+      "missing": [],
+      "standaloneDiskMb": 280
+    },
+    {
+      "id": "nwjs",
+      "name": "NW.js (holo-display-nwjs)",
+      "totalLibs": 18,
+      "coveredInV11": 18,
+      "coveragePercent": 100,
+      "missing": [],
+      "standaloneDiskMb": 310
+    },
+    {
+      "id": "nodejs",
+      "name": "Node.js",
+      "totalLibs": 16,
+      "coveredInV11": 15,
+      "coveragePercent": 93.8,
+      "missing": [
+        "ngtcp2"
+      ],
+      "standaloneDiskMb": 115
+    },
+    {
+      "id": "deno",
+      "name": "Deno",
+      "totalLibs": 10,
+      "coveredInV11": 10,
+      "coveragePercent": 100,
+      "missing": [],
+      "standaloneDiskMb": 135
+    },
+    {
+      "id": "bun",
+      "name": "Bun",
+      "totalLibs": 12,
+      "coveredInV11": 12,
+      "coveragePercent": 100,
+      "missing": [],
+      "standaloneDiskMb": 105
+    },
+    {
+      "id": "ladybird",
+      "name": "Ladybird (awesome-os/ladybird)",
+      "totalLibs": 23,
+      "coveredInV11": 23,
+      "coveragePercent": 100,
+      "missing": [],
+      "standaloneDiskMb": 185
+    },
+    {
+      "id": "lo",
+      "name": "just-js/lo (lo/lib/*)",
+      "totalLibs": 19,
+      "coveredInV11": 19,
+      "coveragePercent": 100,
+      "missing": [],
+      "standaloneDiskMb": 42
+    },
+    {
+      "id": "colibri",
+      "name": "Colibri MoE (awesome-os/colibri)",
+      "totalLibs": 11,
+      "coveredInV11": 11,
+      "coveragePercent": 100,
+      "missing": [],
+      "standaloneDiskMb": 65
+    },
+    {
+      "id": "llama-cpp",
+      "name": "llama.cpp (awesome-os/llama.cpp)",
+      "totalLibs": 12,
+      "coveredInV11": 12,
+      "coveragePercent": 100,
+      "missing": [],
+      "standaloneDiskMb": 120
+    },
+    {
+      "id": "vllm",
+      "name": "vLLM (awesome-os/vllm)",
+      "totalLibs": 16,
+      "coveredInV11": 16,
+      "coveragePercent": 100,
+      "missing": [],
+      "standaloneDiskMb": 480
+    }
+  ],
+  "ladybirdSummary": {
+    "librariesScanned": 42,
+    "webIdlCount": 752,
+    "openFixmes": 1348
+  }
+}
