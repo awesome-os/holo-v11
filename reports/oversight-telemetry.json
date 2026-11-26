@@ -1,14 +1,14 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T09:19:29.855Z",
+  "generatedAt": "2026-11-26T09:23:27.901Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
-    "totalReposMonitored": 12,
-    "passingRuns": 10,
+    "totalReposMonitored": 24,
+    "passingRuns": 20,
     "activeRuns": 2,
     "failingRuns": 0,
-    "upstreamLibsTracked": 21,
+    "upstreamLibsTracked": 44,
     "bigBoysCount": 12,
     "standaloneDiskSavedMb": 2597
   },
@@ -22,11 +22,11 @@
     {
       "repo": "awesome-os/sectium-browser",
       "workflowName": "V8 Upstream — Real Damped Gravity Compile-Release-Bounce (Free Cloud Runner)",
-      "status": "in_progress",
-      "conclusion": "running",
+      "status": "queued",
+      "conclusion": "none",
       "branch": "main",
-      "updatedAt": "2026-11-26T09:11:05Z",
-      "url": "https://github.com/awesome-os/sectium-browser/actions/runs/45788688177"
+      "updatedAt": "2026-11-26T09:22:46Z",
+      "url": "https://github.com/awesome-os/sectium-browser/actions/runs/45791409102"
     },
     {
       "repo": "awesome-os/libv8_monolith",
@@ -65,6 +65,33 @@
       "url": "https://github.com/awesome-os/holo-v11/actions/runs/45775030839"
     },
     {
+      "repo": "awesome-os/holo-compiler",
+      "workflowName": "holo-compiler CI",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "v0.7.0",
+      "updatedAt": "2026-11-25T09:13:36Z",
+      "url": "https://github.com/awesome-os/holo-compiler/actions/runs/45583355527"
+    },
+    {
+      "repo": "awesome-os/holo-pm",
+      "workflowName": "Warm Global v11 CAS CDN",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T06:38:53Z",
+      "url": "https://github.com/awesome-os/holo-pm/actions/runs/45769564993"
+    },
+    {
+      "repo": "awesome-os/holo-ffi",
+      "workflowName": "—",
+      "status": "idle",
+      "conclusion": "no-runs",
+      "branch": "main",
+      "updatedAt": "",
+      "url": "https://github.com/awesome-os/holo-ffi/actions"
+    },
+    {
       "repo": "awesome-os/desktop",
       "workflowName": "Build and Boot Awesome-OS Desktop (Multi-Arch UEFI ISO & Netboot)",
       "status": "completed",
@@ -88,8 +115,8 @@
       "status": "queued",
       "conclusion": "none",
       "branch": "main",
-      "updatedAt": "2026-11-26T09:19:22Z",
-      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45790882451"
+      "updatedAt": "2026-11-26T09:23:12Z",
+      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45791474003"
     },
     {
       "repo": "awesome-os/installer",
@@ -99,6 +126,15 @@
       "branch": "main",
       "updatedAt": "2026-11-26T08:49:30Z",
       "url": "https://github.com/awesome-os/installer/actions/runs/45786417930"
+    },
+    {
+      "repo": "awesome-os/deployment",
+      "workflowName": "—",
+      "status": "idle",
+      "conclusion": "no-runs",
+      "branch": "main",
+      "updatedAt": "",
+      "url": "https://github.com/awesome-os/deployment/actions"
     },
     {
       "repo": "awesome-os/host-manager",
@@ -126,6 +162,78 @@
       "branch": "main",
       "updatedAt": "2026-11-26T08:56:44Z",
       "url": "https://github.com/awesome-os/colibri/actions/runs/45787421635"
+    },
+    {
+      "repo": "awesome-os/code-oss",
+      "workflowName": "Awesome-OS Code - OSS CAS CI",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-25T08:07:50Z",
+      "url": "https://github.com/awesome-os/code-oss/actions/runs/45573179935"
+    },
+    {
+      "repo": "awesome-os/node",
+      "workflowName": "Release 5-OS Matrix (Maintenance Workflows)",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "v0.4.0",
+      "updatedAt": "2026-11-24T22:24:14Z",
+      "url": "https://github.com/awesome-os/node/actions/runs/45500312174"
+    },
+    {
+      "repo": "awesome-os/pnpm",
+      "workflowName": "Release awesome-os CAS pnpm",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "v12.23.0-cas.1",
+      "updatedAt": "2026-11-24T21:49:58Z",
+      "url": "https://github.com/awesome-os/pnpm/actions/runs/45488529987"
+    },
+    {
+      "repo": "awesome-os/cargo",
+      "workflowName": "Release CAS Cargo & libcargo",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "v0.1.0",
+      "updatedAt": "2026-11-24T21:01:07Z",
+      "url": "https://github.com/awesome-os/cargo/actions/runs/45484353512"
+    },
+    {
+      "repo": "awesome-os/uv",
+      "workflowName": "Release Awesome-OS CAS uv + libuvpy",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-25T08:29:14Z",
+      "url": "https://github.com/awesome-os/uv/actions/runs/45573282355"
+    },
+    {
+      "repo": "awesome-os/obs",
+      "workflowName": "Release 5-OS Matrix (Maintenance Workflows)",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "v0.3.0",
+      "updatedAt": "2026-11-25T18:51:47Z",
+      "url": "https://github.com/awesome-os/obs/actions/runs/45679232658"
+    },
+    {
+      "repo": "awesome-os/godot",
+      "workflowName": "Awesome-OS Godot 4 CAS CI",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-25T08:06:32Z",
+      "url": "https://github.com/awesome-os/godot/actions/runs/45573210242"
+    },
+    {
+      "repo": "awesome-os/blender",
+      "workflowName": "Awesome-OS Blender CAS CI",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-25T08:04:58Z",
+      "url": "https://github.com/awesome-os/blender/actions/runs/45573177888"
     }
   ],
   "upstreams": [
@@ -146,12 +254,12 @@
       "bumped": false
     },
     {
-      "pkg": "harfbuzz",
-      "repo": "harfbuzz/harfbuzz",
-      "upstreamTag": "15.2.0",
-      "upstreamVersion": "15.2.0",
-      "previousV11": null,
-      "bumped": false
+      "pkg": "mbedtls",
+      "repo": "Mbed-TLS/mbedtls",
+      "upstreamTag": "mbedtls-4.3.0",
+      "upstreamVersion": "4.3.0",
+      "previousV11": "3.6.8",
+      "bumped": true
     },
     {
       "pkg": "zstd",
@@ -162,11 +270,11 @@
       "bumped": false
     },
     {
-      "pkg": "mimalloc",
-      "repo": "microsoft/mimalloc",
-      "upstreamTag": "v3.7.1",
-      "upstreamVersion": "3.7.1",
-      "previousV11": "3.7.1",
+      "pkg": "zlib",
+      "repo": "madler/zlib",
+      "upstreamTag": "v1.4",
+      "upstreamVersion": "1.4",
+      "previousV11": "1.4",
       "bumped": false
     },
     {
@@ -178,11 +286,107 @@
       "bumped": false
     },
     {
-      "pkg": "expat",
-      "repo": "libexpat/libexpat",
-      "upstreamTag": "R_2_11_0",
-      "upstreamVersion": "2.11.0",
-      "previousV11": "2.11.0",
+      "pkg": "brotli",
+      "repo": "google/brotli",
+      "upstreamTag": "v1.2.1",
+      "upstreamVersion": "1.2.1",
+      "previousV11": "1.2.1",
+      "bumped": false
+    },
+    {
+      "pkg": "lz4",
+      "repo": "lz4/lz4",
+      "upstreamTag": "v1.11.1",
+      "upstreamVersion": "1.11.1",
+      "previousV11": "1.11.1",
+      "bumped": false
+    },
+    {
+      "pkg": "libdeflate",
+      "repo": "ebiggers/libdeflate",
+      "upstreamTag": "v1.26",
+      "upstreamVersion": "1.26",
+      "previousV11": "1.26",
+      "bumped": false
+    },
+    {
+      "pkg": "libarchive",
+      "repo": "libarchive/libarchive",
+      "upstreamTag": "v3.8.11",
+      "upstreamVersion": "3.8.11",
+      "previousV11": "3.8.11",
+      "bumped": false
+    },
+    {
+      "pkg": "mimalloc",
+      "repo": "microsoft/mimalloc",
+      "upstreamTag": "v3.7.1",
+      "upstreamVersion": "3.7.1",
+      "previousV11": "3.7.1",
+      "bumped": false
+    },
+    {
+      "pkg": "liburing",
+      "repo": "axboe/liburing",
+      "upstreamTag": "liburing-2.15",
+      "upstreamVersion": "2.15",
+      "previousV11": "2.15",
+      "bumped": false
+    },
+    {
+      "pkg": "libffi",
+      "repo": "libffi/libffi",
+      "upstreamTag": "v3.8.2",
+      "upstreamVersion": "3.8.2",
+      "previousV11": "3.8.1",
+      "bumped": true
+    },
+    {
+      "pkg": "curl",
+      "repo": "curl/curl",
+      "upstreamTag": "curl-8_23_0",
+      "upstreamVersion": "8.23.0",
+      "previousV11": "8.23.0",
+      "bumped": false
+    },
+    {
+      "pkg": "nghttp2",
+      "repo": "nghttp2/nghttp2",
+      "upstreamTag": "v1.71.0",
+      "upstreamVersion": "1.71.0",
+      "previousV11": "1.71.0",
+      "bumped": false
+    },
+    {
+      "pkg": "nghttp3",
+      "repo": "ngtcp2/nghttp3",
+      "upstreamTag": "v1.19.0",
+      "upstreamVersion": "1.19.0",
+      "previousV11": "1.19.0",
+      "bumped": false
+    },
+    {
+      "pkg": "ngtcp2",
+      "repo": "ngtcp2/ngtcp2",
+      "upstreamTag": "v1.26.0",
+      "upstreamVersion": "1.26.0",
+      "previousV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "c-ares",
+      "repo": "c-ares/c-ares",
+      "upstreamTag": "v1.34.9",
+      "upstreamVersion": "1.34.9",
+      "previousV11": "1.34.9",
+      "bumped": false
+    },
+    {
+      "pkg": "llhttp",
+      "repo": "nodejs/llhttp",
+      "upstreamTag": "release/v9.4.4",
+      "upstreamVersion": "9.4.4",
+      "previousV11": "9.4.4",
       "bumped": false
     },
     {
@@ -194,43 +398,11 @@
       "bumped": false
     },
     {
-      "pkg": "curl",
-      "repo": "curl/curl",
-      "upstreamTag": "curl-8_23_0",
-      "upstreamVersion": "8.23.0",
-      "previousV11": "8.23.0",
-      "bumped": false
-    },
-    {
-      "pkg": "vulkan-headers",
-      "repo": "KhronosGroup/Vulkan-Headers",
-      "upstreamTag": "vulkan-sdk-1.4.363.0",
-      "upstreamVersion": "1.4.363.0",
-      "previousV11": "1.4.369",
-      "bumped": false
-    },
-    {
-      "pkg": "vulkan-loader",
-      "repo": "KhronosGroup/Vulkan-Loader",
-      "upstreamTag": "vulkan-sdk-1.4.363.0",
-      "upstreamVersion": "1.4.363.0",
-      "previousV11": "1.4.369",
-      "bumped": false
-    },
-    {
-      "pkg": "glslang",
-      "repo": "KhronosGroup/glslang",
-      "upstreamTag": "16.6.0",
-      "upstreamVersion": "16.6.0",
-      "previousV11": "16.6.0",
-      "bumped": false
-    },
-    {
-      "pkg": "brotli",
-      "repo": "google/brotli",
-      "upstreamTag": "v1.2.1",
-      "upstreamVersion": "1.2.1",
-      "previousV11": "1.2.1",
+      "pkg": "expat",
+      "repo": "libexpat/libexpat",
+      "upstreamTag": "R_2_11_0",
+      "upstreamVersion": "2.11.0",
+      "previousV11": "2.11.0",
       "bumped": false
     },
     {
@@ -250,6 +422,30 @@
       "bumped": false
     },
     {
+      "pkg": "fast_float",
+      "repo": "fastfloat/fast_float",
+      "upstreamTag": "v8.4.0",
+      "upstreamVersion": "8.4.0",
+      "previousV11": "8.4.0",
+      "bumped": false
+    },
+    {
+      "pkg": "re2",
+      "repo": "google/re2",
+      "upstreamTag": "2025-11-05",
+      "upstreamVersion": "2025-11-05",
+      "previousV11": "2025-11-05",
+      "bumped": false
+    },
+    {
+      "pkg": "md4c",
+      "repo": "mity/md4c",
+      "upstreamTag": "v0.6.0",
+      "upstreamVersion": "0.6.0",
+      "previousV11": "0.5.3",
+      "bumped": true
+    },
+    {
       "pkg": "protobuf",
       "repo": "protocolbuffers/protobuf",
       "upstreamTag": "v36.2",
@@ -258,11 +454,107 @@
       "bumped": false
     },
     {
-      "pkg": "liburing",
-      "repo": "axboe/liburing",
-      "upstreamTag": "liburing-2.15",
-      "upstreamVersion": "2.15",
-      "previousV11": "2.15",
+      "pkg": "icu4c",
+      "repo": "unicode-org/icu",
+      "upstreamTag": "release-79.1",
+      "upstreamVersion": "79.1",
+      "previousV11": "79.1",
+      "bumped": false
+    },
+    {
+      "pkg": "sqlite",
+      "repo": "sqlite/sqlite",
+      "upstreamTag": "version-3.54.1",
+      "upstreamVersion": "3.54.1",
+      "previousV11": "3.54.1",
+      "bumped": false
+    },
+    {
+      "pkg": "harfbuzz",
+      "repo": "harfbuzz/harfbuzz",
+      "upstreamTag": "15.2.0",
+      "upstreamVersion": "15.2.0",
+      "previousV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "woff2",
+      "repo": "google/woff2",
+      "upstreamTag": "v1.0.2",
+      "upstreamVersion": "1.0.2",
+      "previousV11": "1.0.2",
+      "bumped": false
+    },
+    {
+      "pkg": "vulkan-headers",
+      "repo": "KhronosGroup/Vulkan-Headers",
+      "upstreamTag": "v1.4.369",
+      "upstreamVersion": "1.4.369",
+      "previousV11": "1.4.369",
+      "bumped": false
+    },
+    {
+      "pkg": "vulkan-loader",
+      "repo": "KhronosGroup/Vulkan-Loader",
+      "upstreamTag": "v1.4.369",
+      "upstreamVersion": "1.4.369",
+      "previousV11": "1.4.369",
+      "bumped": false
+    },
+    {
+      "pkg": "glslang",
+      "repo": "KhronosGroup/glslang",
+      "upstreamTag": "16.6.0",
+      "upstreamVersion": "16.6.0",
+      "previousV11": "16.6.0",
+      "bumped": false
+    },
+    {
+      "pkg": "libsdl3",
+      "repo": "libsdl-org/SDL",
+      "upstreamTag": "release-3.4.20",
+      "upstreamVersion": "3.4.20",
+      "previousV11": "3.4.20",
+      "bumped": false
+    },
+    {
+      "pkg": "libjpeg-turbo",
+      "repo": "libjpeg-turbo/libjpeg-turbo",
+      "upstreamTag": "3.2.1",
+      "upstreamVersion": "3.2.1",
+      "previousV11": "3.2.1",
+      "bumped": false
+    },
+    {
+      "pkg": "libwebp",
+      "repo": "webmproject/libwebp",
+      "upstreamTag": "v1.6.0",
+      "upstreamVersion": "1.6.0",
+      "previousV11": "1.6.0",
+      "bumped": false
+    },
+    {
+      "pkg": "libavif",
+      "repo": "AOMediaCodec/libavif",
+      "upstreamTag": "v1.4.2",
+      "upstreamVersion": "1.4.2",
+      "previousV11": "1.4.2",
+      "bumped": false
+    },
+    {
+      "pkg": "dav1d",
+      "repo": "videolan/dav1d",
+      "upstreamTag": "1.5.5",
+      "upstreamVersion": "1.5.5",
+      "previousV11": "1.5.5",
+      "bumped": false
+    },
+    {
+      "pkg": "ffmpeg",
+      "repo": "FFmpeg/FFmpeg",
+      "upstreamTag": "n9.1",
+      "upstreamVersion": "9.1",
+      "previousV11": "9.1",
       "bumped": false
     },
     {
@@ -290,11 +582,11 @@
       "bumped": false
     },
     {
-      "pkg": "nghttp2",
-      "repo": "nghttp2/nghttp2",
-      "upstreamTag": "v1.71.0",
-      "upstreamVersion": "1.71.0",
-      "previousV11": "1.71.0",
+      "pkg": "meson",
+      "repo": "mesonbuild/meson",
+      "upstreamTag": "1.12.1",
+      "upstreamVersion": "1.12.1",
+      "previousV11": "1.12.1",
       "bumped": false
     }
   ],

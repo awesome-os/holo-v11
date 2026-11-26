@@ -92,7 +92,7 @@
   <div class="grid2">
     <div>
       <section class="card">
-        <h2><span>GitHub Actions Runners (Core Org)</span><span class="badge accent" id="runner-summary">live</span></h2>
+        <h2><span id="runners-heading">GitHub Actions Runners (Core Org)</span><span class="badge accent" id="runner-summary">live</span></h2>
         <table>
           <thead><tr><th>Repository</th><th>Workflow</th><th>Status</th><th>Updated</th></tr></thead>
           <tbody id="runners-tbody"></tbody>
@@ -107,7 +107,7 @@
 
     <div>
       <section class="card">
-        <h2><span>Upstream Library Drift Radar (21 Core Libs)</span><span class="badge ok" id="upstream-summary">live</span></h2>
+        <h2><span id="upstreams-heading">Upstream Library Drift Radar</span><span class="badge ok" id="upstream-summary">live</span></h2>
         <table>
           <thead><tr><th>Library</th><th>v11 Pin</th><th>Upstream</th><th>State</th></tr></thead>
           <tbody id="upstreams-tbody"></tbody>
@@ -132,6 +132,8 @@
       <div class="kpi"><div class="v">${d.summary.bigBoysCount} runtimes</div><div class="k">${d.summary.standaloneDiskSavedMb} MB → 1 v11 CAS Layer</div></div>
     `;
 
+    document.getElementById('runners-heading').textContent = `GitHub Actions Runners (${d.runners.length} Core Repos)`;
+    document.getElementById('upstreams-heading').textContent = `Upstream Library Drift Radar (${d.upstreams.length} Core Libs)`;
     document.getElementById('runner-summary').textContent = `${d.summary.passingRuns} pass · ${d.summary.activeRuns} active · ${d.summary.failingRuns} fail`;
     document.getElementById('runners-tbody').innerHTML = d.runners.map((r) => {
       const cls = r.status === 'in_progress' || r.status === 'queued'
