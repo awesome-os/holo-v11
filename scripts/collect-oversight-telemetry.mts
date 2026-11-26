@@ -12,6 +12,8 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const REPOS = [
+  'awesome-os/awesome-os',
+  'awesome-os/bootloader',
   'awesome-os/sectium-browser',
   'awesome-os/libv8_monolith',
   'awesome-os/lo',
