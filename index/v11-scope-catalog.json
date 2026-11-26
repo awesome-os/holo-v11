@@ -1,7 +1,7 @@
 {
   "schema": "awesome-os.v11-scope-catalog.v1",
   "abiMagic": "0x33564742",
-  "generatedAt": "2026-11-26T06:07:36.571Z",
+  "generatedAt": "2026-11-26T20:32:20.531Z",
   "taxonomy": [
     "appliance",
     "device",
@@ -18,9 +18,7 @@
     "appliance": [
       "b8g-production-rack"
     ],
-    "device": [
-      "sectium-display"
-    ],
+    "device": [],
     "monitor": [
       "blink",
       "code-oss",
@@ -29,20 +27,18 @@
       "noctalia",
       "qt",
       "sectium-browser",
-      "sectium-display",
-      "sectium-electron",
       "theia",
       "wry"
     ],
     "keyboard": [
       "desktop-omarchy",
-      "noctalia",
-      "sectium-display"
+      "noctalia"
     ],
     "oci-container": [
       "t2xnu"
     ],
     "browser-app": [
+      "awesome-os",
       "blink",
       "code-oss",
       "desktop-omarchy",
@@ -53,19 +49,19 @@
       "powershell",
       "qt",
       "sectium-browser",
-      "sectium-display",
-      "sectium-electron",
       "theia",
       "upstream-mirrors",
       "wasi-host",
       "wry"
     ],
     "terminal-app": [
+      "awesome-os",
       "b8g-production-rack",
       "blender",
       "brave",
       "cargo",
       "code-oss",
+      "colibri",
       "coreutils",
       "dawn",
       "dotnet",
@@ -73,9 +69,9 @@
       "godot",
       "holo-compiler",
       "holo-pm",
-      "just",
       "just-js",
       "libuv",
+      "llama.cpp",
       "lo",
       "noctalia",
       "node",
@@ -84,8 +80,6 @@
       "pnpm",
       "powershell",
       "sectium-browser",
-      "sectium-display",
-      "sectium-distributions",
       "skia",
       "upstream-mirrors",
       "uv",
@@ -93,6 +87,7 @@
       "webui"
     ],
     "folder-structure": [
+      "awesome-os",
       "b8g-app-dedup",
       "b8g-ide",
       "b8g-micro-moe",
@@ -105,17 +100,11 @@
       "desktop-omarchy",
       "electron",
       "explorer",
-      "ghost-100",
-      "ghost-cpp",
-      "ghost-jvm",
-      "ghost-py",
       "godot-vscode",
       "holo-compiler",
       "holo-pm",
       "installer",
-      "just",
       "libv8_monolith",
-      "modern-picomatch",
       "noctalia",
       "nodeman",
       "obs",
@@ -123,12 +112,7 @@
       "ory-polis",
       "pinokio",
       "posix",
-      "pouchdb",
       "qt",
-      "rollup",
-      "sectium-devops",
-      "sectium-devtools",
-      "sectium-electron",
       "sectium-es",
       "sectium-jvm",
       "stealifylang-vscode",
@@ -139,10 +123,10 @@
       "universal-git",
       "unreal-vscode",
       "upstream-mirrors",
-      "wry",
-      "ws"
+      "wry"
     ],
     "local": [
+      "awesome-os",
       "b8g-app-dedup",
       "b8g-micro-moe",
       "b8g-production-rack",
@@ -158,7 +142,7 @@
       "godot-vscode",
       "holo-compiler",
       "holo-pm",
-      "just",
+      "libv8_monolith",
       "noctalia",
       "nodeman",
       "obs",
@@ -167,9 +151,8 @@
       "posix",
       "qt",
       "sectium-browser",
-      "sectium-display",
-      "sectium-electron",
       "stealifylang-vscode",
+      "t2linux-baseline",
       "t2xnu",
       "theia",
       "unity-vscode",
@@ -179,13 +162,13 @@
       "wry"
     ],
     "remote": [
+      "awesome-os",
       "b8g-production-rack",
       "cargo",
       "coreutils",
       "explorer",
       "holo-compiler",
       "holo-pm",
-      "just",
       "nodeman",
       "obs",
       "pnpm",
@@ -195,6 +178,13 @@
     ]
   },
   "byRepo": {
+    "awesome-os": [
+      "browser-app",
+      "terminal-app",
+      "folder-structure",
+      "local",
+      "remote"
+    ],
     "b8g-app-dedup": [
       "folder-structure",
       "local"
@@ -243,6 +233,9 @@
       "terminal-app",
       "local"
     ],
+    "colibri": [
+      "terminal-app"
+    ],
     "coreutils": [
       "terminal-app",
       "folder-structure",
@@ -279,18 +272,6 @@
       "local",
       "remote"
     ],
-    "ghost-100": [
-      "folder-structure"
-    ],
-    "ghost-cpp": [
-      "folder-structure"
-    ],
-    "ghost-jvm": [
-      "folder-structure"
-    ],
-    "ghost-py": [
-      "folder-structure"
-    ],
     "godot": [
       "browser-app",
       "terminal-app"
@@ -314,12 +295,6 @@
     "installer": [
       "folder-structure"
     ],
-    "just": [
-      "terminal-app",
-      "folder-structure",
-      "local",
-      "remote"
-    ],
     "just-js": [
       "terminal-app"
     ],
@@ -327,13 +302,14 @@
       "terminal-app"
     ],
     "libv8_monolith": [
-      "folder-structure"
+      "folder-structure",
+      "local"
+    ],
+    "llama.cpp": [
+      "terminal-app"
     ],
     "lo": [
       "terminal-app"
-    ],
-    "modern-picomatch": [
-      "folder-structure"
     ],
     "noctalia": [
       "monitor",
@@ -377,9 +353,6 @@
       "folder-structure",
       "local"
     ],
-    "pouchdb": [
-      "folder-structure"
-    ],
     "powershell": [
       "browser-app",
       "terminal-app"
@@ -390,36 +363,10 @@
       "folder-structure",
       "local"
     ],
-    "rollup": [
-      "folder-structure"
-    ],
     "sectium-browser": [
       "monitor",
       "browser-app",
       "terminal-app",
-      "local"
-    ],
-    "sectium-devops": [
-      "folder-structure"
-    ],
-    "sectium-devtools": [
-      "folder-structure"
-    ],
-    "sectium-display": [
-      "device",
-      "monitor",
-      "keyboard",
-      "browser-app",
-      "terminal-app",
-      "local"
-    ],
-    "sectium-distributions": [
-      "terminal-app"
-    ],
-    "sectium-electron": [
-      "monitor",
-      "browser-app",
-      "folder-structure",
       "local"
     ],
     "sectium-es": [
@@ -436,7 +383,8 @@
       "local"
     ],
     "t2linux-baseline": [
-      "folder-structure"
+      "folder-structure",
+      "local"
     ],
     "t2xnu": [
       "oci-container",
@@ -487,9 +435,6 @@
       "browser-app",
       "folder-structure",
       "local"
-    ],
-    "ws": [
-      "folder-structure"
     ]
   }
 }

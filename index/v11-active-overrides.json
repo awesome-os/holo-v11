@@ -1,7 +1,7 @@
 {
   "schema": "awesome-os.v11-active-overrides.v1",
   "abiMagic": "0x33564742",
-  "generatedAt": "2026-11-26T06:07:36.503Z",
+  "generatedAt": "2026-11-26T20:32:20.455Z",
   "adoptedRepos": [
     {
       "repo": "b8g-ide",
@@ -60,34 +60,6 @@
       "shadowedLegacyAssets": 1
     },
     {
-      "repo": "ghost-100",
-      "tag": "v0.2.0",
-      "treeManifestUrl": "https://github.com/awesome-os/ghost-100/releases/download/v0.2.0/v11-tree.json",
-      "treeManifestSha512": "c09fe0cf00d7a5b03a263668f6098b245fbc43d3a06b65c3d71742a16296c4f72cdd05c326c3d27f8239a0ca0bf34fd78bfcfd5a736a1541e0054add99acb8ba",
-      "shadowedLegacyAssets": 1
-    },
-    {
-      "repo": "ghost-cpp",
-      "tag": "v0.2.0",
-      "treeManifestUrl": "https://github.com/awesome-os/ghost-cpp/releases/download/v0.2.0/v11-tree.json",
-      "treeManifestSha512": "95066c3baa8bf2cc56795fc9390c9c99c9283c309e4358e5c6af28a002e33bfbe1f9e3b5f3eae3bd4b381112132826f094598dd7fb341b8fa72ff88bf8604424",
-      "shadowedLegacyAssets": 1
-    },
-    {
-      "repo": "ghost-jvm",
-      "tag": "v0.2.0",
-      "treeManifestUrl": "https://github.com/awesome-os/ghost-jvm/releases/download/v0.2.0/v11-tree.json",
-      "treeManifestSha512": "fb06e5ac8a17c6067b22687fcf9517c994cd1140274bf201faff4b998db5489b16a37545b7f77644657bf13194f65f3d5bf037e39cf164b6e1e32eee75224849",
-      "shadowedLegacyAssets": 1
-    },
-    {
-      "repo": "ghost-py",
-      "tag": "v0.2.0",
-      "treeManifestUrl": "https://github.com/awesome-os/ghost-py/releases/download/v0.2.0/v11-tree.json",
-      "treeManifestSha512": "1bcddfa3471b77067546a61be468976615a4d7041b0e5a3b334192cb931ec21f95c366c7263fbe52e1a7e52189202a4b3222298f09ede45ea9b55ad3cfb54c69",
-      "shadowedLegacyAssets": 1
-    },
-    {
       "repo": "holo-compiler",
       "tag": "v0.7.0",
       "treeManifestUrl": "https://github.com/awesome-os/holo-compiler/releases/download/v0.7.0/v11-tree.json",
@@ -106,27 +78,6 @@
       "tag": "v0.2.4",
       "treeManifestUrl": "https://github.com/awesome-os/installer/releases/download/v0.2.4/v11-tree.json",
       "treeManifestSha512": "bbceccd12f9cd57f2128b25e2aa06e27d4ce6613874370d41dcbee181df2806c3082dcc2d3cae3af8581c11c1ad8cc2bd955976947726ebdc321951a3c5fea8a",
-      "shadowedLegacyAssets": 1
-    },
-    {
-      "repo": "just",
-      "tag": "v0.1.0",
-      "treeManifestUrl": "https://github.com/awesome-os/just/releases/download/v0.1.0/v11-tree.json",
-      "treeManifestSha512": "36331870b4195f73ad6b6f4808940dabf07e1eda5da2c8421cf8e15df77b641122394f6f077ea333842c852dd62d7da905ce15d6d78466f42b37a4f9667597e1",
-      "shadowedLegacyAssets": 1
-    },
-    {
-      "repo": "libv8_monolith",
-      "tag": "v0.2.1",
-      "treeManifestUrl": "https://github.com/awesome-os/libv8_monolith/releases/download/v0.2.1/v11-tree.json",
-      "treeManifestSha512": "f67dab60bf6ff8fce38d170f57fb4ac56dcd0e958dc1365a31075cee1983eb6793a24e2e8fc10c4ca0e350c475e04e24c8c7b9811b42806d82aca2ec4b4f9ef0",
-      "shadowedLegacyAssets": 1
-    },
-    {
-      "repo": "modern-picomatch",
-      "tag": "v0.1.0",
-      "treeManifestUrl": "https://github.com/awesome-os/modern-picomatch/releases/download/v0.1.0/v11-tree.json",
-      "treeManifestSha512": "93ca1618c04544c2e62ced5ee94ba7330a039e9429e8606eeb02790734832b1c65333291266fbe80a22f21eeafa964f91e0da035d8e849a8d88e76877f472fc3",
       "shadowedLegacyAssets": 1
     },
     {
@@ -165,45 +116,10 @@
       "shadowedLegacyAssets": 1
     },
     {
-      "repo": "pouchdb",
-      "tag": "v0.1.0",
-      "treeManifestUrl": "https://github.com/awesome-os/pouchdb/releases/download/v0.1.0/v11-tree.json",
-      "treeManifestSha512": "6a675d8bb0eb4dd2a50129c8d38c6f6c68b6e8709101527c13a019aedf6477f4d1bc39998e90a69897c7d0767c9621ef872af94d602990883bb291c00912e6c7",
-      "shadowedLegacyAssets": 1
-    },
-    {
       "repo": "qt",
       "tag": "v0.2.0",
       "treeManifestUrl": "https://github.com/awesome-os/qt/releases/download/v0.2.0/v11-tree.json",
       "treeManifestSha512": "c605ee46925bff28cf99b8966222276f89cb12684c6d2924f90eb5b234db46ecb597c6ec10fe1b41ccc47f2d484a31e9184395d8a61c1cf08bf8770b5352ad5b",
-      "shadowedLegacyAssets": 1
-    },
-    {
-      "repo": "rollup",
-      "tag": "v0.1.0",
-      "treeManifestUrl": "https://github.com/awesome-os/rollup/releases/download/v0.1.0/v11-tree.json",
-      "treeManifestSha512": "e04a5715ccd85264382a47d545e2720698c658697aa3d5287f91b5e9c1a380d6e7c25eb3177facdfe93dbca042fa88560b91cdb03d49b8f46216f04e8f88fc3e",
-      "shadowedLegacyAssets": 1
-    },
-    {
-      "repo": "sectium-devops",
-      "tag": "v0.1.0",
-      "treeManifestUrl": "https://github.com/awesome-os/sectium-devops/releases/download/v0.1.0/v11-tree.json",
-      "treeManifestSha512": "698c026117ea82c1a82d3695ab59f74cc5fe68dbbe530e85a88c0e9807b7faaefc70f20736e65baaf36e3a28b2f1f4c6783b695859bb53ddc92113cb4342f46c",
-      "shadowedLegacyAssets": 1
-    },
-    {
-      "repo": "sectium-devtools",
-      "tag": "v0.1.0",
-      "treeManifestUrl": "https://github.com/awesome-os/sectium-devtools/releases/download/v0.1.0/v11-tree.json",
-      "treeManifestSha512": "7ae2b9a34851ea0f66af62deed488db9f58679272cfaea1e68048cc7da63d99cbeb33d285138bb735de979ae5c40b71bf5681d52c2cd6fd8ee55ce9727f5e1bd",
-      "shadowedLegacyAssets": 1
-    },
-    {
-      "repo": "sectium-electron",
-      "tag": "v0.2.0",
-      "treeManifestUrl": "https://github.com/awesome-os/sectium-electron/releases/download/v0.2.0/v11-tree.json",
-      "treeManifestSha512": "fd3191ed921733642dc3a7a3335f5ffa0d1194f3668d11a5cf36c33f8548529ffa8e5ef175d0737420690648d3d211fc882b602000d43b468fd1dc7c96fe728f",
       "shadowedLegacyAssets": 1
     },
     {
@@ -219,13 +135,6 @@
       "treeManifestUrl": "https://github.com/awesome-os/sectium-jvm/releases/download/v0.1.0/v11-tree.json",
       "treeManifestSha512": "60419bb65522bac61d7f97aafda601868d6b74662c1b6ed94da578071fa5bee62dc3b60c6251915e1a3ac6e5c1bc5b69d02f77d3c845b2998b8685fd00cccb78",
       "shadowedLegacyAssets": 1
-    },
-    {
-      "repo": "t2linux-baseline",
-      "tag": "v0.1.0",
-      "treeManifestUrl": "https://github.com/awesome-os/t2linux-baseline/releases/download/v0.1.0/v11-tree.json",
-      "treeManifestSha512": "d304804c9eb3f7f95b8e6c0059169728723bf38da15ba241cbc9df70a9fea9bfa4c5481a237b07a9a17128f581112d69a68bc695eccf3344ed6c48054c72c0c4",
-      "shadowedLegacyAssets": 0
     },
     {
       "repo": "theia",
@@ -254,18 +163,14 @@
       "treeManifestUrl": "https://github.com/awesome-os/wry/releases/download/v0.1.1/v11-tree.json",
       "treeManifestSha512": "511fa9d2770dcc88b247bb03fc6639875c1519535f91581573554b19651d5d5c4f94b8497298700daf5475f6693fb461d586f6b12966ed5cf814ab0bdbf4c16b",
       "shadowedLegacyAssets": 1
-    },
-    {
-      "repo": "ws",
-      "tag": "v0.1.0",
-      "treeManifestUrl": "https://github.com/awesome-os/ws/releases/download/v0.1.0/v11-tree.json",
-      "treeManifestSha512": "a0ea482a042c1bfcf3a7a9340a71619b887fb5fd60ccf3e13097090607f101228324c2d4c4ad9fe8ac994282f48e95ac3e870a411552298c8c942d6a887304fa",
-      "shadowedLegacyAssets": 1
     }
   ],
   "pendingTarRepos": [
+    "colibri",
+    "libv8_monolith",
+    "llama.cpp",
     "sectium-browser"
   ],
-  "adoptionCount": 37,
-  "legacyTarRepoCount": 1
+  "adoptionCount": 23,
+  "legacyTarRepoCount": 4
 }

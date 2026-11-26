@@ -86,6 +86,53 @@ const LOCAL_CAS_ROOT = process.env.B8G_CAS_DIR || path.join(os.homedir(), '.b8g'
 const CONCURRENCY = 12;
 const OUT_DIR = path.resolve(process.cwd(), 'index');
 
+/**
+ * Consolidated standalone repositories that were archived after folding into the
+ * 5 canonical monorepos, but still host live GitHub Release blobs referenced by
+ * downstream Holo v11 consumers (e.g. `devtools` Theia/IDE hydration).
+ * Dead legacy forks (`pouchdb`, `rollup`, `modern-picomatch`, `ws`, `experiments`)
+ * and `b8g-ghost` repos remain excluded.
+ */
+const CONSOLIDATED_ARCHIVE_ALLOWLIST = new Set<string>([
+  'theia',
+  'code-oss',
+  'b8g-ide',
+  'brave',
+  'electron',
+  'blink',
+  'skia',
+  'dawn',
+  'bun-neon',
+  'node',
+  'nodeman',
+  'libv8_monolith',
+  'just-js',
+  'godot',
+  'blender',
+  'godot-vscode',
+  'blender-vscode',
+  'unity-vscode',
+  'unreal-vscode',
+  'obs-vscode',
+  'stealifylang-vscode',
+  'wasi-host',
+  'sectium-es',
+  'sectium-jvm',
+  'obs',
+  'dotnet',
+  'powershell',
+  'qt',
+  'b8g-micro-moe',
+  'b8g-app-dedup',
+  'x402-BaaS-mcp',
+  'pinokio',
+  't2xnu',
+  'posix',
+  'bootloader',
+  'holo-ffi',
+  'b8g-production-rack',
+]);
+
 const apiHeaders: Record<string, string> = {
   Accept: 'application/vnd.github+json',
   'User-Agent': 'awesome-os-global-v11-cas-warmer/1.0',
@@ -155,7 +202,10 @@ async function listOrgRepos(): Promise<string[]> {
     const batch = (await res.json()) as GhRepo[];
     if (batch.length === 0) break;
     for (const r of batch) {
-      if (!r.archived && r.name !== 'holo-sdk') names.push(r.name);
+      if (r.name === 'holo-sdk') continue;
+      if (!r.archived || CONSOLIDATED_ARCHIVE_ALLOWLIST.has(r.name)) {
+        names.push(r.name);
+      }
     }
     if (batch.length < 100) break;
   }
