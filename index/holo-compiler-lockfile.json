@@ -4,28 +4,6 @@
   "casLayout": "v11",
   "dependencies": [
     {
-      "id": "awesome-os/awesome-os-desktop@v0.1.0/awesome-os-desktop.exe",
-      "repo": "awesome-os-desktop",
-      "tag": "v0.1.0",
-      "filename": "awesome-os-desktop.exe",
-      "target": "win64",
-      "sha512": "73612dc6b19f8723f4f39be254659697720537a55c2d2809c0611f842f45bc66fc8e38acce18fbd62b84eeb271ac879621b6dc555db5cfa9b5d91917fb2f26c0",
-      "size": 26624,
-      "blobPath": "v11/files/73/73612dc6b19f8723f4f39be254659697720537a55c2d2809c0611f842f45bc66fc8e38acce18fbd62b84eeb271ac879621b6dc555db5cfa9b5d91917fb2f26c0-exec",
-      "downloadUrl": "https://github.com/awesome-os/awesome-os-desktop/releases/download/v0.1.0/awesome-os-desktop.exe"
-    },
-    {
-      "id": "awesome-os/awesome-os-desktop@v0.1.0/v11-tree.json",
-      "repo": "awesome-os-desktop",
-      "tag": "v0.1.0",
-      "filename": "v11-tree.json",
-      "target": "any",
-      "sha512": "10bb4024ed9019a20c621f8a74629b28ad35d2a68795e626d7a41ac879d3f7396b622e823de4789d90c6a169f2b5f266d13de0ede1c44659edabdf01b24a60c9",
-      "size": 8064,
-      "blobPath": "v11/files/10/10bb4024ed9019a20c621f8a74629b28ad35d2a68795e626d7a41ac879d3f7396b622e823de4789d90c6a169f2b5f266d13de0ede1c44659edabdf01b24a60c9",
-      "downloadUrl": "https://github.com/awesome-os/awesome-os-desktop/releases/download/v0.1.0/v11-tree.json"
-    },
-    {
       "id": "awesome-os/b8g-app-dedup@v0.3.0/app-paths.b8p",
       "repo": "b8g-app-dedup",
       "tag": "v0.3.0",
@@ -948,6 +926,61 @@
       "size": 2359365,
       "blobPath": "v11/files/97/97a3623ba3055c476ad11296fff0bbe56d7440f898bf9e76ac5479c0ffaf4df6d535e0d41aa836204c390bb993103b61361927bf1908d1e985733a33b1a1178f",
       "downloadUrl": "https://github.com/awesome-os/desktop-omarchy/releases/download/v0.1.0/v11-tree.json"
+    },
+    {
+      "id": "awesome-os/desktop@v0.3.0/awesome-os-desktop-x86_64.iso",
+      "repo": "desktop",
+      "tag": "v0.3.0",
+      "filename": "awesome-os-desktop-x86_64.iso",
+      "target": "any",
+      "sha512": "0949bc6770d1e9df16c07c9e58f06deb39d4ca8ee365425df0495e817a0c8c3b9327d21686c9d168d8c072326a47fa85bfbeb9f554cfbda3549172df6f0788fd",
+      "size": 22544384,
+      "blobPath": "v11/files/09/0949bc6770d1e9df16c07c9e58f06deb39d4ca8ee365425df0495e817a0c8c3b9327d21686c9d168d8c072326a47fa85bfbeb9f554cfbda3549172df6f0788fd",
+      "downloadUrl": "https://github.com/awesome-os/desktop/releases/download/v0.3.0/awesome-os-desktop-x86_64.iso"
+    },
+    {
+      "id": "awesome-os/desktop@v0.3.0/awesome-os-desktop-x86_64.qcow2",
+      "repo": "desktop",
+      "tag": "v0.3.0",
+      "filename": "awesome-os-desktop-x86_64.qcow2",
+      "target": "any",
+      "sha512": "e17b197c42f96da71a0ca0b2a5262c26d5a2bdf12478f3bf36fe79ff05123d49bd4d9bbed11076d908240d83f387ed8db7d1fae0aed772a17e8fa76788b89c30",
+      "size": 19137024,
+      "blobPath": "v11/files/e1/e17b197c42f96da71a0ca0b2a5262c26d5a2bdf12478f3bf36fe79ff05123d49bd4d9bbed11076d908240d83f387ed8db7d1fae0aed772a17e8fa76788b89c30",
+      "downloadUrl": "https://github.com/awesome-os/desktop/releases/download/v0.3.0/awesome-os-desktop-x86_64.qcow2"
+    },
+    {
+      "id": "awesome-os/desktop@v0.3.0/init-x86_64",
+      "repo": "desktop",
+      "tag": "v0.3.0",
+      "filename": "init-x86_64",
+      "target": "any",
+      "sha512": "b101397c295d15007478595736f465f65c974de87fd0ab18c04c1d1daf5b8caab767e72dfd601d2f62350e2df7a3520a23e08835c49df616e425bb53894e25c9",
+      "size": 59168,
+      "blobPath": "v11/files/b1/b101397c295d15007478595736f465f65c974de87fd0ab18c04c1d1daf5b8caab767e72dfd601d2f62350e2df7a3520a23e08835c49df616e425bb53894e25c9-exec",
+      "downloadUrl": "https://github.com/awesome-os/desktop/releases/download/v0.3.0/init-x86_64"
+    },
+    {
+      "id": "awesome-os/desktop@v0.3.0/initramfs-x86_64.cpio.zst",
+      "repo": "desktop",
+      "tag": "v0.3.0",
+      "filename": "initramfs-x86_64.cpio.zst",
+      "target": "any",
+      "sha512": "1245109a4b03d07d480589e6d9287b27a6f73f331c567c8d73f59b0c194457ed696cdcc73742cf1367099a28ca4f36d5e5046f7f31f5e74fc82a1c22f3b6c62b",
+      "size": 1183152,
+      "blobPath": "v11/files/12/1245109a4b03d07d480589e6d9287b27a6f73f331c567c8d73f59b0c194457ed696cdcc73742cf1367099a28ca4f36d5e5046f7f31f5e74fc82a1c22f3b6c62b",
+      "downloadUrl": "https://github.com/awesome-os/desktop/releases/download/v0.3.0/initramfs-x86_64.cpio.zst"
+    },
+    {
+      "id": "awesome-os/desktop@v0.3.0/vmlinuz-x86_64",
+      "repo": "desktop",
+      "tag": "v0.3.0",
+      "filename": "vmlinuz-x86_64",
+      "target": "any",
+      "sha512": "3104753c7eb1274ac9b77d8ab5a982ef040fd921e091fec9ed8f4235031b068bbc10d74b99c436f5e46559ba7a643ba92c802138667e26d75d3b778a8f59aea0",
+      "size": 17500552,
+      "blobPath": "v11/files/31/3104753c7eb1274ac9b77d8ab5a982ef040fd921e091fec9ed8f4235031b068bbc10d74b99c436f5e46559ba7a643ba92c802138667e26d75d3b778a8f59aea0-exec",
+      "downloadUrl": "https://github.com/awesome-os/desktop/releases/download/v0.3.0/vmlinuz-x86_64"
     },
     {
       "id": "awesome-os/dotnet@v0.1.0/dotnet-linux-arm64",
@@ -2468,6 +2501,50 @@
       "downloadUrl": "https://github.com/awesome-os/pnpm/releases/download/v12.23.0-cas.1/SHA256SUMS.txt"
     },
     {
+      "id": "awesome-os/posix@v0.1.0/awesome-os-posix-x86_64.iso",
+      "repo": "posix",
+      "tag": "v0.1.0",
+      "filename": "awesome-os-posix-x86_64.iso",
+      "target": "any",
+      "sha512": "92049e3ae1affa34f525b9e176c73bc2211e69007d0d9fa0de465c437fc3243b8901cd4414b063b08c2e536b9080e6c210c23fd9ac5a54ed98f2a3fbbe5222f7",
+      "size": 22507520,
+      "blobPath": "v11/files/92/92049e3ae1affa34f525b9e176c73bc2211e69007d0d9fa0de465c437fc3243b8901cd4414b063b08c2e536b9080e6c210c23fd9ac5a54ed98f2a3fbbe5222f7",
+      "downloadUrl": "https://github.com/awesome-os/posix/releases/download/v0.1.0/awesome-os-posix-x86_64.iso"
+    },
+    {
+      "id": "awesome-os/posix@v0.1.0/init-x86_64",
+      "repo": "posix",
+      "tag": "v0.1.0",
+      "filename": "init-x86_64",
+      "target": "any",
+      "sha512": "fc52757b7c63fff644a53367ea8f81f32456995b7c65b58d6d3e669afa32acad70824b1d36bd5d029d987e085079e51bfaac96f02ee651e2806c20ddc1ccd24d",
+      "size": 59104,
+      "blobPath": "v11/files/fc/fc52757b7c63fff644a53367ea8f81f32456995b7c65b58d6d3e669afa32acad70824b1d36bd5d029d987e085079e51bfaac96f02ee651e2806c20ddc1ccd24d-exec",
+      "downloadUrl": "https://github.com/awesome-os/posix/releases/download/v0.1.0/init-x86_64"
+    },
+    {
+      "id": "awesome-os/posix@v0.1.0/initramfs-x86_64.cpio.zst",
+      "repo": "posix",
+      "tag": "v0.1.0",
+      "filename": "initramfs-x86_64.cpio.zst",
+      "target": "any",
+      "sha512": "d9347be44bc3f04f7319221efcac0f079ca42a04783e5a1f03e6f21a3c1ecadeea397e93a64648c1048b95bee4821516fef1a1e724f90072ff2ac354352e203e",
+      "size": 1146138,
+      "blobPath": "v11/files/d9/d9347be44bc3f04f7319221efcac0f079ca42a04783e5a1f03e6f21a3c1ecadeea397e93a64648c1048b95bee4821516fef1a1e724f90072ff2ac354352e203e",
+      "downloadUrl": "https://github.com/awesome-os/posix/releases/download/v0.1.0/initramfs-x86_64.cpio.zst"
+    },
+    {
+      "id": "awesome-os/posix@v0.1.0/vmlinuz-x86_64",
+      "repo": "posix",
+      "tag": "v0.1.0",
+      "filename": "vmlinuz-x86_64",
+      "target": "any",
+      "sha512": "3104753c7eb1274ac9b77d8ab5a982ef040fd921e091fec9ed8f4235031b068bbc10d74b99c436f5e46559ba7a643ba92c802138667e26d75d3b778a8f59aea0",
+      "size": 17500552,
+      "blobPath": "v11/files/31/3104753c7eb1274ac9b77d8ab5a982ef040fd921e091fec9ed8f4235031b068bbc10d74b99c436f5e46559ba7a643ba92c802138667e26d75d3b778a8f59aea0-exec",
+      "downloadUrl": "https://github.com/awesome-os/posix/releases/download/v0.1.0/vmlinuz-x86_64"
+    },
+    {
       "id": "awesome-os/pouchdb@v0.1.0/pouchdb-v0.1.0.tar.zst",
       "repo": "pouchdb",
       "tag": "v0.1.0",
@@ -3337,169 +3414,48 @@
       "downloadUrl": "https://github.com/awesome-os/stealifylang-vscode/releases/download/v1.1.0/stealifylang-vscode-1.1.0.vsix"
     },
     {
-      "id": "awesome-os/t2desktop-noctalia@v0.1.0/SHA256SUMS.txt",
-      "repo": "t2desktop-noctalia",
+      "id": "awesome-os/t2linux-baseline@v0.1.0/t2-mininit-x86_64",
+      "repo": "t2linux-baseline",
       "tag": "v0.1.0",
-      "filename": "SHA256SUMS.txt",
+      "filename": "t2-mininit-x86_64",
       "target": "any",
-      "sha512": "eab00de2e343cfb96926dbd58945aee8fb15553cc111f6d319575d646d9c2f2ece8e333e4f707064b9197c9f250f84b168f61d705145aec45efeadbaaaf15206",
-      "size": 100,
-      "blobPath": "v11/files/ea/eab00de2e343cfb96926dbd58945aee8fb15553cc111f6d319575d646d9c2f2ece8e333e4f707064b9197c9f250f84b168f61d705145aec45efeadbaaaf15206",
-      "downloadUrl": "https://github.com/awesome-os/t2desktop-noctalia/releases/download/v0.1.0/SHA256SUMS.txt"
+      "sha512": "12d3792777fc4e97be9eb93dadab0e483f9aa1ab833b4daa6c9e1cd13df412172fb3d27e64628c2986d5ab97ddc3255bd1c6e16b696f03aefc7b56873a4fae28",
+      "size": 54944,
+      "blobPath": "v11/files/12/12d3792777fc4e97be9eb93dadab0e483f9aa1ab833b4daa6c9e1cd13df412172fb3d27e64628c2986d5ab97ddc3255bd1c6e16b696f03aefc7b56873a4fae28-exec",
+      "downloadUrl": "https://github.com/awesome-os/t2linux-baseline/releases/download/v0.1.0/t2-mininit-x86_64"
     },
     {
-      "id": "awesome-os/t2desktop-noctalia@v0.1.0/t2desktop-noctalia-v0.1.0.tar.zst",
-      "repo": "t2desktop-noctalia",
+      "id": "awesome-os/t2linux-baseline@v0.1.0/t2sde-baseline-initramfs-x86_64.cpio.zst",
+      "repo": "t2linux-baseline",
       "tag": "v0.1.0",
-      "filename": "t2desktop-noctalia-v0.1.0.tar.zst",
+      "filename": "t2sde-baseline-initramfs-x86_64.cpio.zst",
       "target": "any",
-      "sha512": "7a1fa5dcf657f4de3f57e76a361f1f69902d3bf6e1c89026c7a65fdb1049ba79fd5d7ae2725e13845199f5a0044a5e2209ebd25d8f763479f8e1a28840c86098",
-      "size": 2586,
-      "blobPath": "v11/files/7a/7a1fa5dcf657f4de3f57e76a361f1f69902d3bf6e1c89026c7a65fdb1049ba79fd5d7ae2725e13845199f5a0044a5e2209ebd25d8f763479f8e1a28840c86098",
-      "downloadUrl": "https://github.com/awesome-os/t2desktop-noctalia/releases/download/v0.1.0/t2desktop-noctalia-v0.1.0.tar.zst"
+      "sha512": "0850a75aa5744354976206b6ada6d5d92d00d0c05a9d5e685df52b2dec4242a5de6f4c1f8c33bf04e3f5f0aaba7dcbcce5ba1677a108b120d27a1336af5541f0",
+      "size": 1063628,
+      "blobPath": "v11/files/08/0850a75aa5744354976206b6ada6d5d92d00d0c05a9d5e685df52b2dec4242a5de6f4c1f8c33bf04e3f5f0aaba7dcbcce5ba1677a108b120d27a1336af5541f0",
+      "downloadUrl": "https://github.com/awesome-os/t2linux-baseline/releases/download/v0.1.0/t2sde-baseline-initramfs-x86_64.cpio.zst"
     },
     {
-      "id": "awesome-os/t2desktop-noctalia@v0.1.0/v11-tree.json",
-      "repo": "t2desktop-noctalia",
+      "id": "awesome-os/t2linux-baseline@v0.1.0/v11-tree.json",
+      "repo": "t2linux-baseline",
       "tag": "v0.1.0",
       "filename": "v11-tree.json",
       "target": "any",
-      "sha512": "bcd35df22ce4536484e1cb96489bf63382a61160cd3800777f21662b9bf0864274db56f2049707e9c07e04425a1aa060f46c0c8444db49d619bc9b3b48875dcf",
-      "size": 3951,
-      "blobPath": "v11/files/bc/bcd35df22ce4536484e1cb96489bf63382a61160cd3800777f21662b9bf0864274db56f2049707e9c07e04425a1aa060f46c0c8444db49d619bc9b3b48875dcf",
-      "downloadUrl": "https://github.com/awesome-os/t2desktop-noctalia/releases/download/v0.1.0/v11-tree.json"
+      "sha512": "d304804c9eb3f7f95b8e6c0059169728723bf38da15ba241cbc9df70a9fea9bfa4c5481a237b07a9a17128f581112d69a68bc695eccf3344ed6c48054c72c0c4",
+      "size": 553,
+      "blobPath": "v11/files/d3/d304804c9eb3f7f95b8e6c0059169728723bf38da15ba241cbc9df70a9fea9bfa4c5481a237b07a9a17128f581112d69a68bc695eccf3344ed6c48054c72c0c4",
+      "downloadUrl": "https://github.com/awesome-os/t2linux-baseline/releases/download/v0.1.0/v11-tree.json"
     },
     {
-      "id": "awesome-os/t2linux@v0.1.0/init-aarch64",
-      "repo": "t2linux",
-      "tag": "v0.1.0",
-      "filename": "init-aarch64",
-      "target": "any",
-      "sha512": "52419d4c5505cee8b6dcd0c6f26d9956c3f63eb7235ee0ca32968a727062041cb185eca48c4a553d92013fbf439fab5541eb16f8784a3fb898b85b3b4e95ac62",
-      "size": 67464,
-      "blobPath": "v11/files/52/52419d4c5505cee8b6dcd0c6f26d9956c3f63eb7235ee0ca32968a727062041cb185eca48c4a553d92013fbf439fab5541eb16f8784a3fb898b85b3b4e95ac62-exec",
-      "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/init-aarch64"
-    },
-    {
-      "id": "awesome-os/t2linux@v0.1.0/init-riscv64",
-      "repo": "t2linux",
-      "tag": "v0.1.0",
-      "filename": "init-riscv64",
-      "target": "any",
-      "sha512": "a608497b86eadd316d113e14a2719f5bf23e0b9cbc28ab718cffeb20cf1b9b841acbb28a9f82d32f3ab2a5c0066d893fb28989f03719635e30a0ba621613066d",
-      "size": 516576,
-      "blobPath": "v11/files/a6/a608497b86eadd316d113e14a2719f5bf23e0b9cbc28ab718cffeb20cf1b9b841acbb28a9f82d32f3ab2a5c0066d893fb28989f03719635e30a0ba621613066d-exec",
-      "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/init-riscv64"
-    },
-    {
-      "id": "awesome-os/t2linux@v0.1.0/init-x86_64",
-      "repo": "t2linux",
-      "tag": "v0.1.0",
-      "filename": "init-x86_64",
-      "target": "any",
-      "sha512": "7f724e257081adb021414e1f8c41f47a05bea5619f67ca90c2d254450efdc513136477fe879751a891ad9bc68035d143356e1aacb41c72875ebe9e1b61a1057e",
-      "size": 55200,
-      "blobPath": "v11/files/7f/7f724e257081adb021414e1f8c41f47a05bea5619f67ca90c2d254450efdc513136477fe879751a891ad9bc68035d143356e1aacb41c72875ebe9e1b61a1057e-exec",
-      "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/init-x86_64"
-    },
-    {
-      "id": "awesome-os/t2linux@v0.1.0/initramfs-aarch64.cpio.zst",
-      "repo": "t2linux",
-      "tag": "v0.1.0",
-      "filename": "initramfs-aarch64.cpio.zst",
-      "target": "any",
-      "sha512": "e427a8fd6b85f4a171689bafd5ec33b0bae6475d181ad06f45e9ac3d4fd44e2fbce2751bd0445ef67f1bf29cfa5a99d11ced4a9def880573808beedc9770126d",
-      "size": 1044671,
-      "blobPath": "v11/files/e4/e427a8fd6b85f4a171689bafd5ec33b0bae6475d181ad06f45e9ac3d4fd44e2fbce2751bd0445ef67f1bf29cfa5a99d11ced4a9def880573808beedc9770126d",
-      "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/initramfs-aarch64.cpio.zst"
-    },
-    {
-      "id": "awesome-os/t2linux@v0.1.0/initramfs-x86_64.cpio.zst",
-      "repo": "t2linux",
-      "tag": "v0.1.0",
-      "filename": "initramfs-x86_64.cpio.zst",
-      "target": "any",
-      "sha512": "a7a9a6af493ef5d73c45575a23ac491e0a129708a67bad93d08d7dae878f31406cb1f8745a62ae292716a254bd404a2338bdd29865d1891e24289f38b3e2028a",
-      "size": 1163145,
-      "blobPath": "v11/files/a7/a7a9a6af493ef5d73c45575a23ac491e0a129708a67bad93d08d7dae878f31406cb1f8745a62ae292716a254bd404a2338bdd29865d1891e24289f38b3e2028a",
-      "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/initramfs-x86_64.cpio.zst"
-    },
-    {
-      "id": "awesome-os/t2linux@v0.1.0/SHA256SUMS.txt",
-      "repo": "t2linux",
-      "tag": "v0.1.0",
-      "filename": "SHA256SUMS.txt",
-      "target": "any",
-      "sha512": "4093d5cfe3791552a0b90caa32bbb68a9886bc756509425bd5a9d37ca57b758828c23fac85153d8e6ceded3e134b2d2133c5f581ed926da864f244ea130749a5",
-      "size": 930,
-      "blobPath": "v11/files/40/4093d5cfe3791552a0b90caa32bbb68a9886bc756509425bd5a9d37ca57b758828c23fac85153d8e6ceded3e134b2d2133c5f581ed926da864f244ea130749a5",
-      "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/SHA256SUMS.txt"
-    },
-    {
-      "id": "awesome-os/t2linux@v0.1.0/t2linux-aarch64.iso",
-      "repo": "t2linux",
-      "tag": "v0.1.0",
-      "filename": "t2linux-aarch64.iso",
-      "target": "linux-x64",
-      "sha512": "403f50320a70a29c1079e1a6168c21f4fc20cf85e69d79d1a4f4236f37c655abb2d12ed2efa62bb158b83c44a5febb663a5589e9bab495e467702a501ce01232",
-      "size": 27873280,
-      "blobPath": "v11/files/40/403f50320a70a29c1079e1a6168c21f4fc20cf85e69d79d1a4f4236f37c655abb2d12ed2efa62bb158b83c44a5febb663a5589e9bab495e467702a501ce01232",
-      "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/t2linux-aarch64.iso"
-    },
-    {
-      "id": "awesome-os/t2linux@v0.1.0/t2linux-aarch64.qcow2",
-      "repo": "t2linux",
-      "tag": "v0.1.0",
-      "filename": "t2linux-aarch64.qcow2",
-      "target": "linux-x64",
-      "sha512": "63b5f7ac724ab3e8bb47a5f9e782e8eec7a6f594e69b3442ed0026c407602cec97ca37ec6955e9a7798a0f1c0a0801564c483db8a39fd571a80de567084574cc",
-      "size": 23460864,
-      "blobPath": "v11/files/63/63b5f7ac724ab3e8bb47a5f9e782e8eec7a6f594e69b3442ed0026c407602cec97ca37ec6955e9a7798a0f1c0a0801564c483db8a39fd571a80de567084574cc",
-      "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/t2linux-aarch64.qcow2"
-    },
-    {
-      "id": "awesome-os/t2linux@v0.1.0/t2linux-x86_64.iso",
-      "repo": "t2linux",
-      "tag": "v0.1.0",
-      "filename": "t2linux-x86_64.iso",
-      "target": "linux-x64",
-      "sha512": "7a05394b3224114e9d06df525fbbc00409853b2594da2cd8c2f8ab7d240176923b7e05456b479dbb3f5c6d2d656dd26b2fbe50b8162e40fa364601e53adc58cb",
-      "size": 22523904,
-      "blobPath": "v11/files/7a/7a05394b3224114e9d06df525fbbc00409853b2594da2cd8c2f8ab7d240176923b7e05456b479dbb3f5c6d2d656dd26b2fbe50b8162e40fa364601e53adc58cb",
-      "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/t2linux-x86_64.iso"
-    },
-    {
-      "id": "awesome-os/t2linux@v0.1.0/t2linux-x86_64.qcow2",
-      "repo": "t2linux",
-      "tag": "v0.1.0",
-      "filename": "t2linux-x86_64.qcow2",
-      "target": "linux-x64",
-      "sha512": "afed3bad329d30463d8735c29430a52b0ed4270b5bf0b05fa2053a3be0e3e796bb40bf2ce16aa5dabf63c43bb4a21cefeebb9e3e09b8e31737394b9f669eee73",
-      "size": 19117568,
-      "blobPath": "v11/files/af/afed3bad329d30463d8735c29430a52b0ed4270b5bf0b05fa2053a3be0e3e796bb40bf2ce16aa5dabf63c43bb4a21cefeebb9e3e09b8e31737394b9f669eee73",
-      "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/t2linux-x86_64.qcow2"
-    },
-    {
-      "id": "awesome-os/t2linux@v0.1.0/vmlinuz-aarch64",
-      "repo": "t2linux",
-      "tag": "v0.1.0",
-      "filename": "vmlinuz-aarch64",
-      "target": "any",
-      "sha512": "c94d1e492170499939f9ee964d005b3fc6c43111a74a73067b3e81ec727db2e5d2464b393ff965d8ae7513ec3dad943fb03ee22d51427287a687ebc9078215c8",
-      "size": 21987566,
-      "blobPath": "v11/files/c9/c94d1e492170499939f9ee964d005b3fc6c43111a74a73067b3e81ec727db2e5d2464b393ff965d8ae7513ec3dad943fb03ee22d51427287a687ebc9078215c8-exec",
-      "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/vmlinuz-aarch64"
-    },
-    {
-      "id": "awesome-os/t2linux@v0.1.0/vmlinuz-x86_64",
-      "repo": "t2linux",
+      "id": "awesome-os/t2linux-baseline@v0.1.0/vmlinuz-x86_64",
+      "repo": "t2linux-baseline",
       "tag": "v0.1.0",
       "filename": "vmlinuz-x86_64",
       "target": "any",
       "sha512": "3104753c7eb1274ac9b77d8ab5a982ef040fd921e091fec9ed8f4235031b068bbc10d74b99c436f5e46559ba7a643ba92c802138667e26d75d3b778a8f59aea0",
       "size": 17500552,
       "blobPath": "v11/files/31/3104753c7eb1274ac9b77d8ab5a982ef040fd921e091fec9ed8f4235031b068bbc10d74b99c436f5e46559ba7a643ba92c802138667e26d75d3b778a8f59aea0-exec",
-      "downloadUrl": "https://github.com/awesome-os/t2linux/releases/download/v0.1.0/vmlinuz-x86_64"
+      "downloadUrl": "https://github.com/awesome-os/t2linux-baseline/releases/download/v0.1.0/vmlinuz-x86_64"
     },
     {
       "id": "awesome-os/t2xnu@v0.1.0/init-aarch64",

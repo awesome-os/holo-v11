@@ -1,15 +1,8 @@
 {
   "schema": "awesome-os.v11-active-overrides.v1",
   "abiMagic": "0x33564742",
-  "generatedAt": "2026-11-25T20:54:17.186Z",
+  "generatedAt": "2026-11-26T06:07:36.503Z",
   "adoptedRepos": [
-    {
-      "repo": "awesome-os-desktop",
-      "tag": "v0.1.0",
-      "treeManifestUrl": "https://github.com/awesome-os/awesome-os-desktop/releases/download/v0.1.0/v11-tree.json",
-      "treeManifestSha512": "10bb4024ed9019a20c621f8a74629b28ad35d2a68795e626d7a41ac879d3f7396b622e823de4789d90c6a169f2b5f266d13de0ede1c44659edabdf01b24a60c9",
-      "shadowedLegacyAssets": 0
-    },
     {
       "repo": "b8g-ide",
       "tag": "v0.1.0",
@@ -228,11 +221,11 @@
       "shadowedLegacyAssets": 1
     },
     {
-      "repo": "t2desktop-noctalia",
+      "repo": "t2linux-baseline",
       "tag": "v0.1.0",
-      "treeManifestUrl": "https://github.com/awesome-os/t2desktop-noctalia/releases/download/v0.1.0/v11-tree.json",
-      "treeManifestSha512": "bcd35df22ce4536484e1cb96489bf63382a61160cd3800777f21662b9bf0864274db56f2049707e9c07e04425a1aa060f46c0c8444db49d619bc9b3b48875dcf",
-      "shadowedLegacyAssets": 1
+      "treeManifestUrl": "https://github.com/awesome-os/t2linux-baseline/releases/download/v0.1.0/v11-tree.json",
+      "treeManifestSha512": "d304804c9eb3f7f95b8e6c0059169728723bf38da15ba241cbc9df70a9fea9bfa4c5481a237b07a9a17128f581112d69a68bc695eccf3344ed6c48054c72c0c4",
+      "shadowedLegacyAssets": 0
     },
     {
       "repo": "theia",
@@ -273,6 +266,6 @@
   "pendingTarRepos": [
     "sectium-browser"
   ],
-  "adoptionCount": 38,
+  "adoptionCount": 37,
   "legacyTarRepoCount": 1
 }
