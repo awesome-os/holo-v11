@@ -1,14 +1,14 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T20:32:36.739Z",
+  "generatedAt": "2026-11-26T20:33:32.411Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
     "totalReposMonitored": 19,
-    "passingRuns": 19,
-    "activeRuns": 0,
+    "passingRuns": 18,
+    "activeRuns": 1,
     "failingRuns": 0,
-    "upstreamLibsTracked": 56,
+    "upstreamLibsTracked": 60,
     "bigBoysCount": 22,
     "standaloneDiskSavedMb": 13987
   },
@@ -74,12 +74,12 @@
     },
     {
       "repo": "awesome-os/holo-v11",
-      "workflowName": "Holo-CI",
-      "status": "completed",
-      "conclusion": "success",
+      "workflowName": "Update Awesome-OS v11 Ecosystem Reports",
+      "status": "in_progress",
+      "conclusion": "running",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:19:41Z",
-      "url": "https://github.com/awesome-os/holo-v11/actions/runs/45890207683"
+      "updatedAt": "2026-11-26T20:33:16Z",
+      "url": "https://github.com/awesome-os/holo-v11/actions/runs/45891868479"
     },
     {
       "repo": "awesome-os/holo-compiler",
@@ -114,8 +114,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:19:36Z",
-      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45890194939"
+      "updatedAt": "2026-11-26T20:33:16Z",
+      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45891857055"
     },
     {
       "repo": "awesome-os/devtools",
@@ -349,7 +349,7 @@
       "repo": "ngtcp2/ngtcp2",
       "upstreamTag": "v1.26.0",
       "upstreamVersion": "1.26.0",
-      "previousV11": null,
+      "previousV11": "1.26.0",
       "bumped": false
     },
     {
@@ -647,6 +647,38 @@
       "upstreamVersion": "1.12.1",
       "previousV11": "1.12.1",
       "bumped": false
+    },
+    {
+      "pkg": "pixman",
+      "repo": "gitlab.freedesktop.org/pixman/pixman",
+      "upstreamTag": "pixman-0.46.4",
+      "upstreamVersion": "0.46.4",
+      "previousV11": "0.46.4",
+      "bumped": false
+    },
+    {
+      "pkg": "cairo",
+      "repo": "gitlab.freedesktop.org/cairo/cairo",
+      "upstreamTag": "1.18.6",
+      "upstreamVersion": "1.18.6",
+      "previousV11": "1.18.6",
+      "bumped": false
+    },
+    {
+      "pkg": "libxml2",
+      "repo": "GNOME/libxml2",
+      "upstreamTag": "v2.15.4",
+      "upstreamVersion": "2.15.4",
+      "previousV11": "2.15.4",
+      "bumped": false
+    },
+    {
+      "pkg": "giflib",
+      "repo": "sourceforge.net/projects/giflib",
+      "upstreamTag": "giflib-6.1.3",
+      "upstreamVersion": "6.1.3",
+      "previousV11": "6.1.3",
+      "bumped": false
     }
   ],
   "bigBoys": [
@@ -654,23 +686,18 @@
       "id": "chromium",
       "name": "Chromium 160 Canary / Sectium Browser",
       "totalLibs": 27,
-      "coveredInV11": 26,
-      "coveragePercent": 96.3,
-      "missing": [
-        "libxml2"
-      ],
+      "coveredInV11": 27,
+      "coveragePercent": 100,
+      "missing": [],
       "standaloneDiskMb": 420
     },
     {
       "id": "firefox",
       "name": "Firefox (Gecko / SpiderMonkey)",
       "totalLibs": 24,
-      "coveredInV11": 22,
-      "coveragePercent": 91.7,
-      "missing": [
-        "pixman",
-        "cairo"
-      ],
+      "coveredInV11": 24,
+      "coveragePercent": 100,
+      "missing": [],
       "standaloneDiskMb": 340
     },
     {
@@ -695,11 +722,9 @@
       "id": "nodejs",
       "name": "Node.js",
       "totalLibs": 16,
-      "coveredInV11": 15,
-      "coveragePercent": 93.8,
-      "missing": [
-        "ngtcp2"
-      ],
+      "coveredInV11": 16,
+      "coveragePercent": 100,
+      "missing": [],
       "standaloneDiskMb": 115
     },
     {
@@ -814,20 +839,15 @@
       "id": "vcpkg-top100",
       "name": "microsoft/vcpkg Top 100 Native Binary Ports",
       "totalLibs": 100,
-      "coveredInV11": 89,
-      "coveragePercent": 89,
+      "coveredInV11": 94,
+      "coveragePercent": 94,
       "missing": [
-        "libxml2",
-        "giflib",
         "googletest",
-        "ngtcp2",
         "glfw",
         "zeromq",
         "rocksdb",
         "leveldb",
-        "libxslt",
-        "pixman",
-        "cairo"
+        "libxslt"
       ],
       "standaloneDiskMb": 1850
     },
@@ -835,22 +855,19 @@
       "id": "npm-top-native",
       "name": "npm Top Native Binary Addons (sharp/sqlite/canvas/v8)",
       "totalLibs": 32,
-      "coveredInV11": 31,
-      "coveragePercent": 96.9,
-      "missing": [
-        "giflib"
-      ],
+      "coveredInV11": 32,
+      "coveragePercent": 100,
+      "missing": [],
       "standaloneDiskMb": 920
     },
     {
       "id": "pypi-top-wheels",
       "name": "PyPI / Python Top Binary Wheels (numpy/torch/pillow/arrow)",
       "totalLibs": 33,
-      "coveredInV11": 30,
-      "coveragePercent": 90.9,
+      "coveredInV11": 31,
+      "coveragePercent": 93.9,
       "missing": [
         "libxslt",
-        "libxml2",
         "zeromq"
       ],
       "standaloneDiskMb": 1480
@@ -883,15 +900,15 @@
   },
   "gravityTelemetry": {
     "schema": "awesome-os.gravity-telemetry.v1",
-    "generatedAt": "2026-11-26T20:32:22.784Z",
+    "generatedAt": "2026-11-26T20:33:22.462Z",
     "abiMagic": "0x33564742",
     "pinning": {
-      "trackedUpstreamLibs": 56,
-      "atMaxCount": 56,
+      "trackedUpstreamLibs": 60,
+      "atMaxCount": 60,
       "bumpedCount": 0,
       "aheadOfChromeCount": 17,
       "driftedLibs": [],
-      "v11UniversePackages": 5070,
+      "v11UniversePackages": 5075,
       "maxVersionLock": {
         "totalLadybirdDeps": 49,
         "coveredInV11": 33,
@@ -917,17 +934,17 @@
       "dampingFactor": 0.65,
       "runnerFleet": {
         "reposMonitored": 20,
-        "activeRepos": 0,
-        "passingLatestRepos": 20,
+        "activeRepos": 1,
+        "passingLatestRepos": 19,
         "failingLatestRepos": 0,
-        "completedLatestRepos": 20,
+        "completedLatestRepos": 19,
         "totalSampledRuns": 159
       },
-      "p50DurationSec": 26,
-      "p95DurationSec": 1757,
-      "overallPassRatePct": 83,
+      "p50DurationSec": 25,
+      "p95DurationSec": 1065,
+      "overallPassRatePct": 83.3,
       "latestFleetPassRatePct": 100,
-      "apiRateRemaining": 4564,
+      "apiRateRemaining": 4922,
       "apiRateLimit": 5000,
       "perRepoTelemetry": [
         {
@@ -999,32 +1016,32 @@
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45890194939",
-          "latestUpdatedAt": "2026-11-26T20:19:36Z",
+          "latestUrl": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45891857055",
+          "latestUpdatedAt": "2026-11-26T20:33:16Z",
           "sampleCount": 10,
-          "completedCount": 10,
+          "completedCount": 9,
           "passingCount": 9,
-          "failingCount": 1,
-          "passRatePct": 90,
+          "failingCount": 0,
+          "passRatePct": 100,
           "p50DurationSec": 48,
           "p95DurationSec": 2051,
-          "lastDurationSec": 11
+          "lastDurationSec": 9
         },
         {
           "repo": "holo-v11",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
-          "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/45890207683",
-          "latestUpdatedAt": "2026-11-26T20:19:41Z",
+          "latestStatus": "in_progress",
+          "latestConclusion": "running",
+          "latestWorkflow": "Update Awesome-OS v11 Ecosystem Reports",
+          "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/45891868479",
+          "latestUpdatedAt": "2026-11-26T20:33:16Z",
           "sampleCount": 10,
-          "completedCount": 10,
-          "passingCount": 10,
+          "completedCount": 8,
+          "passingCount": 8,
           "failingCount": 0,
           "passRatePct": 100,
           "p50DurationSec": 26,
-          "p95DurationSec": 140,
-          "lastDurationSec": 10
+          "p95DurationSec": 36,
+          "lastDurationSec": 4
         },
         {
           "repo": "holo-compiler",
