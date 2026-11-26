@@ -2,7 +2,7 @@
   "schema": "awesome-os-cas-v11-manifest-v1",
   "abiMagic": "0x33564742",
   "version": "v11",
-  "generatedAt": "2026-11-26T20:32:20.358Z",
+  "generatedAt": "2026-11-26T20:45:16.161Z",
   "totalRepos": 58,
   "totalAssets": 407,
   "uniqueBlobs": 396,
@@ -4898,8 +4898,8 @@
     "scheme": "ed25519-sha512-v1",
     "keyId": "awesomeos-root-v11",
     "publicKeyHex": "8706ca1108354453755a32bc0d450a697b084cb5fb18a9a1ed1f4a31eb82a081",
-    "payloadSha512": "ba87fe3dd07e063209ab217126eafacf9a384b0f18395e22197e24925c6e08351e8f6a7b43e1e844d55dabee9ee888c9a4ad3dec15b4ac3fd22a0d7f90104e64",
-    "signatureHex": "e1e96c2d4327a23e7c1721bae5dbe7605d98f4f73dcddea06c59fd74985528669240331431fc3bfbabe504f64112bca187555ceb87a792ec859c2259f8a8eb00",
-    "signedAt": "2026-11-26T20:32:20.360Z"
+    "payloadSha512": "a10cdf132bc9f71a79102bea307d15b77cf78f20d1ca257e40ea6342b7bff183b34712983cea95ab6f55e02a600e4293b338756305aa00f2015e12bdd82813b9",
+    "signatureHex": "2a83d89fbbe773ace40f6119d8a880207010d97ae117c90ed74a20f69d52fb51bd9cfd6be764c4e4bfe7cf9d77933514ca3bcae6cdece6af9899b12c5d71cc05",
+    "signedAt": "2026-11-26T20:45:16.163Z"
   }
 }

@@ -1,12 +1,12 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T20:33:32.411Z",
+  "generatedAt": "2026-11-26T20:45:28.295Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
     "totalReposMonitored": 19,
-    "passingRuns": 18,
-    "activeRuns": 1,
+    "passingRuns": 17,
+    "activeRuns": 2,
     "failingRuns": 0,
     "upstreamLibsTracked": 60,
     "bigBoysCount": 22,
@@ -23,7 +23,7 @@
     "totalAssets": 407,
     "uniqueBlobs": 396,
     "totalMb": 1453.9,
-    "warmedAt": "2026-11-26T20:32:20.358Z",
+    "warmedAt": "2026-11-26T20:45:16.161Z",
     "planetaryEndpoint": "https://awesome-os.com/cas/v11/manifest.json"
   },
   "runners": [
@@ -33,8 +33,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:19:35Z",
-      "url": "https://github.com/awesome-os/awesome-os/actions/runs/45890189518"
+      "updatedAt": "2026-11-26T20:36:51Z",
+      "url": "https://github.com/awesome-os/awesome-os/actions/runs/45892291632"
     },
     {
       "repo": "awesome-os/agent-platform",
@@ -74,12 +74,12 @@
     },
     {
       "repo": "awesome-os/holo-v11",
-      "workflowName": "Update Awesome-OS v11 Ecosystem Reports",
+      "workflowName": "Sync Global Holo v11 Registry",
       "status": "in_progress",
       "conclusion": "running",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:33:16Z",
-      "url": "https://github.com/awesome-os/holo-v11/actions/runs/45891868479"
+      "updatedAt": "2026-11-26T20:44:39Z",
+      "url": "https://github.com/awesome-os/holo-v11/actions/runs/45893228880"
     },
     {
       "repo": "awesome-os/holo-compiler",
@@ -93,11 +93,11 @@
     {
       "repo": "awesome-os/holo-pm",
       "workflowName": "Release Awesome-OS holo-pm + libholo-pm",
-      "status": "completed",
-      "conclusion": "success",
+      "status": "in_progress",
+      "conclusion": "running",
       "branch": "main",
-      "updatedAt": "2026-11-26T17:56:49Z",
-      "url": "https://github.com/awesome-os/holo-pm/actions/runs/45871841108"
+      "updatedAt": "2026-11-26T20:44:56Z",
+      "url": "https://github.com/awesome-os/holo-pm/actions/runs/45893260874"
     },
     {
       "repo": "awesome-os/desktop",
@@ -900,7 +900,7 @@
   },
   "gravityTelemetry": {
     "schema": "awesome-os.gravity-telemetry.v1",
-    "generatedAt": "2026-11-26T20:33:22.462Z",
+    "generatedAt": "2026-11-26T20:45:18.049Z",
     "abiMagic": "0x33564742",
     "pinning": {
       "trackedUpstreamLibs": 60,
@@ -934,17 +934,17 @@
       "dampingFactor": 0.65,
       "runnerFleet": {
         "reposMonitored": 20,
-        "activeRepos": 1,
-        "passingLatestRepos": 19,
+        "activeRepos": 2,
+        "passingLatestRepos": 18,
         "failingLatestRepos": 0,
-        "completedLatestRepos": 19,
+        "completedLatestRepos": 18,
         "totalSampledRuns": 159
       },
       "p50DurationSec": 25,
       "p95DurationSec": 1065,
-      "overallPassRatePct": 83.3,
+      "overallPassRatePct": 84.1,
       "latestFleetPassRatePct": 100,
-      "apiRateRemaining": 4922,
+      "apiRateRemaining": 4860,
       "apiRateLimit": 5000,
       "perRepoTelemetry": [
         {
@@ -952,16 +952,16 @@
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/awesome-os/actions/runs/45890189518",
-          "latestUpdatedAt": "2026-11-26T20:19:35Z",
+          "latestUrl": "https://github.com/awesome-os/awesome-os/actions/runs/45892291632",
+          "latestUpdatedAt": "2026-11-26T20:36:51Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 9,
           "failingCount": 1,
           "passRatePct": 90,
           "p50DurationSec": 15,
-          "p95DurationSec": 59,
-          "lastDurationSec": 13
+          "p95DurationSec": 24,
+          "lastDurationSec": 12
         },
         {
           "repo": "agent-platform",
@@ -1019,11 +1019,11 @@
           "latestUrl": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45891857055",
           "latestUpdatedAt": "2026-11-26T20:33:16Z",
           "sampleCount": 10,
-          "completedCount": 9,
-          "passingCount": 9,
+          "completedCount": 10,
+          "passingCount": 10,
           "failingCount": 0,
           "passRatePct": 100,
-          "p50DurationSec": 48,
+          "p50DurationSec": 45,
           "p95DurationSec": 2051,
           "lastDurationSec": 9
         },
@@ -1031,17 +1031,17 @@
           "repo": "holo-v11",
           "latestStatus": "in_progress",
           "latestConclusion": "running",
-          "latestWorkflow": "Update Awesome-OS v11 Ecosystem Reports",
-          "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/45891868479",
-          "latestUpdatedAt": "2026-11-26T20:33:16Z",
+          "latestWorkflow": "Sync Global Holo v11 Registry",
+          "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/45893228880",
+          "latestUpdatedAt": "2026-11-26T20:44:39Z",
           "sampleCount": 10,
-          "completedCount": 8,
-          "passingCount": 8,
+          "completedCount": 9,
+          "passingCount": 9,
           "failingCount": 0,
           "passRatePct": 100,
-          "p50DurationSec": 26,
+          "p50DurationSec": 25,
           "p95DurationSec": 36,
-          "lastDurationSec": 4
+          "lastDurationSec": 3
         },
         {
           "repo": "holo-compiler",
@@ -1061,19 +1061,19 @@
         },
         {
           "repo": "holo-pm",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
+          "latestStatus": "in_progress",
+          "latestConclusion": "running",
           "latestWorkflow": "Release Awesome-OS holo-pm + libholo-pm",
-          "latestUrl": "https://github.com/awesome-os/holo-pm/actions/runs/45871841108",
-          "latestUpdatedAt": "2026-11-26T17:56:49Z",
+          "latestUrl": "https://github.com/awesome-os/holo-pm/actions/runs/45893260874",
+          "latestUpdatedAt": "2026-11-26T20:44:56Z",
           "sampleCount": 10,
-          "completedCount": 10,
-          "passingCount": 10,
+          "completedCount": 9,
+          "passingCount": 9,
           "failingCount": 0,
           "passRatePct": 100,
           "p50DurationSec": 46,
           "p95DurationSec": 110,
-          "lastDurationSec": 46
+          "lastDurationSec": 3
         },
         {
           "repo": "sectium-browser",
@@ -1100,10 +1100,10 @@
           "latestUpdatedAt": "2026-11-26T20:21:23Z",
           "sampleCount": 6,
           "completedCount": 6,
-          "passingCount": 3,
-          "failingCount": 3,
-          "passRatePct": 50,
-          "p50DurationSec": 12,
+          "passingCount": 4,
+          "failingCount": 2,
+          "passRatePct": 66.7,
+          "p50DurationSec": 13,
           "p95DurationSec": 21,
           "lastDurationSec": 12
         },
