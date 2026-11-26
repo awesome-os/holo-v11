@@ -1,0 +1,37 @@
+name: Update Awesome-OS v11 Ecosystem Reports
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-reports:
+    name: Sync & Commit v11 Ecosystem Scoreboard
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout awesome-os/holo-v11
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22+
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Sync all ecosystem analysis reports & generate scoreboard
+        run: node scripts/sync-ecosystem-reports.mts
+
+      - name: Commit & push updated reports if changed
+        run: |
+          git config user.name "awesome-os-bot"
+          git config user.email "bot@awesome-os.com"
+          git add reports/
+          if git diff --cached --quiet; then
+            echo "No report changes to commit."
+          else
+            git commit -m "chore(reports): daily sync of v11 ecosystem scoreboard, Big Boys overlap, and Ladybird parity"
+            git push origin HEAD:main
+          fi
