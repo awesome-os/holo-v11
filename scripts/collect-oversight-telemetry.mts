@@ -142,9 +142,9 @@ const upstreams = readJsonIfExists<{ libraries?: unknown[]; totalTracked?: numbe
   join(mirrorRoot, 't2linux-baseline', 'catalog', 'live-upstream-tracker.json'),
   { libraries: [], totalTracked: 0 },
 );
-const bigBoys = readJsonIfExists<{ runtimes?: unknown[]; totalStandaloneDiskMb?: number }>(
+const bigBoys = readJsonIfExists<{ runtimes?: unknown[]; totalStandaloneMb?: number; totalStandaloneDiskMb?: number }>(
   join(repoRoot, 'reports', 'big-boys-v11-overlap.json'),
-  { runtimes: [], totalStandaloneDiskMb: 2597 },
+  { runtimes: [], totalStandaloneMb: 3582 },
 );
 const ladybird = readJsonIfExists<Record<string, unknown>>(
   join(repoRoot, 'reports', 'ladybird-chrome-parity.json'),
@@ -166,8 +166,8 @@ const telemetry = {
     activeRuns,
     failingRuns,
     upstreamLibsTracked: upstreams.totalTracked ?? (upstreams.libraries?.length ?? 0),
-    bigBoysCount: bigBoys.runtimes?.length ?? 12,
-    standaloneDiskSavedMb: bigBoys.totalStandaloneDiskMb ?? 2597,
+    bigBoysCount: bigBoys.runtimes?.length ?? 15,
+    standaloneDiskSavedMb: bigBoys.totalStandaloneMb ?? bigBoys.totalStandaloneDiskMb ?? 3582,
   },
   chromiumCanary,
   runners,

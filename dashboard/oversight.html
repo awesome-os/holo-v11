@@ -100,7 +100,7 @@
       </section>
 
       <section class="card">
-        <h2><span>12 Big Boys × v11 CAS Deduplication</span><span class="badge ok" id="bb-saved">2,597 MB → 1 layer</span></h2>
+        <h2><span id="bb-heading">Big Boys × v11 CAS Deduplication</span><span class="badge ok" id="bb-saved">live</span></h2>
         <div id="bigboys-list"></div>
       </section>
     </div>
@@ -134,6 +134,8 @@
 
     document.getElementById('runners-heading').textContent = `GitHub Actions Runners (${d.runners.length} Core Repos)`;
     document.getElementById('upstreams-heading').textContent = `Upstream Library Drift Radar (${d.upstreams.length} Core Libs)`;
+    document.getElementById('bb-heading').textContent = `${d.bigBoys.length} Big Boys × v11 CAS Deduplication`;
+    document.getElementById('bb-saved').textContent = `${d.summary.standaloneDiskSavedMb.toLocaleString()} MB → 1 layer`;
     document.getElementById('runner-summary').textContent = `${d.summary.passingRuns} pass · ${d.summary.activeRuns} active · ${d.summary.failingRuns} fail`;
     document.getElementById('runners-tbody').innerHTML = d.runners.map((r) => {
       const cls = r.status === 'in_progress' || r.status === 'queued'

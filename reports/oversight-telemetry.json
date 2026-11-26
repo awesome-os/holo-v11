@@ -1,6 +1,6 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T09:23:27.901Z",
+  "generatedAt": "2026-11-26T09:36:05.139Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
@@ -9,8 +9,8 @@
     "activeRuns": 2,
     "failingRuns": 0,
     "upstreamLibsTracked": 44,
-    "bigBoysCount": 12,
-    "standaloneDiskSavedMb": 2597
+    "bigBoysCount": 15,
+    "standaloneDiskSavedMb": 3582
   },
   "chromiumCanary": {
     "milestone": 160,
@@ -22,10 +22,10 @@
     {
       "repo": "awesome-os/sectium-browser",
       "workflowName": "V8 Upstream — Real Damped Gravity Compile-Release-Bounce (Free Cloud Runner)",
-      "status": "queued",
-      "conclusion": "none",
+      "status": "in_progress",
+      "conclusion": "running",
       "branch": "main",
-      "updatedAt": "2026-11-26T09:22:46Z",
+      "updatedAt": "2026-11-26T09:25:59Z",
       "url": "https://github.com/awesome-os/sectium-browser/actions/runs/45791409102"
     },
     {
@@ -115,8 +115,8 @@
       "status": "queued",
       "conclusion": "none",
       "branch": "main",
-      "updatedAt": "2026-11-26T09:23:12Z",
-      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45791474003"
+      "updatedAt": "2026-11-26T09:35:44Z",
+      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45793424024"
     },
     {
       "repo": "awesome-os/installer",
@@ -705,6 +705,33 @@
       "coveragePercent": 100,
       "missing": [],
       "standaloneDiskMb": 480
+    },
+    {
+      "id": "gnome-wayland",
+      "name": "GNOME Wayland (GTK 4.24 / libadwaita 1.10)",
+      "totalLibs": 16,
+      "coveredInV11": 16,
+      "coveragePercent": 100,
+      "missing": [],
+      "standaloneDiskMb": 380
+    },
+    {
+      "id": "kde-plasma",
+      "name": "KDE Plasma 6.8 (KWin 6.8.3 / Qt 6.12.1)",
+      "totalLibs": 17,
+      "coveredInV11": 17,
+      "coveragePercent": 100,
+      "missing": [],
+      "standaloneDiskMb": 460
+    },
+    {
+      "id": "hyprland-omarchy",
+      "name": "Omarchy / Hyprland 0.57 (wlroots 0.20)",
+      "totalLibs": 15,
+      "coveredInV11": 15,
+      "coveragePercent": 100,
+      "missing": [],
+      "standaloneDiskMb": 145
     }
   ],
   "ladybirdSummary": {
