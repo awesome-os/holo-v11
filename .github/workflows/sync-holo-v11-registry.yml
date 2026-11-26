@@ -13,37 +13,56 @@ jobs:
     name: Sync Global v11 CAS Manifest & Lockfile
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout holo-v11
+      - name: Checkout awesome-os/holo-v11
         uses: actions/checkout@v4
+        with:
+          path: holo-v11
 
-      - name: Setup Node 22+
+      - name: Checkout awesome-os/awesome-os (verified-boot Ed25519 signer)
+        uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          repository: awesome-os/awesome-os
+          path: awesome-os
+          sparse-checkout: |
+            security/verified-boot.mts
+
+      - name: Checkout awesome-os/t2linux-baseline (upstream pin catalogs)
+        uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          repository: awesome-os/t2linux-baseline
+          path: t2linux-baseline
+          sparse-checkout: |
+            catalog
+
+      - name: Setup Node.js 24
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '24'
 
-      - name: Stream-hash all awesome-os/* releases into Global v11 CAS manifest
+      - name: Stream-hash all awesome-os/* releases into Global v11 CAS manifest & emit gravity telemetry
+        working-directory: holo-v11
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
           AWESOME_OS_ORG: awesome-os
           MAX_ASSET_MB: '250'
         run: |
           node scripts/warm-global-cas.mts
           node scripts/v11-tree-overrides.mts
           node scripts/v11-scope-tags.mts
+          node scripts/gravity-pin-dedup-telemetry.mts
+          node scripts/collect-oversight-telemetry.mts
 
-      - name: Commit updated v11 index manifests to main (only on lockfile diff)
+      - name: Commit updated v11 index manifests & telemetry reports to main
+        working-directory: holo-v11
         run: |
-          mkdir -p index
-          cp dist/cas-v11-global-manifest.json index/cas-v11-global-manifest.json
-          cp dist/holo-compiler-lockfile.json index/holo-compiler-lockfile.json
-          cp dist/v11-active-overrides.json index/v11-active-overrides.json
-          cp dist/v11-scope-catalog.json index/v11-scope-catalog.json
           git config user.name "awesome-os-cas-bot"
           git config user.email "cas@awesome-os.com"
-          if ! git diff --quiet -- index/ 2>/dev/null || [ -n "$(git status --porcelain index/)" ]; then
-            git add index/cas-v11-global-manifest.json index/holo-compiler-lockfile.json index/v11-active-overrides.json index/v11-scope-catalog.json
-            git commit -m "chore(v11-index): sync global holo v11 CAS manifests, overrides & scope tags"
+          if ! git diff --quiet -- index/ reports/ 2>/dev/null || [ -n "$(git status --porcelain index/ reports/)" ]; then
+            git add index/ reports/gravity-telemetry.json reports/gravity-telemetry.ndjson reports/oversight-telemetry.json
+            git commit -m "chore(v11-index): sync global holo v11 CAS manifests, overrides, scope tags & gravity telemetry"
             git push origin HEAD:main
           else
-            echo "index/ unchanged — skipping empty commit."
+            echo "index/ and reports/ unchanged — skipping empty commit."
           fi

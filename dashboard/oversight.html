@@ -92,6 +92,15 @@
 
   .bar-wrap { height: 7px; border-radius: 999px; background: var(--surface-2); overflow: hidden; margin-top: 5px; }
   .bar-fill { height: 100%; background: var(--accent); }
+  .bar-fill.p95 { background: var(--info); opacity: .75; }
+  .gravity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin-bottom: 14px; }
+  .gravity-stat { background: var(--surface-2); border: 1px solid var(--line-soft); border-radius: 10px; padding: 10px 12px; }
+  .gravity-stat .gv { font-size: 17px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .gravity-stat .gk { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+  .lat-row { display: grid; grid-template-columns: 155px 1fr 120px 64px; gap: 10px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--line-soft); font-size: 12.5px; }
+  .lat-row:last-child { border-bottom: 0; }
+  .lat-bars { display: flex; flex-direction: column; gap: 3px; }
+  .lat-track { height: 5px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
   .filter-input {
     background: var(--surface-2); color: var(--ink); border: 1px solid var(--line);
     border-radius: 8px; padding: 5px 10px; font-size: 12px; outline: none;
@@ -127,6 +136,20 @@
   <section class="kpis" id="kpis"></section>
 
   <div class="chip-strip" id="flagship-chips"></div>
+
+  <section class="card" id="gravity-card">
+    <h2>
+      <span>Gravity Damper Runner Telemetry &amp; Version-Pinning Dedup</span>
+      <span style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+        <span class="badge ok" id="gravity-dup-v8">dup_v8 = 0 B</span>
+        <span class="badge accent" id="gravity-rate-headroom">API rate: —</span>
+        <span class="badge info" id="gravity-damping-badge">damping 0.65</span>
+      </span>
+    </h2>
+    <div class="gravity-grid" id="gravity-kpis"></div>
+    <div id="gravity-drift-strip" style="margin-bottom:12px;font-size:12.5px;color:var(--muted);"></div>
+    <div id="gravity-latency-bars"></div>
+  </section>
 
   <div class="grid2">
     <div>
@@ -184,10 +207,76 @@
     }).join('');
   }
 
+  async function fetchFirstOk(urls) {
+    for (const url of urls) {
+      try {
+        const r = await fetch(url, { cache: 'no-store' });
+        if (r.ok) return await r.json();
+      } catch {}
+    }
+    return null;
+  }
+
+  function renderGravitySection(g) {
+    const kpisEl = document.getElementById('gravity-kpis');
+    const driftEl = document.getElementById('gravity-drift-strip');
+    const barsEl = document.getElementById('gravity-latency-bars');
+    if (!g || (!g.dedup && !g.pinning && !g.gravityDamper)) {
+      kpisEl.innerHTML = '<div class="gravity-stat"><div class="gv">—</div><div class="gk">Gravity telemetry pending first sync</div></div>';
+      driftEl.textContent = '';
+      barsEl.innerHTML = '';
+      return;
+    }
+
+    const dedup = g.dedup || {};
+    const pin = g.pinning || {};
+    const damper = g.gravityDamper || {};
+    const dupV8 = dedup.dupV8Bytes ?? 0;
+    const ghosts = dedup.b8gGhostRemnants ?? 0;
+
+    document.getElementById('gravity-dup-v8').textContent = `dup_v8 = ${dupV8} B · ghost = ${ghosts}`;
+    document.getElementById('gravity-rate-headroom').textContent =
+      damper.apiRateLimit ? `API headroom: ${damper.apiRateRemaining} / ${damper.apiRateLimit}` : 'API headroom: local/cached';
+    document.getElementById('gravity-damping-badge').textContent =
+      `damping ${damper.dampingFactor ?? 0.65} · p50 ${damper.p50DurationSec ?? 0}s · p95 ${damper.p95DurationSec ?? 0}s`;
+
+    kpisEl.innerHTML = `
+      <div class="gravity-stat"><div class="gv" style="color:var(--ok);">${dedup.savedMb ?? 0} MB (${dedup.dedupRatioPct ?? 0}%)</div><div class="gk">SHA-512 CAS Dedup Savings (${dedup.dedupedBlobs ?? 0} deduped blobs)</div></div>
+      <div class="gravity-stat"><div class="gv">${dedup.uniqueSha512Blobs ?? 0} / ${dedup.totalAssets ?? 0}</div><div class="gk">Unique SHA-512 Blobs / Total Assets</div></div>
+      <div class="gravity-stat"><div class="gv" style="color:var(--accent);">${pin.atMaxCount ?? 0} / ${pin.trackedUpstreamLibs ?? 0}</div><div class="gk">Pinned Libs at Max (${pin.aheadOfChromeCount ?? 0} ahead-of-Chrome)</div></div>
+      <div class="gravity-stat"><div class="gv" style="color:var(--ok);">${damper.overallPassRatePct ?? 0}%</div><div class="gk">Runner Fleet Pass Rate (${damper.runnerFleet?.totalSampledRuns ?? 0} sampled runs)</div></div>
+    `;
+
+    const drifted = Array.isArray(pin.driftedLibs) ? pin.driftedLibs : [];
+    driftEl.innerHTML = drifted.length === 0
+      ? '<span class="badge ok">0 drifted libs</span> All tracked upstream libraries match pinned Holo v11 lock.'
+      : `<span class="badge warn">${drifted.length} drifted</span> ` + drifted.map((x) => `<code>${x.pkg}: ${x.pinned || '?'} → ${x.upstream}</code>`).join(' · ');
+
+    const rows = Array.isArray(damper.perRepoTelemetry) ? damper.perRepoTelemetry : [];
+    const maxSec = Math.max(10, ...rows.map((r) => Math.max(r.p95DurationSec || 0, r.p50DurationSec || 0)));
+    barsEl.innerHTML = rows.map((r) => {
+      const p50w = Math.min(100, Math.round(((r.p50DurationSec || 0) / maxSec) * 100));
+      const p95w = Math.min(100, Math.round(((r.p95DurationSec || 0) / maxSec) * 100));
+      const cls = r.latestConclusion === 'success' ? 'ok' : r.latestConclusion === 'failure' ? 'fail' : r.latestStatus === 'in_progress' ? 'run' : 'warn';
+      return `
+        <div class="lat-row">
+          <div><a href="${r.latestUrl || '#'}" target="_blank" rel="noopener"><code>${r.repo}</code></a></div>
+          <div class="lat-bars" title="p50=${r.p50DurationSec}s, p95=${r.p95DurationSec}s">
+            <div class="lat-track"><div class="bar-fill" style="width:${p50w}%;"></div></div>
+            <div class="lat-track"><div class="bar-fill p95" style="width:${p95w}%;"></div></div>
+          </div>
+          <div style="font-family:var(--mono);font-size:11.5px;color:var(--muted);">p50 ${r.p50DurationSec}s · p95 ${r.p95DurationSec}s</div>
+          <div><span class="badge ${cls}">${r.passRatePct}%</span></div>
+        </div>
+      `;
+    }).join('');
+  }
+
   async function loadTelemetry() {
-    const resp = await fetch('./oversight-telemetry.json', { cache: 'no-store' });
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const d = await resp.json();
+    const d = await fetchFirstOk(['./oversight-telemetry.json', '../reports/oversight-telemetry.json']);
+    if (!d) throw new Error('Unable to load oversight-telemetry.json');
+    const gravity = await fetchFirstOk(['./gravity-telemetry.json', '../reports/gravity-telemetry.json']) || d.gravityTelemetry;
+    renderGravitySection(gravity);
 
     const cas = d.casGlobal || { uniqueBlobs: 427, totalMb: 1220, totalRepos: 69 };
     const lbProbes = Array.isArray(d.ladybird?.featureMatrix) ? d.ladybird.featureMatrix : [];

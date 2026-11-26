@@ -10,25 +10,63 @@ permissions:
 
 jobs:
   sync-reports:
-    name: Sync & Commit v11 Ecosystem Scoreboard
+    name: Sync & Commit v11 Ecosystem Scoreboard & Gravity Telemetry
     runs-on: ubuntu-latest
     steps:
       - name: Checkout awesome-os/holo-v11
         uses: actions/checkout@v4
+        with:
+          path: holo-v11
 
-      - name: Setup Node.js 22+
+      - name: Checkout awesome-os/t2linux-baseline (upstream pin catalogs)
+        uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          repository: awesome-os/t2linux-baseline
+          path: t2linux-baseline
+          sparse-checkout: |
+            catalog
+
+      - name: Setup Node.js 24
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '24'
 
-      - name: Sync all ecosystem analysis reports & generate scoreboard
+      - name: Sync ecosystem reports, gravity telemetry & oversight telemetry
+        working-directory: holo-v11
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           node scripts/sync-ecosystem-reports.mts
+          node scripts/gravity-pin-dedup-telemetry.mts
           node scripts/collect-oversight-telemetry.mts
 
+      - name: Write Gravity Pin-Dedup Summary to $GITHUB_STEP_SUMMARY
+        working-directory: holo-v11
+        run: |
+          node --input-type=module -e '
+            import { readFileSync, appendFileSync } from "node:fs";
+            const g = JSON.parse(readFileSync("reports/gravity-telemetry.json", "utf8"));
+            const summaryPath = process.env.GITHUB_STEP_SUMMARY;
+            if (!summaryPath) process.exit(0);
+            const md = [
+              "## Holo v11 Gravity Pinning, Dedup & Runner Telemetry",
+              "",
+              "| Metric | Value |",
+              "| :--- | :--- |",
+              `| Schema / ABI Magic | \`${g.schema}\` / \`${g.abiMagic}\` |`,
+              `| Upstream Pinning | **${g.pinning.atMaxCount} / ${g.pinning.trackedUpstreamLibs}** at max (${g.pinning.aheadOfChromeCount} ahead-of-Chrome · ${g.pinning.driftedLibs.length} drifted) |`,
+              `| SHA-512 CAS Dedup | ${g.dedup.uniqueSha512Blobs} unique / ${g.dedup.totalAssets} assets (**${g.dedup.savedMb} MB saved** · ${g.dedup.dedupRatioPct}%) |`,
+              `| \`dup_v8\` / \`b8g-ghost\` | \`${g.dedup.dupV8Bytes} B\` / \`${g.dedup.b8gGhostRemnants}\` |`,
+              `| Runner Fleet (${g.gravityDamper.dampingFactor} damping) | p50 **${g.gravityDamper.p50DurationSec}s** · p95 **${g.gravityDamper.p95DurationSec}s** · pass rate **${g.gravityDamper.overallPassRatePct}%** |`,
+              `| API Rate Headroom | ${g.gravityDamper.apiRateRemaining} / ${g.gravityDamper.apiRateLimit} |`,
+              "",
+            ].join("\n");
+            appendFileSync(summaryPath, md, "utf8");
+          '
+
       - name: Commit & push updated reports if changed
+        working-directory: holo-v11
         run: |
           git config user.name "awesome-os-bot"
           git config user.email "bot@awesome-os.com"
@@ -36,6 +74,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No report changes to commit."
           else
-            git commit -m "chore(reports): daily sync of v11 ecosystem scoreboard, Big Boys overlap, and Ladybird parity"
+            git commit -m "chore(reports): daily sync of v11 ecosystem scoreboard, gravity telemetry & oversight"
             git push origin HEAD:main
           fi

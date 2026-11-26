@@ -13,6 +13,8 @@ import { fileURLToPath } from 'node:url';
 
 const REPOS = [
   'awesome-os/awesome-os',
+  'awesome-os/agent-platform',
+  'awesome-os/chromium-baseline',
   'awesome-os/bootloader',
   'awesome-os/sectium-browser',
   'awesome-os/libv8_monolith',
@@ -136,14 +138,24 @@ function readJsonIfExists<T>(path: string, fallback: T): T {
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const mirrorRoot = resolve(repoRoot, '..');
 
-console.log('[OVERSIGHT] Collecting live GitHub Actions runner states across 11 core repos...');
+console.log(`[OVERSIGHT] Collecting live GitHub Actions runner states across ${REPOS.length} core repos...`);
 const runners = REPOS.map(fetchLatestRun);
 const chromiumCanary = fetchLiveChromiumCanary();
 
-const upstreams = readJsonIfExists<{ libraries?: unknown[]; totalTracked?: number }>(
+let upstreams = readJsonIfExists<{ libraries?: unknown[]; totalTracked?: number }>(
   join(mirrorRoot, 't2linux-baseline', 'catalog', 'live-upstream-tracker.json'),
   { libraries: [], totalTracked: 0 },
 );
+if ((upstreams.libraries?.length ?? 0) === 0) {
+  try {
+    const res = await fetch('https://raw.githubusercontent.com/awesome-os/t2linux-baseline/main/catalog/live-upstream-tracker.json');
+    if (res.ok) {
+      upstreams = (await res.json()) as { libraries?: unknown[]; totalTracked?: number };
+    }
+  } catch {
+    // offline fallback
+  }
+}
 const bigBoys = readJsonIfExists<{ runtimes?: unknown[]; totalStandaloneMb?: number; totalStandaloneDiskMb?: number }>(
   join(repoRoot, 'reports', 'big-boys-v11-overlap.json'),
   { runtimes: [], totalStandaloneMb: 3582 },
@@ -159,6 +171,14 @@ const casGlobal = readJsonIfExists<{
   totalBytes?: number;
   generatedAt?: string;
 }>(join(repoRoot, 'index', 'cas-v11-global-manifest.json'), {});
+const gravityRaw = readJsonIfExists<{
+  schema?: string;
+  generatedAt?: string;
+  abiMagic?: string;
+  pinning?: Record<string, unknown>;
+  dedup?: Record<string, unknown>;
+  gravityDamper?: Record<string, unknown>;
+} | null>(join(repoRoot, 'reports', 'gravity-telemetry.json'), null);
 
 const activeRuns = runners.filter((r) => r.status === 'in_progress' || r.status === 'queued').length;
 const passingRuns = runners.filter((r) => r.conclusion === 'success').length;
@@ -195,6 +215,16 @@ const telemetry = {
     webIdlCount: (ladybird as { totalWebIdlFiles?: number }).totalWebIdlFiles ?? 752,
     openFixmes: (ladybird as { totalFixmes?: number }).totalFixmes ?? 1348,
   },
+  gravityTelemetry: gravityRaw
+    ? {
+        schema: gravityRaw.schema ?? 'awesome-os.gravity-telemetry.v1',
+        generatedAt: gravityRaw.generatedAt ?? new Date().toISOString(),
+        abiMagic: gravityRaw.abiMagic ?? '0x33564742',
+        pinning: gravityRaw.pinning ?? null,
+        dedup: gravityRaw.dedup ?? null,
+        gravityDamper: gravityRaw.gravityDamper ?? null,
+      }
+    : null,
 };
 
 const outDir = join(repoRoot, 'reports');
