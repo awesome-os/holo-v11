@@ -1,11 +1,11 @@
 # Awesome-OS `v11` Ecosystem Scoreboard
 
-> Auto-updated daily by [`scripts/sync-ecosystem-reports.mts`](../scripts/sync-ecosystem-reports.mts) · Last sync: `2026-11-26T09:40:11.651Z`
+> Auto-updated daily by [`scripts/sync-ecosystem-reports.mts`](../scripts/sync-ecosystem-reports.mts) · Last sync: `2026-11-26T09:47:06.244Z`
 
 ## 1. 9-Runtime Big Boys `v11` CAS Coverage
 
-- **Runtimes at 100% Coverage:** **12 / 15**
-- **Standalone Disk Collapsed into 1 Shared `v11` CAS Layer:** **3.582 MB**
+- **Runtimes at 100% Coverage:** **15 / 21**
+- **Standalone Disk Collapsed into 1 Shared `v11` CAS Layer:** **13.792 MB**
 - **V8 Shared Baseline:** `16.0.88 (rolling latest via awesome-os/libv8_monolith)`
 
 | Runtime | Covered | Coverage |
@@ -25,6 +25,12 @@
 | **GNOME Wayland (GTK 4.24 / libadwaita 1.10)** | 16/16 | **100%** |
 | **KDE Plasma 6.8 (KWin 6.8.3 / Qt 6.12.1)** | 17/17 | **100%** |
 | **Omarchy / Hyprland 0.57 (wlroots 0.20)** | 15/15 | **100%** |
+| **Rust / Cargo Native Crates (*-sys)** | 25/25 | **100%** |
+| **.NET 11 SDK & Native Runtime** | 17/17 | **100%** |
+| **microsoft/vcpkg Top 100 Native Binary Ports** | 89/100 | **89%** |
+| **npm Top Native Binary Addons (sharp/sqlite/canvas/v8)** | 31/32 | **96.9%** |
+| **PyPI / Python Top Binary Wheels (numpy/torch/pillow/arrow)** | 30/33 | **90.9%** |
+| **GPU Compute & AI Accelerators (CUDA / NCCL / ROCm / Triton / XDNA)** | 21/21 | **100%** |
 
 ## 2. Ahead-of-Chrome Upstream Pins
 

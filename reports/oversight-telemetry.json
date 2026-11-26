@@ -1,6 +1,6 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T09:40:29.539Z",
+  "generatedAt": "2026-11-26T09:47:23.950Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
@@ -8,9 +8,9 @@
     "passingRuns": 20,
     "activeRuns": 2,
     "failingRuns": 0,
-    "upstreamLibsTracked": 44,
-    "bigBoysCount": 15,
-    "standaloneDiskSavedMb": 3582
+    "upstreamLibsTracked": 54,
+    "bigBoysCount": 21,
+    "standaloneDiskSavedMb": 13792
   },
   "chromiumCanary": {
     "milestone": 160,
@@ -115,8 +115,8 @@
       "status": "queued",
       "conclusion": "none",
       "branch": "main",
-      "updatedAt": "2026-11-26T09:40:13Z",
-      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45794115494"
+      "updatedAt": "2026-11-26T09:47:06Z",
+      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45795182689"
     },
     {
       "repo": "awesome-os/installer",
@@ -258,8 +258,8 @@
       "repo": "Mbed-TLS/mbedtls",
       "upstreamTag": "mbedtls-4.3.0",
       "upstreamVersion": "4.3.0",
-      "previousV11": "3.6.8",
-      "bumped": true
+      "previousV11": "4.3.0",
+      "bumped": false
     },
     {
       "pkg": "zstd",
@@ -338,8 +338,8 @@
       "repo": "libffi/libffi",
       "upstreamTag": "v3.8.2",
       "upstreamVersion": "3.8.2",
-      "previousV11": "3.8.1",
-      "bumped": true
+      "previousV11": "3.8.2",
+      "bumped": false
     },
     {
       "pkg": "curl",
@@ -442,8 +442,8 @@
       "repo": "mity/md4c",
       "upstreamTag": "v0.6.0",
       "upstreamVersion": "0.6.0",
-      "previousV11": "0.5.3",
-      "bumped": true
+      "previousV11": "0.6.0",
+      "bumped": false
     },
     {
       "pkg": "protobuf",
@@ -563,6 +563,86 @@
       "upstreamTag": "v0.3.34",
       "upstreamVersion": "0.3.34",
       "previousV11": "0.3.34",
+      "bumped": false
+    },
+    {
+      "pkg": "nccl",
+      "repo": "NVIDIA/nccl",
+      "upstreamTag": "v2.32.7-1",
+      "upstreamVersion": "2.32.7",
+      "previousV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "cutlass",
+      "repo": "NVIDIA/cutlass",
+      "upstreamTag": "v4.9.0dev",
+      "upstreamVersion": "4.9.0",
+      "previousV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "cccl",
+      "repo": "NVIDIA/cccl",
+      "upstreamTag": "v3.5.0",
+      "upstreamVersion": "3.5.0",
+      "previousV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "triton",
+      "repo": "triton-lang/triton",
+      "upstreamTag": "v3.9.0",
+      "upstreamVersion": "3.9.0",
+      "previousV11": "3.9.0",
+      "bumped": false
+    },
+    {
+      "pkg": "flash-attention",
+      "repo": "Dao-AILab/flash-attention",
+      "upstreamTag": "v2.8.3.post2",
+      "upstreamVersion": "2.8.3",
+      "previousV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "rocm",
+      "repo": "ROCm/ROCm",
+      "upstreamTag": "rocm-7.14.0",
+      "upstreamVersion": "7.14.0",
+      "previousV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "onednn",
+      "repo": "oneapi-src/oneDNN",
+      "upstreamTag": "v3.15-pc",
+      "upstreamVersion": "3.15",
+      "previousV11": null,
+      "bumped": false
+    },
+    {
+      "pkg": "spirv-tools",
+      "repo": "KhronosGroup/SPIRV-Tools",
+      "upstreamTag": "v2026.4",
+      "upstreamVersion": "2026.4",
+      "previousV11": "1.4.363.0",
+      "bumped": true
+    },
+    {
+      "pkg": "spirv-headers",
+      "repo": "KhronosGroup/SPIRV-Headers",
+      "upstreamTag": "vulkan-sdk-1.4.363.0",
+      "upstreamVersion": "1.4.363.0",
+      "previousV11": "1.4.363.0",
+      "bumped": false
+    },
+    {
+      "pkg": "xdna-driver",
+      "repo": "amd/xdna-driver",
+      "upstreamTag": "2.21.75",
+      "upstreamVersion": "2.21.75",
+      "previousV11": null,
       "bumped": false
     },
     {
@@ -732,6 +812,78 @@
       "coveragePercent": 100,
       "missing": [],
       "standaloneDiskMb": 145
+    },
+    {
+      "id": "rust-cargo",
+      "name": "Rust / Cargo Native Crates (*-sys)",
+      "totalLibs": 25,
+      "coveredInV11": 25,
+      "coveragePercent": 100,
+      "missing": [],
+      "standaloneDiskMb": 640
+    },
+    {
+      "id": "dotnet-11",
+      "name": ".NET 11 SDK & Native Runtime",
+      "totalLibs": 17,
+      "coveredInV11": 17,
+      "coveragePercent": 100,
+      "missing": [],
+      "standaloneDiskMb": 520
+    },
+    {
+      "id": "vcpkg-top100",
+      "name": "microsoft/vcpkg Top 100 Native Binary Ports",
+      "totalLibs": 100,
+      "coveredInV11": 89,
+      "coveragePercent": 89,
+      "missing": [
+        "libxml2",
+        "giflib",
+        "googletest",
+        "ngtcp2",
+        "glfw",
+        "zeromq",
+        "rocksdb",
+        "leveldb",
+        "libxslt",
+        "pixman",
+        "cairo"
+      ],
+      "standaloneDiskMb": 1850
+    },
+    {
+      "id": "npm-top-native",
+      "name": "npm Top Native Binary Addons (sharp/sqlite/canvas/v8)",
+      "totalLibs": 32,
+      "coveredInV11": 31,
+      "coveragePercent": 96.9,
+      "missing": [
+        "giflib"
+      ],
+      "standaloneDiskMb": 920
+    },
+    {
+      "id": "pypi-top-wheels",
+      "name": "PyPI / Python Top Binary Wheels (numpy/torch/pillow/arrow)",
+      "totalLibs": 33,
+      "coveredInV11": 30,
+      "coveragePercent": 90.9,
+      "missing": [
+        "libxslt",
+        "libxml2",
+        "zeromq"
+      ],
+      "standaloneDiskMb": 1480
+    },
+    {
+      "id": "gpu-compute-stack",
+      "name": "GPU Compute & AI Accelerators (CUDA / NCCL / ROCm / Triton / XDNA)",
+      "totalLibs": 21,
+      "coveredInV11": 21,
+      "coveragePercent": 100,
+      "missing": [],
+      "standaloneDiskMb": 4800
     }
   ],
   "ladybirdSummary": {
