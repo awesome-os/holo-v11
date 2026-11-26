@@ -1,12 +1,12 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T19:41:03.120Z",
+  "generatedAt": "2026-11-26T19:41:29.747Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
     "totalReposMonitored": 19,
-    "passingRuns": 18,
-    "activeRuns": 0,
+    "passingRuns": 17,
+    "activeRuns": 1,
     "failingRuns": 0,
     "upstreamLibsTracked": 56,
     "bigBoysCount": 22,
@@ -75,11 +75,11 @@
     {
       "repo": "awesome-os/holo-v11",
       "workflowName": "Update Awesome-OS v11 Ecosystem Reports",
-      "status": "completed",
-      "conclusion": "success",
+      "status": "in_progress",
+      "conclusion": "running",
       "branch": "main",
-      "updatedAt": "2026-11-26T18:47:59Z",
-      "url": "https://github.com/awesome-os/holo-v11/actions/runs/45878714259"
+      "updatedAt": "2026-11-26T19:41:13Z",
+      "url": "https://github.com/awesome-os/holo-v11/actions/runs/45885471314"
     },
     {
       "repo": "awesome-os/holo-compiler",
@@ -883,7 +883,7 @@
   },
   "gravityTelemetry": {
     "schema": "awesome-os.gravity-telemetry.v1",
-    "generatedAt": "2026-11-26T19:40:48.979Z",
+    "generatedAt": "2026-11-26T19:41:19.280Z",
     "abiMagic": "0x33564742",
     "pinning": {
       "trackedUpstreamLibs": 56,
@@ -925,15 +925,15 @@
       "dampingFactor": 0.65,
       "runnerFleet": {
         "reposMonitored": 17,
-        "activeRepos": 0,
-        "passingLatestRepos": 16,
+        "activeRepos": 1,
+        "passingLatestRepos": 15,
         "failingLatestRepos": 0,
-        "totalSampledRuns": 134
+        "totalSampledRuns": 135
       },
       "p50DurationSec": 27,
       "p95DurationSec": 1091,
       "overallPassRatePct": 77.6,
-      "apiRateRemaining": 3851,
+      "apiRateRemaining": 4910,
       "apiRateLimit": 5000,
       "perRepoTelemetry": [
         {
@@ -1018,19 +1018,19 @@
         },
         {
           "repo": "holo-v11",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
+          "latestStatus": "in_progress",
+          "latestConclusion": "running",
           "latestWorkflow": "Update Awesome-OS v11 Ecosystem Reports",
-          "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/45878714259",
-          "latestUpdatedAt": "2026-11-26T18:47:59Z",
-          "sampleCount": 8,
+          "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/45885471314",
+          "latestUpdatedAt": "2026-11-26T19:41:13Z",
+          "sampleCount": 9,
           "completedCount": 8,
           "passingCount": 8,
           "failingCount": 0,
           "passRatePct": 100,
           "p50DurationSec": 27,
           "p95DurationSec": 215,
-          "lastDurationSec": 26
+          "lastDurationSec": 4
         },
         {
           "repo": "holo-compiler",
