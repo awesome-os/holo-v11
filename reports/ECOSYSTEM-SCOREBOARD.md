@@ -1,6 +1,6 @@
 # Awesome-OS `v11` Ecosystem Scoreboard
 
-> Auto-updated daily by [`scripts/sync-ecosystem-reports.mts`](../scripts/sync-ecosystem-reports.mts) · Last sync: `2026-11-26T08:14:46.085Z`
+> Auto-updated daily by [`scripts/sync-ecosystem-reports.mts`](../scripts/sync-ecosystem-reports.mts) · Last sync: `2026-11-26T08:47:10.831Z`
 
 ## 1. 9-Runtime Big Boys `v11` CAS Coverage
 
@@ -12,7 +12,7 @@
 | :--- | ---: | ---: |
 | **Chromium 160 Canary / Sectium Browser** | 26/27 | **96.3%** |
 | **Firefox (Gecko / SpiderMonkey)** | 22/24 | **91.7%** |
-| **Electron (awesome-os/sectium-electron)** | 20/20 | **100%** |
+| **Electron (awesome-os/electron)** | 20/20 | **100%** |
 | **NW.js (holo-display-nwjs)** | 18/18 | **100%** |
 | **Node.js** | 15/16 | **93.8%** |
 | **Deno** | 10/10 | **100%** |

@@ -1,13 +1,13 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T08:31:50.817Z",
+  "generatedAt": "2026-11-26T08:47:19.218Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
     "totalReposMonitored": 11,
     "passingRuns": 7,
-    "activeRuns": 1,
-    "failingRuns": 1,
+    "activeRuns": 2,
+    "failingRuns": 0,
     "upstreamLibsTracked": 21,
     "bigBoysCount": 12,
     "standaloneDiskSavedMb": 2597
@@ -25,26 +25,26 @@
       "status": "in_progress",
       "conclusion": "running",
       "branch": "main",
-      "updatedAt": "2026-11-26T08:21:58Z",
-      "url": "https://github.com/awesome-os/sectium-browser/actions/runs/45782530287"
+      "updatedAt": "2026-11-26T08:42:55Z",
+      "url": "https://github.com/awesome-os/sectium-browser/actions/runs/45785490169"
     },
     {
       "repo": "awesome-os/libv8_monolith",
-      "workflowName": "Release Tarball",
-      "status": "completed",
-      "conclusion": "failure",
-      "branch": "main",
-      "updatedAt": "2026-11-26T07:49:02Z",
-      "url": "https://github.com/awesome-os/libv8_monolith/actions/runs/45778114598"
-    },
-    {
-      "repo": "awesome-os/lo",
-      "workflowName": "CI — awesome-os/lo (Ghost CAS Dynamic V8 + Native Libs)",
+      "workflowName": "CI — Holo v11 Dynamic libv8_monolith Verification (V8 16+ Zero Static Bloat)",
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T07:48:33Z",
-      "url": "https://github.com/awesome-os/lo/actions/runs/45778045514"
+      "updatedAt": "2026-11-26T08:46:32Z",
+      "url": "https://github.com/awesome-os/libv8_monolith/actions/runs/45785990036"
+    },
+    {
+      "repo": "awesome-os/lo",
+      "workflowName": "CI — awesome-os/lo (Holo v11 CAS + HoloFFI Dynamic V8 16+)",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T08:46:39Z",
+      "url": "https://github.com/awesome-os/lo/actions/runs/45785983260"
     },
     {
       "repo": "awesome-os/holo-v11",
@@ -76,11 +76,11 @@
     {
       "repo": "awesome-os/t2linux-baseline",
       "workflowName": "Build & Boot T2Linux Baseline (Original T2 SDE + v11 CAS)",
-      "status": "completed",
-      "conclusion": "success",
+      "status": "in_progress",
+      "conclusion": "running",
       "branch": "main",
-      "updatedAt": "2026-11-26T08:15:29Z",
-      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45781536645"
+      "updatedAt": "2026-11-26T08:47:14Z",
+      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45786107162"
     },
     {
       "repo": "awesome-os/installer",
@@ -88,8 +88,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T08:15:40Z",
-      "url": "https://github.com/awesome-os/installer/actions/runs/45781612679"
+      "updatedAt": "2026-11-26T08:46:34Z",
+      "url": "https://github.com/awesome-os/installer/actions/runs/45785997101"
     },
     {
       "repo": "awesome-os/host-manager",
@@ -315,7 +315,7 @@
     },
     {
       "id": "electron",
-      "name": "Electron (awesome-os/sectium-electron)",
+      "name": "Electron (awesome-os/electron)",
       "totalLibs": 20,
       "coveredInV11": 20,
       "coveragePercent": 100,
