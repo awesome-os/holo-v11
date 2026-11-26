@@ -15,6 +15,7 @@ const REPOS = [
   'awesome-os/sectium-browser',
   'awesome-os/libv8_monolith',
   'awesome-os/lo',
+  'awesome-os/bun-neon',
   'awesome-os/holo-v11',
   'awesome-os/desktop',
   'awesome-os/posix',

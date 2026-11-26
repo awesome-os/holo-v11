@@ -1,12 +1,12 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T08:47:19.218Z",
+  "generatedAt": "2026-11-26T08:49:40.534Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
-    "totalReposMonitored": 11,
-    "passingRuns": 7,
-    "activeRuns": 2,
+    "totalReposMonitored": 12,
+    "passingRuns": 9,
+    "activeRuns": 1,
     "failingRuns": 0,
     "upstreamLibsTracked": 21,
     "bigBoysCount": 12,
@@ -47,6 +47,15 @@
       "url": "https://github.com/awesome-os/lo/actions/runs/45785983260"
     },
     {
+      "repo": "awesome-os/bun-neon",
+      "workflowName": "CI — Bun-Neon Driven by Sectium Browser Baseline",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T08:49:33Z",
+      "url": "https://github.com/awesome-os/bun-neon/actions/runs/45786412202"
+    },
+    {
       "repo": "awesome-os/holo-v11",
       "workflowName": "Update Awesome-OS v11 Ecosystem Reports",
       "status": "completed",
@@ -76,10 +85,10 @@
     {
       "repo": "awesome-os/t2linux-baseline",
       "workflowName": "Build & Boot T2Linux Baseline (Original T2 SDE + v11 CAS)",
-      "status": "in_progress",
-      "conclusion": "running",
+      "status": "completed",
+      "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T08:47:14Z",
+      "updatedAt": "2026-11-26T08:48:08Z",
       "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45786107162"
     },
     {
@@ -88,8 +97,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T08:46:34Z",
-      "url": "https://github.com/awesome-os/installer/actions/runs/45785997101"
+      "updatedAt": "2026-11-26T08:49:30Z",
+      "url": "https://github.com/awesome-os/installer/actions/runs/45786417930"
     },
     {
       "repo": "awesome-os/host-manager",
