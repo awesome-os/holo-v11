@@ -1,12 +1,12 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T08:56:27.535Z",
+  "generatedAt": "2026-11-26T08:57:10.861Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
     "totalReposMonitored": 12,
-    "passingRuns": 9,
-    "activeRuns": 3,
+    "passingRuns": 11,
+    "activeRuns": 1,
     "failingRuns": 0,
     "upstreamLibsTracked": 21,
     "bigBoysCount": 12,
@@ -103,10 +103,10 @@
     {
       "repo": "awesome-os/host-manager",
       "workflowName": "CI — Awesome-OS Host Manager (Fleet, A/B Slots, Workspaces & MCP)",
-      "status": "in_progress",
-      "conclusion": "running",
+      "status": "completed",
+      "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T08:56:23Z",
+      "updatedAt": "2026-11-26T08:56:29Z",
       "url": "https://github.com/awesome-os/host-manager/actions/runs/45787415182"
     },
     {
@@ -121,10 +121,10 @@
     {
       "repo": "awesome-os/colibri",
       "workflowName": "CI — Awesome-OS Colibri (v11 CAS Bridge & LumiBERT 2.8ms)",
-      "status": "in_progress",
-      "conclusion": "running",
+      "status": "completed",
+      "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T08:56:27Z",
+      "updatedAt": "2026-11-26T08:56:44Z",
       "url": "https://github.com/awesome-os/colibri/actions/runs/45787421635"
     }
   ],
