@@ -1,11 +1,11 @@
 # Awesome-OS `v11` Ecosystem Scoreboard
 
-> Auto-updated daily by [`scripts/sync-ecosystem-reports.mts`](../scripts/sync-ecosystem-reports.mts) · Last sync: `2026-11-26T09:47:06.244Z`
+> Auto-updated daily by [`scripts/sync-ecosystem-reports.mts`](../scripts/sync-ecosystem-reports.mts) · Last sync: `2026-11-26T09:55:49.027Z`
 
 ## 1. 9-Runtime Big Boys `v11` CAS Coverage
 
-- **Runtimes at 100% Coverage:** **15 / 21**
-- **Standalone Disk Collapsed into 1 Shared `v11` CAS Layer:** **13.792 MB**
+- **Runtimes at 100% Coverage:** **15 / 22**
+- **Standalone Disk Collapsed into 1 Shared `v11` CAS Layer:** **13.987 MB**
 - **V8 Shared Baseline:** `16.0.88 (rolling latest via awesome-os/libv8_monolith)`
 
 | Runtime | Covered | Coverage |
@@ -31,6 +31,7 @@
 | **npm Top Native Binary Addons (sharp/sqlite/canvas/v8)** | 31/32 | **96.9%** |
 | **PyPI / Python Top Binary Wheels (numpy/torch/pillow/arrow)** | 30/33 | **90.9%** |
 | **GPU Compute & AI Accelerators (CUDA / NCCL / ROCm / Triton / XDNA)** | 21/21 | **100%** |
+| **Linux Kernel & Bare-Metal Boot (torvalds/linux + Limine + musl)** | 14/15 | **93.3%** |
 
 ## 2. Ahead-of-Chrome Upstream Pins
 
