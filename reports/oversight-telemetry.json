@@ -1,12 +1,12 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T20:45:28.295Z",
+  "generatedAt": "2026-11-26T20:57:46.370Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
     "totalReposMonitored": 19,
-    "passingRuns": 17,
-    "activeRuns": 2,
+    "passingRuns": 19,
+    "activeRuns": 0,
     "failingRuns": 0,
     "upstreamLibsTracked": 60,
     "bigBoysCount": 22,
@@ -19,11 +19,11 @@
     "v8Hash": "a12d1e5662b8"
   },
   "casGlobal": {
-    "totalRepos": 58,
-    "totalAssets": 407,
-    "uniqueBlobs": 396,
-    "totalMb": 1453.9,
-    "warmedAt": "2026-11-26T20:45:16.161Z",
+    "totalRepos": 60,
+    "totalAssets": 413,
+    "uniqueBlobs": 402,
+    "totalMb": 1454,
+    "warmedAt": "2026-11-26T20:57:30.303Z",
     "planetaryEndpoint": "https://awesome-os.com/cas/v11/manifest.json"
   },
   "runners": [
@@ -33,8 +33,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:36:51Z",
-      "url": "https://github.com/awesome-os/awesome-os/actions/runs/45892291632"
+      "updatedAt": "2026-11-26T20:53:22Z",
+      "url": "https://github.com/awesome-os/awesome-os/actions/runs/45894224170"
     },
     {
       "repo": "awesome-os/agent-platform",
@@ -47,66 +47,66 @@
     },
     {
       "repo": "awesome-os/chromium-baseline",
-      "workflowName": "chromium-baseline CI",
+      "workflowName": "Holo-CI",
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:25:57Z",
-      "url": "https://github.com/awesome-os/chromium-baseline/actions/runs/45890955202"
+      "updatedAt": "2026-11-26T20:49:01Z",
+      "url": "https://github.com/awesome-os/chromium-baseline/actions/runs/45893726961"
     },
     {
       "repo": "awesome-os/sectium-browser",
-      "workflowName": "V8 Upstream — Unified Multi-OS Damped Gravity Compile (Linux / Win64 / macOS ARM64)",
+      "workflowName": "Holo-CI",
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T10:12:03Z",
-      "url": "https://github.com/awesome-os/sectium-browser/actions/runs/45797112899"
+      "updatedAt": "2026-11-26T20:50:45Z",
+      "url": "https://github.com/awesome-os/sectium-browser/actions/runs/45893943188"
     },
     {
       "repo": "awesome-os/lo",
-      "workflowName": "CI — awesome-os/lo (Holo v11 CAS + HoloFFI Dynamic V8 16+)",
+      "workflowName": "Holo-CI",
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:22:59Z",
-      "url": "https://github.com/awesome-os/lo/actions/runs/45890610583"
+      "updatedAt": "2026-11-26T20:51:01Z",
+      "url": "https://github.com/awesome-os/lo/actions/runs/45893968840"
     },
     {
       "repo": "awesome-os/holo-v11",
       "workflowName": "Sync Global Holo v11 Registry",
-      "status": "in_progress",
-      "conclusion": "running",
+      "status": "completed",
+      "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:44:39Z",
+      "updatedAt": "2026-11-26T20:45:34Z",
       "url": "https://github.com/awesome-os/holo-v11/actions/runs/45893228880"
     },
     {
       "repo": "awesome-os/holo-compiler",
-      "workflowName": "holo-compiler CI",
+      "workflowName": "Holo-CI",
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:23:04Z",
-      "url": "https://github.com/awesome-os/holo-compiler/actions/runs/45890617005"
+      "updatedAt": "2026-11-26T20:50:48Z",
+      "url": "https://github.com/awesome-os/holo-compiler/actions/runs/45893950245"
     },
     {
       "repo": "awesome-os/holo-pm",
-      "workflowName": "Release Awesome-OS holo-pm + libholo-pm",
-      "status": "in_progress",
-      "conclusion": "running",
-      "branch": "main",
-      "updatedAt": "2026-11-26T20:44:56Z",
-      "url": "https://github.com/awesome-os/holo-pm/actions/runs/45893260874"
-    },
-    {
-      "repo": "awesome-os/desktop",
-      "workflowName": "Build and Boot AwesomeOS v1.0 (Multi-Arch Dual-Slot ISO, QCOW2 & Netboot)",
+      "workflowName": "Warm Global v11 CAS CDN",
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T18:05:24Z",
-      "url": "https://github.com/awesome-os/desktop/actions/runs/45872933871"
+      "updatedAt": "2026-11-26T20:52:35Z",
+      "url": "https://github.com/awesome-os/holo-pm/actions/runs/45894126387"
+    },
+    {
+      "repo": "awesome-os/desktop",
+      "workflowName": "Holo-CI",
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "main",
+      "updatedAt": "2026-11-26T20:50:46Z",
+      "url": "https://github.com/awesome-os/desktop/actions/runs/45893938585"
     },
     {
       "repo": "awesome-os/t2linux-baseline",
@@ -123,8 +123,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:21:23Z",
-      "url": "https://github.com/awesome-os/devtools/actions/runs/45890412711"
+      "updatedAt": "2026-11-26T20:49:27Z",
+      "url": "https://github.com/awesome-os/devtools/actions/runs/45893785440"
     },
     {
       "repo": "awesome-os/maintenance-workflows",
@@ -132,8 +132,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:15:28Z",
-      "url": "https://github.com/awesome-os/maintenance-workflows/actions/runs/45889684607"
+      "updatedAt": "2026-11-26T20:51:54Z",
+      "url": "https://github.com/awesome-os/maintenance-workflows/actions/runs/45894072660"
     },
     {
       "repo": "awesome-os/installer",
@@ -141,8 +141,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T20:25:35Z",
-      "url": "https://github.com/awesome-os/installer/actions/runs/45890929733"
+      "updatedAt": "2026-11-26T20:52:31Z",
+      "url": "https://github.com/awesome-os/installer/actions/runs/45894134844"
     },
     {
       "repo": "awesome-os/deployment",
@@ -900,7 +900,7 @@
   },
   "gravityTelemetry": {
     "schema": "awesome-os.gravity-telemetry.v1",
-    "generatedAt": "2026-11-26T20:45:18.049Z",
+    "generatedAt": "2026-11-26T20:57:32.706Z",
     "abiMagic": "0x33564742",
     "pinning": {
       "trackedUpstreamLibs": 60,
@@ -920,11 +920,11 @@
       }
     },
     "dedup": {
-      "totalAssets": 407,
-      "uniqueSha512Blobs": 396,
+      "totalAssets": 413,
+      "uniqueSha512Blobs": 402,
       "dedupedBlobs": 11,
-      "rawTotalMb": 1453.93,
-      "uniqueTotalMb": 1373.14,
+      "rawTotalMb": 1454,
+      "uniqueTotalMb": 1373.21,
       "savedMb": 80.79,
       "dedupRatioPct": 5.56,
       "dupV8Bytes": 0,
@@ -934,17 +934,17 @@
       "dampingFactor": 0.65,
       "runnerFleet": {
         "reposMonitored": 20,
-        "activeRepos": 2,
-        "passingLatestRepos": 18,
+        "activeRepos": 0,
+        "passingLatestRepos": 20,
         "failingLatestRepos": 0,
-        "completedLatestRepos": 18,
-        "totalSampledRuns": 159
+        "completedLatestRepos": 20,
+        "totalSampledRuns": 163
       },
-      "p50DurationSec": 25,
-      "p95DurationSec": 1065,
-      "overallPassRatePct": 84.1,
+      "p50DurationSec": 23,
+      "p95DurationSec": 887,
+      "overallPassRatePct": 84.7,
       "latestFleetPassRatePct": 100,
-      "apiRateRemaining": 4860,
+      "apiRateRemaining": 4279,
       "apiRateLimit": 5000,
       "perRepoTelemetry": [
         {
@@ -952,16 +952,16 @@
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/awesome-os/actions/runs/45892291632",
-          "latestUpdatedAt": "2026-11-26T20:36:51Z",
+          "latestUrl": "https://github.com/awesome-os/awesome-os/actions/runs/45894224170",
+          "latestUpdatedAt": "2026-11-26T20:53:22Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 9,
           "failingCount": 1,
           "passRatePct": 90,
           "p50DurationSec": 15,
-          "p95DurationSec": 24,
-          "lastDurationSec": 12
+          "p95DurationSec": 21,
+          "lastDurationSec": 20
         },
         {
           "repo": "agent-platform",
@@ -983,33 +983,33 @@
           "repo": "chromium-baseline",
           "latestStatus": "completed",
           "latestConclusion": "success",
-          "latestWorkflow": "chromium-baseline CI",
-          "latestUrl": "https://github.com/awesome-os/chromium-baseline/actions/runs/45890955202",
-          "latestUpdatedAt": "2026-11-26T20:25:57Z",
-          "sampleCount": 9,
-          "completedCount": 9,
-          "passingCount": 8,
+          "latestWorkflow": "Holo-CI",
+          "latestUrl": "https://github.com/awesome-os/chromium-baseline/actions/runs/45893726961",
+          "latestUpdatedAt": "2026-11-26T20:49:01Z",
+          "sampleCount": 10,
+          "completedCount": 10,
+          "passingCount": 9,
           "failingCount": 1,
-          "passRatePct": 88.9,
-          "p50DurationSec": 19,
-          "p95DurationSec": 25,
-          "lastDurationSec": 19
+          "passRatePct": 90,
+          "p50DurationSec": 20,
+          "p95DurationSec": 39,
+          "lastDurationSec": 15
         },
         {
           "repo": "desktop",
           "latestStatus": "completed",
           "latestConclusion": "success",
-          "latestWorkflow": "Build and Boot AwesomeOS v1.0 (Multi-Arch Dual-Slot ISO, QCOW2 & Netboot)",
-          "latestUrl": "https://github.com/awesome-os/desktop/actions/runs/45872933871",
-          "latestUpdatedAt": "2026-11-26T18:05:24Z",
+          "latestWorkflow": "Holo-CI",
+          "latestUrl": "https://github.com/awesome-os/desktop/actions/runs/45893938585",
+          "latestUpdatedAt": "2026-11-26T20:50:46Z",
           "sampleCount": 10,
           "completedCount": 10,
-          "passingCount": 6,
-          "failingCount": 4,
-          "passRatePct": 60,
-          "p50DurationSec": 54,
+          "passingCount": 7,
+          "failingCount": 3,
+          "passRatePct": 70,
+          "p50DurationSec": 53,
           "p95DurationSec": 71,
-          "lastDurationSec": 71
+          "lastDurationSec": 12
         },
         {
           "repo": "t2linux-baseline",
@@ -1029,27 +1029,27 @@
         },
         {
           "repo": "holo-v11",
-          "latestStatus": "in_progress",
-          "latestConclusion": "running",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
           "latestWorkflow": "Sync Global Holo v11 Registry",
           "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/45893228880",
-          "latestUpdatedAt": "2026-11-26T20:44:39Z",
+          "latestUpdatedAt": "2026-11-26T20:45:34Z",
           "sampleCount": 10,
-          "completedCount": 9,
-          "passingCount": 9,
+          "completedCount": 10,
+          "passingCount": 10,
           "failingCount": 0,
           "passRatePct": 100,
           "p50DurationSec": 25,
-          "p95DurationSec": 36,
-          "lastDurationSec": 3
+          "p95DurationSec": 58,
+          "lastDurationSec": 58
         },
         {
           "repo": "holo-compiler",
           "latestStatus": "completed",
           "latestConclusion": "success",
-          "latestWorkflow": "holo-compiler CI",
-          "latestUrl": "https://github.com/awesome-os/holo-compiler/actions/runs/45890617005",
-          "latestUpdatedAt": "2026-11-26T20:23:04Z",
+          "latestWorkflow": "Holo-CI",
+          "latestUrl": "https://github.com/awesome-os/holo-compiler/actions/runs/45893950245",
+          "latestUpdatedAt": "2026-11-26T20:50:48Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 10,
@@ -1057,31 +1057,31 @@
           "passRatePct": 100,
           "p50DurationSec": 10,
           "p95DurationSec": 483,
-          "lastDurationSec": 10
+          "lastDurationSec": 9
         },
         {
           "repo": "holo-pm",
-          "latestStatus": "in_progress",
-          "latestConclusion": "running",
-          "latestWorkflow": "Release Awesome-OS holo-pm + libholo-pm",
-          "latestUrl": "https://github.com/awesome-os/holo-pm/actions/runs/45893260874",
-          "latestUpdatedAt": "2026-11-26T20:44:56Z",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
+          "latestWorkflow": "Warm Global v11 CAS CDN",
+          "latestUrl": "https://github.com/awesome-os/holo-pm/actions/runs/45894126387",
+          "latestUpdatedAt": "2026-11-26T20:52:35Z",
           "sampleCount": 10,
-          "completedCount": 9,
-          "passingCount": 9,
+          "completedCount": 10,
+          "passingCount": 10,
           "failingCount": 0,
           "passRatePct": 100,
-          "p50DurationSec": 46,
-          "p95DurationSec": 110,
-          "lastDurationSec": 3
+          "p50DurationSec": 37,
+          "p95DurationSec": 52,
+          "lastDurationSec": 24
         },
         {
           "repo": "sectium-browser",
           "latestStatus": "completed",
           "latestConclusion": "success",
-          "latestWorkflow": "V8 Upstream — Real Damped Gravity Compile-Release-Bounce (Free Cloud Runner)",
-          "latestUrl": "https://github.com/awesome-os/sectium-browser/actions/runs/45797112899",
-          "latestUpdatedAt": "2026-11-26T10:12:03Z",
+          "latestWorkflow": "Holo-CI",
+          "latestUrl": "https://github.com/awesome-os/sectium-browser/actions/runs/45893943188",
+          "latestUpdatedAt": "2026-11-26T20:50:45Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 10,
@@ -1089,23 +1089,23 @@
           "passRatePct": 100,
           "p50DurationSec": 671,
           "p95DurationSec": 1065,
-          "lastDurationSec": 739
+          "lastDurationSec": 9
         },
         {
           "repo": "devtools",
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/devtools/actions/runs/45890412711",
-          "latestUpdatedAt": "2026-11-26T20:21:23Z",
-          "sampleCount": 6,
-          "completedCount": 6,
-          "passingCount": 4,
+          "latestUrl": "https://github.com/awesome-os/devtools/actions/runs/45893785440",
+          "latestUpdatedAt": "2026-11-26T20:49:27Z",
+          "sampleCount": 9,
+          "completedCount": 9,
+          "passingCount": 7,
           "failingCount": 2,
-          "passRatePct": 66.7,
-          "p50DurationSec": 13,
+          "passRatePct": 77.8,
+          "p50DurationSec": 12,
           "p95DurationSec": 21,
-          "lastDurationSec": 12
+          "lastDurationSec": 10
         },
         {
           "repo": "llama.cpp",
@@ -1160,16 +1160,16 @@
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/installer/actions/runs/45890929733",
-          "latestUpdatedAt": "2026-11-26T20:25:35Z",
+          "latestUrl": "https://github.com/awesome-os/installer/actions/runs/45894134844",
+          "latestUpdatedAt": "2026-11-26T20:52:31Z",
           "sampleCount": 10,
           "completedCount": 10,
-          "passingCount": 10,
-          "failingCount": 0,
-          "passRatePct": 100,
-          "p50DurationSec": 11,
-          "p95DurationSec": 25,
-          "lastDurationSec": 9
+          "passingCount": 9,
+          "failingCount": 1,
+          "passRatePct": 90,
+          "p50DurationSec": 10,
+          "p95DurationSec": 20,
+          "lastDurationSec": 16
         },
         {
           "repo": "host-manager",
@@ -1223,17 +1223,17 @@
           "repo": "lo",
           "latestStatus": "completed",
           "latestConclusion": "success",
-          "latestWorkflow": "CI — awesome-os/lo (Holo v11 CAS + HoloFFI Dynamic V8 16+)",
-          "latestUrl": "https://github.com/awesome-os/lo/actions/runs/45890610583",
-          "latestUpdatedAt": "2026-11-26T20:22:59Z",
+          "latestWorkflow": "Holo-CI",
+          "latestUrl": "https://github.com/awesome-os/lo/actions/runs/45893968840",
+          "latestUpdatedAt": "2026-11-26T20:51:01Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 10,
           "failingCount": 0,
           "passRatePct": 100,
-          "p50DurationSec": 16,
+          "p50DurationSec": 10,
           "p95DurationSec": 96,
-          "lastDurationSec": 8
+          "lastDurationSec": 12
         },
         {
           "repo": "awesome-os.github.io",

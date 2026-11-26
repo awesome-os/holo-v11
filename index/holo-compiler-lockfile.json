@@ -719,6 +719,39 @@
       "downloadUrl": "https://github.com/awesome-os/cargo/releases/download/v0.1.0/SHA256SUMS.txt"
     },
     {
+      "id": "awesome-os/chromium-baseline@v11-chromium-baseline-latest/chromium-baseline-linux-x86_64-holo-v11.tar.gz",
+      "repo": "chromium-baseline",
+      "tag": "v11-chromium-baseline-latest",
+      "filename": "chromium-baseline-linux-x86_64-holo-v11.tar.gz",
+      "target": "linux-x64",
+      "sha512": "5790c94e2cc920fe7374a09e3857bd943cd6459d14c3e5b34222628cdc86875fa4c1f384a8af9f84ce3999cfff95ebcd87c8a77b4f623471cbebb6b53cb13146",
+      "size": 39538,
+      "blobPath": "v11/files/57/5790c94e2cc920fe7374a09e3857bd943cd6459d14c3e5b34222628cdc86875fa4c1f384a8af9f84ce3999cfff95ebcd87c8a77b4f623471cbebb6b53cb13146",
+      "downloadUrl": "https://github.com/awesome-os/chromium-baseline/releases/download/v11-chromium-baseline-latest/chromium-baseline-linux-x86_64-holo-v11.tar.gz"
+    },
+    {
+      "id": "awesome-os/chromium-baseline@v11-chromium-baseline-latest/holo-v11-manifest.json",
+      "repo": "chromium-baseline",
+      "tag": "v11-chromium-baseline-latest",
+      "filename": "holo-v11-manifest.json",
+      "target": "any",
+      "sha512": "d1044560251fd2d7717735166384a2fd726f6b1a786d00e487201dd199c360d6d2e9b0029fe13c4b5913153e1d3d5b6f7ccae733f51742ee4e2311ec7b6c0e0d",
+      "size": 4627,
+      "blobPath": "v11/files/d1/d1044560251fd2d7717735166384a2fd726f6b1a786d00e487201dd199c360d6d2e9b0029fe13c4b5913153e1d3d5b6f7ccae733f51742ee4e2311ec7b6c0e0d",
+      "downloadUrl": "https://github.com/awesome-os/chromium-baseline/releases/download/v11-chromium-baseline-latest/holo-v11-manifest.json"
+    },
+    {
+      "id": "awesome-os/chromium-baseline@v11-chromium-baseline-latest/SHA512SUMS.txt",
+      "repo": "chromium-baseline",
+      "tag": "v11-chromium-baseline-latest",
+      "filename": "SHA512SUMS.txt",
+      "target": "any",
+      "sha512": "a31af517c228e01ce896fa96e1f029f8ad1968faf550878a472085b8a8bb79dfc17441b85ea96ba6994b55d5d06fe633b9b66359af50147db15c274fe34f261b",
+      "size": 3013,
+      "blobPath": "v11/files/a3/a31af517c228e01ce896fa96e1f029f8ad1968faf550878a472085b8a8bb79dfc17441b85ea96ba6994b55d5d06fe633b9b66359af50147db15c274fe34f261b",
+      "downloadUrl": "https://github.com/awesome-os/chromium-baseline/releases/download/v11-chromium-baseline-latest/SHA512SUMS.txt"
+    },
+    {
       "id": "awesome-os/code-oss@v0.3.0/code-oss-linux-arm64",
       "repo": "code-oss",
       "tag": "v0.3.0",
@@ -1256,6 +1289,39 @@
       "size": 17500552,
       "blobPath": "v11/files/31/3104753c7eb1274ac9b77d8ab5a982ef040fd921e091fec9ed8f4235031b068bbc10d74b99c436f5e46559ba7a643ba92c802138667e26d75d3b778a8f59aea0-exec",
       "downloadUrl": "https://github.com/awesome-os/desktop/releases/download/v1.0.0/vmlinuz-x86_64"
+    },
+    {
+      "id": "awesome-os/devtools@v11-devtools-launchers-latest/devtools-launchers-linux-x86_64-holo-v11.tar.gz",
+      "repo": "devtools",
+      "tag": "v11-devtools-launchers-latest",
+      "filename": "devtools-launchers-linux-x86_64-holo-v11.tar.gz",
+      "target": "linux-x64",
+      "sha512": "58e531ffe12711f652e3abe62be46b2ae9662c0891664bb1a020f2f8035ac7316391ed8e7498e5be224f7a2fafbede04a2fa4076a8c3f41f762b5a8a8ece034a",
+      "size": 22692,
+      "blobPath": "v11/files/58/58e531ffe12711f652e3abe62be46b2ae9662c0891664bb1a020f2f8035ac7316391ed8e7498e5be224f7a2fafbede04a2fa4076a8c3f41f762b5a8a8ece034a",
+      "downloadUrl": "https://github.com/awesome-os/devtools/releases/download/v11-devtools-launchers-latest/devtools-launchers-linux-x86_64-holo-v11.tar.gz"
+    },
+    {
+      "id": "awesome-os/devtools@v11-devtools-launchers-latest/holo-v11-manifest.json",
+      "repo": "devtools",
+      "tag": "v11-devtools-launchers-latest",
+      "filename": "holo-v11-manifest.json",
+      "target": "any",
+      "sha512": "ae7b872560eaabfe929ea216a5b6775288db147b98d15615ebd69f1f755d94bd30efe753adedb166cfebd161b05218cd993ddf51a388cc15ec233e95415981ee",
+      "size": 4188,
+      "blobPath": "v11/files/ae/ae7b872560eaabfe929ea216a5b6775288db147b98d15615ebd69f1f755d94bd30efe753adedb166cfebd161b05218cd993ddf51a388cc15ec233e95415981ee",
+      "downloadUrl": "https://github.com/awesome-os/devtools/releases/download/v11-devtools-launchers-latest/holo-v11-manifest.json"
+    },
+    {
+      "id": "awesome-os/devtools@v11-devtools-launchers-latest/SHA512SUMS.txt",
+      "repo": "devtools",
+      "tag": "v11-devtools-launchers-latest",
+      "filename": "SHA512SUMS.txt",
+      "target": "any",
+      "sha512": "29ed716f2c330972e8a95f0ac407552d1db9757d4378e07d7b65265b2155bb3200d14869b3257f45ad0fc0172d0bf732167645841e40d34d9441e221c9d668b5",
+      "size": 331,
+      "blobPath": "v11/files/29/29ed716f2c330972e8a95f0ac407552d1db9757d4378e07d7b65265b2155bb3200d14869b3257f45ad0fc0172d0bf732167645841e40d34d9441e221c9d668b5",
+      "downloadUrl": "https://github.com/awesome-os/devtools/releases/download/v11-devtools-launchers-latest/SHA512SUMS.txt"
     },
     {
       "id": "awesome-os/dotnet@v0.1.0/dotnet-linux-arm64",

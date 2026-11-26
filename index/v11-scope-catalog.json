@@ -1,7 +1,7 @@
 {
   "schema": "awesome-os.v11-scope-catalog.v1",
   "abiMagic": "0x33564742",
-  "generatedAt": "2026-11-26T20:45:16.303Z",
+  "generatedAt": "2026-11-26T20:57:30.483Z",
   "taxonomy": [
     "appliance",
     "device",
@@ -60,10 +60,12 @@
       "blender",
       "brave",
       "cargo",
+      "chromium-baseline",
       "code-oss",
       "colibri",
       "coreutils",
       "dawn",
+      "devtools",
       "dotnet",
       "explorer",
       "godot",
@@ -227,6 +229,9 @@
       "local",
       "remote"
     ],
+    "chromium-baseline": [
+      "terminal-app"
+    ],
     "code-oss": [
       "monitor",
       "browser-app",
@@ -255,6 +260,9 @@
       "browser-app",
       "folder-structure",
       "local"
+    ],
+    "devtools": [
+      "terminal-app"
     ],
     "dotnet": [
       "browser-app",
