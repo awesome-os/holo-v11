@@ -167,12 +167,14 @@
     }).join('');
 
     document.getElementById('bigboys-list').innerHTML = d.bigBoys.map((b) => {
-      const pct = b.coveragePercent ?? Math.round((b.covered / Math.max(1, b.total)) * 100);
+      const covered = b.coveredInV11 ?? b.covered ?? 0;
+      const total = b.totalLibs ?? b.total ?? 0;
+      const pct = b.coveragePercent ?? Math.round((covered / Math.max(1, total)) * 100);
       return `
         <div style="margin-bottom:10px;">
           <div style="display:flex;justify-content:space-between;font-size:12.5px;">
             <strong>${b.name}</strong>
-            <span style="font-family:var(--mono);color:var(--muted);">${b.covered}/${b.total} (${pct}%)</span>
+            <span style="font-family:var(--mono);color:var(--muted);">${covered}/${total} (${pct}%)</span>
           </div>
           <div class="bar-wrap"><div class="bar-fill" style="width:${pct}%;"></div></div>
         </div>
