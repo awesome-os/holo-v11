@@ -1,7 +1,7 @@
 {
   "schema": "awesome-os.gravity-telemetry.v1",
   "abiMagic": "0x33564742",
-  "generatedAt": "2026-11-26T18:46:32.474Z",
+  "generatedAt": "2026-11-26T18:47:42.559Z",
   "pinning": {
     "trackedUpstreamLibs": 56,
     "atMaxCount": 55,
@@ -42,15 +42,15 @@
     "dampingFactor": 0.65,
     "runnerFleet": {
       "reposMonitored": 17,
-      "activeRepos": 2,
-      "passingLatestRepos": 14,
+      "activeRepos": 4,
+      "passingLatestRepos": 13,
       "failingLatestRepos": 0,
-      "totalSampledRuns": 122
+      "totalSampledRuns": 124
     },
     "p50DurationSec": 34,
     "p95DurationSec": 840,
     "overallPassRatePct": 80.8,
-    "apiRateRemaining": 4033,
+    "apiRateRemaining": 4983,
     "apiRateLimit": 5000,
     "perRepoTelemetry": [
       {
@@ -87,19 +87,19 @@
       },
       {
         "repo": "chromium-baseline",
-        "latestStatus": "idle",
-        "latestConclusion": "no-runs",
-        "latestWorkflow": "—",
-        "latestUrl": "https://github.com/awesome-os/chromium-baseline/actions",
-        "latestUpdatedAt": "",
-        "sampleCount": 0,
+        "latestStatus": "in_progress",
+        "latestConclusion": "running",
+        "latestWorkflow": "chromium-baseline CI",
+        "latestUrl": "https://github.com/awesome-os/chromium-baseline/actions/runs/45878719461",
+        "latestUpdatedAt": "2026-11-26T18:47:38Z",
+        "sampleCount": 1,
         "completedCount": 0,
         "passingCount": 0,
         "failingCount": 0,
         "passRatePct": 0,
         "p50DurationSec": 0,
         "p95DurationSec": 0,
-        "lastDurationSec": 0
+        "lastDurationSec": 3
       },
       {
         "repo": "desktop",
@@ -135,19 +135,19 @@
       },
       {
         "repo": "holo-v11",
-        "latestStatus": "completed",
-        "latestConclusion": "success",
+        "latestStatus": "in_progress",
+        "latestConclusion": "running",
         "latestWorkflow": "Update Awesome-OS v11 Ecosystem Reports",
-        "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/45775030839",
-        "latestUpdatedAt": "2026-11-26T07:24:26Z",
-        "sampleCount": 7,
+        "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/45878714259",
+        "latestUpdatedAt": "2026-11-26T18:47:37Z",
+        "sampleCount": 8,
         "completedCount": 7,
         "passingCount": 7,
         "failingCount": 0,
         "passRatePct": 100,
         "p50DurationSec": 36,
         "p95DurationSec": 215,
-        "lastDurationSec": 20
+        "lastDurationSec": 4
       },
       {
         "repo": "holo-compiler",

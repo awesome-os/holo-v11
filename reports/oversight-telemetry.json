@@ -1,12 +1,12 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T18:46:53.332Z",
+  "generatedAt": "2026-11-26T18:47:55.185Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
     "totalReposMonitored": 28,
-    "passingRuns": 26,
-    "activeRuns": 1,
+    "passingRuns": 25,
+    "activeRuns": 3,
     "failingRuns": 0,
     "upstreamLibsTracked": 56,
     "bigBoysCount": 22,
@@ -47,12 +47,12 @@
     },
     {
       "repo": "awesome-os/chromium-baseline",
-      "workflowName": "—",
-      "status": "idle",
-      "conclusion": "no-runs",
+      "workflowName": "chromium-baseline CI",
+      "status": "in_progress",
+      "conclusion": "running",
       "branch": "main",
-      "updatedAt": "",
-      "url": "https://github.com/awesome-os/chromium-baseline/actions"
+      "updatedAt": "2026-11-26T18:47:38Z",
+      "url": "https://github.com/awesome-os/chromium-baseline/actions/runs/45878719461"
     },
     {
       "repo": "awesome-os/bootloader",
@@ -102,11 +102,11 @@
     {
       "repo": "awesome-os/holo-v11",
       "workflowName": "Update Awesome-OS v11 Ecosystem Reports",
-      "status": "completed",
-      "conclusion": "success",
+      "status": "in_progress",
+      "conclusion": "running",
       "branch": "main",
-      "updatedAt": "2026-11-26T07:24:26Z",
-      "url": "https://github.com/awesome-os/holo-v11/actions/runs/45775030839"
+      "updatedAt": "2026-11-26T18:47:37Z",
+      "url": "https://github.com/awesome-os/holo-v11/actions/runs/45878714259"
     },
     {
       "repo": "awesome-os/holo-compiler",
@@ -964,7 +964,7 @@
   },
   "gravityTelemetry": {
     "schema": "awesome-os.gravity-telemetry.v1",
-    "generatedAt": "2026-11-26T18:46:32.474Z",
+    "generatedAt": "2026-11-26T18:47:42.559Z",
     "abiMagic": "0x33564742",
     "pinning": {
       "trackedUpstreamLibs": 56,
@@ -1006,15 +1006,15 @@
       "dampingFactor": 0.65,
       "runnerFleet": {
         "reposMonitored": 17,
-        "activeRepos": 2,
-        "passingLatestRepos": 14,
+        "activeRepos": 4,
+        "passingLatestRepos": 13,
         "failingLatestRepos": 0,
-        "totalSampledRuns": 122
+        "totalSampledRuns": 124
       },
       "p50DurationSec": 34,
       "p95DurationSec": 840,
       "overallPassRatePct": 80.8,
-      "apiRateRemaining": 4033,
+      "apiRateRemaining": 4983,
       "apiRateLimit": 5000,
       "perRepoTelemetry": [
         {
@@ -1051,19 +1051,19 @@
         },
         {
           "repo": "chromium-baseline",
-          "latestStatus": "idle",
-          "latestConclusion": "no-runs",
-          "latestWorkflow": "—",
-          "latestUrl": "https://github.com/awesome-os/chromium-baseline/actions",
-          "latestUpdatedAt": "",
-          "sampleCount": 0,
+          "latestStatus": "in_progress",
+          "latestConclusion": "running",
+          "latestWorkflow": "chromium-baseline CI",
+          "latestUrl": "https://github.com/awesome-os/chromium-baseline/actions/runs/45878719461",
+          "latestUpdatedAt": "2026-11-26T18:47:38Z",
+          "sampleCount": 1,
           "completedCount": 0,
           "passingCount": 0,
           "failingCount": 0,
           "passRatePct": 0,
           "p50DurationSec": 0,
           "p95DurationSec": 0,
-          "lastDurationSec": 0
+          "lastDurationSec": 3
         },
         {
           "repo": "desktop",
@@ -1099,19 +1099,19 @@
         },
         {
           "repo": "holo-v11",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
+          "latestStatus": "in_progress",
+          "latestConclusion": "running",
           "latestWorkflow": "Update Awesome-OS v11 Ecosystem Reports",
-          "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/45775030839",
-          "latestUpdatedAt": "2026-11-26T07:24:26Z",
-          "sampleCount": 7,
+          "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/45878714259",
+          "latestUpdatedAt": "2026-11-26T18:47:37Z",
+          "sampleCount": 8,
           "completedCount": 7,
           "passingCount": 7,
           "failingCount": 0,
           "passRatePct": 100,
           "p50DurationSec": 36,
           "p95DurationSec": 215,
-          "lastDurationSec": 20
+          "lastDurationSec": 4
         },
         {
           "repo": "holo-compiler",
