@@ -29,6 +29,7 @@ jobs:
         run: |
           node scripts/warm-global-cas.mts
           node scripts/v11-tree-overrides.mts
+          node scripts/v11-scope-tags.mts
 
       - name: Commit updated v11 index manifests to main (only on lockfile diff)
         run: |
@@ -36,11 +37,12 @@ jobs:
           cp dist/cas-v11-global-manifest.json index/cas-v11-global-manifest.json
           cp dist/holo-compiler-lockfile.json index/holo-compiler-lockfile.json
           cp dist/v11-active-overrides.json index/v11-active-overrides.json
+          cp dist/v11-scope-catalog.json index/v11-scope-catalog.json
           git config user.name "awesome-os-cas-bot"
           git config user.email "cas@awesome-os.com"
           if ! git diff --quiet -- index/ 2>/dev/null || [ -n "$(git status --porcelain index/)" ]; then
-            git add index/cas-v11-global-manifest.json index/holo-compiler-lockfile.json index/v11-active-overrides.json
-            git commit -m "chore(v11-index): sync global holo v11 CAS manifests & active overrides"
+            git add index/cas-v11-global-manifest.json index/holo-compiler-lockfile.json index/v11-active-overrides.json index/v11-scope-catalog.json
+            git commit -m "chore(v11-index): sync global holo v11 CAS manifests, overrides & scope tags"
             git push origin HEAD:main
           else
             echo "index/ unchanged — skipping empty commit."

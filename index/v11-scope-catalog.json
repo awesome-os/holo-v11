@@ -1,0 +1,515 @@
+{
+  "schema": "awesome-os.v11-scope-catalog.v1",
+  "abiMagic": "0x33564742",
+  "generatedAt": "2026-11-26T03:56:25.644Z",
+  "taxonomy": [
+    "appliance",
+    "device",
+    "monitor",
+    "keyboard",
+    "oci-container",
+    "browser-app",
+    "terminal-app",
+    "folder-structure",
+    "local",
+    "remote"
+  ],
+  "byTag": {
+    "appliance": [
+      "awesome-os-desktop",
+      "b8g-production-rack"
+    ],
+    "device": [
+      "sectium-display"
+    ],
+    "monitor": [
+      "blink",
+      "code-oss",
+      "desktop-omarchy",
+      "electron",
+      "noctalia",
+      "qt",
+      "sectium-browser",
+      "sectium-display",
+      "sectium-electron",
+      "t2desktop-noctalia",
+      "theia",
+      "wry"
+    ],
+    "keyboard": [
+      "desktop-omarchy",
+      "noctalia",
+      "sectium-display",
+      "t2desktop-noctalia"
+    ],
+    "oci-container": [
+      "t2linux",
+      "t2xnu"
+    ],
+    "browser-app": [
+      "blink",
+      "code-oss",
+      "desktop-omarchy",
+      "dotnet",
+      "electron",
+      "godot",
+      "noctalia",
+      "powershell",
+      "qt",
+      "sectium-browser",
+      "sectium-display",
+      "sectium-electron",
+      "t2desktop-noctalia",
+      "theia",
+      "upstream-mirrors",
+      "wasi-host",
+      "wry"
+    ],
+    "terminal-app": [
+      "awesome-os-desktop",
+      "b8g-production-rack",
+      "blender",
+      "brave",
+      "cargo",
+      "code-oss",
+      "coreutils",
+      "dawn",
+      "dotnet",
+      "explorer",
+      "godot",
+      "holo-compiler",
+      "holo-pm",
+      "just",
+      "just-js",
+      "libuv",
+      "lo",
+      "noctalia",
+      "node",
+      "nodeman",
+      "obs",
+      "pnpm",
+      "powershell",
+      "sectium-browser",
+      "sectium-display",
+      "sectium-distributions",
+      "skia",
+      "t2linux",
+      "upstream-mirrors",
+      "uv",
+      "wasi-host",
+      "webui"
+    ],
+    "folder-structure": [
+      "awesome-os-desktop",
+      "b8g-app-dedup",
+      "b8g-ide",
+      "b8g-micro-moe",
+      "b8g-production-rack",
+      "blender-vscode",
+      "blink",
+      "bun-neon",
+      "coreutils",
+      "desktop-omarchy",
+      "electron",
+      "explorer",
+      "ghost-100",
+      "ghost-cpp",
+      "ghost-jvm",
+      "ghost-py",
+      "godot-vscode",
+      "holo-compiler",
+      "holo-pm",
+      "installer",
+      "just",
+      "libv8_monolith",
+      "modern-picomatch",
+      "noctalia",
+      "nodeman",
+      "obs",
+      "obs-vscode",
+      "ory-polis",
+      "pinokio",
+      "pouchdb",
+      "qt",
+      "rollup",
+      "sectium-browser",
+      "sectium-devops",
+      "sectium-devtools",
+      "sectium-electron",
+      "sectium-es",
+      "sectium-jvm",
+      "stealifylang-vscode",
+      "t2desktop-noctalia",
+      "theia",
+      "ts-morph",
+      "unity-vscode",
+      "universal-git",
+      "unreal-vscode",
+      "upstream-mirrors",
+      "wry",
+      "ws"
+    ],
+    "local": [
+      "awesome-os-desktop",
+      "b8g-app-dedup",
+      "b8g-micro-moe",
+      "b8g-production-rack",
+      "blender-vscode",
+      "blink",
+      "cargo",
+      "code-oss",
+      "coreutils",
+      "desktop-omarchy",
+      "electron",
+      "explorer",
+      "godot-vscode",
+      "holo-compiler",
+      "holo-pm",
+      "just",
+      "noctalia",
+      "nodeman",
+      "obs",
+      "obs-vscode",
+      "pnpm",
+      "qt",
+      "sectium-browser",
+      "sectium-display",
+      "sectium-electron",
+      "stealifylang-vscode",
+      "t2desktop-noctalia",
+      "t2linux",
+      "t2xnu",
+      "theia",
+      "unity-vscode",
+      "unreal-vscode",
+      "upstream-mirrors",
+      "uv",
+      "wry"
+    ],
+    "remote": [
+      "awesome-os-desktop",
+      "b8g-production-rack",
+      "cargo",
+      "coreutils",
+      "explorer",
+      "holo-compiler",
+      "holo-pm",
+      "just",
+      "nodeman",
+      "obs",
+      "pnpm",
+      "t2linux",
+      "t2xnu",
+      "upstream-mirrors",
+      "uv"
+    ]
+  },
+  "byRepo": {
+    "awesome-os-desktop": [
+      "appliance",
+      "terminal-app",
+      "folder-structure",
+      "local",
+      "remote"
+    ],
+    "b8g-app-dedup": [
+      "folder-structure",
+      "local"
+    ],
+    "b8g-ide": [
+      "folder-structure"
+    ],
+    "b8g-micro-moe": [
+      "folder-structure",
+      "local"
+    ],
+    "b8g-production-rack": [
+      "appliance",
+      "terminal-app",
+      "folder-structure",
+      "local",
+      "remote"
+    ],
+    "blender": [
+      "terminal-app"
+    ],
+    "blender-vscode": [
+      "folder-structure",
+      "local"
+    ],
+    "blink": [
+      "monitor",
+      "browser-app",
+      "folder-structure",
+      "local"
+    ],
+    "brave": [
+      "terminal-app"
+    ],
+    "bun-neon": [
+      "folder-structure"
+    ],
+    "cargo": [
+      "terminal-app",
+      "local",
+      "remote"
+    ],
+    "code-oss": [
+      "monitor",
+      "browser-app",
+      "terminal-app",
+      "local"
+    ],
+    "coreutils": [
+      "terminal-app",
+      "folder-structure",
+      "local",
+      "remote"
+    ],
+    "dawn": [
+      "terminal-app"
+    ],
+    "desktop-omarchy": [
+      "monitor",
+      "keyboard",
+      "browser-app",
+      "folder-structure",
+      "local"
+    ],
+    "dotnet": [
+      "browser-app",
+      "terminal-app"
+    ],
+    "electron": [
+      "monitor",
+      "browser-app",
+      "folder-structure",
+      "local"
+    ],
+    "explorer": [
+      "terminal-app",
+      "folder-structure",
+      "local",
+      "remote"
+    ],
+    "ghost-100": [
+      "folder-structure"
+    ],
+    "ghost-cpp": [
+      "folder-structure"
+    ],
+    "ghost-jvm": [
+      "folder-structure"
+    ],
+    "ghost-py": [
+      "folder-structure"
+    ],
+    "godot": [
+      "browser-app",
+      "terminal-app"
+    ],
+    "godot-vscode": [
+      "folder-structure",
+      "local"
+    ],
+    "holo-compiler": [
+      "terminal-app",
+      "folder-structure",
+      "local",
+      "remote"
+    ],
+    "holo-pm": [
+      "terminal-app",
+      "folder-structure",
+      "local",
+      "remote"
+    ],
+    "installer": [
+      "folder-structure"
+    ],
+    "just": [
+      "terminal-app",
+      "folder-structure",
+      "local",
+      "remote"
+    ],
+    "just-js": [
+      "terminal-app"
+    ],
+    "libuv": [
+      "terminal-app"
+    ],
+    "libv8_monolith": [
+      "folder-structure"
+    ],
+    "lo": [
+      "terminal-app"
+    ],
+    "modern-picomatch": [
+      "folder-structure"
+    ],
+    "noctalia": [
+      "monitor",
+      "keyboard",
+      "browser-app",
+      "terminal-app",
+      "folder-structure",
+      "local"
+    ],
+    "node": [
+      "terminal-app"
+    ],
+    "nodeman": [
+      "terminal-app",
+      "folder-structure",
+      "local",
+      "remote"
+    ],
+    "obs": [
+      "terminal-app",
+      "folder-structure",
+      "local",
+      "remote"
+    ],
+    "obs-vscode": [
+      "folder-structure",
+      "local"
+    ],
+    "ory-polis": [
+      "folder-structure"
+    ],
+    "pinokio": [
+      "folder-structure"
+    ],
+    "pnpm": [
+      "terminal-app",
+      "local",
+      "remote"
+    ],
+    "pouchdb": [
+      "folder-structure"
+    ],
+    "powershell": [
+      "browser-app",
+      "terminal-app"
+    ],
+    "qt": [
+      "monitor",
+      "browser-app",
+      "folder-structure",
+      "local"
+    ],
+    "rollup": [
+      "folder-structure"
+    ],
+    "sectium-browser": [
+      "monitor",
+      "browser-app",
+      "terminal-app",
+      "folder-structure",
+      "local"
+    ],
+    "sectium-devops": [
+      "folder-structure"
+    ],
+    "sectium-devtools": [
+      "folder-structure"
+    ],
+    "sectium-display": [
+      "device",
+      "monitor",
+      "keyboard",
+      "browser-app",
+      "terminal-app",
+      "local"
+    ],
+    "sectium-distributions": [
+      "terminal-app"
+    ],
+    "sectium-electron": [
+      "monitor",
+      "browser-app",
+      "folder-structure",
+      "local"
+    ],
+    "sectium-es": [
+      "folder-structure"
+    ],
+    "sectium-jvm": [
+      "folder-structure"
+    ],
+    "skia": [
+      "terminal-app"
+    ],
+    "stealifylang-vscode": [
+      "folder-structure",
+      "local"
+    ],
+    "t2desktop-noctalia": [
+      "monitor",
+      "keyboard",
+      "browser-app",
+      "folder-structure",
+      "local"
+    ],
+    "t2linux": [
+      "oci-container",
+      "terminal-app",
+      "local",
+      "remote"
+    ],
+    "t2xnu": [
+      "oci-container",
+      "local",
+      "remote"
+    ],
+    "theia": [
+      "monitor",
+      "browser-app",
+      "folder-structure",
+      "local"
+    ],
+    "ts-morph": [
+      "folder-structure"
+    ],
+    "unity-vscode": [
+      "folder-structure",
+      "local"
+    ],
+    "universal-git": [
+      "folder-structure"
+    ],
+    "unreal-vscode": [
+      "folder-structure",
+      "local"
+    ],
+    "upstream-mirrors": [
+      "browser-app",
+      "terminal-app",
+      "folder-structure",
+      "local",
+      "remote"
+    ],
+    "uv": [
+      "terminal-app",
+      "local",
+      "remote"
+    ],
+    "wasi-host": [
+      "browser-app",
+      "terminal-app"
+    ],
+    "webui": [
+      "terminal-app"
+    ],
+    "wry": [
+      "monitor",
+      "browser-app",
+      "folder-structure",
+      "local"
+    ],
+    "ws": [
+      "folder-structure"
+    ]
+  }
+}
