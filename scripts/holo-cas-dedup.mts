@@ -59,8 +59,28 @@ function sha512File(path: string): string {
 
 const args = process.argv.slice(2);
 const apply = args.includes('--apply');
+const allEcosystems = args.includes('--ecosystems');
 const dirIdx = args.indexOf('--dir');
 const casRoot = resolve(dirIdx !== -1 && args[dirIdx + 1] ? args[dirIdx + 1] : join(homedir(), '.b8g', 'cas'));
+
+function discoverEcosystemRoots(): Array<{ name: string; path: string }> {
+  const home = homedir();
+  const localAppData = process.env.LOCALAPPDATA ?? join(home, 'AppData', 'Local');
+  const candidates: Array<{ name: string; path: string }> = [
+    { name: 'b8g-cas', path: casRoot },
+    { name: 'pnpm-store', path: join(localAppData, 'pnpm', 'store') },
+    { name: 'npm-cache', path: join(localAppData, 'npm-cache') },
+    { name: 'cargo-registry', path: join(home, '.cargo', 'registry') },
+    { name: 'uv-cache', path: join(localAppData, 'uv', 'cache') },
+    { name: 'pip-cache', path: join(localAppData, 'pip', 'Cache') },
+    { name: 'nuget-packages', path: join(home, '.nuget', 'packages') },
+    { name: 'go-mod-cache', path: join(home, 'go', 'pkg', 'mod', 'cache') },
+    { name: 'vcpkg-archives', path: join(localAppData, 'vcpkg', 'archives') },
+    { name: 'huggingface-cache', path: join(home, '.cache', 'huggingface') },
+    { name: 'colibri-models', path: join(home, 'colibri-models') },
+  ];
+  return candidates.filter((c) => existsSync(c.path));
+}
 
 if (!existsSync(casRoot)) {
   console.error(`CAS root not found: ${casRoot}`);
@@ -68,7 +88,16 @@ if (!existsSync(casRoot)) {
 }
 
 const t0 = performance.now();
-const files = walkFiles(casRoot);
+const scanRoots = allEcosystems ? discoverEcosystemRoots() : [{ name: 'b8g-cas', path: casRoot }];
+const files: FileRec[] = [];
+const perEcosystem: Array<{ name: string; path: string; files: number; mb: number }> = [];
+
+for (const root of scanRoots) {
+  const found = walkFiles(root.path);
+  const bytes = found.reduce((a, f) => a + f.size, 0);
+  perEcosystem.push({ name: root.name, path: root.path, files: found.length, mb: Number((bytes / 1048576).toFixed(2)) });
+  files.push(...found);
+}
 
 let totalLogicalBytes = 0;
 let archiveBytes = 0;
@@ -149,8 +178,15 @@ topDupes.sort((a, b) => b.savedMb - a.savedMb);
 archives.sort((a, b) => b.mb - a.mb);
 
 const ms = (performance.now() - t0).toFixed(0);
-console.log(`\n=== HOLO v11 CAS DEDUP REPORT (${apply ? 'APPLIED' : 'DRY-RUN'}) ===`);
-console.log(`CAS Root:             ${casRoot}`);
+console.log(`\n=== HOLO v11 CROSS-ECOSYSTEM CAS DEDUP REPORT (${apply ? 'APPLIED' : 'DRY-RUN'}) ===`);
+console.log(`Target v11 CAS Root:  ${casRoot}`);
+if (allEcosystems) {
+  console.log('\nEcosystems Scanned:');
+  for (const eco of perEcosystem) {
+    console.log(`  ${eco.name.padEnd(20)} ${String(eco.mb).padStart(9)} MB  (${eco.files} files)  ${eco.path}`);
+  }
+  console.log('');
+}
 console.log(`Files Scanned:        ${files.length} (${(totalLogicalBytes / 1048576).toFixed(2)} MB) in ${ms} ms`);
 console.log(`Exact Duplicates:     ${duplicateFileCount} extra copies -> ${(reclaimableDuplicateBytes / 1048576).toFixed(2)} MB immediately reclaimable via v11 hardlinks`);
 console.log(`Monolithic Archives:  ${archives.length} archive files -> ${(archiveBytes / 1048576).toFixed(2)} MB (.tar*/.zip)`);
