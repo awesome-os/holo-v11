@@ -1,12 +1,12 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T08:57:10.861Z",
+  "generatedAt": "2026-11-26T09:19:29.855Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
     "totalReposMonitored": 12,
-    "passingRuns": 11,
-    "activeRuns": 1,
+    "passingRuns": 10,
+    "activeRuns": 2,
     "failingRuns": 0,
     "upstreamLibsTracked": 21,
     "bigBoysCount": 12,
@@ -25,8 +25,8 @@
       "status": "in_progress",
       "conclusion": "running",
       "branch": "main",
-      "updatedAt": "2026-11-26T08:54:28Z",
-      "url": "https://github.com/awesome-os/sectium-browser/actions/runs/45787134996"
+      "updatedAt": "2026-11-26T09:11:05Z",
+      "url": "https://github.com/awesome-os/sectium-browser/actions/runs/45788688177"
     },
     {
       "repo": "awesome-os/libv8_monolith",
@@ -85,11 +85,11 @@
     {
       "repo": "awesome-os/t2linux-baseline",
       "workflowName": "Build & Boot T2Linux Baseline (Original T2 SDE + v11 CAS)",
-      "status": "completed",
-      "conclusion": "success",
+      "status": "queued",
+      "conclusion": "none",
       "branch": "main",
-      "updatedAt": "2026-11-26T08:48:08Z",
-      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45786107162"
+      "updatedAt": "2026-11-26T09:19:22Z",
+      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45790882451"
     },
     {
       "repo": "awesome-os/installer",
@@ -212,8 +212,8 @@
     {
       "pkg": "vulkan-loader",
       "repo": "KhronosGroup/Vulkan-Loader",
-      "upstreamTag": "windows-rt-1.0.8.1",
-      "upstreamVersion": "1.0.8.1",
+      "upstreamTag": "vulkan-sdk-1.4.363.0",
+      "upstreamVersion": "1.4.363.0",
       "previousV11": "1.4.369",
       "bumped": false
     },
@@ -246,8 +246,8 @@
       "repo": "simdutf/simdutf",
       "upstreamTag": "v9.5.0",
       "upstreamVersion": "9.5.0",
-      "previousV11": "9.4.0",
-      "bumped": true
+      "previousV11": "9.5.0",
+      "bumped": false
     },
     {
       "pkg": "protobuf",
