@@ -15,13 +15,18 @@
 
 import { createHash } from 'node:crypto';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
+import { signManifestEd25519 } from '../../awesome-os/security/verified-boot.mts';
 
 const ORG = process.env.AWESOME_OS_ORG || 'awesome-os';
 const TOKEN = process.env.GH_TOKEN || process.env.GITHUB_TOKEN || '';
 const MAX_ASSET_BYTES = Number(process.env.MAX_ASSET_MB || '250') * 1024 * 1024;
+const WARM_DISK_MAX_BYTES = Number(process.env.WARM_DISK_MAX_MB || '32') * 1024 * 1024;
+const WRITE_LOCAL_CAS = process.argv.includes('--write-local-cas');
+const LOCAL_CAS_ROOT = process.env.B8G_CAS_DIR || path.join(os.homedir(), '.b8g', 'cas');
 const CONCURRENCY = 12;
-const OUT_DIR = path.resolve(process.cwd(), 'dist');
+const OUT_DIR = path.resolve(process.cwd(), 'index');
 
 const apiHeaders: Record<string, string> = {
   Accept: 'application/vnd.github+json',
@@ -99,19 +104,38 @@ async function listOrgRepos(): Promise<string[]> {
   return names.sort();
 }
 
-async function streamSha512(url: string): Promise<{ sha512: string; bytes: number }> {
+async function streamSha512AndMaybeWarm(
+  url: string,
+  executable: boolean,
+  expectedSize: number,
+): Promise<{ sha512: string; bytes: number; warmedOnDisk: boolean }> {
   const res = await fetch(url, {
     redirect: 'follow',
     headers: { 'User-Agent': 'awesome-os-global-v11-cas-warmer/1.0' },
   });
   if (!res.ok || !res.body) throw new Error(`HTTP ${res.status} fetching ${url}`);
+  const shouldCacheBytes = WRITE_LOCAL_CAS && expectedSize <= WARM_DISK_MAX_BYTES;
+  const chunks: Uint8Array[] = [];
   const hash = createHash('sha512');
   let bytes = 0;
   for await (const chunk of res.body as AsyncIterable<Uint8Array>) {
     hash.update(chunk);
     bytes += chunk.byteLength;
+    if (shouldCacheBytes) chunks.push(chunk);
   }
-  return { sha512: hash.digest('hex'), bytes };
+  const sha512 = hash.digest('hex');
+  let warmedOnDisk = false;
+  if (shouldCacheBytes) {
+    const shardDir = path.join(LOCAL_CAS_ROOT, 'v11', 'files', sha512.slice(0, 2));
+    const blobName = executable ? `${sha512}-exec` : sha512;
+    const dst = path.join(shardDir, blobName);
+    if (!fs.existsSync(dst)) {
+      fs.mkdirSync(shardDir, { recursive: true });
+      fs.writeFileSync(dst, Buffer.concat(chunks));
+    }
+    warmedOnDisk = true;
+  }
+  return { sha512, bytes, warmedOnDisk };
 }
 
 const repos = await listOrgRepos();
@@ -133,13 +157,18 @@ async function worker(): Promise<void> {
       if (!rel.tag_name || !Array.isArray(rel.assets) || rel.assets.length === 0) continue;
 
       for (const asset of rel.assets) {
+        if (/^b8g-ghost/i.test(asset.name)) continue;
         if (asset.size > MAX_ASSET_BYTES) {
           skippedLarge++;
           continue;
         }
         try {
-          const { sha512, bytes } = await streamSha512(asset.browser_download_url);
           const executable = isExecutableAsset(asset.name);
+          const { sha512, bytes } = await streamSha512AndMaybeWarm(
+            asset.browser_download_url,
+            executable,
+            asset.size,
+          );
           const blobName = executable ? `${sha512}-exec` : sha512;
           entries.push({
             id: `${ORG}/${repo}@${rel.tag_name}/${asset.name}`,
@@ -172,7 +201,7 @@ const totalBytes = entries.reduce((sum, e) => sum + e.size, 0);
 
 fs.mkdirSync(OUT_DIR, { recursive: true });
 
-const manifestDoc = {
+const manifestDoc = signManifestEd25519({
   schema: 'awesome-os-cas-v11-manifest-v1',
   abiMagic: '0x33564742',
   version: 'v11',
@@ -183,7 +212,7 @@ const manifestDoc = {
   totalBytes,
   skippedLarge,
   entries,
-};
+});
 
 const lockfileDoc = {
   schema: 'holo-compiler-lockfile-v1',

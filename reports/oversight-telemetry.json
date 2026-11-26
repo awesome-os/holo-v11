@@ -1,12 +1,12 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-26T15:51:35.119Z",
+  "generatedAt": "2026-11-26T17:53:17.372Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
     "totalReposMonitored": 26,
-    "passingRuns": 25,
-    "activeRuns": 1,
+    "passingRuns": 26,
+    "activeRuns": 0,
     "failingRuns": 0,
     "upstreamLibsTracked": 56,
     "bigBoysCount": 22,
@@ -18,6 +18,14 @@
     "branchPosition": 1754429,
     "v8Hash": "0239d7c3d8e3"
   },
+  "casGlobal": {
+    "totalRepos": 61,
+    "totalAssets": 409,
+    "uniqueBlobs": 399,
+    "totalMb": 1218.6,
+    "warmedAt": "2026-11-26T17:52:57.475Z",
+    "planetaryEndpoint": "https://awesome-os.com/cas/v11/manifest.json"
+  },
   "runners": [
     {
       "repo": "awesome-os/awesome-os",
@@ -25,8 +33,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T15:49:54Z",
-      "url": "https://github.com/awesome-os/awesome-os/actions/runs/45852901873"
+      "updatedAt": "2026-11-26T17:25:23Z",
+      "url": "https://github.com/awesome-os/awesome-os/actions/runs/45867575603"
     },
     {
       "repo": "awesome-os/bootloader",
@@ -129,12 +137,12 @@
     },
     {
       "repo": "awesome-os/t2linux-baseline",
-      "workflowName": "Release — Compile & QEMU-Boot Real Holo-Linux 7.3 Kernel + b8g_abi.ko",
-      "status": "in_progress",
-      "conclusion": "running",
+      "workflowName": "Build & Boot T2Linux Baseline (Original T2 SDE + v11 CAS)",
+      "status": "completed",
+      "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T15:48:04Z",
-      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45852645638"
+      "updatedAt": "2026-11-26T17:22:53Z",
+      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/45867127246"
     },
     {
       "repo": "awesome-os/installer",
@@ -165,12 +173,12 @@
     },
     {
       "repo": "awesome-os/ladybird",
-      "workflowName": "Dependabot Updates",
+      "workflowName": "CI — AwesomeOS Ladybird (18/18 Chrome Parity, Upstream Issues & C11 Bridges)",
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-26T06:43:50Z",
-      "url": "https://github.com/awesome-os/ladybird/actions/runs/45769664585"
+      "updatedAt": "2026-11-26T17:25:21Z",
+      "url": "https://github.com/awesome-os/ladybird/actions/runs/45867567575"
     },
     {
       "repo": "awesome-os/colibri",

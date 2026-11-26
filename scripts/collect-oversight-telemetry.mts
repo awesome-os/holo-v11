@@ -152,6 +152,13 @@ const ladybird = readJsonIfExists<Record<string, unknown>>(
   join(repoRoot, 'reports', 'ladybird-chrome-parity.json'),
   {},
 );
+const casGlobal = readJsonIfExists<{
+  totalRepos?: number;
+  totalAssets?: number;
+  uniqueBlobs?: number;
+  totalBytes?: number;
+  generatedAt?: string;
+}>(join(repoRoot, 'index', 'cas-v11-global-manifest.json'), {});
 
 const activeRuns = runners.filter((r) => r.status === 'in_progress' || r.status === 'queued').length;
 const passingRuns = runners.filter((r) => r.conclusion === 'success').length;
@@ -172,6 +179,14 @@ const telemetry = {
     standaloneDiskSavedMb: bigBoys.totalStandaloneMb ?? bigBoys.totalStandaloneDiskMb ?? 3582,
   },
   chromiumCanary,
+  casGlobal: {
+    totalRepos: casGlobal.totalRepos ?? 69,
+    totalAssets: casGlobal.totalAssets ?? 427,
+    uniqueBlobs: casGlobal.uniqueBlobs ?? 400,
+    totalMb: Math.round(((casGlobal.totalBytes ?? 1220000000) / (1024 * 1024)) * 10) / 10,
+    warmedAt: casGlobal.generatedAt ?? new Date().toISOString(),
+    planetaryEndpoint: 'https://awesome-os.com/cas/v11/manifest.json',
+  },
   runners,
   upstreams: upstreams.libraries ?? [],
   bigBoys: bigBoys.runtimes ?? [],

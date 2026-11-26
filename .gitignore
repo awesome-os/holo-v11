@@ -12,3 +12,6 @@ build/
 *.ilk
 SHA256SUMS.txt
 SHA512SUMS.txt
+
+cdn-shards/
+
