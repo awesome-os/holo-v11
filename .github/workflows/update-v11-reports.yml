@@ -14,12 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout awesome-os/holo-v11
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           path: holo-v11
 
       - name: Checkout awesome-os/t2linux-baseline (upstream pin catalogs)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         continue-on-error: true
         with:
           repository: awesome-os/t2linux-baseline
