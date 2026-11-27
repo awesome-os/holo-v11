@@ -16,6 +16,7 @@
     "zeroGhost": true,
     "zeroCasV1": true,
     "noWorkflowBloat": true,
+    "requireWorkflowHardening": true,
     "spdxLicense": true,
     "gitattributes": true,
     "codeowners": true

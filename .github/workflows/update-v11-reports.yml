@@ -8,10 +8,15 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   sync-reports:
     name: Sync & Commit v11 Ecosystem Scoreboard & Gravity Telemetry
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout awesome-os/holo-v11
         uses: actions/checkout@v7

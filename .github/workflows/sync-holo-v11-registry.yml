@@ -8,10 +8,15 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   sync-holo-v11-registry:
     name: Sync Global v11 CAS Manifest & Lockfile
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout awesome-os/holo-v11
         uses: actions/checkout@v7
