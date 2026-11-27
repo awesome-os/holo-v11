@@ -1,0 +1,507 @@
+{
+  "schema": "awesome-os.project-geometry.v1",
+  "workspaceRoot": "E:\\awesome-os",
+  "mirrors": {
+    "totalActive": 17,
+    "engineeringCount": 13,
+    "anchorCount": 4,
+    "activeRepos": [
+      ".github",
+      "agent-platform",
+      "awesome-os",
+      "awesome-os.github.io",
+      "b8g.app",
+      "chromium-baseline",
+      "demos",
+      "deployment",
+      "devtools",
+      "dockerimages",
+      "holo-v11",
+      "installer",
+      "lemanschik.com",
+      "maintenance-workflows",
+      "t2linux-baseline",
+      "upstream-mirrors",
+      "wordpress-ecosystem"
+    ],
+    "engineeringRepos": [
+      "agent-platform",
+      "awesome-os",
+      "chromium-baseline",
+      "demos",
+      "deployment",
+      "devtools",
+      "dockerimages",
+      "holo-v11",
+      "installer",
+      "maintenance-workflows",
+      "t2linux-baseline",
+      "upstream-mirrors",
+      "wordpress-ecosystem"
+    ],
+    "anchorRepos": [
+      ".github",
+      "awesome-os.github.io",
+      "b8g.app",
+      "lemanschik.com"
+    ],
+    "entries": [
+      {
+        "name": ".github",
+        "path": "github-mirror/awesome-os/.github",
+        "kind": "anchor",
+        "hasHoloCiJson": false,
+        "hasBoundaryJson": false
+      },
+      {
+        "name": "agent-platform",
+        "path": "github-mirror/awesome-os/agent-platform",
+        "kind": "engineering",
+        "hasHoloCiJson": true,
+        "hasBoundaryJson": true
+      },
+      {
+        "name": "awesome-os",
+        "path": "github-mirror/awesome-os/awesome-os",
+        "kind": "engineering",
+        "hasHoloCiJson": true,
+        "hasBoundaryJson": true
+      },
+      {
+        "name": "awesome-os.github.io",
+        "path": "github-mirror/awesome-os/awesome-os.github.io",
+        "kind": "anchor",
+        "hasHoloCiJson": false,
+        "hasBoundaryJson": false
+      },
+      {
+        "name": "b8g.app",
+        "path": "github-mirror/awesome-os/b8g.app",
+        "kind": "anchor",
+        "hasHoloCiJson": false,
+        "hasBoundaryJson": false
+      },
+      {
+        "name": "chromium-baseline",
+        "path": "github-mirror/awesome-os/chromium-baseline",
+        "kind": "engineering",
+        "hasHoloCiJson": true,
+        "hasBoundaryJson": true
+      },
+      {
+        "name": "demos",
+        "path": "github-mirror/awesome-os/demos",
+        "kind": "engineering",
+        "hasHoloCiJson": true,
+        "hasBoundaryJson": true
+      },
+      {
+        "name": "deployment",
+        "path": "github-mirror/awesome-os/deployment",
+        "kind": "engineering",
+        "hasHoloCiJson": true,
+        "hasBoundaryJson": true
+      },
+      {
+        "name": "devtools",
+        "path": "github-mirror/awesome-os/devtools",
+        "kind": "engineering",
+        "hasHoloCiJson": true,
+        "hasBoundaryJson": true
+      },
+      {
+        "name": "dockerimages",
+        "path": "github-mirror/awesome-os/dockerimages",
+        "kind": "engineering",
+        "hasHoloCiJson": true,
+        "hasBoundaryJson": true
+      },
+      {
+        "name": "holo-v11",
+        "path": "github-mirror/awesome-os/holo-v11",
+        "kind": "engineering",
+        "hasHoloCiJson": true,
+        "hasBoundaryJson": true
+      },
+      {
+        "name": "installer",
+        "path": "github-mirror/awesome-os/installer",
+        "kind": "engineering",
+        "hasHoloCiJson": true,
+        "hasBoundaryJson": true
+      },
+      {
+        "name": "lemanschik.com",
+        "path": "github-mirror/awesome-os/lemanschik.com",
+        "kind": "anchor",
+        "hasHoloCiJson": false,
+        "hasBoundaryJson": false
+      },
+      {
+        "name": "maintenance-workflows",
+        "path": "github-mirror/awesome-os/maintenance-workflows",
+        "kind": "engineering",
+        "hasHoloCiJson": true,
+        "hasBoundaryJson": true
+      },
+      {
+        "name": "t2linux-baseline",
+        "path": "github-mirror/awesome-os/t2linux-baseline",
+        "kind": "engineering",
+        "hasHoloCiJson": true,
+        "hasBoundaryJson": true
+      },
+      {
+        "name": "upstream-mirrors",
+        "path": "github-mirror/awesome-os/upstream-mirrors",
+        "kind": "engineering",
+        "hasHoloCiJson": true,
+        "hasBoundaryJson": true
+      },
+      {
+        "name": "wordpress-ecosystem",
+        "path": "github-mirror/awesome-os/wordpress-ecosystem",
+        "kind": "engineering",
+        "hasHoloCiJson": true,
+        "hasBoundaryJson": true
+      }
+    ]
+  },
+  "abiGoldens": {
+    "headersTotal": 14,
+    "coveredCount": 14,
+    "uncoveredCount": 0,
+    "manifestPaths": [
+      "sections/asog-4dgs/abi-golden.json",
+      "sections/b8g-fidl-bridge/abi-golden.json",
+      "sections/b8g-game-engine/abi-golden.json",
+      "sections/b8g-graphics/abi-golden.json",
+      "sections/b8g-model-ops/abi-golden.json",
+      "sections/b8g-pdp11/abi-golden.json",
+      "sections/b8g-runtime/abi-golden.json",
+      "sections/b8g-task-manager/abi-golden.json",
+      "sections/b8g-workstation-units/abi-golden.json",
+      "sections/chromium-build/chrome-boot-abi/abi-golden.json",
+      "sections/chromium-build/cloud-sync-abi/abi-golden.json",
+      "sections/chromium-build/node-embed-abi/abi-golden.json",
+      "sections/runtime/abi-golden.json",
+      "sections/sectium-cloud-control-plane/abi-golden.json"
+    ],
+    "entries": [
+      {
+        "section": "asog-4dgs",
+        "headerRel": "sections/asog-4dgs/b8g_splat4d_abi.h",
+        "goldenJsonRel": "sections/asog-4dgs/abi-golden.json",
+        "goldenTestRel": "sections/asog-4dgs/abi-golden.test.mts",
+        "hasGoldenJson": true,
+        "hasGoldenTest": true
+      },
+      {
+        "section": "b8g-fidl-bridge",
+        "headerRel": "sections/b8g-fidl-bridge/b8g_zircon_arena_abi.h",
+        "goldenJsonRel": "sections/b8g-fidl-bridge/abi-golden.json",
+        "goldenTestRel": "sections/b8g-fidl-bridge/abi-golden.test.mts",
+        "hasGoldenJson": true,
+        "hasGoldenTest": true
+      },
+      {
+        "section": "b8g-game-engine",
+        "headerRel": "sections/b8g-game-engine/b8g_game_engine_abi.h",
+        "goldenJsonRel": "sections/b8g-game-engine/abi-golden.json",
+        "goldenTestRel": "sections/b8g-game-engine/abi-golden.test.mts",
+        "hasGoldenJson": true,
+        "hasGoldenTest": true
+      },
+      {
+        "section": "b8g-graphics",
+        "headerRel": "sections/b8g-graphics/b8g_graphics_abi.h",
+        "goldenJsonRel": "sections/b8g-graphics/abi-golden.json",
+        "goldenTestRel": "sections/b8g-graphics/abi-golden.test.mts",
+        "hasGoldenJson": true,
+        "hasGoldenTest": true
+      },
+      {
+        "section": "b8g-model-ops",
+        "headerRel": "sections/b8g-model-ops/b8g_model_ops_abi.h",
+        "goldenJsonRel": "sections/b8g-model-ops/abi-golden.json",
+        "goldenTestRel": "sections/b8g-model-ops/abi-golden.test.mts",
+        "hasGoldenJson": true,
+        "hasGoldenTest": true
+      },
+      {
+        "section": "b8g-pdp11",
+        "headerRel": "sections/b8g-pdp11/b8g_pdp11_abi.h",
+        "goldenJsonRel": "sections/b8g-pdp11/abi-golden.json",
+        "goldenTestRel": "sections/b8g-pdp11/abi-golden.test.mts",
+        "hasGoldenJson": true,
+        "hasGoldenTest": true
+      },
+      {
+        "section": "b8g-runtime",
+        "headerRel": "sections/b8g-runtime/syscall_abi.h",
+        "goldenJsonRel": "sections/b8g-runtime/abi-golden.json",
+        "goldenTestRel": "sections/b8g-runtime/abi-golden.test.mts",
+        "hasGoldenJson": true,
+        "hasGoldenTest": true
+      },
+      {
+        "section": "b8g-task-manager",
+        "headerRel": "sections/b8g-task-manager/b8g_task_mgr_abi.h",
+        "goldenJsonRel": "sections/b8g-task-manager/abi-golden.json",
+        "goldenTestRel": "sections/b8g-task-manager/abi-golden.test.mts",
+        "hasGoldenJson": true,
+        "hasGoldenTest": true
+      },
+      {
+        "section": "b8g-workstation-units",
+        "headerRel": "sections/b8g-workstation-units/b8g_workstation_units_abi.h",
+        "goldenJsonRel": "sections/b8g-workstation-units/abi-golden.json",
+        "goldenTestRel": "sections/b8g-workstation-units/abi-golden.test.mts",
+        "hasGoldenJson": true,
+        "hasGoldenTest": true
+      },
+      {
+        "section": "chromium-build",
+        "headerRel": "sections/chromium-build/chrome-boot-abi/b8g_chrome_boot_abi.h",
+        "goldenJsonRel": "sections/chromium-build/chrome-boot-abi/abi-golden.json",
+        "goldenTestRel": "sections/chromium-build/chrome-boot-abi/abi-golden.test.mts",
+        "hasGoldenJson": true,
+        "hasGoldenTest": true
+      },
+      {
+        "section": "chromium-build",
+        "headerRel": "sections/chromium-build/cloud-sync-abi/b8g_cloud_sync_abi.h",
+        "goldenJsonRel": "sections/chromium-build/cloud-sync-abi/abi-golden.json",
+        "goldenTestRel": "sections/chromium-build/cloud-sync-abi/abi-golden.test.mts",
+        "hasGoldenJson": true,
+        "hasGoldenTest": true
+      },
+      {
+        "section": "chromium-build",
+        "headerRel": "sections/chromium-build/node-embed-abi/b8g_libnode_abi.h",
+        "goldenJsonRel": "sections/chromium-build/node-embed-abi/abi-golden.json",
+        "goldenTestRel": "sections/chromium-build/node-embed-abi/abi-golden.test.mts",
+        "hasGoldenJson": true,
+        "hasGoldenTest": true
+      },
+      {
+        "section": "runtime",
+        "headerRel": "sections/runtime/stealifylang-compiler/1-bootstrap/b8g_abi.h",
+        "goldenJsonRel": "sections/runtime/abi-golden.json",
+        "goldenTestRel": "sections/runtime/abi-golden.test.mts",
+        "hasGoldenJson": true,
+        "hasGoldenTest": true
+      },
+      {
+        "section": "sectium-cloud-control-plane",
+        "headerRel": "sections/sectium-cloud-control-plane/b8g_sectium_cp_abi.h",
+        "goldenJsonRel": "sections/sectium-cloud-control-plane/abi-golden.json",
+        "goldenTestRel": "sections/sectium-cloud-control-plane/abi-golden.test.mts",
+        "hasGoldenJson": true,
+        "hasGoldenTest": true
+      }
+    ]
+  },
+  "topology": {
+    "filesScanned": 6176,
+    "coreFiles": 4784,
+    "hostFiles": 152,
+    "testFiles": 1240,
+    "unitsTotal": 159,
+    "sectionsCount": 58,
+    "intersectionsCount": 53,
+    "packagesCount": 40,
+    "coreEdgesCount": 125,
+    "runtimeEdgesCount": 192,
+    "coreSccs": [],
+    "runtimeSccs": [
+      [
+        "packages/@awesome-os/b8g-emcc",
+        "packages/@awesome-os/bin-shim",
+        "packages/@awesome-os/stealify-schema",
+        "packages/@awesome-os/stealifylang-cli",
+        "packages/@awesome-os/vscodium-web",
+        "sections/display",
+        "sections/drivers",
+        "sections/runtime",
+        "sections/storage"
+      ],
+      [
+        "intersections/b8g-llm-studio",
+        "intersections/b8g-vm-manager",
+        "sections/b8g-host-bus"
+      ],
+      [
+        "intersections/b8g-html",
+        "intersections/docs-reader"
+      ]
+    ],
+    "coreLayerInversionsCount": 0,
+    "runtimeLayerInversionsCount": 0,
+    "coreLayerInversions": [],
+    "runtimeLayerInversions": [],
+    "deepSectionBypassCount": 0,
+    "deepSectionBypasses": [],
+    "httpIpcViolationUnits": [],
+    "httpIpcViolationCount": 0,
+    "httpIpcFindingsSample": [],
+    "topHubs": [
+      {
+        "unit": "packages/@awesome-os/stealifylang-cli",
+        "layer": 0,
+        "layerName": "substrate",
+        "inDegree": 20,
+        "outDegree": 6,
+        "totalDegree": 26
+      },
+      {
+        "unit": "intersections/b8g-vm-manager",
+        "layer": 2,
+        "layerName": "intersection",
+        "inDegree": 3,
+        "outDegree": 15,
+        "totalDegree": 18
+      },
+      {
+        "unit": "packages/@awesome-os/stealify-schema",
+        "layer": 0,
+        "layerName": "substrate",
+        "inDegree": 15,
+        "outDegree": 1,
+        "totalDegree": 16
+      },
+      {
+        "unit": "sections/telemetry",
+        "layer": 1,
+        "layerName": "section",
+        "inDegree": 15,
+        "outDegree": 1,
+        "totalDegree": 16
+      },
+      {
+        "unit": "sections/trace",
+        "layer": 1,
+        "layerName": "section",
+        "inDegree": 15,
+        "outDegree": 1,
+        "totalDegree": 16
+      },
+      {
+        "unit": "sections/runtime",
+        "layer": 1,
+        "layerName": "section",
+        "inDegree": 7,
+        "outDegree": 5,
+        "totalDegree": 12
+      },
+      {
+        "unit": "sections/storage",
+        "layer": 1,
+        "layerName": "section",
+        "inDegree": 11,
+        "outDegree": 1,
+        "totalDegree": 12
+      },
+      {
+        "unit": "intersections/b8g-electron",
+        "layer": 2,
+        "layerName": "intersection",
+        "inDegree": 6,
+        "outDegree": 3,
+        "totalDegree": 9
+      },
+      {
+        "unit": "sections/drivers",
+        "layer": 1,
+        "layerName": "section",
+        "inDegree": 5,
+        "outDegree": 4,
+        "totalDegree": 9
+      },
+      {
+        "unit": "packages/@awesome-os/b8g-emcc",
+        "layer": 0,
+        "layerName": "substrate",
+        "inDegree": 4,
+        "outDegree": 4,
+        "totalDegree": 8
+      },
+      {
+        "unit": "sections/display",
+        "layer": 1,
+        "layerName": "section",
+        "inDegree": 5,
+        "outDegree": 3,
+        "totalDegree": 8
+      },
+      {
+        "unit": "packages/@awesome-os/bin-shim",
+        "layer": 0,
+        "layerName": "substrate",
+        "inDegree": 3,
+        "outDegree": 4,
+        "totalDegree": 7
+      }
+    ]
+  },
+  "rating": {
+    "totalScore": 100,
+    "maxScore": 100,
+    "grade": "A",
+    "axes": {
+      "schemaAndArenaIntegrity": 20,
+      "dagAndLayerMonotonicity": 20,
+      "encapsulationAndAbi": 20,
+      "ipcAndAssetHygiene": 20,
+      "autarkSelfUpdate": 20
+    }
+  },
+  "bottlenecks": [
+    {
+      "rank": 1,
+      "id": "layer-inversions-and-sccs",
+      "severity": "high",
+      "title": "Cross-Layer Upward Inversions & Runtime SCC Coupling",
+      "measuredCount": 14,
+      "evidence": "0 core SCC(s) (0 units), 3 runtime SCC(s) (14 units), 0 core P0/P1->P2 inversion edges",
+      "remediation": "Keep packages/ at Layer 0, sections/ at Layer 1, intersections/ at Layer 2; push CLI/server orchestrators into *.host.mts (Layer 3)."
+    },
+    {
+      "rank": 2,
+      "id": "unmigrated-loopback-http-ipc",
+      "severity": "medium",
+      "title": "Unmigrated 127.0.0.1 Dev-UI HTTP Ports (B8G016)",
+      "measuredCount": 0,
+      "evidence": "0 127.0.0.1/createServer lines across 0 intersection/package unit(s) (0 in sections/*)",
+      "remediation": "Route local control/UI RPC through singleton b8g-host-bus pipe & CDP pipes; isolate external HTTP docs portals clearly."
+    },
+    {
+      "rank": 3,
+      "id": "deep-internal-section-bypasses",
+      "severity": "medium",
+      "title": "Deep Cross-Section Imports Bypassing index.mts Entrypoints",
+      "measuredCount": 0,
+      "evidence": "0 cross-section imports reference internal submodules instead of sections/<name>/index.mts",
+      "remediation": "Re-export shared contracts (e.g., drivers capabilities, sectium-device protocol) through sections/<name>/index.mts."
+    },
+    {
+      "rank": 4,
+      "id": "site-removal-test-rot",
+      "severity": "medium",
+      "title": "Stale Local Site Assumptions After GitHub Pages Migration",
+      "measuredCount": 1,
+      "evidence": "intersections/b8g-vm-manager/link-check.test.mts still scans pruned local site/awesome-os.com/ expecting archived /kids, /book, /rss.xml paths",
+      "remediation": "Point link-check.test.mts at live awesome-os.github.io portal manifests via cdp-network-audit.mts."
+    },
+    {
+      "rank": 5,
+      "id": "multi-process-powershell-fanout",
+      "severity": "medium",
+      "title": "Sequential N*3 PowerShell/b8g-shim Spawn Latency in Fleet Verification",
+      "measuredCount": 17,
+      "evidence": "Single bin/node or bin/gh cold call averages ~77ms on Windows; sequential N*3 polling across 13 engineering repos adds ~3s+ latency",
+      "remediation": "Batch GitHub API probes concurrently in verify-fleet-stability.mts and keep pure-TS scripts running inside one Node process."
+    }
+  ],
+  "contentSha256": "1ce76347b1d1516cdfdeb62b130c8d995e0e90cedb8e0ed2f819e66e63355107"
+}
