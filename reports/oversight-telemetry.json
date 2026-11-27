@@ -24,7 +24,7 @@
     "uniqueBlobs": 450,
     "totalMb": 1717.2,
     "warmedAt": "2026-11-26T22:21:51.646Z",
-    "planetaryEndpoint": "https://awesome-os.com/cas/v11/manifest.json"
+    "planetaryEndpoint": "https://raw.githubusercontent.com/awesome-os/holo-v11/main/index/cas-v11-global-manifest.json"
   },
   "runners": [
     {

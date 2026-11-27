@@ -190,7 +190,7 @@ const telemetry = {
     uniqueBlobs: casGlobal.uniqueBlobs ?? 400,
     totalMb: Math.round(((casGlobal.totalBytes ?? 1220000000) / (1024 * 1024)) * 10) / 10,
     warmedAt: casGlobal.generatedAt ?? new Date().toISOString(),
-    planetaryEndpoint: 'https://awesome-os.com/cas/v11/manifest.json',
+    planetaryEndpoint: 'https://raw.githubusercontent.com/awesome-os/holo-v11/main/index/cas-v11-global-manifest.json',
   },
   runners,
   upstreams: upstreams.libraries ?? [],
