@@ -724,9 +724,9 @@
       "tag": "v11-chromium-baseline-latest",
       "filename": "chromium-baseline-linux-x86_64-holo-v11.tar.gz",
       "target": "linux-x64",
-      "sha512": "4cc883408c8725a63afeb2904182b1efc2d6adb97cce76134389d875d91bc815a7dbf9e241f6d57288aee18798972c1d7c1a02ad394d1e6775411ea164296a19",
-      "size": 39530,
-      "blobPath": "v11/files/4c/4cc883408c8725a63afeb2904182b1efc2d6adb97cce76134389d875d91bc815a7dbf9e241f6d57288aee18798972c1d7c1a02ad394d1e6775411ea164296a19",
+      "sha512": "a07ecc50d951bf45d37df96d2ae44b7b96de78885d527b49ffb3d201066b69da9d4d88f5dc377969c5ea1689efd88f7a6e05256f75b9b70182b464eeaf901669",
+      "size": 39532,
+      "blobPath": "v11/files/a0/a07ecc50d951bf45d37df96d2ae44b7b96de78885d527b49ffb3d201066b69da9d4d88f5dc377969c5ea1689efd88f7a6e05256f75b9b70182b464eeaf901669",
       "downloadUrl": "https://github.com/awesome-os/chromium-baseline/releases/download/v11-chromium-baseline-latest/chromium-baseline-linux-x86_64-holo-v11.tar.gz"
     },
     {
@@ -735,9 +735,9 @@
       "tag": "v11-chromium-baseline-latest",
       "filename": "holo-v11-manifest.json",
       "target": "any",
-      "sha512": "2d32aabcc550d83783fce89994370cccb74cb3fab9e8026e4d139fb9eea800da08dee41916e84f37ccb3608cee4a15d84880b2de5c8d9b605525d9fc76aac054",
+      "sha512": "04cc3e757b4172057b02b3f7b81a1487ffb963db505217cfa0f88c478044af04990afc1ccb53dd4f3c970498db71f65cfe5d3f186777cc0c7f08ab33d4a68e62",
       "size": 4627,
-      "blobPath": "v11/files/2d/2d32aabcc550d83783fce89994370cccb74cb3fab9e8026e4d139fb9eea800da08dee41916e84f37ccb3608cee4a15d84880b2de5c8d9b605525d9fc76aac054",
+      "blobPath": "v11/files/04/04cc3e757b4172057b02b3f7b81a1487ffb963db505217cfa0f88c478044af04990afc1ccb53dd4f3c970498db71f65cfe5d3f186777cc0c7f08ab33d4a68e62",
       "downloadUrl": "https://github.com/awesome-os/chromium-baseline/releases/download/v11-chromium-baseline-latest/holo-v11-manifest.json"
     },
     {
@@ -1307,9 +1307,9 @@
       "tag": "v11-devtools-launchers-latest",
       "filename": "holo-v11-manifest.json",
       "target": "any",
-      "sha512": "08af270d7bcf9c53a855bba64972a81fc520aee46f2f118d424c6320ad1e9131c6b7d9beb21df8edf4fa4595295de0f67d0d9b1e4e01a792e2d0462e2eb28388",
+      "sha512": "2977ca31e50ad04b1b0f425d348784531e1392a2266f43d961566ce8ce0123e998613a4e0d2e29a593e5ecc7abb175a23d5bb47f769fe4e935742cf79cfcfcc6",
       "size": 4188,
-      "blobPath": "v11/files/08/08af270d7bcf9c53a855bba64972a81fc520aee46f2f118d424c6320ad1e9131c6b7d9beb21df8edf4fa4595295de0f67d0d9b1e4e01a792e2d0462e2eb28388",
+      "blobPath": "v11/files/29/2977ca31e50ad04b1b0f425d348784531e1392a2266f43d961566ce8ce0123e998613a4e0d2e29a593e5ecc7abb175a23d5bb47f769fe4e935742cf79cfcfcc6",
       "downloadUrl": "https://github.com/awesome-os/devtools/releases/download/v11-devtools-launchers-latest/holo-v11-manifest.json"
     },
     {
@@ -1318,9 +1318,9 @@
       "tag": "v11-devtools-launchers-latest",
       "filename": "SHA512SUMS.txt",
       "target": "any",
-      "sha512": "7a2290f11f82aa43f7d0a4c8ecb3251f6c4b6ebf630690f75dec4d6b3015e46a02d4fe0e079e19547ef058f9f87085719be32bcca2bc9e048dea424b8c4e752b",
+      "sha512": "2e64b0b5ad1a30726e6d672099afd63e93ea0ba01ee99ab6406d60b11dccc2e2b64a38da4c973b0cbc9fc01367ddeec49544740c61ef8b3693bd3c5f7cf40cc9",
       "size": 331,
-      "blobPath": "v11/files/7a/7a2290f11f82aa43f7d0a4c8ecb3251f6c4b6ebf630690f75dec4d6b3015e46a02d4fe0e079e19547ef058f9f87085719be32bcca2bc9e048dea424b8c4e752b",
+      "blobPath": "v11/files/2e/2e64b0b5ad1a30726e6d672099afd63e93ea0ba01ee99ab6406d60b11dccc2e2b64a38da4c973b0cbc9fc01367ddeec49544740c61ef8b3693bd3c5f7cf40cc9",
       "downloadUrl": "https://github.com/awesome-os/devtools/releases/download/v11-devtools-launchers-latest/SHA512SUMS.txt"
     },
     {
@@ -1329,9 +1329,9 @@
       "tag": "v11-oci-latest",
       "filename": "holo-e2e-lite-linux-amd64.oci.tar.gz",
       "target": "linux-x64",
-      "sha512": "8c130fb4d6ba9c9da73f8722d93c7745c6fd47a7604a74fdf034e20c7037f699a4ce949d8edf794eb93a690f8acd5602864658d12b81b19566d9c0415c67b1f1",
-      "size": 70601847,
-      "blobPath": "v11/files/8c/8c130fb4d6ba9c9da73f8722d93c7745c6fd47a7604a74fdf034e20c7037f699a4ce949d8edf794eb93a690f8acd5602864658d12b81b19566d9c0415c67b1f1",
+      "sha512": "01cdffede6849e10c6798697a05341bf57c34daa50546324d26d997e9301886bb55f139b50cc969bd757a09aec258616a0a3e698bb78eb3f68c89ea0646cc4fe",
+      "size": 70601931,
+      "blobPath": "v11/files/01/01cdffede6849e10c6798697a05341bf57c34daa50546324d26d997e9301886bb55f139b50cc969bd757a09aec258616a0a3e698bb78eb3f68c89ea0646cc4fe",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/holo-e2e-lite-linux-amd64.oci.tar.gz"
     },
     {
@@ -1340,9 +1340,9 @@
       "tag": "v11-oci-latest",
       "filename": "holo-e2e-runner-linux-amd64.oci.tar.gz",
       "target": "linux-x64",
-      "sha512": "0f240d862ef1139884cbbdd863e11d31ca5d96f5f18d210197ec4ca7803bcae0ceaf76ee6dd72f5aa05f4f6d67e5b97c2fbb3c7ad3a246291a88e3b26e9f9bce",
-      "size": 258271188,
-      "blobPath": "v11/files/0f/0f240d862ef1139884cbbdd863e11d31ca5d96f5f18d210197ec4ca7803bcae0ceaf76ee6dd72f5aa05f4f6d67e5b97c2fbb3c7ad3a246291a88e3b26e9f9bce",
+      "sha512": "d8664febdd69463f75415b2b517dc36ebdbaa434cec33eac9ffe6c556dc447ea520acaf1a60614509aef9f5f0a9ad6fa089d38d3070ab98ef8163fca55febb02",
+      "size": 258269010,
+      "blobPath": "v11/files/d8/d8664febdd69463f75415b2b517dc36ebdbaa434cec33eac9ffe6c556dc447ea520acaf1a60614509aef9f5f0a9ad6fa089d38d3070ab98ef8163fca55febb02",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/holo-e2e-runner-linux-amd64.oci.tar.gz"
     },
     {
@@ -1351,9 +1351,9 @@
       "tag": "v11-oci-latest",
       "filename": "SHA512SUMS-holo-e2e-lite.txt",
       "target": "any",
-      "sha512": "084a3df005696ee42b807e63d5f09d53b6f91eb0f64d725e1c4ca3c3521783beb8803faa85e5e5ddecb850164ca8531d876d5a99ecff74ae0e4e23098d46537e",
+      "sha512": "b10fc24f53e4bc6d72027a5e8e5941db0613da784e2fd203df9d558bbaa1157e34af9a43ce2367cf535d8f7f22fcce61a118aff157ee2d98b150e0e9d0e6642e",
       "size": 167,
-      "blobPath": "v11/files/08/084a3df005696ee42b807e63d5f09d53b6f91eb0f64d725e1c4ca3c3521783beb8803faa85e5e5ddecb850164ca8531d876d5a99ecff74ae0e4e23098d46537e",
+      "blobPath": "v11/files/b1/b10fc24f53e4bc6d72027a5e8e5941db0613da784e2fd203df9d558bbaa1157e34af9a43ce2367cf535d8f7f22fcce61a118aff157ee2d98b150e0e9d0e6642e",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/SHA512SUMS-holo-e2e-lite.txt"
     },
     {
@@ -1362,9 +1362,9 @@
       "tag": "v11-oci-latest",
       "filename": "SHA512SUMS-holo-e2e-runner.txt",
       "target": "any",
-      "sha512": "25535fd4fe7554b8d1826d22d8f463df4db20af6e5fdf379cc6503158c571c9744bc0ae8847b1c7d5a61210171246770669b9d52349927962f7409eca51107f4",
+      "sha512": "2f47d83f39fbead3b7e9b8d31da2ff372770e39de0b94e81285105177e87f9c115241e4b715733ee6dadce182bf9654cde9533e44c2d00422413731e7705890b",
       "size": 169,
-      "blobPath": "v11/files/25/25535fd4fe7554b8d1826d22d8f463df4db20af6e5fdf379cc6503158c571c9744bc0ae8847b1c7d5a61210171246770669b9d52349927962f7409eca51107f4",
+      "blobPath": "v11/files/2f/2f47d83f39fbead3b7e9b8d31da2ff372770e39de0b94e81285105177e87f9c115241e4b715733ee6dadce182bf9654cde9533e44c2d00422413731e7705890b",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/SHA512SUMS-holo-e2e-runner.txt"
     },
     {
@@ -7599,9 +7599,9 @@
       "tag": "v11-wp-wasi-latest",
       "filename": "SHA512SUMS.txt",
       "target": "any",
-      "sha512": "7f234ee056e7c8e35160149939682b985bec8b2ea0e0c4559183ccfc9156f29c874b99c4fb1c196bfcded85cb7e066d835810d74120d05d243eeccbb780a9487",
+      "sha512": "e31d138081e55d0bad07df8038affae7f39daebfa1287e7f7cdc6f45f8e4d3a88555e3ea641d2957ab7281ff1168c6ad8e64fcfd1e344aecc32c949ad7b0a40a",
       "size": 614,
-      "blobPath": "v11/files/7f/7f234ee056e7c8e35160149939682b985bec8b2ea0e0c4559183ccfc9156f29c874b99c4fb1c196bfcded85cb7e066d835810d74120d05d243eeccbb780a9487",
+      "blobPath": "v11/files/e3/e31d138081e55d0bad07df8038affae7f39daebfa1287e7f7cdc6f45f8e4d3a88555e3ea641d2957ab7281ff1168c6ad8e64fcfd1e344aecc32c949ad7b0a40a",
       "downloadUrl": "https://github.com/awesome-os/wordpress-ecosystem/releases/download/v11-wp-wasi-latest/SHA512SUMS.txt"
     },
     {
@@ -7621,9 +7621,9 @@
       "tag": "v11-wp-wasi-latest",
       "filename": "wasi-bundle-manifest.json",
       "target": "any",
-      "sha512": "e850ada5087a7bb180bc33180068ec234ff68799c6e1fb029c1a1ea1b31018eebc0de86be50f99c07f2289a7c6efae11743abd13c27fab2ddb22e1a8b1a16570",
+      "sha512": "5a6de547246d9006e58b52a63554777258cb89e71c83d6ccb43f15df261678a8aaf8df4c6eb088181fdcf8c25ac99c9653c54d492e7509eb609e42c9d71a43a3",
       "size": 1394,
-      "blobPath": "v11/files/e8/e850ada5087a7bb180bc33180068ec234ff68799c6e1fb029c1a1ea1b31018eebc0de86be50f99c07f2289a7c6efae11743abd13c27fab2ddb22e1a8b1a16570",
+      "blobPath": "v11/files/5a/5a6de547246d9006e58b52a63554777258cb89e71c83d6ccb43f15df261678a8aaf8df4c6eb088181fdcf8c25ac99c9653c54d492e7509eb609e42c9d71a43a3",
       "downloadUrl": "https://github.com/awesome-os/wordpress-ecosystem/releases/download/v11-wp-wasi-latest/wasi-bundle-manifest.json"
     },
     {
