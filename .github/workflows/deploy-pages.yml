@@ -52,6 +52,9 @@ jobs:
             cp reports/oversight-telemetry.json _site/oversight-telemetry.json
             cp reports/oversight-telemetry.json _site/reports/oversight-telemetry.json
           fi
+          if [ -d audit-stack ]; then
+            cp -r audit-stack _site/audit-stack
+          fi
       - name: Setup Pages
         uses: actions/configure-pages@v6
       - name: Upload artifact

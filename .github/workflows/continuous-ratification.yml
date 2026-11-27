@@ -1,0 +1,64 @@
+name: Continuous Ratification & Audit Stack Hub
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - 'audit-stack/**'
+      - 'scripts/audit-stack-hub.mts'
+      - 'scripts/audit-stack-hub.test.mts'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  continuous-ratification:
+    name: Verify Audit Stack Hub & Enforce Monotonic Ratchet
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout awesome-os/holo-v11
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+
+      - name: Run Audit Stack Hub unit tests
+        run: node --test scripts/audit-stack-hub.test.mts
+
+      - name: Evaluate Monotonic Continuous Ratification
+        run: node scripts/audit-stack-hub.mts --out-dir audit-stack --enforce-ratchet --json
+
+      - name: Write Ratification Receipt to $GITHUB_STEP_SUMMARY
+        if: always() && hashFiles('audit-stack/ratification-receipt.json') != ''
+        run: |
+          node --input-type=module -e '
+            import { readFileSync, appendFileSync } from "node:fs";
+            const r = JSON.parse(readFileSync("audit-stack/ratification-receipt.json", "utf8"));
+            const out = process.env.GITHUB_STEP_SUMMARY;
+            if (!out) process.exit(0);
+            const f = r.floors;
+            const md = [
+              "## Holo v11 Continuous Ratification Receipt",
+              "",
+              "| Field | Value |",
+              "| :--- | :--- |",
+              `| Status / Action | **${r.ratified ? "RATIFIED" : "BLOCKED"}** (\`${r.action}\`) |`,
+              `| Audits / Violations | ${r.passedAudits} passed · ${r.failedAudits} failed · ${r.violationCount} violation(s) |`,
+              `| Geometry / Boundary Floors | Geometry >= \`${f.minGeometryScore}\` (SCC <= \`${f.maxCoreSccs}\`, Inv <= \`${f.maxCoreLayerInversions}\`) · Boundary >= \`${f.minBoundaryScore}\` |`,
+              `| B8G016 / CNAME / Rollback | HTTP-IPC <= \`${f.maxHttpIpcUnits}\` · CNAME <= \`${f.maxCnameViolations}\` · Rollback Contract: \`${f.requireRollbackContract}\` |`,
+              `| Receipt SHA-512 | \`${r.sha512.slice(0, 24)}...\` |`,
+              "",
+            ].join("\n");
+            appendFileSync(out, md, "utf8");
+          '

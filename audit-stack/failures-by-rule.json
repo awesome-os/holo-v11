@@ -1,0 +1,10 @@
+{
+  "schema": "b8g.audit-stack-failures.v1",
+  "abiMagic": "0x33564742",
+  "generatedAt": "2026-11-27T11:34:11.649Z",
+  "totalOccurrences": 0,
+  "uniqueFingerprints": 0,
+  "uniqueRules": 0,
+  "entries": [],
+  "byRule": []
+}

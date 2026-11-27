@@ -146,6 +146,7 @@
 
 <main>
   <div class="gate-strip" id="gate-strip">
+    <span class="gate-pill ok" id="gate-ratification">Ratification: LOADING</span>
     <span class="gate-pill ok" id="gate-boundary">Boundary: 13/13 (100/100)</span>
     <span class="gate-pill ok" id="gate-openssf">OpenSSF: 12/12</span>
     <span class="gate-pill accent" id="gate-oci">OCI: 9 Base + 16 Stacks</span>
@@ -186,6 +187,27 @@
     <div class="gravity-grid" id="gravity-kpis"></div>
     <div id="gravity-drift-strip" style="margin-bottom:12px;font-size:12.5px;color:var(--muted);"></div>
     <div id="gravity-latency-bars"></div>
+  </section>
+
+  <section class="card" id="continuous-ratification-panel">
+    <h2>
+      <span>Continuous Ratification &amp; Central Audit Stack</span>
+      <span style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+        <span class="badge warn" id="ratification-status-badge">LOADING…</span>
+        <span class="badge accent" id="ratification-audits-badge">audits: —</span>
+        <span class="badge info" id="ratification-sha-badge">sha512: —</span>
+      </span>
+    </h2>
+    <div class="gravity-grid" id="ratification-floors-grid"></div>
+    <div id="ratification-breach-strip" style="margin-bottom:12px;font-size:12.5px;color:var(--muted);"></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Rule ID</th><th>Occurrences</th><th>Gravity</th><th>Remediation Command</th></tr></thead>
+        <tbody id="ratification-rules-tbody">
+          <tr><td colspan="4" style="color:var(--muted);">Loading audit stack telemetry…</td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <div class="grid2">
@@ -262,6 +284,88 @@
       } catch {}
     }
     return null;
+  }
+
+  function escHtml(value) {
+    return String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function renderAuditStackPanel(latest, failures) {
+    const statusBadge = document.getElementById('ratification-status-badge');
+    const auditsBadge = document.getElementById('ratification-audits-badge');
+    const shaBadge = document.getElementById('ratification-sha-badge');
+    const floorsGrid = document.getElementById('ratification-floors-grid');
+    const breachStrip = document.getElementById('ratification-breach-strip');
+    const rulesTbody = document.getElementById('ratification-rules-tbody');
+    const gatePill = document.getElementById('gate-ratification');
+
+    if (!latest) {
+      statusBadge.className = 'badge warn';
+      statusBadge.textContent = 'PENDING SYNC';
+      gatePill.className = 'gate-pill accent';
+      gatePill.textContent = 'Ratification: PENDING';
+      floorsGrid.innerHTML = '<div class="gravity-stat"><div class="gv">—</div><div class="gk">Awaiting audit-stack/latest.json</div></div>';
+      breachStrip.textContent = '';
+      rulesTbody.innerHTML = '<tr><td colspan="4" style="color:var(--muted);">Audit stack baseline pending first sync.</td></tr>';
+      return;
+    }
+
+    const ratified = latest.ratified === true;
+    const totals = latest.totals || {};
+    const floors = latest.floors || {};
+    const breaches = Array.isArray(latest.ratchetViolations) ? latest.ratchetViolations : [];
+
+    statusBadge.className = `badge ${ratified ? 'ok' : 'fail'}`;
+    statusBadge.textContent = ratified ? 'RATIFIED — PROMOTE' : 'HOLD — O(1) ROLLBACK';
+    gatePill.className = `gate-pill ${ratified ? 'ok' : 'accent'}`;
+    gatePill.textContent = ratified ? 'Ratification: PROMOTE' : 'Ratification: HOLD / ROLLBACK';
+
+    auditsBadge.textContent = `${totals.passedAudits ?? 0}/${totals.totalAudits ?? 0} audits · ${totals.violationCount ?? 0} violations`;
+    shaBadge.textContent = latest.receiptSha512 ? `sha512: ${String(latest.receiptSha512).slice(0, 12)}…` : 'sha512: —';
+
+    floorsGrid.innerHTML = `
+      <div class="gravity-stat"><div class="gv" style="color:var(--ok);">&ge; ${escHtml(floors.minGeometryScore ?? 0)} / 100</div><div class="gk">Geometry Floor (SCC &le; ${escHtml(floors.maxCoreSccs ?? 0)} · Inv &le; ${escHtml(floors.maxCoreLayerInversions ?? 0)})</div></div>
+      <div class="gravity-stat"><div class="gv" style="color:var(--ok);">&ge; ${escHtml(floors.minBoundaryScore ?? 100)} / 100</div><div class="gk">Boundary Floor (Monotonic Lock)</div></div>
+      <div class="gravity-stat"><div class="gv" style="color:var(--accent);">&le; ${escHtml(floors.maxHttpIpcUnits ?? 0)} units</div><div class="gk">B8G016 HTTP-IPC Ceiling</div></div>
+      <div class="gravity-stat"><div class="gv" style="color:var(--info);">&le; ${escHtml(floors.maxCnameViolations ?? 0)} files</div><div class="gk">CNAME Policy Ceiling</div></div>
+      <div class="gravity-stat"><div class="gv" style="color:${floors.requireRollbackContract ? 'var(--ok)' : 'var(--warn)'};">${floors.requireRollbackContract ? 'REQUIRED' : 'OPTIONAL'}</div><div class="gk">O(1) Rollback Contract</div></div>
+    `;
+
+    breachStrip.innerHTML = breaches.length === 0
+      ? `<span class="badge ok">0 ratchet breaches</span> Monotonic ratification active (${escHtml(latest.runId || 'baseline')}).`
+      : `<span class="badge fail">${breaches.length} ratchet breach(es)</span> ` + breaches.map((b) => `<code>${escHtml(b.metric)}: ${escHtml(b.observed)} vs floor ${escHtml(b.floor)}</code>`).join(' · ');
+
+    const ruleRows = Array.isArray(failures?.byRule) && failures.byRule.length > 0
+      ? failures.byRule
+      : (Array.isArray(latest.topFailingRules) ? latest.topFailingRules : []);
+
+    if (ruleRows.length === 0) {
+      rulesTbody.innerHTML = '<tr><td colspan="4" style="color:var(--muted);">0 failing telemetry rules accumulated — all gates ratified.</td></tr>';
+    } else {
+      rulesTbody.innerHTML = ruleRows.slice(0, 10).map((r) => {
+        const sevCls = r.severity === 'error' ? 'fail' : r.severity === 'warning' ? 'warn' : 'info';
+        return `
+          <tr>
+            <td><span class="badge ${sevCls}">${escHtml(r.ruleId)}</span></td>
+            <td><code>${escHtml(r.occurrences)}</code></td>
+            <td><code>${escHtml(r.gravityScore)}</code></td>
+            <td><code>${escHtml(r.remediationCmd || '—')}</code></td>
+          </tr>
+        `;
+      }).join('');
+    }
+  }
+
+  async function loadAuditStack() {
+    const [latest, failures] = await Promise.all([
+      fetchFirstOk(['./audit-stack/latest.json', '../audit-stack/latest.json']),
+      fetchFirstOk(['./audit-stack/failures-by-rule.json', '../audit-stack/failures-by-rule.json']),
+    ]);
+    renderAuditStackPanel(latest, failures);
   }
 
   function renderGravitySection(g) {
@@ -449,7 +553,12 @@
   }
 
   document.getElementById('lib-filter').addEventListener('input', (e) => renderUpstreams(e.target.value));
-  document.getElementById('btn-refresh').addEventListener('click', loadTelemetry);
+  document.getElementById('btn-refresh').addEventListener('click', () => {
+    loadAuditStack().catch(() => {});
+    loadTelemetry().catch((e) => {
+      document.getElementById('gen-at').textContent = `Error: ${e.message}`;
+    });
+  });
   document.getElementById('btn-copy-cmd').addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText(document.getElementById('warm-cmd').textContent);
@@ -462,6 +571,7 @@
     document.documentElement.dataset.theme = next;
     try { localStorage.setItem('awesome-os.theme', next); } catch {}
   });
+  loadAuditStack().catch(() => {});
   loadTelemetry().catch((e) => {
     document.getElementById('gen-at').textContent = `Error: ${e.message}`;
   });
