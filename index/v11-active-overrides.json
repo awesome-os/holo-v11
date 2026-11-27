@@ -1,7 +1,7 @@
 {
   "schema": "awesome-os.v11-active-overrides.v1",
   "abiMagic": "0x33564742",
-  "generatedAt": "2026-11-27T05:59:25.454Z",
+  "generatedAt": "2026-11-27T16:14:46.455Z",
   "adoptedRepos": [
     {
       "repo": "b8g-ide",
