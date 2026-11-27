@@ -1,0 +1,43 @@
+name: Gravity Issue Governor
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      apply_closes:
+        description: 'Apply verified green issue auto-closures via gh CLI'
+        required: false
+        type: boolean
+        default: false
+      apply_upgrades:
+        description: 'Apply wave count/title consistency upgrades via gh CLI'
+        required: false
+        type: boolean
+        default: false
+      apply_auto:
+        description: 'Create/update damped-gravity auto issues via gh CLI'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+  actions: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gravity-issue-governor:
+    uses: awesome-os/maintenance-workflows/.github/workflows/reusable-gravity-issue-governor.yml@v1
+    with:
+      config-repo: 'awesome-os/awesome-os'
+      wip-max: '5'
+      damping-factor: '0.85'
+      apply-closes: ${{ inputs.apply_closes == true }}
+      apply-upgrades: ${{ inputs.apply_upgrades == true }}
+      apply-auto: ${{ inputs.apply_auto == true }}
+      node-version: '26'
