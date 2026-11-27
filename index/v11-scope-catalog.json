@@ -1,7 +1,7 @@
 {
   "schema": "awesome-os.v11-scope-catalog.v1",
   "abiMagic": "0x33564742",
-  "generatedAt": "2026-11-26T22:21:51.849Z",
+  "generatedAt": "2026-11-27T01:30:02.804Z",
   "taxonomy": [
     "appliance",
     "device",
@@ -53,6 +53,7 @@
       "theia",
       "upstream-mirrors",
       "wasi-host",
+      "wordpress-ecosystem",
       "wry"
     ],
     "terminal-app": [
@@ -447,6 +448,9 @@
     ],
     "webui": [
       "terminal-app"
+    ],
+    "wordpress-ecosystem": [
+      "browser-app"
     ],
     "wry": [
       "monitor",
