@@ -2,12 +2,15 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   CORE_ACTIVE_REPOS,
+  LIB_BINARY_STEM_ALIASES,
   buildGravityTelemetryReport,
   compareVersions,
   computeDedupMetrics,
   computeMaterializationMetrics,
   computePercentile,
   computePinningMetrics,
+  isCanonicalShardReceipt,
+  isRealCompiledBinaryAsset,
   serializeGravityNdjson,
   summarizeRepoRuns,
 } from './gravity-pin-dedup-telemetry.mts';
@@ -298,4 +301,103 @@ test('latestFleetPassRatePct reflects head health independently of rolling histo
   assert.equal(partialHead.gravityDamper.runnerFleet.completedLatestRepos, 3);
   assert.equal(partialHead.gravityDamper.runnerFleet.passingLatestRepos, 2);
   assert.equal(partialHead.gravityDamper.latestFleetPassRatePct, 66.7);
+});
+
+test('computeMaterializationMetrics resolves all 12 Tier-2 libs plus php/ruby/sqlite via binaries & shard receipts while excluding ordinary JSON', () => {
+  const tier2AndPolyglot = [
+    'mbedtls',
+    'llhttp',
+    'nghttp2',
+    'nghttp3',
+    'c-ares',
+    'fast_float',
+    'libpng',
+    'giflib',
+    'freetype',
+    'harfbuzz',
+    'onig',
+    'zlib-ng',
+    'php',
+    'ruby',
+    'sqlite',
+  ] as const;
+
+  for (const pkg of tier2AndPolyglot) {
+    assert.ok(Array.isArray(LIB_BINARY_STEM_ALIASES[pkg]) && LIB_BINARY_STEM_ALIASES[pkg].length >= 2, `Missing aliases for ${pkg}`);
+  }
+
+  assert.equal(isCanonicalShardReceipt('libpng-receipt.json'), true);
+  assert.equal(isCanonicalShardReceipt('libzlib-ng-receipt.json'), true);
+  assert.equal(isCanonicalShardReceipt('resolved-tier2-versions.json'), false);
+  assert.equal(isCanonicalShardReceipt('cas-manifest.json'), false);
+  assert.equal(isCanonicalShardReceipt('-receipt.json'), false);
+  assert.equal(isRealCompiledBinaryAsset('libpng-receipt.json'), false);
+
+  const tracker = {
+    totalTracked: tier2AndPolyglot.length + 3,
+    libraries: [
+      ...tier2AndPolyglot.map((pkg) => ({ pkg })),
+      { pkg: 'openssl' },
+      { pkg: 'curl' },
+      { pkg: 're2' },
+    ],
+  };
+
+  // Compiled binaries for Tier-2 + polyglot + ordinary metadata JSONs that must stay excluded
+  const binaryRun = computeMaterializationMetrics(tracker, [
+    { filename: 'libmbedtls-linux-x64.so' },
+    { filename: 'libllhttp-win64.dll' },
+    { filename: 'libnghttp2-linux-arm64.so' },
+    { filename: 'libnghttp3-wasm32-wasi.wasm' },
+    { filename: 'libcares-win64.dll' },
+    { filename: 'libfast_float-linux-x64.so' },
+    { filename: 'libpng-macos-arm64.dylib' },
+    { filename: 'libgiflib-linux-x64.so' },
+    { filename: 'libfreetype-win64.dll' },
+    { filename: 'libharfbuzz-linux-x64.so' },
+    { filename: 'libonig-wasm32-wasi.wasm' },
+    { filename: 'libzlib-ng-linux-x64.so' },
+    { filename: 'php-wasi-wasm32-wasi.wasm' },
+    { filename: 'libruby-linux-x64.so' },
+    { filename: 'libsqlite3-win64.dll' },
+    { filename: 'resolved-tier2-versions.json' },
+    { filename: 'cas-manifest.json' },
+    { filename: 'openssl-manifest.json' },
+    { filename: 'curl.json' },
+    { filename: 're2-metadata.json' },
+  ]);
+
+  assert.deepEqual(binaryRun.realCompiledLibs, [...tier2AndPolyglot]);
+  assert.deepEqual(binaryRun.virtualPinOnlyLibs, ['openssl', 'curl', 're2']);
+  assert.equal(binaryRun.realCompiledCount, 15);
+  assert.equal(binaryRun.virtualPinOnlyCount, 3);
+
+  // Canonical shard receipt files (*-receipt.json / lib*-receipt.json) also resolve all 15
+  const receiptRun = computeMaterializationMetrics(tracker, [
+    { filename: 'libmbedtls-receipt.json' },
+    { filename: 'libllhttp-receipt.json' },
+    { filename: 'libnghttp2-receipt.json' },
+    { filename: 'libnghttp3-receipt.json' },
+    { filename: 'libcares-receipt.json' },
+    { filename: 'libfast_float-receipt.json' },
+    { filename: 'libpng-receipt.json' },
+    { filename: 'libgiflib-receipt.json' },
+    { filename: 'libfreetype-receipt.json' },
+    { filename: 'libharfbuzz-receipt.json' },
+    { filename: 'libonig-receipt.json' },
+    { filename: 'libzlib-ng-receipt.json' },
+    { filename: 'php-receipt.json' },
+    { filename: 'ruby-receipt.json' },
+    { filename: 'libsqlite3-receipt.json' },
+    { filename: 'resolved-tier2-versions.json' },
+    { filename: 'cas-manifest.json' },
+    { filename: 'openssl.json' },
+    { filename: 'curl-config.json' },
+    { filename: '-receipt.json' },
+  ]);
+
+  assert.deepEqual(receiptRun.realCompiledLibs, [...tier2AndPolyglot]);
+  assert.deepEqual(receiptRun.virtualPinOnlyLibs, ['openssl', 'curl', 're2']);
+  assert.equal(receiptRun.realCompiledCount, 15);
+  assert.equal(receiptRun.virtualPinOnlyCount, 3);
 });

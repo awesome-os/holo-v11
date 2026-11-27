@@ -307,20 +307,38 @@ export function computePinningMetrics(
 const NON_BINARY_ASSET_RE =
   /\.(json|txt|md|conf|svg|bmp|ico|html|ipxe|sh|ps1|h|gn|sha256|pdb|vsix|tar\.gz|tar\.zst|tar\.xz|tgz|zip|iso|qcow2|yaml|yml|toml|b8p)$/i;
 const COMPILED_BINARY_EXT_RE = /\.(so|dll|dylib|wasm|a|ko|lib|elf|o|exe)$/i;
+const SHARD_RECEIPT_RE = /^[a-z0-9][a-z0-9._+-]*-receipt\.json$/i;
 
-const LIB_BINARY_STEM_ALIASES: Readonly<Record<string, readonly string[]>> = {
-  zlib: ['zlib', 'libz', 'z'],
-  sqlite: ['sqlite', 'sqlite3', 'libsqlite3'],
+export const LIB_BINARY_STEM_ALIASES: Readonly<Record<string, readonly string[]>> = {
+  zlib: ['zlib', 'libzlib', 'libz', 'z'],
+  'zlib-ng': ['zlib-ng', 'libzlib-ng', 'zlibng', 'libzng'],
+  sqlite: ['sqlite', 'libsqlite', 'sqlite3', 'libsqlite3'],
+  mbedtls: ['mbedtls', 'libmbedtls'],
+  llhttp: ['llhttp', 'libllhttp'],
+  nghttp2: ['nghttp2', 'libnghttp2'],
+  nghttp3: ['nghttp3', 'libnghttp3'],
+  'c-ares': ['c-ares', 'libc-ares', 'cares', 'libcares'],
+  fast_float: ['fast_float', 'libfast_float', 'fastfloat', 'libfastfloat'],
+  libpng: ['libpng', 'png', 'libpng16', 'png16'],
+  giflib: ['giflib', 'libgiflib', 'gif', 'libgif'],
+  freetype: ['freetype', 'libfreetype', 'freetype2', 'libfreetype2'],
+  harfbuzz: ['harfbuzz', 'libharfbuzz'],
+  onig: ['onig', 'oniguruma', 'libonig', 'liboniguruma'],
+  php: ['php', 'libphp', 'php-wasi', 'php-cgi'],
+  ruby: ['ruby', 'libruby', 'ruby-wasi', 'ruby-wasm'],
   'libjpeg-turbo': ['libjpeg-turbo', 'jpeg', 'libjpeg', 'turbojpeg', 'libturbojpeg'],
   libsdl3: ['libsdl3', 'sdl3'],
   icu4c: ['icu4c', 'icu', 'icudata', 'icuuc', 'icui18n'],
-  onig: ['onig', 'oniguruma', 'libonig'],
   'vulkan-loader': ['vulkan-loader', 'vulkan', 'libvulkan'],
   libxml2: ['libxml2', 'xml2'],
   libxslt: ['libxslt', 'xslt'],
-  'c-ares': ['c-ares', 'cares', 'libcares'],
-  'zlib-ng': ['zlib-ng', 'zlibng', 'libzng'],
 };
+
+export function isCanonicalShardReceipt(filename: string): boolean {
+  const base = filename.trim().split(/[\\/]/).pop() ?? '';
+  if (!base) return false;
+  return SHARD_RECEIPT_RE.test(base);
+}
 
 export function isRealCompiledBinaryAsset(filename: string): boolean {
   const f = filename.trim();
@@ -336,7 +354,9 @@ export function isRealCompiledBinaryAsset(filename: string): boolean {
 export function extractCompiledBinaryStem(filename: string): string {
   return filename
     .trim()
+    .replace(/^.*[\\/]/, '')
     .toLowerCase()
+    .replace(/-receipt\.json$/i, '')
     .replace(/-(linux|win64|windows|macos|darwin|wasm32|x86_64|aarch64|x64|arm64).*$/i, '')
     .replace(/\.(so|dll|dylib|wasm|a|ko|lib|elf|o|exe).*$/i, '');
 }
@@ -348,7 +368,7 @@ export function computeMaterializationMetrics(
   const compiledStems = new Set<string>();
   for (const entry of lockfileEntries) {
     const filename = String(entry.filename ?? '');
-    if (!isRealCompiledBinaryAsset(filename)) continue;
+    if (!isRealCompiledBinaryAsset(filename) && !isCanonicalShardReceipt(filename)) continue;
     const stem = extractCompiledBinaryStem(filename);
     if (stem) compiledStems.add(stem);
   }
