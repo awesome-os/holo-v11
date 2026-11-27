@@ -37,16 +37,19 @@ Every `repository://` and `project://` URI resolves to an immutable SHA-512 dige
 
 ## Planetary Warm CAS & Telemetry Snapshot
 
+<!-- AUTO-GENERATED:BEGIN source="reports/gravity-telemetry.json" id="holo-v11:telemetry-snapshot" -->
 | Metric | Live Value | Source |
 | :--- | :--- | :--- |
-| **Indexed Repositories** | `61` repos (active `awesome-os/*` + `74`-repo `CONSOLIDATED_ARCHIVE_ALLOWLIST` in [`scripts/warm-global-cas.mts`](scripts/warm-global-cas.mts), including `v11-chromium-baseline-latest`, `v11-devtools-launchers-latest`, `v11-max-5os-latest`, and `v11-oci-latest`) | [`index/cas-v11-global-manifest.json`](index/cas-v11-global-manifest.json) |
-| **Indexed Release Assets** | `461` assets | [`index/cas-v11-global-manifest.json`](index/cas-v11-global-manifest.json) |
-| **Unique SHA-512 Blobs** | `450` unique blobs (`80.79` MB saved · `4.7%` CAS dedup) | [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) |
-| **Total CAS Volume** | `1717.15` MB raw (`1636.36` MB unique) | [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) |
+| **Indexed Repositories** | `62` repos (active `awesome-os/*` + consolidated archive allowlist in [`scripts/warm-global-cas.mts`](scripts/warm-global-cas.mts), including `v11-chromium-baseline-latest`, `v11-devtools-launchers-latest`, `v11-max-5os-latest`, and `v11-oci-latest`) | [`index/cas-v11-global-manifest.json`](index/cas-v11-global-manifest.json) |
+| **Indexed Release Assets** | `697` assets | [`index/cas-v11-global-manifest.json`](index/cas-v11-global-manifest.json) |
+| **Unique SHA-512 Blobs** | `684` unique blobs (`84.84` MB saved · `4.32%` CAS dedup · `13` deduped blobs) | [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) |
+| **Total CAS Volume** | `1963.5` MB raw (`1878.66` MB unique) | [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) |
 | **Upstream Version Pinning** | `68/68` tracked upstreams at max (`0` drifted · `18` ahead-of-Chrome · `5078` `v11` universe packages) | [`scripts/gravity-pin-dedup-telemetry.mts`](scripts/gravity-pin-dedup-telemetry.mts) |
-| **CAS Binary Materialization** | `15/68` (`22.06%`) real compiled CAS binaries vs `53/68` virtual-pin only | [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) |
+| **CAS Binary Materialization** | `45/68` (`66.18%`) real compiled CAS binaries vs `23/68` virtual-pin only | [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) |
 | **Zero-Duplication & Cleanliness** | `dup_v8 = 0 B` · `b8g-ghost` remnants `= 0` | [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) |
-| **Fleet Head Health** | `100%` (`12/12` core active flat-org repos passing latest CI) | [`dashboard/oversight.html`](dashboard/oversight.html) ([Live Oversight](https://awesome-os.github.io/holo-v11/oversight.html)) |
+| **Fleet Head Health** | `100%` (`12/12` monitored flat-org repos · `11` passing latest + `1` running · `0` failing · `p50 = 31s`) | [`dashboard/oversight.html`](dashboard/oversight.html) ([Live Oversight](https://awesome-os.github.io/holo-v11/oversight.html)) |
+| **Central Audit Stack Hub** | `100/100` (`B8G_ABI_MAGIC_V3 = 0x33564742` · fail-fast + monotonic ratchet ledger) | [`audit-stack/latest.json`](audit-stack/latest.json) · [`audit-stack/ratification-receipt.json`](audit-stack/ratification-receipt.json) |
+<!-- AUTO-GENERATED:END -->
 
 ---
 
