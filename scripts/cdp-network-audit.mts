@@ -960,6 +960,61 @@ export type FetchLike = (
 
 const NON_RESOURCE_LINK_RELS = new Set(['dns-prefetch', 'preconnect', 'assets']);
 
+const GITHUB_HOSTS = new Set(['github.com', 'www.github.com']);
+
+const GITHUB_CHROME_TOP_LEVEL_SEGMENTS = new Set([
+  'about',
+  'customer-stories',
+  'enterprise',
+  'features',
+  'login',
+  'marketplace',
+  'partners',
+  'platform',
+  'pricing',
+  'resources',
+  'security',
+  'signup',
+  'solutions',
+  'sponsors',
+  'team',
+  'trending',
+  'trust-center',
+  'why-github',
+]);
+
+const GITHUB_PROJECTS_TAB_PATTERN = /^\/(?:orgs\/[^/]+|[^/]+\/[^/]+)\/projects(?:\/.*)?$/i;
+
+export function shouldSkipGitHubChromeLink(linkUrl: string, pageUrl: string): boolean {
+  let pageParsed: URL;
+  let targetParsed: URL;
+  try {
+    pageParsed = new URL(pageUrl);
+    targetParsed = new URL(linkUrl);
+  } catch {
+    return false;
+  }
+
+  if (!GITHUB_HOSTS.has(pageParsed.hostname.toLowerCase())) {
+    return false;
+  }
+  if (!GITHUB_HOSTS.has(targetParsed.hostname.toLowerCase())) {
+    return false;
+  }
+
+  const pathname = targetParsed.pathname;
+  if (
+    GITHUB_PROJECTS_TAB_PATTERN.test(pathname) ||
+    pathname === '/open-source/sponsors' ||
+    pathname.startsWith('/open-source/sponsors/')
+  ) {
+    return true;
+  }
+
+  const firstSegment = pathname.split('/').filter(Boolean)[0]?.toLowerCase() ?? '';
+  return GITHUB_CHROME_TOP_LEVEL_SEGMENTS.has(firstSegment);
+}
+
 export interface LinkCheckInput {
   readonly url: string;
   readonly pageUrl: string;
@@ -988,6 +1043,9 @@ export async function verifyLinks(
       if (relTokens.length > 0 && relTokens.every((t) => NON_RESOURCE_LINK_RELS.has(t))) {
         continue;
       }
+    }
+    if (shouldSkipGitHubChromeLink(item.url, item.pageUrl)) {
+      continue;
     }
     let normalized = item.url;
     try {

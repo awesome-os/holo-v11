@@ -9,6 +9,7 @@ import {
   parseCliArgs,
   resolveBrowserBinary,
   resolveSuiteUrls,
+  shouldSkipGitHubChromeLink,
   verifyLinks,
 } from './cdp-network-audit.mts';
 
@@ -374,6 +375,75 @@ test('verifyLinks retries transient 504/network failures once before settling', 
   assert.equal(attempts, 2);
   assert.equal(results[0]?.ok, true);
   assert.equal(results[0]?.status, 200);
+});
+
+test('verifyLinks skips GitHub site chrome links only on github.com pages while preserving repo/release/awesome-os.github.io links', async () => {
+  const ghPage = 'https://github.com/awesome-os/dockerimages/releases/tag/v11-oci-latest';
+  const orgPkgPage = 'https://github.com/orgs/awesome-os/packages';
+  const nonGhPage = 'https://awesome-os.github.io/';
+
+  assert.equal(shouldSkipGitHubChromeLink('https://github.com/marketplace', ghPage), true);
+  assert.equal(shouldSkipGitHubChromeLink('https://github.com/customer-stories', ghPage), true);
+  assert.equal(shouldSkipGitHubChromeLink('https://github.com/signup?ref_cta=Sign+up', orgPkgPage), true);
+  assert.equal(shouldSkipGitHubChromeLink('https://github.com/login?return_to=%2Forgs%2Fawesome-os%2Fpackages', orgPkgPage), true);
+  assert.equal(shouldSkipGitHubChromeLink('https://github.com/features/copilot', ghPage), true);
+  assert.equal(shouldSkipGitHubChromeLink('https://github.com/pricing', ghPage), true);
+  assert.equal(shouldSkipGitHubChromeLink('https://github.com/sponsors', ghPage), true);
+  assert.equal(shouldSkipGitHubChromeLink('https://github.com/open-source/sponsors', ghPage), true);
+  assert.equal(shouldSkipGitHubChromeLink('https://github.com/about', ghPage), true);
+  assert.equal(shouldSkipGitHubChromeLink('https://github.com/awesome-os/dockerimages/projects', ghPage), true);
+  assert.equal(shouldSkipGitHubChromeLink('https://github.com/orgs/awesome-os/projects', orgPkgPage), true);
+
+  assert.equal(shouldSkipGitHubChromeLink('https://awesome-os.github.io/holo-v11/oversight.html', ghPage), false);
+  assert.equal(shouldSkipGitHubChromeLink('https://github.com/awesome-os/dockerimages', ghPage), false);
+  assert.equal(shouldSkipGitHubChromeLink('https://github.com/awesome-os/dockerimages/blob/main/README.md', ghPage), false);
+  assert.equal(
+    shouldSkipGitHubChromeLink(
+      'https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/holo-node-linux-amd64.oci.tar.gz',
+      ghPage,
+    ),
+    false,
+  );
+  assert.equal(shouldSkipGitHubChromeLink('https://github.com/marketplace', nonGhPage), false);
+  assert.equal(shouldSkipGitHubChromeLink('https://github.com/awesome-os/dockerimages/projects', nonGhPage), false);
+
+  const fetched: string[] = [];
+  const results = await verifyLinks(
+    [
+      { url: 'https://github.com/marketplace', pageUrl: ghPage, tag: 'a' },
+      { url: 'https://github.com/customer-stories', pageUrl: ghPage, tag: 'a' },
+      { url: 'https://github.com/signup?source=header', pageUrl: orgPkgPage, tag: 'a' },
+      { url: 'https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Forgs%2Fawesome-os%2Fpackages', pageUrl: orgPkgPage, tag: 'a' },
+      { url: 'https://github.com/features/actions', pageUrl: ghPage, tag: 'a' },
+      { url: 'https://github.com/pricing', pageUrl: ghPage, tag: 'a' },
+      { url: 'https://github.com/sponsors', pageUrl: ghPage, tag: 'a' },
+      { url: 'https://github.com/about', pageUrl: ghPage, tag: 'a' },
+      { url: 'https://github.com/awesome-os/dockerimages/projects', pageUrl: ghPage, tag: 'a' },
+      { url: 'https://awesome-os.github.io/holo-v11/oversight.html', pageUrl: ghPage, tag: 'a' },
+      { url: 'https://github.com/awesome-os/dockerimages/blob/main/README.md', pageUrl: ghPage, tag: 'a' },
+      { url: 'https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/holo-node-linux-amd64.oci.tar.gz', pageUrl: ghPage, tag: 'a' },
+      { url: 'https://github.com/awesome-os/projects', pageUrl: ghPage, tag: 'a' },
+    ],
+    {
+      concurrency: 2,
+      fetchImpl: async (input) => {
+        const url = String(input);
+        fetched.push(url);
+        return { status: 200, ok: true, url };
+      },
+    },
+  );
+
+  assert.equal(results.length, 4);
+  assert.deepEqual(
+    fetched.sort(),
+    [
+      'https://awesome-os.github.io/holo-v11/oversight.html',
+      'https://github.com/awesome-os/dockerimages/blob/main/README.md',
+      'https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/holo-node-linux-amd64.oci.tar.gz',
+      'https://github.com/awesome-os/projects',
+    ].sort(),
+  );
 });
 
 test('resolveBrowserBinary honors CHROME_PATH, skips D:\\Sectium, and blocks sectium.exe', () => {
