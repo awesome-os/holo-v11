@@ -39,6 +39,19 @@ jobs:
       - name: Evaluate Monotonic Continuous Ratification
         run: node scripts/audit-stack-hub.mts --out-dir audit-stack --enforce-ratchet --json
 
+      - name: Checkout holo-ci runtime
+        if: ${{ hashFiles('.holo-ci-runtime/holo-ci/cli.mts') == '' }}
+        uses: actions/checkout@v5
+        with:
+          repository: awesome-os/maintenance-workflows
+          ref: v1
+          path: .holo-ci-runtime
+
+      - name: Capture 6h Fleet SLA Forensics Ledger
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node .holo-ci-runtime/holo-ci/cli.mts fleet-forensics --hours 6 --json > audit-stack/regression-ledger.json
+
       - name: Write Ratification Receipt to $GITHUB_STEP_SUMMARY
         if: always() && hashFiles('audit-stack/ratification-receipt.json') != ''
         run: |

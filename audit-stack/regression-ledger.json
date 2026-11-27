@@ -1,0 +1,60 @@
+{
+  "schema": "b8g.fleet-forensics.v1",
+  "abiMagic": "0x33564742",
+  "generatedAt": "2026-11-27T12:41:06.551Z",
+  "owner": "awesome-os",
+  "hours": 6,
+  "slowThresholdSec": 300,
+  "ok": true,
+  "reposScanned": 17,
+  "greenOnLatest": 17,
+  "failedRuns": [],
+  "cancelledRuns": [],
+  "slowJobs": [
+    {
+      "repo": "upstream-mirrors",
+      "runId": 45990254391,
+      "jobId": 140476065752,
+      "workflowName": "Holo 5-OS Tier-6 Shards — Runtime Libraries, Tools & GPU/NPU ABI Probes",
+      "jobName": "build-tier6-5os-shard (onednn)",
+      "conclusion": "success",
+      "status": "completed",
+      "htmlUrl": "https://github.com/awesome-os/upstream-mirrors/actions/runs/45990254391/job/140476065752",
+      "durationSec": 2989
+    },
+    {
+      "repo": "upstream-mirrors",
+      "runId": 45959460743,
+      "jobId": 140373640690,
+      "workflowName": "Holo 5-OS Tier-5 Shards — Pure Zig 0.14.0 & CMake Cross-Compiled Libraries",
+      "jobName": "build-tier5-5os-shard (spirv-tools)",
+      "conclusion": "success",
+      "status": "completed",
+      "htmlUrl": "https://github.com/awesome-os/upstream-mirrors/actions/runs/45959460743/job/140373640690",
+      "durationSec": 577
+    },
+    {
+      "repo": "upstream-mirrors",
+      "runId": 45959460743,
+      "jobId": 140373640710,
+      "workflowName": "Holo 5-OS Tier-5 Shards — Pure Zig 0.14.0 & CMake Cross-Compiled Libraries",
+      "jobName": "build-tier5-5os-shard (glslang)",
+      "conclusion": "success",
+      "status": "completed",
+      "htmlUrl": "https://github.com/awesome-os/upstream-mirrors/actions/runs/45959460743/job/140373640710",
+      "durationSec": 427
+    },
+    {
+      "repo": "upstream-mirrors",
+      "runId": 45959460743,
+      "jobId": 140373640699,
+      "workflowName": "Holo 5-OS Tier-5 Shards — Pure Zig 0.14.0 & CMake Cross-Compiled Libraries",
+      "jobName": "build-tier5-5os-shard (libsdl3)",
+      "conclusion": "success",
+      "status": "completed",
+      "htmlUrl": "https://github.com/awesome-os/upstream-mirrors/actions/runs/45959460743/job/140373640699",
+      "durationSec": 380
+    }
+  ],
+  "durationMs": 9740
+}

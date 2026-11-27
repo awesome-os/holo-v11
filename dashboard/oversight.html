@@ -200,6 +200,10 @@
     </h2>
     <div class="gravity-grid" id="ratification-floors-grid"></div>
     <div id="ratification-breach-strip" style="margin-bottom:12px;font-size:12.5px;color:var(--muted);"></div>
+    <div id="ratification-fleet-sla-strip" style="margin-bottom:12px;font-size:12.5px;color:var(--muted);display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+      <span class="badge warn" id="fleet-sla-badge">Fleet SLA: LOADING…</span>
+      <span id="fleet-sla-details">Awaiting audit-stack/regression-ledger.json</span>
+    </div>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Rule ID</th><th>Occurrences</th><th>Gravity</th><th>Remediation Command</th></tr></thead>
@@ -294,7 +298,7 @@
       .replace(/"/g, '&quot;');
   }
 
-  function renderAuditStackPanel(latest, failures) {
+  function renderAuditStackPanel(latest, failures, ledger) {
     const statusBadge = document.getElementById('ratification-status-badge');
     const auditsBadge = document.getElementById('ratification-audits-badge');
     const shaBadge = document.getElementById('ratification-sha-badge');
@@ -302,6 +306,25 @@
     const breachStrip = document.getElementById('ratification-breach-strip');
     const rulesTbody = document.getElementById('ratification-rules-tbody');
     const gatePill = document.getElementById('gate-ratification');
+    const slaBadge = document.getElementById('fleet-sla-badge');
+    const slaDetails = document.getElementById('fleet-sla-details');
+
+    const forensics = ledger?.fleetForensics || ledger;
+    if (forensics && typeof forensics.reposScanned === 'number') {
+      const green = forensics.greenOnLatest ?? 0;
+      const scanned = forensics.reposScanned ?? 0;
+      const failedCount = Array.isArray(forensics.failedRuns) ? forensics.failedRuns.length : 0;
+      const cancelledCount = Array.isArray(forensics.cancelledRuns) ? forensics.cancelledRuns.length : 0;
+      const slowCount = Array.isArray(forensics.slowJobs) ? forensics.slowJobs.length : 0;
+      const slaOk = forensics.ok === true && green >= scanned && failedCount === 0;
+      slaBadge.className = `badge ${slaOk ? 'ok' : failedCount > 0 ? 'fail' : 'warn'}`;
+      slaBadge.textContent = `Fleet SLA: ${escHtml(green)}/${escHtml(scanned)} Green-on-Latest`;
+      slaDetails.innerHTML = `<span class="badge ${failedCount === 0 ? 'ok' : 'fail'}">${failedCount} failed</span> <span class="badge ${cancelledCount === 0 ? 'ok' : 'warn'}">${cancelledCount} cancelled</span> <span class="badge ${slowCount === 0 ? 'ok' : 'info'}">${slowCount} slow (&gt;${escHtml(forensics.slowThresholdSec ?? 300)}s)</span> · window: ${escHtml(forensics.hours ?? 6)}h`;
+    } else {
+      slaBadge.className = 'badge warn';
+      slaBadge.textContent = 'Fleet SLA: PENDING';
+      slaDetails.textContent = 'Awaiting audit-stack/regression-ledger.json';
+    }
 
     if (!latest) {
       statusBadge.className = 'badge warn';
@@ -361,11 +384,12 @@
   }
 
   async function loadAuditStack() {
-    const [latest, failures] = await Promise.all([
+    const [latest, failures, ledger] = await Promise.all([
       fetchFirstOk(['./audit-stack/latest.json', '../audit-stack/latest.json']),
       fetchFirstOk(['./audit-stack/failures-by-rule.json', '../audit-stack/failures-by-rule.json']),
+      fetchFirstOk(['./audit-stack/regression-ledger.json', '../audit-stack/regression-ledger.json']),
     ]);
-    renderAuditStackPanel(latest, failures);
+    renderAuditStackPanel(latest, failures, ledger);
   }
 
   function renderGravitySection(g) {
