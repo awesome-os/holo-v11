@@ -5,21 +5,9 @@ on:
     - cron: '0 */6 * * *'
   workflow_dispatch:
     inputs:
-      apply_closes:
-        description: 'Apply verified green issue auto-closures via gh CLI'
-        required: false
-        type: boolean
-        default: false
-      apply_upgrades:
-        description: 'Apply wave count/title consistency upgrades via gh CLI'
-        required: false
-        type: boolean
-        default: false
-      apply_auto:
-        description: 'Create/update damped-gravity auto issues via gh CLI'
-        required: false
-        type: boolean
-        default: false
+      apply_closes: { description: 'Apply verified green issue auto-closures via gh CLI', required: false, type: boolean, default: false }
+      apply_upgrades: { description: 'Apply wave count/title consistency upgrades via gh CLI', required: false, type: boolean, default: false }
+      apply_auto: { description: 'Create/update damped-gravity auto issues via gh CLI', required: false, type: boolean, default: false }
 
 permissions:
   contents: read
@@ -32,12 +20,54 @@ concurrency:
 
 jobs:
   gravity-issue-governor:
-    uses: awesome-os/maintenance-workflows/.github/workflows/reusable-gravity-issue-governor.yml@v1
-    with:
-      config-repo: 'awesome-os/awesome-os'
-      wip-max: '5'
-      damping-factor: '0.85'
-      apply-closes: ${{ inputs.apply_closes == true }}
-      apply-upgrades: ${{ inputs.apply_upgrades == true }}
-      apply-auto: ${{ inputs.apply_auto == true }}
-      node-version: '26'
+    name: Gravity Issue Governor & Repair Waves
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout awesome-os/holo-v11
+        uses: actions/checkout@v7
+        with:
+          path: holo-v11
+
+      - name: Checkout awesome-os/awesome-os
+        uses: actions/checkout@v7
+        with:
+          repository: awesome-os/awesome-os
+          path: awesome-os
+
+      - name: Setup Node.js 26
+        uses: actions/setup-node@v7
+        with:
+          node-version: '26'
+
+      - name: Run gravity issue governor & emit repair-waves.json
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GOV_APPLY_CLOSES: ${{ inputs.apply_closes == true }}
+          GOV_APPLY_UPGRADES: ${{ inputs.apply_upgrades == true }}
+          GOV_APPLY_AUTO: ${{ inputs.apply_auto == true }}
+        run: |
+          ARGS=(--plan --json --root awesome-os --wip-max 5 --damping 0.85 --audit-stack holo-v11/audit-stack/failures-by-rule.json --emit-repair-waves repair-waves.json)
+          if [ "${GOV_APPLY_CLOSES}" = "true" ]; then ARGS+=(--apply-closes); fi
+          if [ "${GOV_APPLY_UPGRADES}" = "true" ]; then ARGS+=(--apply-upgrades); fi
+          if [ "${GOV_APPLY_AUTO}" = "true" ]; then ARGS+=(--apply-auto); fi
+          node awesome-os/scripts/gravity-issue-governor.mts "${ARGS[@]}" > gravity-governor-plan.json
+          node -e '
+            const fs = require("node:fs");
+            const p = JSON.parse(fs.readFileSync("gravity-governor-plan.json", "utf8"));
+            const w = p.repairWavePlan || { waveCount: 0, totalTasks: 0, totalClusters: 0 };
+            const md = `## Gravity Issue Governor & Repair Waves\n| Metric | Value |\n| :--- | :--- |\n| Schema / ABI | \`${p.schema}\` / \`${w.schema || "n/a"}\` (\`${p.abiMagic}\`) |\n| WIP Active / Max | \`${p.activeAutoIssues}/${p.wipMax}\` (zeta=\`${p.dampingFactor}\`, slots=\`${p.availableWipSlots}\`) |\n| Repair Waves | \`${w.waveCount}\` waves · \`${w.totalTasks}\` tasks · \`${w.totalClusters}\` clusters |\n| Actions | close=\`${p.closeActions.length}\` upgrade=\`${p.waveUpgrades.length}\` auto=\`${p.autoIssueActions.length}\` deferred=\`${p.deferredByDamping.length}\` |\n`;
+            if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, md, "utf8");
+          '
+
+      - name: Upload repair-waves & governor plan artifacts
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: repair-waves
+          path: |
+            repair-waves.json
+            gravity-governor-plan.json
+          retention-days: 7
+          if-no-files-found: warn
