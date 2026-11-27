@@ -56,7 +56,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          node .holo-ci-runtime/holo-ci/cli.mts fleet-forensics --hours 6 --json > audit-stack/regression-ledger.json || true
+          node .holo-ci-runtime/holo-ci/cli.mts fleet-forensics --hours 6 --gate latest --json > audit-stack/regression-ledger.json || true
           test -s audit-stack/regression-ledger.json
 
       - name: Write Ratification Receipt to $GITHUB_STEP_SUMMARY

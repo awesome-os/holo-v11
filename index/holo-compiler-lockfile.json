@@ -7670,5 +7670,14 @@
       "blobPath": "v11/files/d5/d5cd608e0a503c23bf1e0e723c7f960cea332b522b566237a63917a40d2c76eeec9196bc84586b3190bfbd8342f6d0f9caae45b4fce35487ab7d2a86adc01f3b",
       "downloadUrl": "https://github.com/awesome-os/wry/releases/download/v0.1.1/wry-v0.1.1.tar.zst"
     }
-  ]
+  ],
+  "lockfileVersion": 3,
+  "migrationsApplied": [
+    "v0->v1",
+    "v1->v2",
+    "v2->v3"
+  ],
+  "provenanceChain": {
+    "commitAndTreeBound": true
+  }
 }
