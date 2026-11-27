@@ -9,7 +9,8 @@
     "scripts/pack-v11-shards.mts",
     "scripts/export-static-cas-pages.mts",
     "scripts/gravity-pin-dedup-telemetry.mts",
-    "scripts/collect-oversight-telemetry.mts"
+    "scripts/collect-oversight-telemetry.mts",
+    "scripts/cdp-network-audit.mts"
   ],
   "includePaths": [
     "bootstrap",

@@ -6,6 +6,7 @@
     "node --test scripts/gravity-pin-dedup-telemetry.test.mts",
     "node --test scripts/b8p-forward-bundle.test.mts",
     "node --test scripts/export-static-cas-pages.test.mts",
+    "node --test scripts/cdp-network-audit.test.mts",
     "node --test pins/holo-overrides.test.mts"
   ],
   "docs": [

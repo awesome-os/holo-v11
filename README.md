@@ -26,9 +26,11 @@ Every `repository://` and `project://` URI resolves to an immutable SHA-512 dige
 | [`scripts/export-static-cas-pages.mts`](scripts/export-static-cas-pages.mts) | Static sharded CAS JSON exporter publishing zero-rate-limit [`/cas/v11/index.json`](https://awesome-os.github.io/holo-v11/cas/v11/index.json) and `/cas/v11/shards/<aa>.json` (`00..ff`) via GitHub Pages |
 | [`scripts/gravity-pin-dedup-telemetry.mts`](scripts/gravity-pin-dedup-telemetry.mts) | Gravity Damper runner telemetry, upstream version-pinning audit, and SHA-512 CAS deduplication verifier emitting [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) and [`reports/gravity-telemetry.ndjson`](reports/gravity-telemetry.ndjson) |
 | [`scripts/collect-oversight-telemetry.mts`](scripts/collect-oversight-telemetry.mts) | Live GitHub Actions, Chromium Canary, and CAS telemetry collector emitting [`reports/oversight-telemetry.json`](reports/oversight-telemetry.json) |
+| [`scripts/cdp-network-audit.mts`](scripts/cdp-network-audit.mts) | Zero-dependency Chrome/Edge `--remote-debugging-pipe` (`\0`-delimited CDP JSON-RPC) network, console/runtime error, and DOM link auditor |
 | [`dashboard/oversight.html`](dashboard/oversight.html) | Live Oversight Dashboard ([`awesome-os.github.io/holo-v11/`](https://awesome-os.github.io/holo-v11/) · [`oversight.html`](https://awesome-os.github.io/holo-v11/oversight.html)) visualizing Planetary Warm CAS, upstream pinning, and Gravity Damper runner health |
 | [`holo-ci.json`](holo-ci.json) | `holo-ci@v1` verification manifest (`zeroGhost: true`, `zeroCasV1: true`, unit test & doc gates) |
 | [`.github/workflows/holo-ci.yml`](.github/workflows/holo-ci.yml) | Reusable `holo-ci@v1` CI workflow (`awesome-os/maintenance-workflows/.github/workflows/reusable-holo-ci.yml@v1`) |
+| [`.github/workflows/cdp-network-audit.yml`](.github/workflows/cdp-network-audit.yml) | Daily + post-Pages Chrome `--remote-debugging-pipe` network & link audit uploading `cdp-audit-report.json` |
 | [`.github/workflows/sync-holo-v11-registry.yml`](.github/workflows/sync-holo-v11-registry.yml) | Scheduled 6-hourly (`0 */6 * * *`) + manual sync workflow committing to `main` when `index/` or `reports/` change |
 
 ---
@@ -53,9 +55,10 @@ Every `repository://` and `project://` URI resolves to an immutable SHA-512 dige
 Run the zero-dependency Node 22+ test suites, `b8g-web-doc` link audit, `holo-ci@v1` guards, and fixed-point proof directly from TypeScript source:
 
 ```bash
-node --test pins/holo-overrides.test.mts bootstrap/selfhost-fixedpoint.test.mts scripts/gravity-pin-dedup-telemetry.test.mts scripts/v11-scope-tags.test.mts scripts/v11-tree-overrides.test.mts
+node --test pins/holo-overrides.test.mts bootstrap/selfhost-fixedpoint.test.mts scripts/gravity-pin-dedup-telemetry.test.mts scripts/v11-scope-tags.test.mts scripts/v11-tree-overrides.test.mts scripts/cdp-network-audit.test.mts
 node pins/holo-overrides.mts
 node bootstrap/selfhost-fixedpoint.mts
+node scripts/cdp-network-audit.mts --suite all --check-links
 holo-ci verify --cwd .
 ```
 

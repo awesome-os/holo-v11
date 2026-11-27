@@ -1,0 +1,56 @@
+name: CDP Network Audit
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - "Deploy GitHub Pages"
+    types:
+      - completed
+
+permissions:
+  contents: read
+
+concurrency:
+  group: '${{ github.workflow }}-${{ github.ref }}'
+  cancel-in-progress: true
+
+jobs:
+  cdp-network-audit:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout awesome-os/holo-v11
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js 26
+        uses: actions/setup-node@v7
+        with:
+          node-version: '26'
+
+      - name: Run Chrome CDP network & link audit
+        run: |
+          node scripts/cdp-network-audit.mts --suite all --check-links --json-out cdp-audit-report.json
+
+      - name: Write CDP Audit Summary
+        if: always() && hashFiles('cdp-audit-report.json') != ''
+        run: |
+          node --input-type=module -e '
+            import { readFileSync, appendFileSync } from "node:fs";
+            const r = JSON.parse(readFileSync("cdp-audit-report.json", "utf8"));
+            const s = r.summary;
+            const out = process.env.GITHUB_STEP_SUMMARY;
+            if (!out) process.exit(0);
+            appendFileSync(out, `## CDP Network Audit (${r.browserVersion})\n\nPages: ${s.totalPages} | Requests: ${s.totalRequests} | Active HTTP>=400: ${s.activeResponseErrors} | LoadFailed: ${s.totalLoadingFailed} | RuntimeExc: ${s.totalRuntimeExceptions} | LogErr: ${s.totalLogErrors} | BrokenLinks: ${s.brokenLinks}/${s.checkedLinks}\n`);
+          '
+
+      - name: Upload CDP audit report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: cdp-audit-report
+          path: cdp-audit-report.json
+          retention-days: 7
