@@ -5,7 +5,9 @@
     "bootstrap/selfhost-fixedpoint.mts",
     "pins/holo-overrides.mts",
     "scripts/holo-cas-dedup.mts",
+    "scripts/b8p-forward-bundle.mts",
     "scripts/pack-v11-shards.mts",
+    "scripts/export-static-cas-pages.mts",
     "scripts/gravity-pin-dedup-telemetry.mts",
     "scripts/collect-oversight-telemetry.mts"
   ],

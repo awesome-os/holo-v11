@@ -15,6 +15,7 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { computeForwardBundleHash } from './b8p-forward-bundle.mts';
 
 export const CORE_ACTIVE_REPOS = [
   'awesome-os',
@@ -39,6 +40,7 @@ export interface CasManifestEntryLike {
   readonly target?: string;
   readonly sha512?: string;
   readonly size?: number;
+  readonly receiptKind?: string;
 }
 
 export interface UpstreamLibLike {
@@ -107,6 +109,12 @@ export interface PinningTelemetry {
   readonly maxVersionLock: MaxVersionLockLike['summary'] | null;
 }
 
+export interface MaterializationReceiptKinds {
+  readonly compiledBinaries: number;
+  readonly shardReceipts: number;
+  readonly byKind?: Readonly<Record<string, number>>;
+}
+
 export interface MaterializationTelemetry {
   readonly totalTracked: number;
   readonly realCompiledCount: number;
@@ -114,6 +122,8 @@ export interface MaterializationTelemetry {
   readonly realMaterializationPct: number;
   readonly realCompiledLibs: readonly string[];
   readonly virtualPinOnlyLibs: readonly string[];
+  readonly receiptKinds?: MaterializationReceiptKinds;
+  readonly casForwardHash?: string;
 }
 
 export interface DedupTelemetry {
@@ -327,9 +337,13 @@ export const LIB_BINARY_STEM_ALIASES: Readonly<Record<string, readonly string[]>
   php: ['php', 'libphp', 'php-wasi', 'php-cgi'],
   ruby: ['ruby', 'libruby', 'ruby-wasi', 'ruby-wasm'],
   'libjpeg-turbo': ['libjpeg-turbo', 'jpeg', 'libjpeg', 'turbojpeg', 'libturbojpeg'],
-  libsdl3: ['libsdl3', 'sdl3'],
-  icu4c: ['icu4c', 'icu', 'icudata', 'icuuc', 'icui18n'],
+  libsdl3: ['libsdl3', 'libSDL3', 'sdl3'],
+  icu4c: ['icu4c', 'libicuuc', 'libicui18n', 'icu', 'icudata', 'icuuc', 'icui18n'],
   'vulkan-loader': ['vulkan-loader', 'vulkan', 'libvulkan'],
+  'vulkan-headers': ['vulkan-headers', 'libvulkan_headers', 'vulkan_headers'],
+  'spirv-headers': ['spirv-headers', 'libspirv_headers', 'spirv_headers'],
+  'spirv-tools': ['spirv-tools', 'libSPIRV-Tools', 'libspirv-tools', 'spirv_tools'],
+  glslang: ['glslang', 'libglslang'],
   libxml2: ['libxml2', 'xml2'],
   libxslt: ['libxslt', 'xslt'],
   pixman: ['pixman', 'libpixman'],
@@ -346,6 +360,23 @@ export const LIB_BINARY_STEM_ALIASES: Readonly<Record<string, readonly string[]>
   curl: ['curl', 'libcurl'],
   openssl: ['openssl', 'libssl', 'libcrypto'],
   limine: ['limine'],
+  cccl: ['cccl', 'libcccl'],
+  cutlass: ['cutlass', 'libcutlass'],
+  dav1d: ['dav1d', 'libdav1d'],
+  librdkafka: ['librdkafka', 'rdkafka'],
+  re2: ['re2', 'libre2'],
+  ffmpeg: ['ffmpeg', 'libavutil', 'libavcodec', 'libavformat', 'libswscale'],
+  meson: ['meson'],
+  protobuf: ['protobuf', 'libprotobuf'],
+  vips: ['vips', 'libvips'],
+  openblas: ['openblas', 'libopenblas'],
+  onednn: ['onednn', 'libonednn', 'libdnnl', 'dnnl'],
+  cmake: ['cmake', 'libcmake'],
+  nccl: ['nccl', 'libnccl'],
+  rocm: ['rocm', 'librocm'],
+  triton: ['triton', 'libtriton'],
+  'flash-attention': ['flash-attention', 'libflash_attention', 'flash_attention'],
+  'xdna-driver': ['xdna-driver', 'libxdna_driver', 'xdna_driver'],
 };
 
 export function isCanonicalShardReceipt(filename: string): boolean {
@@ -380,11 +411,33 @@ export function computeMaterializationMetrics(
   lockfileEntries: readonly CasManifestEntryLike[],
 ): MaterializationTelemetry {
   const compiledStems = new Set<string>();
+  let compiledBinaries = 0;
+  let shardReceipts = 0;
+  const byKind: Record<string, number> = {};
+  const hashableEntries: Array<{ readonly path: string; readonly bytes: number; readonly sha512: string }> = [];
+
   for (const entry of lockfileEntries) {
     const filename = String(entry.filename ?? '');
-    if (!isRealCompiledBinaryAsset(filename) && !isCanonicalShardReceipt(filename)) continue;
+    if (typeof entry.sha512 === 'string' && entry.sha512.length > 0) {
+      hashableEntries.push({
+        path: String(entry.id ?? filename ?? entry.sha512),
+        bytes: typeof entry.size === 'number' && Number.isFinite(entry.size) ? Math.max(0, Math.trunc(entry.size)) : 0,
+        sha512: entry.sha512,
+      });
+    }
+
+    const isBin = isRealCompiledBinaryAsset(filename);
+    const isRcpt = isCanonicalShardReceipt(filename);
+    if (!isBin && !isRcpt) continue;
+    if (isBin) compiledBinaries++;
+    if (isRcpt) shardReceipts++;
+    if (typeof entry.receiptKind === 'string' && entry.receiptKind.trim().length > 0) {
+      const k = entry.receiptKind.trim().toLowerCase();
+      byKind[k] = (byKind[k] ?? 0) + 1;
+    }
+
     const stem = extractCompiledBinaryStem(filename);
-    if (stem) compiledStems.add(stem);
+    if (stem) compiledStems.add(stem.toLowerCase());
   }
 
   const libs = tracker.libraries ?? [];
@@ -406,7 +459,7 @@ export function computeMaterializationMetrics(
         pkgLower,
         pkgLower.startsWith('lib') ? pkgLower.slice(3) : `lib${pkgLower}`,
       ];
-      matched = aliases.some((cand) => compiledStems.has(cand));
+      matched = aliases.some((cand) => compiledStems.has(cand.toLowerCase()));
     }
 
     if (matched) {
@@ -422,6 +475,13 @@ export function computeMaterializationMetrics(
   const realMaterializationPct =
     totalTracked > 0 ? Number(((realCompiledCount / totalTracked) * 100).toFixed(2)) : 0;
 
+  const receiptKinds: MaterializationReceiptKinds = {
+    compiledBinaries,
+    shardReceipts,
+    ...(Object.keys(byKind).length > 0 ? { byKind } : {}),
+  };
+  const casForwardHash = hashableEntries.length > 0 ? computeForwardBundleHash(hashableEntries) : undefined;
+
   return {
     totalTracked,
     realCompiledCount,
@@ -429,6 +489,8 @@ export function computeMaterializationMetrics(
     realMaterializationPct,
     realCompiledLibs,
     virtualPinOnlyLibs,
+    receiptKinds,
+    ...(casForwardHash ? { casForwardHash } : {}),
   };
 }
 

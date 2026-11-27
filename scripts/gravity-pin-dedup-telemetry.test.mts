@@ -453,3 +453,78 @@ test('computeMaterializationMetrics resolves all Tier-3 and Tier-4 libraries via
   assert.equal(run.realCompiledCount, tier3And4.length);
   assert.equal(run.virtualPinOnlyCount, 1);
 });
+
+test('computeMaterializationMetrics resolves all Tier-5 and Tier-6 stem aliases case-insensitively with receiptKinds & casForwardHash', () => {
+  const tier5And6 = [
+    'vulkan-headers',
+    'spirv-headers',
+    'cccl',
+    'cutlass',
+    'dav1d',
+    'librdkafka',
+    'libsdl3',
+    're2',
+    'spirv-tools',
+    'glslang',
+    'ffmpeg',
+    'meson',
+    'protobuf',
+    'icu4c',
+    'vips',
+    'openblas',
+    'onednn',
+    'cmake',
+    'nccl',
+    'rocm',
+    'triton',
+    'flash-attention',
+    'xdna-driver',
+  ] as const;
+
+  for (const pkg of tier5And6) {
+    assert.ok(Array.isArray(LIB_BINARY_STEM_ALIASES[pkg]) && LIB_BINARY_STEM_ALIASES[pkg].length >= 1, `Missing alias for ${pkg}`);
+  }
+
+  const tracker = {
+    totalTracked: tier5And6.length,
+    libraries: tier5And6.map((pkg) => ({ pkg })),
+  };
+
+  const assets = [
+    { id: 'u/vulkan_headers', filename: 'libvulkan_headers-receipt.json', sha512: '01'.repeat(64), size: 128, receiptKind: 'header-pack' },
+    { id: 'u/spirv_headers', filename: 'libspirv_headers-receipt.json', sha512: '02'.repeat(64), size: 128, receiptKind: 'header-pack' },
+    { id: 'u/cccl', filename: 'libcccl-receipt.json', sha512: '03'.repeat(64), size: 128, receiptKind: 'header-pack' },
+    { id: 'u/cutlass', filename: 'libcutlass-receipt.json', sha512: '04'.repeat(64), size: 128, receiptKind: 'header-pack' },
+    { id: 'u/dav1d', filename: 'libdav1d-linux-x64.so', sha512: '05'.repeat(64), size: 4096 },
+    { id: 'u/rdkafka', filename: 'rdkafka-win64.dll', sha512: '06'.repeat(64), size: 4096 },
+    { id: 'u/libsdl3', filename: 'libSDL3-win64.dll', sha512: '07'.repeat(64), size: 8192 },
+    { id: 'u/re2', filename: 'libre2-linux-x64.so', sha512: '08'.repeat(64), size: 4096 },
+    { id: 'u/spirv-tools', filename: 'libSPIRV-Tools-receipt.json', sha512: '09'.repeat(64), size: 256, receiptKind: 'compiled-shard' },
+    { id: 'u/glslang', filename: 'libglslang-linux-x64.so', sha512: '0a'.repeat(64), size: 4096 },
+    { id: 'u/ffmpeg', filename: 'libavcodec-linux-x64.so', sha512: '0b'.repeat(64), size: 16384 },
+    { id: 'u/meson', filename: 'meson-receipt.json', sha512: '0c'.repeat(64), size: 256, receiptKind: 'tool-shard' },
+    { id: 'u/protobuf', filename: 'libprotobuf-linux-x64.so', sha512: '0d'.repeat(64), size: 8192 },
+    { id: 'u/icu4c', filename: 'libicuuc-win64.dll', sha512: '0e'.repeat(64), size: 8192 },
+    { id: 'u/vips', filename: 'libvips-linux-x64.so', sha512: '0f'.repeat(64), size: 8192 },
+    { id: 'u/openblas', filename: 'libopenblas-linux-x64.so', sha512: '10'.repeat(64), size: 8192 },
+    { id: 'u/onednn', filename: 'libdnnl-linux-x64.so', sha512: '11'.repeat(64), size: 8192 },
+    { id: 'u/cmake', filename: 'cmake-receipt.json', sha512: '12'.repeat(64), size: 256, receiptKind: 'tool-shard' },
+    { id: 'u/nccl', filename: 'libnccl-receipt.json', sha512: '13'.repeat(64), size: 256, receiptKind: 'gpu-bridge' },
+    { id: 'u/rocm', filename: 'librocm-receipt.json', sha512: '14'.repeat(64), size: 256, receiptKind: 'gpu-bridge' },
+    { id: 'u/triton', filename: 'libtriton-receipt.json', sha512: '15'.repeat(64), size: 256, receiptKind: 'gpu-bridge' },
+    { id: 'u/flash-attention', filename: 'libflash_attention-receipt.json', sha512: '16'.repeat(64), size: 256, receiptKind: 'gpu-bridge' },
+    { id: 'u/xdna-driver', filename: 'libxdna_driver-receipt.json', sha512: '17'.repeat(64), size: 256, receiptKind: 'npu-bridge' },
+  ];
+
+  const run = computeMaterializationMetrics(tracker, assets);
+  assert.deepEqual(run.realCompiledLibs, [...tier5And6]);
+  assert.deepEqual(run.virtualPinOnlyLibs, []);
+  assert.equal(run.realCompiledCount, tier5And6.length);
+  assert.equal(run.realMaterializationPct, 100);
+  assert.equal(run.receiptKinds?.compiledBinaries, 11);
+  assert.equal(run.receiptKinds?.shardReceipts, 12);
+  assert.equal(run.receiptKinds?.byKind?.['header-pack'], 4);
+  assert.equal(run.receiptKinds?.byKind?.['gpu-bridge'], 4);
+  assert.equal(typeof run.casForwardHash, 'string');
+  assert.equal(run.casForwardHash?.length, 128);
+});

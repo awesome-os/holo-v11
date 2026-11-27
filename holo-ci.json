@@ -4,6 +4,8 @@
   "kind": "control-plane",
   "tests": [
     "node --test scripts/gravity-pin-dedup-telemetry.test.mts",
+    "node --test scripts/b8p-forward-bundle.test.mts",
+    "node --test scripts/export-static-cas-pages.test.mts",
     "node --test pins/holo-overrides.test.mts"
   ],
   "docs": [
@@ -12,6 +14,7 @@
   "guards": {
     "zeroGhost": true,
     "zeroCasV1": true,
+    "noWorkflowBloat": true,
     "spdxLicense": true,
     "gitattributes": true,
     "codeowners": true
