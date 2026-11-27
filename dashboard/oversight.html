@@ -33,36 +33,56 @@
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
   header {
-    position: sticky; top: 0; z-index: 10; background: var(--surface); border-bottom: 1px solid var(--line);
-    padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    position: sticky; top: 0; z-index: 20; background: var(--surface); border-bottom: 1px solid var(--line);
+    padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; gap: 8px 14px; flex-wrap: wrap;
   }
-  .brand { font-weight: 800; font-size: 16px; display: flex; align-items: center; gap: 10px; }
-  .logo { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); color: #051d1d; display: grid; place-items: center; font-size: 11px; font-weight: 900; }
-  .actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .brand { font-weight: 800; font-size: 15px; display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .logo { width: 28px; height: 28px; flex: 0 0 28px; border-radius: 8px; background: var(--accent); color: #051d1d; display: grid; place-items: center; font-size: 11px; font-weight: 900; }
+  .actions { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; min-width: 0; }
   button, .pill-link {
     background: var(--surface-2); color: var(--ink); border: 1px solid var(--line); border-radius: 9px;
-    padding: 6px 12px; font-size: 12.5px; font-weight: 600; cursor: pointer; font-family: inherit;
+    padding: 5px 10px; font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit; white-space: nowrap;
   }
   button:hover, .pill-link:hover { border-color: var(--accent); text-decoration: none; }
 
-  main { max-width: 1280px; margin: 0 auto; padding: 22px 20px 64px; }
+  @media (max-width: 1280px) {
+    header { padding: 10px 16px; }
+    .brand { font-size: 14px; }
+  }
+  @media (max-width: 1100px) {
+    header { position: static; padding: 12px 16px; }
+  }
+
+  main { max-width: 1280px; margin: 0 auto; padding: 20px 20px 64px; }
+
+  .gate-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; align-items: center; }
+  .gate-pill {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
+    padding: 4px 11px; font-size: 11.5px; font-weight: 700; font-family: var(--mono);
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+  }
+  .gate-pill.ok { border-color: rgba(63,185,80,.4); background: var(--ok-tint); color: var(--ok); }
+  .gate-pill.accent { border-color: rgba(57,197,207,.4); background: var(--accent-tint); color: var(--accent); }
+  .gate-pill.info { border-color: rgba(88,166,255,.4); background: var(--info-tint); color: var(--info); }
 
   .hero {
     background: linear-gradient(135deg, var(--accent-tint), var(--info-tint));
     border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; margin-bottom: 18px;
     display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
   }
-  .hero h1 { margin: 0 0 4px; font-size: 18px; }
+  .hero > div { min-width: 0; }
+  .hero h1 { margin: 0 0 4px; font-size: 18px; line-height: 1.3; }
   .hero p { margin: 0; color: var(--muted); font-size: 13px; }
   .cmd-pill {
     background: var(--bg); border: 1px solid var(--line); border-radius: 10px;
     padding: 8px 12px; font-family: var(--mono); font-size: 12px; display: flex; gap: 10px; align-items: center;
+    max-width: 100%; overflow-x: auto; min-width: 0;
   }
 
-  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr)); gap: 12px; margin-bottom: 20px; }
-  .kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 13px; padding: 14px 16px; }
-  .kpi .v { font-size: 21px; font-weight: 800; font-variant-numeric: tabular-nums; }
-  .kpi .k { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr)); gap: 12px; margin-bottom: 18px; }
+  .kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 13px; padding: 14px 16px; min-width: 0; }
+  .kpi .v { font-size: clamp(18px, 1.6vw, 21px); font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1.25; overflow-wrap: break-word; }
+  .kpi .k { font-size: 12px; color: var(--muted); margin-top: 3px; line-height: 1.35; overflow-wrap: break-word; }
 
   .chip-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
   .lib-chip {
@@ -74,8 +94,9 @@
   .grid2 { display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 16px; align-items: start; }
   @media (max-width: 960px) { .grid2 { grid-template-columns: 1fr; } }
 
-  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin-bottom: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin-bottom: 16px; min-width: 0; }
   .card h2 { margin: 0 0 12px; font-size: 15px; display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .table-wrap { width: 100%; overflow-x: auto; }
 
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line-soft); }
@@ -99,6 +120,7 @@
   .gravity-stat .gk { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
   .lat-row { display: grid; grid-template-columns: 165px 1fr 185px 72px; gap: 10px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--line-soft); font-size: 12.5px; }
   .lat-row:last-child { border-bottom: 0; }
+  @media (max-width: 720px) { .lat-row { grid-template-columns: 1fr 1fr; } }
   .lat-bars { display: flex; flex-direction: column; gap: 3px; }
   .lat-track { height: 5px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
   .filter-input {
@@ -122,10 +144,17 @@
 </header>
 
 <main>
+  <div class="gate-strip" id="gate-strip">
+    <span class="gate-pill ok" id="gate-boundary">Boundary: 13/13 (100/100)</span>
+    <span class="gate-pill ok" id="gate-openssf">OpenSSF: 12/12</span>
+    <span class="gate-pill accent" id="gate-oci">OCI: 9 Base + 16 Stacks</span>
+    <span class="gate-pill info" id="gate-pages">GitHub Pages OSS</span>
+  </div>
+
   <section class="hero">
     <div>
       <h1>Planetary Warm <code>Holo v11</code> CAS &amp; Rolling Upstream Radar</h1>
-      <p id="hero-sub">5,070 deduplicated OS packages · 56 live upstream C/C++/Rust/GPU libraries polled continuously · Ed25519 + SHA-512 verified.</p>
+      <p id="hero-sub"><span id="hero-v11-pkgs">—</span> deduplicated OS packages · <span id="hero-tracked-libs">—</span> live upstream C/C++/Rust/GPU libraries (<span id="hero-mat-summary">—</span> real compiled) · <span id="hero-fleet-health">—</span> runners GREEN · Ed25519 + SHA-512 verified.</p>
     </div>
     <div class="cmd-pill">
       <span id="warm-cmd">curl -fsSL https://raw.githubusercontent.com/awesome-os/installer/main/start-here.sh | sh</span>
@@ -133,7 +162,14 @@
     </div>
   </section>
 
-  <section class="kpis" id="kpis"></section>
+  <section class="kpis" id="kpis">
+    <div class="kpi"><div class="v" id="kpi-upstreams-val" style="color:var(--ok);">—</div><div class="k" id="kpi-upstreams-sub">Upstream Libs at Max</div></div>
+    <div class="kpi"><div class="v" id="kpi-mat-val" style="color:var(--info);">—</div><div class="k" id="kpi-mat-sub">Real Compiled CAS Binaries</div></div>
+    <div class="kpi"><div class="v" id="kpi-cas-val" style="color:var(--accent);">—</div><div class="k" id="kpi-cas-sub">Warm Planetary v11 CAS</div></div>
+    <div class="kpi"><div class="v" id="kpi-runners-val" style="color:var(--ok);">—</div><div class="k" id="kpi-runners-sub">Runner Fleet Passing Latest</div></div>
+    <div class="kpi"><div class="v" id="kpi-canary-val">—</div><div class="k" id="kpi-canary-sub">Sectium Canary &amp; Parity</div></div>
+    <div class="kpi"><div class="v" id="kpi-universe-val">—</div><div class="k" id="kpi-universe-sub">v11 Package Universe</div></div>
+  </section>
 
   <div class="chip-strip" id="flagship-chips"></div>
 
@@ -143,7 +179,7 @@
       <span style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
         <span class="badge ok" id="gravity-dup-v8">dup_v8 = 0 B</span>
         <span class="badge accent" id="gravity-rate-headroom">API rate: —</span>
-        <span class="badge info" id="gravity-damping-badge">damping 0.65</span>
+        <span class="badge info" id="gravity-damping-badge">damping —</span>
       </span>
     </h2>
     <div class="gravity-grid" id="gravity-kpis"></div>
@@ -156,29 +192,33 @@
       <section class="card">
         <h2>
           <span id="upstreams-heading">Live Upstream Library Update Telemetry</span>
-          <span style="display:flex;gap:8px;align-items:center;">
-            <input class="filter-input" id="lib-filter" type="search" placeholder="Filter 56 libraries…" />
-            <span class="badge ok" id="upstream-summary">100% AT MAX</span>
+          <span style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <input class="filter-input" id="lib-filter" type="search" placeholder="Filter libraries…" />
+            <span class="badge ok" id="upstream-summary">—</span>
           </span>
         </h2>
-        <table>
-          <thead><tr><th>Library</th><th>AwesomeOS v11 Pin</th><th>Upstream Latest</th><th>Status</th></tr></thead>
-          <tbody id="upstreams-tbody"></tbody>
-        </table>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Library</th><th>AwesomeOS v11 Pin</th><th>Upstream Latest</th><th>Status</th></tr></thead>
+            <tbody id="upstreams-tbody"></tbody>
+          </table>
+        </div>
       </section>
     </div>
 
     <div>
       <section class="card">
         <h2><span id="runners-heading">GitHub Actions Runners (Core Monorepo &amp; Stack)</span><span class="badge accent" id="runner-summary">live</span></h2>
-        <table>
-          <thead><tr><th>Repository</th><th>Workflow</th><th>Status</th><th>Updated</th></tr></thead>
-          <tbody id="runners-tbody"></tbody>
-        </table>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Repository</th><th>Workflow</th><th>Status</th><th>Updated</th></tr></thead>
+            <tbody id="runners-tbody"></tbody>
+          </table>
+        </div>
       </section>
 
       <section class="card">
-        <h2><span id="bb-heading">22 Big Boys × v11 CAS Deduplication</span><span class="badge ok" id="bb-saved">live</span></h2>
+        <h2><span id="bb-heading">Big Boys × v11 CAS Deduplication</span><span class="badge ok" id="bb-saved">live</span></h2>
         <div id="bigboys-list"></div>
       </section>
     </div>
@@ -232,8 +272,25 @@
     const pin = g.pinning || {};
     const mat = g.materialization || null;
     const damper = g.gravityDamper || {};
+    const fleet = damper.runnerFleet || {};
     const dupV8 = dedup.dupV8Bytes ?? 0;
     const ghosts = dedup.b8gGhostRemnants ?? 0;
+
+    const totalTracked = mat?.totalTracked ?? pin.trackedUpstreamLibs ?? 0;
+    const realCompiled = mat?.realCompiledCount ?? 0;
+    const realMatPct = mat?.realMaterializationPct ?? 0;
+    const passingLatest = fleet.passingLatestRepos ?? 0;
+    const reposMonitored = fleet.reposMonitored ?? (passingLatest + (fleet.failingLatestRepos ?? 0));
+    const completedLatest = fleet.completedLatestRepos ?? (passingLatest + (fleet.failingLatestRepos ?? 0));
+    const headHealthPct = damper.latestFleetPassRatePct ?? (completedLatest > 0 ? Number(((passingLatest / completedLatest) * 100).toFixed(1)) : 0);
+    const headHealthColor = headHealthPct >= 100 ? 'var(--ok)' : headHealthPct >= 80 ? 'var(--warn)' : 'var(--err)';
+
+    document.getElementById('hero-v11-pkgs').textContent =
+      pin.v11UniversePackages != null ? Number(pin.v11UniversePackages).toLocaleString() : '—';
+    document.getElementById('hero-tracked-libs').textContent = totalTracked || '—';
+    document.getElementById('hero-mat-summary').textContent =
+      mat ? `${realCompiled}/${totalTracked} (${realMatPct}%)` : '—';
+    document.getElementById('hero-fleet-health').textContent = `${passingLatest}/${reposMonitored}`;
 
     document.getElementById('gravity-dup-v8').textContent = `dup_v8 = ${dupV8} B · ghost = ${ghosts}`;
     document.getElementById('gravity-rate-headroom').textContent =
@@ -241,29 +298,23 @@
     document.getElementById('gravity-damping-badge').textContent =
       `damping ${damper.dampingFactor ?? 0.65} · p50 ${damper.p50DurationSec ?? 0}s · p95 ${damper.p95DurationSec ?? 0}s`;
 
-    const passingLatest = damper.runnerFleet?.passingLatestRepos ?? 0;
-    const completedLatest = damper.runnerFleet?.completedLatestRepos ?? (passingLatest + (damper.runnerFleet?.failingLatestRepos ?? 0));
-    const headHealthPct = damper.latestFleetPassRatePct ?? (completedLatest > 0 ? Number(((passingLatest / completedLatest) * 100).toFixed(1)) : 0);
-    const headHealthColor = headHealthPct >= 100 ? 'var(--ok)' : headHealthPct >= 80 ? 'var(--warn)' : 'var(--err)';
-
     const matHtml = mat
-      ? `<div class="gravity-stat"><div class="gv" style="color:var(--info);">${mat.realCompiledCount ?? 0} / ${mat.totalTracked ?? 0} (${mat.realMaterializationPct ?? 0}%)</div><div class="gk">Real Compiled CAS Binaries (${mat.virtualPinOnlyCount ?? 0} virtual-pin only)</div></div>`
+      ? `<div class="gravity-stat"><div class="gv" style="color:var(--info);">${realCompiled} / ${totalTracked} (${realMatPct}%)</div><div class="gk">Real Compiled CAS Binaries (${mat.virtualPinOnlyCount ?? 0} virtual-pin only)</div></div>`
       : '';
 
     kpisEl.innerHTML = `
       <div class="gravity-stat"><div class="gv" style="color:var(--ok);">${dedup.savedMb ?? 0} MB (${dedup.dedupRatioPct ?? 0}%)</div><div class="gk">SHA-512 CAS Dedup Savings (${dedup.dedupedBlobs ?? 0} deduped blobs)</div></div>
       <div class="gravity-stat"><div class="gv">${dedup.uniqueSha512Blobs ?? 0} / ${dedup.totalAssets ?? 0}</div><div class="gk">Unique SHA-512 Blobs / Total Assets</div></div>
-      <div class="gravity-stat"><div class="gv" style="color:var(--accent);">${pin.atMaxCount ?? 0} / ${pin.trackedUpstreamLibs ?? 0}</div><div class="gk">Pinned Libs at Max (${pin.aheadOfChromeCount ?? 0} ahead-of-Chrome)</div></div>
+      <div class="gravity-stat"><div class="gv" style="color:var(--accent);">${pin.atMaxCount ?? 0} / ${totalTracked}</div><div class="gk">Pinned Libs at Max (${pin.aheadOfChromeCount ?? 0} ahead-of-Chrome)</div></div>
       ${matHtml}
       <div class="gravity-stat"><div class="gv" style="color:${headHealthColor};">${headHealthPct}%</div><div class="gk">Head Health (${passingLatest}/${completedLatest} GREEN)</div></div>
-      <div class="gravity-stat"><div class="gv" style="color:var(--ok);">${damper.overallPassRatePct ?? 0}%</div><div class="gk">Rolling Fleet Pass Rate (${damper.runnerFleet?.totalSampledRuns ?? 0} sampled runs)</div></div>
+      <div class="gravity-stat"><div class="gv" style="color:var(--ok);">${damper.overallPassRatePct ?? 0}%</div><div class="gk">Rolling Fleet Pass Rate (${fleet.totalSampledRuns ?? 0} sampled runs)</div></div>
     `;
 
     const drifted = Array.isArray(pin.driftedLibs) ? pin.driftedLibs : [];
     const atMax = pin.atMaxCount ?? 0;
-    const tracked = pin.trackedUpstreamLibs ?? 0;
     driftEl.innerHTML = drifted.length === 0
-      ? `<span class="badge ok">0 drifted · ${atMax}/${tracked} at max</span> All tracked upstream libraries match or exceed pinned Holo v11 lock.`
+      ? `<span class="badge ok">0 drifted · ${atMax}/${totalTracked} at max</span> All tracked upstream libraries match or exceed pinned Holo v11 lock.`
       : `<span class="badge warn">${drifted.length} drifted</span> ` + drifted.map((x) => `<code>${x.pkg}: ${x.pinned || '?'} → ${x.upstream}</code>`).join(' · ');
 
     const rows = Array.isArray(damper.perRepoTelemetry) ? damper.perRepoTelemetry : [];
@@ -292,19 +343,51 @@
     const gravity = await fetchFirstOk(['./gravity-telemetry.json', '../reports/gravity-telemetry.json']) || d.gravityTelemetry;
     renderGravitySection(gravity);
 
-    const cas = d.casGlobal || { uniqueBlobs: 427, totalMb: 1220, totalRepos: 69 };
+    const pin = gravity?.pinning || {};
+    const mat = gravity?.materialization || {};
+    const dedup = gravity?.dedup || {};
+    const fleet = gravity?.gravityDamper?.runnerFleet || {};
+    const cas = d.casGlobal || {
+      uniqueBlobs: dedup.uniqueSha512Blobs ?? 0,
+      totalMb: dedup.rawTotalMb ?? 0,
+      totalRepos: 0,
+    };
     const lbProbes = Array.isArray(d.ladybird?.featureMatrix) ? d.ladybird.featureMatrix : [];
     const lbGreen = lbProbes.filter((f) => f.status === 'implemented-or-partial').length;
 
+    const totalTracked = mat.totalTracked ?? pin.trackedUpstreamLibs ?? d.upstreams.length;
+    const atMaxCount = pin.atMaxCount ?? d.upstreams.length;
+    const driftedCount = Array.isArray(pin.driftedLibs) ? pin.driftedLibs.length : 0;
+    const realCompiled = mat.realCompiledCount ?? 0;
+    const realMatPct = mat.realMaterializationPct ?? 0;
+    const virtualPinCount = mat.virtualPinOnlyCount ?? Math.max(0, totalTracked - realCompiled);
+    const passingLatest = fleet.passingLatestRepos ?? d.summary.passingRuns;
+    const reposMonitored = fleet.reposMonitored ?? d.summary.totalReposMonitored;
+    const activeRepos = fleet.activeRepos ?? d.summary.activeRuns ?? 0;
+    const failingRepos = fleet.failingLatestRepos ?? d.summary.failingRuns ?? 0;
+    const v11Packages = pin.v11UniversePackages;
+
     document.getElementById('gen-at').textContent = `Synced: ${d.generatedAt.replace('T', ' ').slice(0, 19)} UTC`;
-    document.getElementById('kpis').innerHTML = `
-      <div class="kpi"><div class="v" style="color:var(--ok);">${d.upstreams.length} / ${d.upstreams.length}</div><div class="k">Upstream Libs at Max (0 Stale)</div></div>
-      <div class="kpi"><div class="v" style="color:var(--accent);">${cas.uniqueBlobs} blobs</div><div class="k">Warm Planetary v11 CAS (${cas.totalMb} MB · ${cas.totalRepos} repos)</div></div>
-      <div class="kpi"><div class="v" style="color:var(--ok);">${d.summary.passingRuns} / ${d.summary.totalReposMonitored}</div><div class="k">CI Passing (${d.summary.failingRuns} Fail)</div></div>
-      <div class="kpi"><div class="v">${d.chromiumCanary.version}</div><div class="k">Sectium Canary (M${d.chromiumCanary.milestone} · V8 ${d.chromiumCanary.v8Hash})</div></div>
-      <div class="kpi"><div class="v" style="color:var(--ok);">${lbGreen || 18} / ${lbProbes.length || 18}</div><div class="k">Ladybird Chrome Parity Probes</div></div>
-      <div class="kpi"><div class="v">5,070 pkgs</div><div class="k">${d.summary.standaloneDiskSavedMb.toLocaleString()} MB → 1 v11 Layer</div></div>
-    `;
+
+    document.getElementById('kpi-upstreams-val').textContent = `${atMaxCount} / ${totalTracked}`;
+    document.getElementById('kpi-upstreams-sub').textContent = `Upstream Libs at Max (${driftedCount} Stale)`;
+
+    document.getElementById('kpi-mat-val').textContent = `${realCompiled} / ${totalTracked}`;
+    document.getElementById('kpi-mat-sub').textContent = `${realMatPct}% real compiled · ${virtualPinCount} pinned`;
+
+    document.getElementById('kpi-cas-val').textContent = `${cas.uniqueBlobs} blobs`;
+    document.getElementById('kpi-cas-sub').textContent = `Warm Planetary v11 CAS (${cas.totalMb} MB · ${cas.totalRepos} repos)`;
+
+    document.getElementById('kpi-runners-val').textContent = `${passingLatest} / ${reposMonitored}`;
+    document.getElementById('kpi-runners-sub').textContent = `Runner Fleet Passing (${activeRepos} active · ${failingRepos} fail)`;
+
+    document.getElementById('kpi-canary-val').textContent = d.chromiumCanary.version;
+    document.getElementById('kpi-canary-sub').textContent =
+      `Sectium Canary (M${d.chromiumCanary.milestone}${lbProbes.length ? ` · Ladybird ${lbGreen}/${lbProbes.length}` : ''})`;
+
+    document.getElementById('kpi-universe-val').textContent =
+      v11Packages != null ? `${Number(v11Packages).toLocaleString()} pkgs` : '—';
+    document.getElementById('kpi-universe-sub').textContent = `${d.summary.standaloneDiskSavedMb.toLocaleString()} MB → 1 v11 Layer`;
 
     const featured = ['linux', 'limine', 'openssl', 'harfbuzz', 'zstd', 'mimalloc', 'zlib-ng', 'libuv', 'vulkan-headers', 'rocm'];
     const featuredRows = d.upstreams.filter((u) => featured.includes(u.pkg));
@@ -313,13 +396,15 @@
     ).join('');
 
     allUpstreams = d.upstreams;
-    document.getElementById('upstreams-heading').textContent = `Live Upstream Library Update Telemetry (${d.upstreams.length} Core Libs)`;
+    document.getElementById('upstreams-heading').textContent = `Live Upstream Library Update Telemetry (${totalTracked} Core Libs)`;
+    document.getElementById('lib-filter').placeholder = `Filter ${allUpstreams.length} libraries…`;
+    document.getElementById('upstream-summary').textContent = `${atMaxCount}/${totalTracked} AT MAX`;
     renderUpstreams(document.getElementById('lib-filter').value);
 
     document.getElementById('runners-heading').textContent = `GitHub Actions Runners (${d.runners.length} Core Repos)`;
     document.getElementById('bb-heading').textContent = `${d.bigBoys.length} Big Boys × v11 CAS Deduplication`;
     document.getElementById('bb-saved').textContent = `${d.summary.standaloneDiskSavedMb.toLocaleString()} MB → 1 layer`;
-    document.getElementById('runner-summary').textContent = `${d.summary.passingRuns} pass · ${d.summary.activeRuns} active · ${d.summary.failingRuns} fail`;
+    document.getElementById('runner-summary').textContent = `${passingLatest}/${reposMonitored} pass · ${activeRepos} active · ${failingRepos} fail`;
 
     document.getElementById('runners-tbody').innerHTML = d.runners.map((r) => {
       const cls = r.status === 'in_progress' || r.status === 'queued'

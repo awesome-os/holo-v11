@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+  workflow_run:
+    workflows:
+      - "Sync Global Holo v11 Registry"
+    types:
+      - completed
   workflow_dispatch: {}
 
 permissions:
@@ -17,6 +22,7 @@ concurrency:
 
 jobs:
   deploy:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -24,6 +30,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_run' && 'refs/heads/main' || github.sha }}
       - name: Stage _site with dashboard and live telemetry
         run: |
           rm -rf _site
@@ -44,6 +52,8 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: '_site'
+      - name: Wait for GitHub Pages artifact index propagation
+        run: sleep 8
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
