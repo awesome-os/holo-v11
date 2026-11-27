@@ -36,8 +36,13 @@ jobs:
       - name: Run Audit Stack Hub unit tests
         run: node --test scripts/audit-stack-hub.test.mts
 
-      - name: Evaluate Monotonic Continuous Ratification
-        run: node scripts/audit-stack-hub.mts --out-dir audit-stack --enforce-ratchet --json
+      - name: Evaluate & Sign Monotonic Continuous Ratification
+        env:
+          HOLO_RATIFY_ED25519_KEY: ${{ secrets.HOLO_RATIFY_ED25519_KEY }}
+        run: |
+          node scripts/audit-stack-hub.mts --out-dir audit-stack --enforce-ratchet --sign-key-env HOLO_RATIFY_ED25519_KEY --ephemeral-sign --public-key-out /tmp/holo-ratify-pub.pem --json
+          node scripts/audit-stack-hub.mts --verify-receipt audit-stack/ratification-receipt.json --public-key /tmp/holo-ratify-pub.pem --json
+          rm -f /tmp/holo-ratify-pub.pem
 
       - name: Checkout holo-ci runtime
         if: ${{ hashFiles('.holo-ci-runtime/holo-ci/cli.mts') == '' }}

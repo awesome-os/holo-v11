@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
+import { generateKeyPairSync } from 'node:crypto';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -18,6 +19,7 @@ import {
   DEFAULT_RATCHET_FLOORS,
   evaluateRatification,
   FAST_FAIL_GATE_SCHEMA,
+  findLastRatifiedPromoteRun,
   HOLO_CI_RECEIPT_SCHEMA,
   HOLO_CI_WF_HARDEN_SCHEMA,
   HOLO_FAILURE_TELEMETRY_SCHEMA,
@@ -27,6 +29,8 @@ import {
   RATIFICATION_RECEIPT_SCHEMA,
   REGRESSION_LEDGER_SCHEMA,
   runAuditStackHub,
+  signRatificationReceipt,
+  verifyRatificationReceipt,
 } from './audit-stack-hub.mts';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -651,5 +655,181 @@ describe('scripts/audit-stack-hub.mts — Monotonic Continuous Ratification & Te
     assert.ok(runsLines.length >= 1);
     const lastRun = JSON.parse(runsLines[runsLines.length - 1]!) as { schema: string };
     assert.equal(lastRun.schema, AUDIT_STACK_RUN_SCHEMA);
+  });
+
+  it('signs and verifies b8g.ratification-receipt.v1 with Ed25519 and rejects tampered receipts', () => {
+    const { publicKey, privateKey } = generateKeyPairSync('ed25519', {
+      publicKeyEncoding: { type: 'spki', format: 'pem' },
+      privateKeyEncoding: { type: 'pkcs8', format: 'pem' },
+    });
+    const otherPair = generateKeyPairSync('ed25519', {
+      publicKeyEncoding: { type: 'spki', format: 'pem' },
+      privateKeyEncoding: { type: 'pkcs8', format: 'pem' },
+    });
+
+    const clean = ingestAuditPayload(
+      {
+        schema: PROJECT_GEOMETRY_SCHEMA,
+        rating: { totalScore: 100 },
+        topology: { coreSccs: [], coreLayerInversionsCount: 0, httpIpcViolationUnits: [] },
+      },
+      'geom-100.json',
+      '2026-11-27T12:30:00.000Z',
+    );
+    const receipt = evaluateRatification(clean, null, undefined, '2026-11-27T12:30:00.000Z');
+    const signed = signRatificationReceipt(receipt, privateKey);
+
+    assert.ok(signed.signatureEd25519);
+    assert.match(signed.publicKeySha256 ?? '', /^[a-f0-9]{64}$/);
+    assert.match(signed.keyId ?? '', /^ed25519:[a-f0-9]{16}$/);
+    assert.equal(verifyRatificationReceipt(signed, publicKey), true);
+
+    // Wrong key rejected
+    assert.equal(verifyRatificationReceipt(signed, otherPair.publicKey), false);
+    // Tampered payload rejected
+    assert.equal(verifyRatificationReceipt({ ...signed, passedAudits: 999 }, publicKey), false);
+    assert.equal(
+      verifyRatificationReceipt({ ...signed, action: 'HOLD_AND_ROLLBACK_O1' }, publicKey),
+      false,
+    );
+    // Missing or tampered signature rejected
+    assert.equal(verifyRatificationReceipt(receipt, publicKey), false);
+    assert.equal(
+      verifyRatificationReceipt({ ...signed, signatureEd25519: 'AAAA' }, publicKey),
+      false,
+    );
+  });
+
+  it('supports CLI --sign-key-env, --ephemeral-sign, --public-key-out, and --verify-receipt', () => {
+    const tmp = makeTempDir('holo-ed25519-cli-');
+    try {
+      const outDir = path.join(tmp, 'audit-stack');
+      const pubOut = path.join(tmp, 'ratify-pub.pem');
+      const g100 = path.join(tmp, 'geom-100.json');
+      fs.writeFileSync(
+        g100,
+        JSON.stringify({
+          schema: PROJECT_GEOMETRY_SCHEMA,
+          rating: { totalScore: 100 },
+          topology: { coreSccs: [], coreLayerInversionsCount: 0, httpIpcViolationUnits: [] },
+        }),
+        'utf8',
+      );
+
+      // Ephemeral fallback when HOLO_TEST_RATIFY_KEY is unset
+      execFileSync(
+        process.execPath,
+        [
+          SCRIPT_PATH,
+          '--ingest',
+          g100,
+          '--out-dir',
+          outDir,
+          '--enforce-ratchet',
+          '--sign-key-env',
+          'HOLO_TEST_RATIFY_KEY_UNSET',
+          '--ephemeral-sign',
+          '--public-key-out',
+          pubOut,
+          '--json',
+        ],
+        { encoding: 'utf8' },
+      );
+
+      const receiptPath = path.join(outDir, 'ratification-receipt.json');
+      const verifyOut = execFileSync(
+        process.execPath,
+        [SCRIPT_PATH, '--verify-receipt', receiptPath, '--public-key', pubOut, '--json'],
+        { encoding: 'utf8' },
+      );
+      const verifyJson = JSON.parse(verifyOut) as { verified: boolean; keyId: string };
+      assert.equal(verifyJson.verified, true);
+      assert.match(verifyJson.keyId, /^ephemeral-ed25519:[a-f0-9]{16}$/);
+
+      // Tamper receipt on disk and assert --verify-receipt exits non-zero
+      const tampered = JSON.parse(fs.readFileSync(receiptPath, 'utf8')) as Record<string, unknown>;
+      tampered.passedAudits = 999;
+      fs.writeFileSync(receiptPath, JSON.stringify(tampered), 'utf8');
+      let verifyExit = 0;
+      try {
+        execFileSync(
+          process.execPath,
+          [SCRIPT_PATH, '--verify-receipt', receiptPath, '--public-key', pubOut, '--json'],
+          { encoding: 'utf8' },
+        );
+      } catch (err) {
+        verifyExit = (err as { status?: number }).status ?? 0;
+      }
+      assert.equal(verifyExit, 1);
+    } finally {
+      fs.rmSync(tmp, { recursive: true, force: true });
+    }
+  });
+
+  it('attaches O(1) RollingReleaseManifest rollbackTarget pointing to last green PROMOTE run on HOLD_AND_ROLLBACK_O1', () => {
+    const tmp = makeTempDir('holo-rollback-o1-');
+    try {
+      const outDir = path.join(tmp, 'audit-stack');
+      const run1 = runAuditStackHub({
+        outDir,
+        timestamp: '2026-11-27T10:00:00.000Z',
+        payloads: [
+          {
+            sourceLabel: 'geom-100.json',
+            raw: {
+              schema: PROJECT_GEOMETRY_SCHEMA,
+              rating: { totalScore: 100 },
+              topology: { coreSccs: [], coreLayerInversionsCount: 0, httpIpcViolationUnits: [] },
+            },
+          },
+        ],
+      });
+      assert.equal(run1.receipt.action, 'PROMOTE');
+      assert.equal(run1.receipt.rollbackTarget, undefined);
+
+      const run2 = runAuditStackHub({
+        outDir,
+        timestamp: '2026-11-27T11:00:00.000Z',
+        payloads: [
+          {
+            sourceLabel: 'geom-96.json',
+            raw: {
+              schema: PROJECT_GEOMETRY_SCHEMA,
+              rating: { totalScore: 96 },
+              topology: { coreSccs: [], coreLayerInversionsCount: 0, httpIpcViolationUnits: [] },
+            },
+          },
+        ],
+      });
+      assert.equal(run2.receipt.action, 'HOLD_AND_ROLLBACK_O1');
+      assert.deepEqual(run2.receipt.rollbackTarget, {
+        strategy: 'RollingReleaseManifest-O1',
+        targetRunId: run1.runRecord.runId,
+        targetReceiptSha512: run1.receipt.sha512,
+        restoreCmd: `.\\bin\\holo-upgrade.ps1 --rollback-o1 --manifest RollingReleaseManifest.json --target-run ${run1.runRecord.runId}`,
+      });
+
+      // Subsequent regression must still point to run1 (the last ratified green PROMOTE run)
+      const run3 = runAuditStackHub({
+        outDir,
+        timestamp: '2026-11-27T12:00:00.000Z',
+        payloads: [
+          {
+            sourceLabel: 'geom-92.json',
+            raw: {
+              schema: PROJECT_GEOMETRY_SCHEMA,
+              rating: { totalScore: 92 },
+              topology: { coreSccs: [], coreLayerInversionsCount: 0, httpIpcViolationUnits: [] },
+            },
+          },
+        ],
+      });
+      assert.equal(run3.receipt.action, 'HOLD_AND_ROLLBACK_O1');
+      assert.equal(run3.receipt.rollbackTarget?.targetRunId, run1.runRecord.runId);
+      assert.equal(run3.receipt.rollbackTarget?.targetReceiptSha512, run1.receipt.sha512);
+      assert.equal(findLastRatifiedPromoteRun(run3.runsPath)?.runId, run1.runRecord.runId);
+    } finally {
+      fs.rmSync(tmp, { recursive: true, force: true });
+    }
   });
 });

@@ -24,7 +24,14 @@
  * Strictly `erasableSyntaxOnly: true`, Node 24/26 built-ins only, `shell: false`, zero loopback HTTP IPC.
  */
 
-import { createHash } from 'node:crypto';
+import {
+  createHash,
+  createPrivateKey,
+  createPublicKey,
+  generateKeyPairSync,
+  sign as cryptoSign,
+  verify as cryptoVerify,
+} from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
@@ -152,6 +159,13 @@ export interface RatchetUpdate {
   readonly next: number | boolean;
 }
 
+export interface RollbackTarget {
+  readonly strategy: 'RollingReleaseManifest-O1';
+  readonly targetRunId: string;
+  readonly targetReceiptSha512: string;
+  readonly restoreCmd: string;
+}
+
 export interface RatificationReceipt {
   readonly schema: typeof RATIFICATION_RECEIPT_SCHEMA;
   readonly abiMagic: typeof B8G_ABI_MAGIC_V3;
@@ -168,7 +182,11 @@ export interface RatificationReceipt {
   readonly passedAudits: number;
   readonly failedAudits: number;
   readonly rollbackCommand: string;
+  readonly rollbackTarget?: RollbackTarget;
   readonly sha512: string;
+  readonly signatureEd25519?: string;
+  readonly publicKeySha256?: string;
+  readonly keyId?: string;
 }
 
 export interface AggregatedFailureEntry {
@@ -239,6 +257,7 @@ export interface AuditStackSummaryDocument {
   readonly audits: readonly AuditGateSummary[];
   readonly topFailingRules: readonly RuleFailureRollup[];
   readonly receiptSha512: string;
+  readonly rollbackTarget?: RollbackTarget;
 }
 
 export interface AuditStackRunRecord {
@@ -262,6 +281,10 @@ export interface RunAuditStackHubOptions {
   readonly floors?: Partial<RatchetFloors>;
   readonly timestamp?: string;
   readonly maxHistoryRuns?: number;
+  readonly privateKeyPem?: string;
+  readonly signKeyEnv?: string;
+  readonly ephemeralSign?: boolean;
+  readonly publicKeyOut?: string;
 }
 
 export interface RunAuditStackHubResult {
@@ -284,6 +307,11 @@ export interface ParsedAuditStackCliArgs {
   readonly help: boolean;
   readonly maxHistoryRuns: number;
   readonly timestamp?: string;
+  readonly signKeyEnv?: string;
+  readonly ephemeralSign: boolean;
+  readonly publicKeyOut?: string;
+  readonly verifyReceipt?: string;
+  readonly publicKey?: string;
 }
 
 const VALID_SEVERITIES = new Set<AuditRuleSeverity>(['error', 'warning', 'info']);
@@ -540,9 +568,9 @@ export function computeAuditViolationFingerprint(
 }
 
 /**
- * Computes deterministic SHA-512 over any JSON-serializable payload with recursively sorted keys.
+ * Serializes any JSON-serializable payload with recursively sorted object keys.
  */
-export function computeCanonicalSha512(value: unknown): string {
+export function toCanonicalJson(value: unknown): string {
   const canonicalize = (v: unknown): unknown => {
     if (Array.isArray(v)) {
       return v.map(canonicalize);
@@ -558,7 +586,88 @@ export function computeCanonicalSha512(value: unknown): string {
     }
     return v;
   };
-  return createHash('sha512').update(JSON.stringify(canonicalize(value)), 'utf8').digest('hex');
+  return JSON.stringify(canonicalize(value));
+}
+
+/**
+ * Computes deterministic SHA-512 over any JSON-serializable payload with recursively sorted keys.
+ */
+export function computeCanonicalSha512(value: unknown): string {
+  return createHash('sha512').update(toCanonicalJson(value), 'utf8').digest('hex');
+}
+
+function stripReceiptSignatureFields(
+  receipt: RatificationReceipt,
+): Omit<RatificationReceipt, 'signatureEd25519' | 'publicKeySha256' | 'keyId'> {
+  const {
+    signatureEd25519: _sig,
+    publicKeySha256: _pubSha,
+    keyId: _keyId,
+    ...unsignedPayload
+  } = receipt;
+  return unsignedPayload;
+}
+
+function computeEd25519PublicKeySha256(publicKeyPem: string): string {
+  const pubKey = createPublicKey(publicKeyPem);
+  const spkiDer = pubKey.export({ type: 'spki', format: 'der' });
+  return createHash('sha256').update(spkiDer).digest('hex');
+}
+
+/**
+ * Signs a `b8g.ratification-receipt.v1` using native Node.js Ed25519 over its canonical JSON payload
+ * (excluding signature fields).
+ */
+export function signRatificationReceipt(
+  receipt: RatificationReceipt,
+  privateKeyPem: string,
+  options?: { readonly keyId?: string },
+): RatificationReceipt {
+  const privateKey = createPrivateKey(privateKeyPem);
+  const publicKey = createPublicKey(privateKey);
+  const publicKeyPem = publicKey.export({ type: 'spki', format: 'pem' }) as string;
+  const publicKeySha256 = computeEd25519PublicKeySha256(publicKeyPem);
+  const keyId = options?.keyId ?? `ed25519:${publicKeySha256.slice(0, 16)}`;
+  const canonicalJson = toCanonicalJson(stripReceiptSignatureFields(receipt));
+  const signatureEd25519 = cryptoSign(null, Buffer.from(canonicalJson, 'utf8'), privateKey).toString(
+    'base64',
+  );
+  return {
+    ...stripReceiptSignatureFields(receipt),
+    signatureEd25519,
+    publicKeySha256,
+    keyId,
+  };
+}
+
+/**
+ * Verifies an Ed25519-signed `b8g.ratification-receipt.v1` against a public key PEM.
+ */
+export function verifyRatificationReceipt(
+  receipt: RatificationReceipt,
+  publicKeyPem: string,
+): boolean {
+  if (!receipt || typeof receipt.signatureEd25519 !== 'string' || !receipt.signatureEd25519.trim()) {
+    return false;
+  }
+  try {
+    const publicKey = createPublicKey(publicKeyPem);
+    const expectedPubSha = computeEd25519PublicKeySha256(
+      publicKey.export({ type: 'spki', format: 'pem' }) as string,
+    );
+    if (
+      typeof receipt.publicKeySha256 === 'string' &&
+      receipt.publicKeySha256 !== expectedPubSha
+    ) {
+      return false;
+    }
+    const canonicalJson = toCanonicalJson(stripReceiptSignatureFields(receipt));
+    const sigBuf = Buffer.from(receipt.signatureEd25519, 'base64');
+    if (sigBuf.length === 0) return false;
+    return cryptoVerify(null, Buffer.from(canonicalJson, 'utf8'), publicKey, sigBuf);
+  } catch {
+    return false;
+  }
 }
 
 function makeViolation(input: {
@@ -1690,6 +1799,7 @@ export function evaluateRatification(
   previousLatest?: Pick<AuditStackSummaryDocument, 'floors'> | { readonly floors?: Partial<RatchetFloors> } | null,
   floors?: Partial<RatchetFloors>,
   generatedAt: string = new Date().toISOString(),
+  lastRatifiedRun?: Pick<AuditStackRunRecord, 'runId' | 'receiptSha512'> | null,
 ): RatificationReceipt {
   const merged = Array.isArray(ingested) ? mergeIngestedAudits(ingested) : (ingested as IngestedAuditResult);
   const previousFloors = resolveEffectiveFloors(previousLatest, floors);
@@ -1892,6 +2002,21 @@ export function evaluateRatification(
     };
   }
 
+  const rollbackTarget: RollbackTarget | undefined =
+    action === 'HOLD_AND_ROLLBACK_O1' &&
+    lastRatifiedRun &&
+    typeof lastRatifiedRun.runId === 'string' &&
+    lastRatifiedRun.runId.length > 0 &&
+    typeof lastRatifiedRun.receiptSha512 === 'string' &&
+    lastRatifiedRun.receiptSha512.length > 0
+      ? {
+          strategy: 'RollingReleaseManifest-O1',
+          targetRunId: lastRatifiedRun.runId,
+          targetReceiptSha512: lastRatifiedRun.receiptSha512,
+          restoreCmd: `${DEFAULT_ROLLBACK_COMMAND} --target-run ${lastRatifiedRun.runId}`,
+        }
+      : undefined;
+
   const unsignedReceipt = {
     schema: RATIFICATION_RECEIPT_SCHEMA,
     abiMagic: B8G_ABI_MAGIC_V3,
@@ -1908,6 +2033,7 @@ export function evaluateRatification(
     passedAudits,
     failedAudits,
     rollbackCommand: DEFAULT_ROLLBACK_COMMAND,
+    ...(rollbackTarget ? { rollbackTarget } : {}),
   };
 
   const sha512 = computeCanonicalSha512(unsignedReceipt);
@@ -2199,6 +2325,94 @@ function appendBoundedRunHistory(
 }
 
 /**
+ * Scans `runs.jsonl` in reverse order and returns the most recent ratified green `PROMOTE` run.
+ */
+export function findLastRatifiedPromoteRun(runsPath: string): AuditStackRunRecord | null {
+  if (!fs.existsSync(runsPath)) return null;
+  const raw = fs.readFileSync(runsPath, 'utf8');
+  const lines = raw.split(/\r?\n/);
+  for (let i = lines.length - 1; i >= 0; i--) {
+    const trimmed = lines[i]?.trim();
+    if (!trimmed) continue;
+    try {
+      const parsed = JSON.parse(trimmed) as Partial<AuditStackRunRecord>;
+      if (
+        parsed.ratified === true &&
+        parsed.action === 'PROMOTE' &&
+        typeof parsed.runId === 'string' &&
+        parsed.runId.length > 0 &&
+        typeof parsed.receiptSha512 === 'string' &&
+        parsed.receiptSha512.length > 0
+      ) {
+        return parsed as AuditStackRunRecord;
+      }
+    } catch {
+      // Skip malformed historical line
+    }
+  }
+  return null;
+}
+
+function normalizePemFromEnv(raw: string): string {
+  const trimmed = raw.trim();
+  if (!trimmed.includes('\n') && trimmed.includes('\\n')) {
+    return `${trimmed.replace(/\\n/g, '\n')}\n`;
+  }
+  return trimmed;
+}
+
+function resolveSigningKeys(options: RunAuditStackHubOptions): {
+  readonly privateKeyPem: string;
+  readonly publicKeyPem: string;
+  readonly keyId?: string;
+} | null {
+  let privateKeyPem: string | undefined = options.privateKeyPem
+    ? normalizePemFromEnv(options.privateKeyPem)
+    : undefined;
+  let isEphemeral = false;
+
+  if (!privateKeyPem && options.signKeyEnv) {
+    const envVal = process.env[options.signKeyEnv];
+    if (typeof envVal === 'string' && envVal.trim().length > 0) {
+      privateKeyPem = normalizePemFromEnv(envVal);
+    } else if (!options.ephemeralSign) {
+      throw new Error(
+        `Signing key environment variable "${options.signKeyEnv}" is unset and --ephemeral-sign was not specified`,
+      );
+    }
+  }
+
+  if (!privateKeyPem && options.ephemeralSign) {
+    const pair = generateKeyPairSync('ed25519', {
+      publicKeyEncoding: { type: 'spki', format: 'pem' },
+      privateKeyEncoding: { type: 'pkcs8', format: 'pem' },
+    });
+    privateKeyPem = pair.privateKey;
+    isEphemeral = true;
+    const pubSha = computeEd25519PublicKeySha256(pair.publicKey);
+    return {
+      privateKeyPem,
+      publicKeyPem: pair.publicKey,
+      keyId: `ephemeral-ed25519:${pubSha.slice(0, 16)}`,
+    };
+  }
+
+  if (!privateKeyPem) return null;
+
+  const privKeyObj = createPrivateKey(privateKeyPem);
+  const publicKeyPem = createPublicKey(privKeyObj).export({
+    type: 'spki',
+    format: 'pem',
+  }) as string;
+  const pubSha = computeEd25519PublicKeySha256(publicKeyPem);
+  return {
+    privateKeyPem,
+    publicKeyPem,
+    keyId: isEphemeral ? `ephemeral-ed25519:${pubSha.slice(0, 16)}` : `ed25519:${pubSha.slice(0, 16)}`,
+  };
+}
+
+/**
  * Runs the full Central Audit Stack Hub pipeline:
  * ingests files/payloads -> evaluates monotonic ratification -> aggregates failures -> writes `audit-stack/*`.
  */
@@ -2217,6 +2431,7 @@ export function runAuditStackHub(options: RunAuditStackHubOptions = {}): RunAudi
 
   const previousLatest = readJsonIfExists<AuditStackSummaryDocument>(latestPath);
   const previousFailures = readJsonIfExists<AuditStackFailuresDocument>(failuresPath);
+  const lastRatifiedRun = findLastRatifiedPromoteRun(runsPath);
 
   const ingestedBatches: IngestedAuditResult[] = [];
   const ingestFiles = collectIngestFiles(options.ingestPaths ?? [], outDir);
@@ -2231,7 +2446,22 @@ export function runAuditStackHub(options: RunAuditStackHubOptions = {}): RunAudi
   }
 
   const merged = mergeIngestedAudits(ingestedBatches);
-  const receipt = evaluateRatification(merged, previousLatest, options.floors, generatedAt);
+  const baseReceipt = evaluateRatification(
+    merged,
+    previousLatest,
+    options.floors,
+    generatedAt,
+    lastRatifiedRun,
+  );
+  const signingKeys = resolveSigningKeys(options);
+  const receipt = signingKeys
+    ? signRatificationReceipt(baseReceipt, signingKeys.privateKeyPem, { keyId: signingKeys.keyId })
+    : baseReceipt;
+  if (signingKeys && options.publicKeyOut) {
+    const pubOutPath = path.resolve(options.publicKeyOut);
+    fs.mkdirSync(path.dirname(pubOutPath), { recursive: true });
+    fs.writeFileSync(pubOutPath, signingKeys.publicKeyPem, 'utf8');
+  }
   const failures = aggregateFailuresByRule(merged.violations, previousFailures, generatedAt);
 
   const runId = `run-${generatedAt.replace(/[^0-9]/g, '').slice(0, 14)}-${receipt.sha512.slice(0, 8)}`;
@@ -2263,6 +2493,7 @@ export function runAuditStackHub(options: RunAuditStackHubOptions = {}): RunAudi
     audits: merged.gates,
     topFailingRules: failures.byRule.slice(0, 10),
     receiptSha512: receipt.sha512,
+    ...(receipt.rollbackTarget ? { rollbackTarget: receipt.rollbackTarget } : {}),
   };
 
   const runRecord: AuditStackRunRecord = {
@@ -2306,13 +2537,18 @@ export function getHelpText(): string {
     '  node scripts/audit-stack-hub.mts [options]',
     '',
     'Options:',
-    '  --ingest <file-or-dir>  Ingest JSON/JSONL audit receipt or directory (repeatable)',
-    `  --out-dir <dir>         Output directory for audit-stack artifacts (default: ${DEFAULT_OUT_DIR})`,
-    '  --enforce-ratchet       Exit non-zero if ratification action is HOLD_AND_ROLLBACK_O1',
-    '  --max-runs <n>          Maximum NDJSON records retained in runs.jsonl (default: 500)',
-    '  --timestamp <iso>       Override ISO-8601 timestamp for deterministic runs',
-    '  --json                  Emit structured JSON summary to stdout',
-    '  -h, --help              Show this help message',
+    '  --ingest <file-or-dir>     Ingest JSON/JSONL audit receipt or directory (repeatable)',
+    `  --out-dir <dir>            Output directory for audit-stack artifacts (default: ${DEFAULT_OUT_DIR})`,
+    '  --enforce-ratchet          Exit non-zero if ratification action is HOLD_AND_ROLLBACK_O1',
+    '  --max-runs <n>             Maximum NDJSON records retained in runs.jsonl (default: 500)',
+    '  --timestamp <iso>          Override ISO-8601 timestamp for deterministic runs',
+    '  --sign-key-env <ENV_VAR>   Sign ratification receipt with Ed25519 private key PEM from env var',
+    '  --ephemeral-sign           Fallback to ephemeral Ed25519 keypair when signing key env is unset',
+    '  --public-key-out <path>    Write corresponding Ed25519 public key PEM to file',
+    '  --verify-receipt <path>    Verify an Ed25519-signed ratification-receipt.json file',
+    '  --public-key <path-or-env> Public key PEM file path or env var name for --verify-receipt',
+    '  --json                     Emit structured JSON summary to stdout',
+    '  -h, --help                 Show this help message',
     '',
   ].join('\n');
 }
@@ -2325,6 +2561,11 @@ export function parseCliArgs(argv: readonly string[]): ParsedAuditStackCliArgs {
   let help = false;
   let maxHistoryRuns = DEFAULT_MAX_HISTORY_RUNS;
   let timestamp: string | undefined;
+  let signKeyEnv: string | undefined;
+  let ephemeralSign = false;
+  let publicKeyOut: string | undefined;
+  let verifyReceipt: string | undefined;
+  let publicKey: string | undefined;
 
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i]!;
@@ -2346,6 +2587,16 @@ export function parseCliArgs(argv: readonly string[]): ParsedAuditStackCliArgs {
       maxHistoryRuns = parsed;
     } else if (arg === '--timestamp' && i + 1 < argv.length) {
       timestamp = argv[++i]!;
+    } else if (arg === '--sign-key-env' && i + 1 < argv.length) {
+      signKeyEnv = argv[++i]!;
+    } else if (arg === '--ephemeral-sign') {
+      ephemeralSign = true;
+    } else if (arg === '--public-key-out' && i + 1 < argv.length) {
+      publicKeyOut = argv[++i]!;
+    } else if (arg === '--verify-receipt' && i + 1 < argv.length) {
+      verifyReceipt = argv[++i]!;
+    } else if (arg === '--public-key' && i + 1 < argv.length) {
+      publicKey = argv[++i]!;
     } else {
       throw new Error(`Unknown or incomplete argument: "${arg}"`);
     }
@@ -2358,8 +2609,28 @@ export function parseCliArgs(argv: readonly string[]): ParsedAuditStackCliArgs {
     json,
     help,
     maxHistoryRuns,
+    ephemeralSign,
     ...(timestamp ? { timestamp } : {}),
+    ...(signKeyEnv ? { signKeyEnv } : {}),
+    ...(publicKeyOut ? { publicKeyOut } : {}),
+    ...(verifyReceipt ? { verifyReceipt } : {}),
+    ...(publicKey ? { publicKey } : {}),
   };
+}
+
+function resolvePublicKeyInput(pathOrEnv: string): string {
+  const absPath = path.resolve(pathOrEnv);
+  if (fs.existsSync(absPath) && fs.statSync(absPath).isFile()) {
+    return fs.readFileSync(absPath, 'utf8');
+  }
+  const envVal = process.env[pathOrEnv];
+  if (typeof envVal === 'string' && envVal.trim().length > 0) {
+    return normalizePemFromEnv(envVal);
+  }
+  if (pathOrEnv.includes('BEGIN PUBLIC KEY')) {
+    return pathOrEnv;
+  }
+  throw new Error(`Public key not found as file or environment variable: "${pathOrEnv}"`);
 }
 
 export function runAuditStackCli(argv: readonly string[]): {
@@ -2372,21 +2643,56 @@ export function runAuditStackCli(argv: readonly string[]): {
     return { exitCode: 0 };
   }
 
+  if (opts.verifyReceipt) {
+    if (!opts.publicKey) {
+      throw new Error('--verify-receipt requires --public-key <path-or-env>');
+    }
+    const receiptPath = path.resolve(opts.verifyReceipt);
+    if (!fs.existsSync(receiptPath)) {
+      throw new Error(`Receipt file not found: ${receiptPath}`);
+    }
+    const receipt = JSON.parse(fs.readFileSync(receiptPath, 'utf8')) as RatificationReceipt;
+    const publicKeyPem = resolvePublicKeyInput(opts.publicKey);
+    const verified = verifyRatificationReceipt(receipt, publicKeyPem);
+    const payload = {
+      schema: RATIFICATION_RECEIPT_SCHEMA,
+      abiMagic: B8G_ABI_MAGIC_V3,
+      verified,
+      receiptPath: normalizePosixPath(opts.verifyReceipt),
+      keyId: receipt.keyId ?? null,
+      publicKeySha256: receipt.publicKeySha256 ?? null,
+      action: receipt.action,
+      sha512: receipt.sha512,
+    };
+    if (opts.json) {
+      process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
+    } else {
+      process.stdout.write(
+        `[audit-stack-hub] Ed25519 verify=${verified ? 'VALID' : 'INVALID'} keyId=${payload.keyId ?? 'none'} sha512=${receipt.sha512.slice(0, 16)}...\n`,
+      );
+    }
+    return { exitCode: verified ? 0 : 1 };
+  }
+
   const result = runAuditStackHub({
     ingestPaths: opts.ingestPaths,
     outDir: opts.outDir,
     maxHistoryRuns: opts.maxHistoryRuns,
     timestamp: opts.timestamp,
+    signKeyEnv: opts.signKeyEnv,
+    ephemeralSign: opts.ephemeralSign,
+    publicKeyOut: opts.publicKeyOut,
   });
 
   if (opts.json) {
     process.stdout.write(`${JSON.stringify(result.latest, null, 2)}\n`);
   } else {
     const statusLabel = result.receipt.ratified ? 'RATIFIED (PROMOTE)' : 'HOLD_AND_ROLLBACK_O1';
+    const sigSuffix = result.receipt.keyId ? ` keyId=${result.receipt.keyId}` : '';
     process.stdout.write(
       `[audit-stack-hub] ${statusLabel} | audits=${result.receipt.passedAudits}/${result.latest.totals.totalAudits} ` +
         `violations=${result.receipt.violationCount} ratchetViolations=${result.receipt.ratchetViolations.length} ` +
-        `sha512=${result.receipt.sha512.slice(0, 16)}...\n`,
+        `sha512=${result.receipt.sha512.slice(0, 16)}...${sigSuffix}\n`,
     );
     for (const rv of result.receipt.ratchetViolations) {
       process.stdout.write(`  [RATCHET BREACH] ${rv.message}\n`);
