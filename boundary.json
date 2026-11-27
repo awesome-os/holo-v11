@@ -1,0 +1,28 @@
+{
+  "schema": "holo-boundary.v1",
+  "plane": 1,
+  "publicEntrypoints": [
+    "bootstrap/selfhost-fixedpoint.mts",
+    "pins/holo-overrides.mts",
+    "scripts/holo-cas-dedup.mts",
+    "scripts/pack-v11-shards.mts",
+    "scripts/gravity-pin-dedup-telemetry.mts",
+    "scripts/collect-oversight-telemetry.mts"
+  ],
+  "includePaths": [
+    "bootstrap",
+    "pins",
+    "scripts"
+  ],
+  "abiGoldenFiles": [
+    "index/cas-v11-global-manifest.json",
+    "index/v11-scope-catalog.json"
+  ],
+  "forbiddenImports": [
+    "intersections/sectium-browser",
+    "../../packages/",
+    "../../sections/"
+  ],
+  "maxParentTraversals": 2,
+  "scanSourceHttpIpc": true
+}
