@@ -23,7 +23,7 @@ Every `repository://` and `project://` URI resolves to an immutable SHA-512 dige
 | [`scripts/warm-global-cas.mts`](scripts/warm-global-cas.mts) | 12-way parallel stream-hasher that refreshes [`index/cas-v11-global-manifest.json`](index/cas-v11-global-manifest.json) and [`index/holo-compiler-lockfile.json`](index/holo-compiler-lockfile.json) from `awesome-os/*` releases |
 | [`scripts/gravity-pin-dedup-telemetry.mts`](scripts/gravity-pin-dedup-telemetry.mts) | Gravity Damper runner telemetry, upstream version-pinning audit, and SHA-512 CAS deduplication verifier emitting [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) and [`reports/gravity-telemetry.ndjson`](reports/gravity-telemetry.ndjson) |
 | [`scripts/collect-oversight-telemetry.mts`](scripts/collect-oversight-telemetry.mts) | Live GitHub Actions, Chromium Canary, and CAS telemetry collector emitting [`reports/oversight-telemetry.json`](reports/oversight-telemetry.json) |
-| [`dashboard/oversight.html`](dashboard/oversight.html) | Live Oversight Dashboard visualizing Planetary Warm CAS, upstream pinning, and Gravity Damper runner health |
+| [`dashboard/oversight.html`](dashboard/oversight.html) | Live Oversight Dashboard ([`awesome-os.github.io/holo-v11/`](https://awesome-os.github.io/holo-v11/) · [`oversight.html`](https://awesome-os.github.io/holo-v11/oversight.html)) visualizing Planetary Warm CAS, upstream pinning, and Gravity Damper runner health |
 | [`holo-ci.json`](holo-ci.json) | `holo-ci@v1` verification manifest (`zeroGhost: true`, `zeroCasV1: true`, unit test & doc gates) |
 | [`.github/workflows/holo-ci.yml`](.github/workflows/holo-ci.yml) | Reusable `holo-ci@v1` CI workflow (`awesome-os/maintenance-workflows/.github/workflows/reusable-holo-ci.yml@v1`) |
 | [`.github/workflows/sync-holo-v11-registry.yml`](.github/workflows/sync-holo-v11-registry.yml) | Scheduled 6-hourly (`0 */6 * * *`) + manual sync workflow committing to `main` when `index/` or `reports/` change |
@@ -41,7 +41,7 @@ Every `repository://` and `project://` URI resolves to an immutable SHA-512 dige
 | **Upstream Version Pinning** | `68/68` tracked upstreams at max (`0` drifted · `18` ahead-of-Chrome · `5078` `v11` universe packages) | [`scripts/gravity-pin-dedup-telemetry.mts`](scripts/gravity-pin-dedup-telemetry.mts) |
 | **CAS Binary Materialization** | `15/68` (`22.06%`) real compiled CAS binaries vs `53/68` virtual-pin only | [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) |
 | **Zero-Duplication & Cleanliness** | `dup_v8 = 0 B` · `b8g-ghost` remnants `= 0` | [`reports/gravity-telemetry.json`](reports/gravity-telemetry.json) |
-| **Fleet Head Health** | `100%` (`12/12` core active flat-org repos passing latest CI) | [`dashboard/oversight.html`](dashboard/oversight.html) |
+| **Fleet Head Health** | `100%` (`12/12` core active flat-org repos passing latest CI) | [`dashboard/oversight.html`](dashboard/oversight.html) ([Live Oversight](https://awesome-os.github.io/holo-v11/oversight.html)) |
 
 ---
 
