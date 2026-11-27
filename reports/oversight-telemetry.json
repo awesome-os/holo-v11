@@ -1,6 +1,6 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-27T15:13:41.634Z",
+  "generatedAt": "2026-11-27T15:40:39.690Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
@@ -38,12 +38,12 @@
     },
     {
       "repo": "awesome-os/t2linux-baseline",
-      "workflowName": "Damped-Gravity Upstream Version Bump (v11)",
-      "status": "in_progress",
-      "conclusion": "running",
+      "workflowName": "Holo-CI",
+      "status": "completed",
+      "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-27T15:12:32Z",
-      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/46022808628"
+      "updatedAt": "2026-11-27T15:24:36Z",
+      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/46024617866"
     },
     {
       "repo": "awesome-os/chromium-baseline",
@@ -51,8 +51,8 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-27T10:31:02Z",
-      "url": "https://github.com/awesome-os/chromium-baseline/actions/runs/45982701091"
+      "updatedAt": "2026-11-27T15:21:43Z",
+      "url": "https://github.com/awesome-os/chromium-baseline/actions/runs/46024173594"
     },
     {
       "repo": "awesome-os/agent-platform",
@@ -83,21 +83,21 @@
     },
     {
       "repo": "awesome-os/holo-v11",
-      "workflowName": "Continuous Ratification & Audit Stack Hub",
+      "workflowName": "Update Awesome-OS v11 Ecosystem Reports",
       "status": "in_progress",
       "conclusion": "running",
       "branch": "main",
-      "updatedAt": "2026-11-27T15:13:26Z",
-      "url": "https://github.com/awesome-os/holo-v11/actions/runs/46022947422"
+      "updatedAt": "2026-11-27T15:40:15Z",
+      "url": "https://github.com/awesome-os/holo-v11/actions/runs/46026941617"
     },
     {
       "repo": "awesome-os/maintenance-workflows",
       "workflowName": "CI",
-      "status": "completed",
-      "conclusion": "success",
+      "status": "in_progress",
+      "conclusion": "running",
       "branch": "main",
-      "updatedAt": "2026-11-27T15:07:59Z",
-      "url": "https://github.com/awesome-os/maintenance-workflows/actions/runs/46022066296"
+      "updatedAt": "2026-11-27T15:40:30Z",
+      "url": "https://github.com/awesome-os/maintenance-workflows/actions/runs/46026991224"
     },
     {
       "repo": "awesome-os/upstream-mirrors",
@@ -502,9 +502,9 @@
       "repo": "libvips/libvips",
       "upstreamTag": "v8.18.8",
       "upstreamVersion": "8.18.8",
-      "previousV11": "8.18.7",
+      "previousV11": "8.18.8",
       "currentV11": "8.18.8",
-      "bumped": true
+      "bumped": false
     },
     {
       "pkg": "vulkan-headers",
@@ -985,12 +985,12 @@
   },
   "gravityTelemetry": {
     "schema": "awesome-os.gravity-telemetry.v1",
-    "generatedAt": "2026-11-27T15:13:32.739Z",
+    "generatedAt": "2026-11-27T15:40:31.510Z",
     "abiMagic": "0x33564742",
     "pinning": {
       "trackedUpstreamLibs": 68,
       "atMaxCount": 68,
-      "bumpedCount": 1,
+      "bumpedCount": 0,
       "aheadOfChromeCount": 18,
       "driftedLibs": [],
       "v11UniversePackages": 5078,
@@ -1102,66 +1102,66 @@
       "dampingFactor": 0.65,
       "runnerFleet": {
         "reposMonitored": 12,
-        "activeRepos": 3,
-        "passingLatestRepos": 9,
+        "activeRepos": 2,
+        "passingLatestRepos": 10,
         "failingLatestRepos": 0,
-        "completedLatestRepos": 9,
+        "completedLatestRepos": 10,
         "totalSampledRuns": 120
       },
       "p50DurationSec": 23,
       "p95DurationSec": 335,
-      "overallPassRatePct": 98.3,
+      "overallPassRatePct": 97.5,
       "latestFleetPassRatePct": 100,
-      "apiRateRemaining": 4981,
+      "apiRateRemaining": 4986,
       "apiRateLimit": 5000,
       "perRepoTelemetry": [
         {
           "repo": "awesome-os",
-          "latestStatus": "in_progress",
-          "latestConclusion": "running",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
           "latestWorkflow": "Holo Upgrade — Continuous Ecosystem Pinning, Dedup & Telemetry Check",
           "latestUrl": "https://github.com/awesome-os/awesome-os/actions/runs/46022936145",
-          "latestUpdatedAt": "2026-11-27T15:13:25Z",
+          "latestUpdatedAt": "2026-11-27T15:13:33Z",
           "sampleCount": 10,
-          "completedCount": 9,
-          "passingCount": 9,
+          "completedCount": 10,
+          "passingCount": 10,
           "failingCount": 0,
           "passRatePct": 100,
-          "p50DurationSec": 24,
+          "p50DurationSec": 23,
           "p95DurationSec": 44,
-          "lastDurationSec": 7
+          "lastDurationSec": 15
         },
         {
           "repo": "t2linux-baseline",
-          "latestStatus": "in_progress",
-          "latestConclusion": "running",
-          "latestWorkflow": "Damped-Gravity Upstream Version Bump (v11)",
-          "latestUrl": "https://github.com/awesome-os/t2linux-baseline/actions/runs/46022808628",
-          "latestUpdatedAt": "2026-11-27T15:12:32Z",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
+          "latestWorkflow": "Holo-CI",
+          "latestUrl": "https://github.com/awesome-os/t2linux-baseline/actions/runs/46024617866",
+          "latestUpdatedAt": "2026-11-27T15:24:36Z",
           "sampleCount": 10,
-          "completedCount": 9,
-          "passingCount": 9,
+          "completedCount": 10,
+          "passingCount": 10,
           "failingCount": 0,
           "passRatePct": 100,
-          "p50DurationSec": 21,
+          "p50DurationSec": 20,
           "p95DurationSec": 79,
-          "lastDurationSec": 4
+          "lastDurationSec": 13
         },
         {
           "repo": "chromium-baseline",
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/chromium-baseline/actions/runs/45982701091",
-          "latestUpdatedAt": "2026-11-27T10:31:02Z",
+          "latestUrl": "https://github.com/awesome-os/chromium-baseline/actions/runs/46024173594",
+          "latestUpdatedAt": "2026-11-27T15:21:43Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 10,
           "failingCount": 0,
           "passRatePct": 100,
-          "p50DurationSec": 24,
-          "p95DurationSec": 42,
-          "lastDurationSec": 21
+          "p50DurationSec": 26,
+          "p95DurationSec": 47,
+          "lastDurationSec": 19
         },
         {
           "repo": "agent-platform",
@@ -1215,33 +1215,33 @@
           "repo": "holo-v11",
           "latestStatus": "in_progress",
           "latestConclusion": "running",
-          "latestWorkflow": "Continuous Ratification & Audit Stack Hub",
-          "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/46022947422",
-          "latestUpdatedAt": "2026-11-27T15:13:26Z",
+          "latestWorkflow": "Update Awesome-OS v11 Ecosystem Reports",
+          "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/46026941617",
+          "latestUpdatedAt": "2026-11-27T15:40:15Z",
           "sampleCount": 10,
-          "completedCount": 8,
+          "completedCount": 9,
           "passingCount": 8,
-          "failingCount": 0,
-          "passRatePct": 100,
-          "p50DurationSec": 28,
-          "p95DurationSec": 81,
-          "lastDurationSec": 3
+          "failingCount": 1,
+          "passRatePct": 88.9,
+          "p50DurationSec": 27,
+          "p95DurationSec": 80,
+          "lastDurationSec": 7
         },
         {
           "repo": "maintenance-workflows",
-          "latestStatus": "completed",
-          "latestConclusion": "success",
+          "latestStatus": "in_progress",
+          "latestConclusion": "running",
           "latestWorkflow": "CI",
-          "latestUrl": "https://github.com/awesome-os/maintenance-workflows/actions/runs/46022066296",
-          "latestUpdatedAt": "2026-11-27T15:07:59Z",
+          "latestUrl": "https://github.com/awesome-os/maintenance-workflows/actions/runs/46026991224",
+          "latestUpdatedAt": "2026-11-27T15:40:30Z",
           "sampleCount": 10,
-          "completedCount": 10,
-          "passingCount": 10,
+          "completedCount": 9,
+          "passingCount": 9,
           "failingCount": 0,
           "passRatePct": 100,
-          "p50DurationSec": 22,
-          "p95DurationSec": 42,
-          "lastDurationSec": 27
+          "p50DurationSec": 23,
+          "p95DurationSec": 27,
+          "lastDurationSec": 3
         },
         {
           "repo": "upstream-mirrors",
