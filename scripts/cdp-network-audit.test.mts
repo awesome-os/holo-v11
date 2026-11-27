@@ -355,6 +355,27 @@ test('verifyLinks deduplicates across pages, strips hashes, skips origin-hint li
   );
 });
 
+test('verifyLinks retries transient 504/network failures once before settling', async () => {
+  let attempts = 0;
+  const results = await verifyLinks(
+    [{ url: 'https://github.com/facebook/zstd', pageUrl: 'https://awesome-os.github.io/holo-v11/oversight.html', tag: 'a' }],
+    {
+      retryDelayMs: 5,
+      fetchImpl: async (input) => {
+        attempts++;
+        const url = String(input);
+        if (attempts === 1) {
+          return { status: 504, ok: false, url };
+        }
+        return { status: 200, ok: true, url };
+      },
+    },
+  );
+  assert.equal(attempts, 2);
+  assert.equal(results[0]?.ok, true);
+  assert.equal(results[0]?.status, 200);
+});
+
 test('resolveBrowserBinary honors CHROME_PATH, skips D:\\Sectium, and blocks sectium.exe', () => {
   assert.throws(
     () =>

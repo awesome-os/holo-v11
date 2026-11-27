@@ -14,7 +14,7 @@
 import { spawn, type ChildProcess } from 'node:child_process';
 import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { basename, dirname, join, resolve } from 'node:path';
+import { dirname, join, posix, resolve, win32 } from 'node:path';
 import type { Readable, Writable } from 'node:stream';
 import { fileURLToPath } from 'node:url';
 
@@ -342,7 +342,7 @@ export function buildSanitizedBrowserEnv(
 }
 
 function isProhibitedSectiumBinary(candidatePath: string): boolean {
-  const base = basename(candidatePath).toLowerCase();
+  const base = candidatePath.split(/[\\/]/).pop()?.toLowerCase() ?? '';
   if (base === 'sectium.exe' || base === 'sectium') {
     return true;
   }
@@ -361,10 +361,11 @@ export function resolveBrowserBinary(options: ResolveBrowserBinaryOptions = {}):
   const env = options.env ?? process.env;
   const platform = options.platform ?? process.platform;
   const fileExists = options.fileExists ?? existsSync;
+  const platformJoin = platform === 'win32' ? win32.join : posix.join;
 
   const explicit = options.chromePath?.trim() || env.CHROME_PATH?.trim();
   if (explicit) {
-    if (basename(explicit).toLowerCase() === 'sectium.exe' || basename(explicit).toLowerCase() === 'sectium') {
+    if (isProhibitedSectiumBinary(explicit)) {
       throw new Error(
         `Refusing to launch Sectium binary directly (${explicit}); sectium-host-device-boundary prohibits ad-hoc sectium.exe spawning.`,
       );
@@ -381,12 +382,16 @@ export function resolveBrowserBinary(options: ResolveBrowserBinaryOptions = {}):
     const programFiles = env.PROGRAMFILES ?? 'C:\\Program Files';
     const programFilesX86 = env['PROGRAMFILES(X86)'] ?? 'C:\\Program Files (x86)';
     fixedCandidates.push(
-      join(programFiles, 'Google', 'Chrome', 'Application', 'chrome.exe'),
-      join(programFilesX86, 'Google', 'Chrome', 'Application', 'chrome.exe'),
-      ...(localAppData ? [join(localAppData, 'Google', 'Chrome', 'Application', 'chrome.exe')] : []),
-      join(programFilesX86, 'Microsoft', 'Edge', 'Application', 'msedge.exe'),
-      join(programFiles, 'Microsoft', 'Edge', 'Application', 'msedge.exe'),
-      ...(localAppData ? [join(localAppData, 'Microsoft', 'Edge', 'Application', 'msedge.exe')] : []),
+      platformJoin(programFiles, 'Google', 'Chrome', 'Application', 'chrome.exe'),
+      platformJoin(programFilesX86, 'Google', 'Chrome', 'Application', 'chrome.exe'),
+      ...(localAppData
+        ? [platformJoin(localAppData, 'Google', 'Chrome', 'Application', 'chrome.exe')]
+        : []),
+      platformJoin(programFilesX86, 'Microsoft', 'Edge', 'Application', 'msedge.exe'),
+      platformJoin(programFiles, 'Microsoft', 'Edge', 'Application', 'msedge.exe'),
+      ...(localAppData
+        ? [platformJoin(localAppData, 'Microsoft', 'Edge', 'Application', 'msedge.exe')]
+        : []),
     );
   } else if (platform === 'darwin') {
     fixedCandidates.push(
@@ -424,7 +429,7 @@ export function resolveBrowserBinary(options: ResolveBrowserBinaryOptions = {}):
       continue;
     }
     for (const binName of pathNames) {
-      const candidate = join(trimmed, binName);
+      const candidate = platformJoin(trimmed, binName);
       if (!isProhibitedSectiumBinary(candidate) && fileExists(candidate)) {
         return candidate;
       }
@@ -533,10 +538,19 @@ export function launchHeadlessBrowserOverPipe(options: {
         // ignore
       }
     }
-    await Promise.race([
-      exitPromise,
-      new Promise<void>((resolveWait) => setTimeout(resolveWait, 2_500)),
-    ]);
+    let exitWaitTimer: ReturnType<typeof setTimeout> | undefined;
+    try {
+      await Promise.race([
+        exitPromise,
+        new Promise<void>((resolveWait) => {
+          exitWaitTimer = setTimeout(resolveWait, 2_500);
+        }),
+      ]);
+    } finally {
+      if (exitWaitTimer !== undefined) {
+        clearTimeout(exitWaitTimer);
+      }
+    }
     try {
       rmSync(userDataDir, { recursive: true, force: true });
     } catch {
@@ -843,10 +857,19 @@ export async function auditUrlOverCdp(
       resolveLoad();
     }
 
-    await Promise.race([
-      loadPromise,
-      new Promise<void>((res) => setTimeout(res, timeoutMs)),
-    ]);
+    let loadTimer: ReturnType<typeof setTimeout> | undefined;
+    try {
+      await Promise.race([
+        loadPromise,
+        new Promise<void>((res) => {
+          loadTimer = setTimeout(res, timeoutMs);
+        }),
+      ]);
+    } finally {
+      if (loadTimer !== undefined) {
+        clearTimeout(loadTimer);
+      }
+    }
 
     // Wait for async fetch() / dynamic script activity to settle
     const settleDeadline = Date.now() + Math.max(settleMs, 600);
@@ -949,11 +972,13 @@ export async function verifyLinks(
   options: {
     readonly concurrency?: number;
     readonly timeoutMs?: number;
+    readonly retryDelayMs?: number;
     readonly fetchImpl?: FetchLike;
   } = {},
 ): Promise<CheckedLinkResult[]> {
-  const concurrency = Math.max(1, options.concurrency ?? 6);
+  const concurrency = Math.max(1, options.concurrency ?? 4);
   const timeoutMs = options.timeoutMs ?? 15_000;
+  const retryDelayMs = options.retryDelayMs ?? 450;
   const fetchImpl: FetchLike = options.fetchImpl ?? (fetch as unknown as FetchLike);
 
   const grouped = new Map<string, { pages: Set<string>; tags: Set<string> }>();
@@ -1010,36 +1035,46 @@ export async function verifyLinks(
       return resp;
     };
 
-    try {
-      let method: 'HEAD' | 'GET' = 'HEAD';
-      let resp = await runRequest('HEAD');
+    const attemptCheck = async (): Promise<CheckedLinkResult> => {
+      try {
+        let method: 'HEAD' | 'GET' = 'HEAD';
+        let resp = await runRequest('HEAD');
 
-      if (resp.status === 405 || resp.status === 501) {
-        method = 'GET';
-        resp = await runRequest('GET', { Range: 'bytes=0-0' });
+        if (resp.status === 405 || resp.status === 501) {
+          method = 'GET';
+          resp = await runRequest('GET', { Range: 'bytes=0-0' });
+        }
+
+        const ok = resp.status >= 200 && resp.status < 400;
+        return {
+          url: targetUrl,
+          method,
+          status: resp.status,
+          ok,
+          ...(resp.url ? { finalUrl: resp.url } : {}),
+          foundOnPages,
+          tags,
+        };
+      } catch (err) {
+        return {
+          url: targetUrl,
+          method: 'HEAD',
+          status: null,
+          ok: false,
+          error: err instanceof Error ? err.message : String(err),
+          foundOnPages,
+          tags,
+        };
       }
+    };
 
-      const ok = resp.status >= 200 && resp.status < 400;
-      return {
-        url: targetUrl,
-        method,
-        status: resp.status,
-        ok,
-        ...(resp.url ? { finalUrl: resp.url } : {}),
-        foundOnPages,
-        tags,
-      };
-    } catch (err) {
-      return {
-        url: targetUrl,
-        method: 'HEAD',
-        status: null,
-        ok: false,
-        error: err instanceof Error ? err.message : String(err),
-        foundOnPages,
-        tags,
-      };
+    const TRANSIENT_STATUSES = new Set([429, 502, 503, 504]);
+    let last = await attemptCheck();
+    if (!last.ok && (last.status === null || TRANSIENT_STATUSES.has(last.status))) {
+      await new Promise<void>((res) => setTimeout(res, retryDelayMs));
+      last = await attemptCheck();
     }
+    return last;
   };
 
   const worker = async (): Promise<void> => {
