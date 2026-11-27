@@ -401,3 +401,55 @@ test('computeMaterializationMetrics resolves all 12 Tier-2 libs plus php/ruby/sq
   assert.equal(receiptRun.realCompiledCount, 15);
   assert.equal(receiptRun.virtualPinOnlyCount, 3);
 });
+
+test('computeMaterializationMetrics resolves all Tier-3 and Tier-4 libraries via binaries and shard receipts', () => {
+  const tier3And4 = [
+    'pixman',
+    'libffi',
+    'woff2',
+    'ngtcp2',
+    'libxml2',
+    'libxslt',
+    'libarchive',
+    'liburing',
+    'ninja',
+    'libavif',
+    'cairo',
+    'mariadb-connector-c',
+    'libgit2',
+    'curl',
+    'openssl',
+    'limine',
+    'vulkan-loader',
+  ] as const;
+
+  const tracker = {
+    totalTracked: tier3And4.length + 1,
+    libraries: [...tier3And4.map((pkg) => ({ pkg })), { pkg: 're2' }],
+  };
+
+  const run = computeMaterializationMetrics(tracker, [
+    { filename: 'libpixman-receipt.json' },
+    { filename: 'libffi-receipt.json' },
+    { filename: 'libwoff2-receipt.json' },
+    { filename: 'libngtcp2-receipt.json' },
+    { filename: 'libxml2-receipt.json' },
+    { filename: 'libxslt-receipt.json' },
+    { filename: 'libarchive-receipt.json' },
+    { filename: 'liburing-receipt.json' },
+    { filename: 'ninja-receipt.json' },
+    { filename: 'libavif-receipt.json' },
+    { filename: 'libcairo-receipt.json' },
+    { filename: 'libmariadb-receipt.json' },
+    { filename: 'libgit2-receipt.json' },
+    { filename: 'libcurl-receipt.json' },
+    { filename: 'libssl-receipt.json' },
+    { filename: 'limine-receipt.json' },
+    { filename: 'libvulkan-receipt.json' },
+  ]);
+
+  assert.deepEqual(run.realCompiledLibs, [...tier3And4]);
+  assert.deepEqual(run.virtualPinOnlyLibs, ['re2']);
+  assert.equal(run.realCompiledCount, tier3And4.length);
+  assert.equal(run.virtualPinOnlyCount, 1);
+});

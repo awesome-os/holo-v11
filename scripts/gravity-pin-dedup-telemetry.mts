@@ -332,6 +332,20 @@ export const LIB_BINARY_STEM_ALIASES: Readonly<Record<string, readonly string[]>
   'vulkan-loader': ['vulkan-loader', 'vulkan', 'libvulkan'],
   libxml2: ['libxml2', 'xml2'],
   libxslt: ['libxslt', 'xslt'],
+  pixman: ['pixman', 'libpixman'],
+  libffi: ['libffi', 'ffi'],
+  woff2: ['woff2', 'libwoff2'],
+  ngtcp2: ['ngtcp2', 'libngtcp2'],
+  libarchive: ['libarchive', 'archive'],
+  liburing: ['liburing', 'uring'],
+  ninja: ['ninja'],
+  libavif: ['libavif', 'avif'],
+  cairo: ['cairo', 'libcairo'],
+  'mariadb-connector-c': ['mariadb-connector-c', 'libmariadb', 'mariadb'],
+  libgit2: ['libgit2', 'git2'],
+  curl: ['curl', 'libcurl'],
+  openssl: ['openssl', 'libssl', 'libcrypto'],
+  limine: ['limine'],
 };
 
 export function isCanonicalShardReceipt(filename: string): boolean {
