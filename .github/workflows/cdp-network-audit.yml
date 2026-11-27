@@ -14,8 +14,8 @@ permissions:
   contents: read
 
 concurrency:
-  group: '${{ github.workflow }}-${{ github.ref }}'
-  cancel-in-progress: true
+  group: cdp-network-audit-${{ github.event_name }}-${{ github.sha }}
+  cancel-in-progress: false
 
 jobs:
   cdp-network-audit:
