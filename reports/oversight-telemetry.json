@@ -1,12 +1,12 @@
 {
   "schema": "awesome-os.oversight-telemetry.v1",
-  "generatedAt": "2026-11-27T16:14:55.854Z",
+  "generatedAt": "2026-11-28T00:56:38.842Z",
   "abiMagic": "0x33564742",
   "casLayout": "v11",
   "summary": {
     "totalReposMonitored": 12,
-    "passingRuns": 10,
-    "activeRuns": 2,
+    "passingRuns": 11,
+    "activeRuns": 1,
     "failingRuns": 0,
     "upstreamLibsTracked": 68,
     "bigBoysCount": 24,
@@ -14,8 +14,8 @@
   },
   "chromiumCanary": {
     "milestone": 160,
-    "version": "160.0.8187.0",
-    "branchPosition": 1756123,
+    "version": "160.0.8188.0",
+    "branchPosition": 1756433,
     "v8Hash": "812d92d684f3"
   },
   "casGlobal": {
@@ -23,7 +23,7 @@
     "totalAssets": 882,
     "uniqueBlobs": 870,
     "totalMb": 2435.2,
-    "warmedAt": "2026-11-27T16:14:46.351Z",
+    "warmedAt": "2026-11-28T00:56:32.063Z",
     "planetaryEndpoint": "https://raw.githubusercontent.com/awesome-os/holo-v11/main/index/cas-v11-global-manifest.json"
   },
   "runners": [
@@ -33,17 +33,17 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-27T16:00:01Z",
-      "url": "https://github.com/awesome-os/awesome-os/actions/runs/46029742974"
+      "updatedAt": "2026-11-27T18:18:07Z",
+      "url": "https://github.com/awesome-os/awesome-os/actions/runs/46048375696"
     },
     {
       "repo": "awesome-os/t2linux-baseline",
-      "workflowName": "Dependabot Updates",
+      "workflowName": "Build & Boot T2Linux Baseline (Original T2 SDE + v11 CAS)",
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-27T15:55:14Z",
-      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/46029027683"
+      "updatedAt": "2026-11-27T17:19:30Z",
+      "url": "https://github.com/awesome-os/t2linux-baseline/actions/runs/46040800318"
     },
     {
       "repo": "awesome-os/chromium-baseline",
@@ -51,35 +51,35 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-27T15:41:41Z",
-      "url": "https://github.com/awesome-os/chromium-baseline/actions/runs/46027133290"
+      "updatedAt": "2026-11-27T17:18:42Z",
+      "url": "https://github.com/awesome-os/chromium-baseline/actions/runs/46040760113"
     },
     {
       "repo": "awesome-os/agent-platform",
-      "workflowName": "Dependabot Updates",
-      "status": "in_progress",
-      "conclusion": "running",
+      "workflowName": "Holo-E2E",
+      "status": "completed",
+      "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-27T16:14:45Z",
-      "url": "https://github.com/awesome-os/agent-platform/actions/runs/46031932665"
+      "updatedAt": "2026-11-27T17:18:40Z",
+      "url": "https://github.com/awesome-os/agent-platform/actions/runs/46040754001"
     },
     {
       "repo": "awesome-os/devtools",
-      "workflowName": "Holo-E2E",
+      "workflowName": "Dependabot Updates",
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-27T15:42:19Z",
-      "url": "https://github.com/awesome-os/devtools/actions/runs/46027142018"
+      "updatedAt": "2026-11-27T22:44:54Z",
+      "url": "https://github.com/awesome-os/devtools/actions/runs/46078435138"
     },
     {
       "repo": "awesome-os/wordpress-ecosystem",
-      "workflowName": "Holo-E2E",
+      "workflowName": "Holo-CI",
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-27T09:19:39Z",
-      "url": "https://github.com/awesome-os/wordpress-ecosystem/actions/runs/45972713427"
+      "updatedAt": "2026-11-27T17:19:01Z",
+      "url": "https://github.com/awesome-os/wordpress-ecosystem/actions/runs/46040814195"
     },
     {
       "repo": "awesome-os/holo-v11",
@@ -87,8 +87,8 @@
       "status": "in_progress",
       "conclusion": "running",
       "branch": "main",
-      "updatedAt": "2026-11-27T16:12:31Z",
-      "url": "https://github.com/awesome-os/holo-v11/actions/runs/46031610957"
+      "updatedAt": "2026-11-28T00:54:02Z",
+      "url": "https://github.com/awesome-os/holo-v11/actions/runs/46090339971"
     },
     {
       "repo": "awesome-os/maintenance-workflows",
@@ -96,17 +96,17 @@
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-27T15:41:10Z",
-      "url": "https://github.com/awesome-os/maintenance-workflows/actions/runs/46026991224"
+      "updatedAt": "2026-11-27T17:18:58Z",
+      "url": "https://github.com/awesome-os/maintenance-workflows/actions/runs/46040793697"
     },
     {
       "repo": "awesome-os/upstream-mirrors",
-      "workflowName": "Holo-CI",
+      "workflowName": "Dependabot Updates",
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-27T15:41:54Z",
-      "url": "https://github.com/awesome-os/upstream-mirrors/actions/runs/46027170259"
+      "updatedAt": "2026-11-27T22:35:08Z",
+      "url": "https://github.com/awesome-os/upstream-mirrors/actions/runs/46077471159"
     },
     {
       "repo": "awesome-os/dockerimages",
@@ -119,12 +119,12 @@
     },
     {
       "repo": "awesome-os/installer",
-      "workflowName": "Holo-CI",
+      "workflowName": "Dependabot Updates",
       "status": "completed",
       "conclusion": "success",
       "branch": "main",
-      "updatedAt": "2026-11-27T15:41:49Z",
-      "url": "https://github.com/awesome-os/installer/actions/runs/46027155256"
+      "updatedAt": "2026-11-27T23:44:47Z",
+      "url": "https://github.com/awesome-os/installer/actions/runs/46084139297"
     },
     {
       "repo": "awesome-os/deployment",
@@ -985,7 +985,7 @@
   },
   "gravityTelemetry": {
     "schema": "awesome-os.gravity-telemetry.v1",
-    "generatedAt": "2026-11-27T16:14:47.724Z",
+    "generatedAt": "2026-11-28T00:56:33.549Z",
     "abiMagic": "0x33564742",
     "pinning": {
       "trackedUpstreamLibs": 68,
@@ -1084,7 +1084,7 @@
         "compiledBinaries": 514,
         "shardReceipts": 55
       },
-      "casForwardHash": "941ba5e9536e00563db826719cf751b5e582368d75733d3faeb27313ba5ec1545ef1da6c2aef1edf018c771c8ff68a27ebd75025648e9a3d746254ff56fed251"
+      "casForwardHash": "dddae09102bd7b7e3fbd5611597b9930c610a8cf0d39d4a9d38953fbc0f564a63bf56f1cd6ecf2da27447591e7d98c88a48adad24529f249369f3b4dc974fc39"
     },
     "dedup": {
       "totalAssets": 882,
@@ -1101,17 +1101,17 @@
       "dampingFactor": 0.65,
       "runnerFleet": {
         "reposMonitored": 12,
-        "activeRepos": 2,
-        "passingLatestRepos": 10,
+        "activeRepos": 1,
+        "passingLatestRepos": 11,
         "failingLatestRepos": 0,
-        "completedLatestRepos": 10,
+        "completedLatestRepos": 11,
         "totalSampledRuns": 120
       },
-      "p50DurationSec": 23,
+      "p50DurationSec": 24,
       "p95DurationSec": 239,
-      "overallPassRatePct": 95.8,
+      "overallPassRatePct": 96.6,
       "latestFleetPassRatePct": 100,
-      "apiRateRemaining": 4940,
+      "apiRateRemaining": 4982,
       "apiRateLimit": 5000,
       "perRepoTelemetry": [
         {
@@ -1119,24 +1119,24 @@
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "Cloud Control Plane — Stateless Fleet Verification",
-          "latestUrl": "https://github.com/awesome-os/awesome-os/actions/runs/46029742974",
-          "latestUpdatedAt": "2026-11-27T16:00:01Z",
+          "latestUrl": "https://github.com/awesome-os/awesome-os/actions/runs/46048375696",
+          "latestUpdatedAt": "2026-11-27T18:18:07Z",
           "sampleCount": 10,
           "completedCount": 10,
-          "passingCount": 8,
-          "failingCount": 2,
-          "passRatePct": 80,
-          "p50DurationSec": 18,
+          "passingCount": 9,
+          "failingCount": 1,
+          "passRatePct": 90,
+          "p50DurationSec": 19,
           "p95DurationSec": 41,
-          "lastDurationSec": 18
+          "lastDurationSec": 23
         },
         {
           "repo": "t2linux-baseline",
           "latestStatus": "completed",
           "latestConclusion": "success",
-          "latestWorkflow": "github_actions in /. - Update #1734989630",
-          "latestUrl": "https://github.com/awesome-os/t2linux-baseline/actions/runs/46029027683",
-          "latestUpdatedAt": "2026-11-27T15:55:14Z",
+          "latestWorkflow": "Build & Boot T2Linux Baseline (Original T2 SDE + v11 CAS)",
+          "latestUrl": "https://github.com/awesome-os/t2linux-baseline/actions/runs/46040800318",
+          "latestUpdatedAt": "2026-11-27T17:19:30Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 10,
@@ -1144,63 +1144,63 @@
           "passRatePct": 100,
           "p50DurationSec": 39,
           "p95DurationSec": 79,
-          "lastDurationSec": 39
+          "lastDurationSec": 52
         },
         {
           "repo": "chromium-baseline",
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/chromium-baseline/actions/runs/46027133290",
-          "latestUpdatedAt": "2026-11-27T15:41:41Z",
+          "latestUrl": "https://github.com/awesome-os/chromium-baseline/actions/runs/46040760113",
+          "latestUpdatedAt": "2026-11-27T17:18:42Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 10,
           "failingCount": 0,
           "passRatePct": 100,
-          "p50DurationSec": 26,
+          "p50DurationSec": 24,
           "p95DurationSec": 51,
-          "lastDurationSec": 15
+          "lastDurationSec": 24
         },
         {
           "repo": "agent-platform",
-          "latestStatus": "in_progress",
-          "latestConclusion": "running",
-          "latestWorkflow": "github_actions in /. - Update #1735018273",
-          "latestUrl": "https://github.com/awesome-os/agent-platform/actions/runs/46031932665",
-          "latestUpdatedAt": "2026-11-27T16:14:45Z",
+          "latestStatus": "completed",
+          "latestConclusion": "success",
+          "latestWorkflow": "Holo-E2E",
+          "latestUrl": "https://github.com/awesome-os/agent-platform/actions/runs/46040754001",
+          "latestUpdatedAt": "2026-11-27T17:18:40Z",
           "sampleCount": 10,
-          "completedCount": 9,
-          "passingCount": 8,
-          "failingCount": 1,
-          "passRatePct": 88.9,
-          "p50DurationSec": 23,
+          "completedCount": 10,
+          "passingCount": 10,
+          "failingCount": 0,
+          "passRatePct": 100,
+          "p50DurationSec": 25,
           "p95DurationSec": 50,
-          "lastDurationSec": 4
+          "lastDurationSec": 25
         },
         {
           "repo": "devtools",
           "latestStatus": "completed",
           "latestConclusion": "success",
-          "latestWorkflow": "Holo-E2E",
-          "latestUrl": "https://github.com/awesome-os/devtools/actions/runs/46027142018",
-          "latestUpdatedAt": "2026-11-27T15:42:19Z",
+          "latestWorkflow": "github_actions in /. - Update #1735499803",
+          "latestUrl": "https://github.com/awesome-os/devtools/actions/runs/46078435138",
+          "latestUpdatedAt": "2026-11-27T22:44:54Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 10,
           "failingCount": 0,
           "passRatePct": 100,
-          "p50DurationSec": 15,
+          "p50DurationSec": 19,
           "p95DurationSec": 50,
-          "lastDurationSec": 50
+          "lastDurationSec": 33
         },
         {
           "repo": "wordpress-ecosystem",
           "latestStatus": "completed",
           "latestConclusion": "success",
-          "latestWorkflow": "Holo-E2E",
-          "latestUrl": "https://github.com/awesome-os/wordpress-ecosystem/actions/runs/45972713427",
-          "latestUpdatedAt": "2026-11-27T09:19:39Z",
+          "latestWorkflow": "Holo-CI",
+          "latestUrl": "https://github.com/awesome-os/wordpress-ecosystem/actions/runs/46040814195",
+          "latestUpdatedAt": "2026-11-27T17:19:01Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 10,
@@ -1208,22 +1208,22 @@
           "passRatePct": 100,
           "p50DurationSec": 21,
           "p95DurationSec": 33,
-          "lastDurationSec": 25
+          "lastDurationSec": 17
         },
         {
           "repo": "holo-v11",
           "latestStatus": "in_progress",
           "latestConclusion": "running",
           "latestWorkflow": "Sync Global Holo v11 Registry",
-          "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/46031610957",
-          "latestUpdatedAt": "2026-11-27T16:12:31Z",
+          "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/46090339971",
+          "latestUpdatedAt": "2026-11-28T00:54:02Z",
           "sampleCount": 10,
           "completedCount": 9,
-          "passingCount": 9,
-          "failingCount": 0,
-          "passRatePct": 100,
+          "passingCount": 8,
+          "failingCount": 1,
+          "passRatePct": 88.9,
           "p50DurationSec": 27,
-          "p95DurationSec": 79,
+          "p95DurationSec": 220,
           "lastDurationSec": 3
         },
         {
@@ -1231,8 +1231,8 @@
           "latestStatus": "completed",
           "latestConclusion": "success",
           "latestWorkflow": "CI",
-          "latestUrl": "https://github.com/awesome-os/maintenance-workflows/actions/runs/46026991224",
-          "latestUpdatedAt": "2026-11-27T15:41:10Z",
+          "latestUrl": "https://github.com/awesome-os/maintenance-workflows/actions/runs/46040793697",
+          "latestUpdatedAt": "2026-11-27T17:18:58Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 10,
@@ -1240,23 +1240,23 @@
           "passRatePct": 100,
           "p50DurationSec": 23,
           "p95DurationSec": 43,
-          "lastDurationSec": 43
+          "lastDurationSec": 24
         },
         {
           "repo": "upstream-mirrors",
           "latestStatus": "completed",
           "latestConclusion": "success",
-          "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/upstream-mirrors/actions/runs/46027170259",
-          "latestUpdatedAt": "2026-11-27T15:41:54Z",
+          "latestWorkflow": "github_actions in /. - Update #1735488420",
+          "latestUrl": "https://github.com/awesome-os/upstream-mirrors/actions/runs/46077471159",
+          "latestUpdatedAt": "2026-11-27T22:35:08Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 10,
           "failingCount": 0,
           "passRatePct": 100,
-          "p50DurationSec": 23,
+          "p50DurationSec": 19,
           "p95DurationSec": 418,
-          "lastDurationSec": 13
+          "lastDurationSec": 39
         },
         {
           "repo": "dockerimages",
@@ -1278,17 +1278,17 @@
           "repo": "installer",
           "latestStatus": "completed",
           "latestConclusion": "success",
-          "latestWorkflow": "Holo-CI",
-          "latestUrl": "https://github.com/awesome-os/installer/actions/runs/46027155256",
-          "latestUpdatedAt": "2026-11-27T15:41:49Z",
+          "latestWorkflow": "github_actions in /. - Update #1735566647",
+          "latestUrl": "https://github.com/awesome-os/installer/actions/runs/46084139297",
+          "latestUpdatedAt": "2026-11-27T23:44:47Z",
           "sampleCount": 10,
           "completedCount": 10,
           "passingCount": 8,
           "failingCount": 2,
           "passRatePct": 80,
           "p50DurationSec": 20,
-          "p95DurationSec": 39,
-          "lastDurationSec": 14
+          "p95DurationSec": 38,
+          "lastDurationSec": 31
         },
         {
           "repo": "deployment",

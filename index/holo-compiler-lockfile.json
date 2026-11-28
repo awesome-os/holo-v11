@@ -724,9 +724,9 @@
       "tag": "v11-chromium-baseline-latest",
       "filename": "chromium-baseline-linux-x86_64-holo-v11.tar.gz",
       "target": "linux-x64",
-      "sha512": "276db7044ccddc6b234961c4dee01a5183e0f61e3a40269cbca7334a702f6982aa1f28dd8c4d3185365bfb87c81d992a2e28947fa969f238e6bd3bfa24c1407b",
-      "size": 39536,
-      "blobPath": "v11/files/27/276db7044ccddc6b234961c4dee01a5183e0f61e3a40269cbca7334a702f6982aa1f28dd8c4d3185365bfb87c81d992a2e28947fa969f238e6bd3bfa24c1407b",
+      "sha512": "8b9e3aa40c7c54b7b1b4a4970ccc331aa46edb8fca3d3b5b98d05693bf63d7cdebaa740bf218ebbb966c56097d59ef388a13c91b64a2aafe49a8270a38f943dd",
+      "size": 39534,
+      "blobPath": "v11/files/8b/8b9e3aa40c7c54b7b1b4a4970ccc331aa46edb8fca3d3b5b98d05693bf63d7cdebaa740bf218ebbb966c56097d59ef388a13c91b64a2aafe49a8270a38f943dd",
       "downloadUrl": "https://github.com/awesome-os/chromium-baseline/releases/download/v11-chromium-baseline-latest/chromium-baseline-linux-x86_64-holo-v11.tar.gz"
     },
     {
@@ -735,9 +735,9 @@
       "tag": "v11-chromium-baseline-latest",
       "filename": "holo-v11-manifest.json",
       "target": "any",
-      "sha512": "b4c255cf6be665a03204bd7a5eec8ceaae432de565d7c1b894a44045e80f796962071592d058a590b14827886aa06e1c9d2038a4b2ddf2e867359372ef8602ba",
+      "sha512": "ae1f3944566b322999420a0b09e6106c1fabb26f08080022cb7c74dccc5c263602c1d7d90d2b941e5caaf9006893d191297aa990090f8439f33accd4941bac64",
       "size": 4627,
-      "blobPath": "v11/files/b4/b4c255cf6be665a03204bd7a5eec8ceaae432de565d7c1b894a44045e80f796962071592d058a590b14827886aa06e1c9d2038a4b2ddf2e867359372ef8602ba",
+      "blobPath": "v11/files/ae/ae1f3944566b322999420a0b09e6106c1fabb26f08080022cb7c74dccc5c263602c1d7d90d2b941e5caaf9006893d191297aa990090f8439f33accd4941bac64",
       "downloadUrl": "https://github.com/awesome-os/chromium-baseline/releases/download/v11-chromium-baseline-latest/holo-v11-manifest.json"
     },
     {
@@ -1307,9 +1307,9 @@
       "tag": "v11-devtools-launchers-latest",
       "filename": "holo-v11-manifest.json",
       "target": "any",
-      "sha512": "c5a6b2c9838873092e01edbec805b37d470719f1dbd85c07a7a84ba062ef21e71f40904ac325a388f38a95e7bd9530cccb962389b4c2fe2e146f5d9538235edc",
+      "sha512": "a75b563141b6cd7a049b0f08d32703ad1e8fb342e3dc18f41c7b2ce8168d8c4d9681ee3600ad3a99324dcbdccbb03bd883d3e44698e409fc8ddc550db01c1723",
       "size": 4188,
-      "blobPath": "v11/files/c5/c5a6b2c9838873092e01edbec805b37d470719f1dbd85c07a7a84ba062ef21e71f40904ac325a388f38a95e7bd9530cccb962389b4c2fe2e146f5d9538235edc",
+      "blobPath": "v11/files/a7/a75b563141b6cd7a049b0f08d32703ad1e8fb342e3dc18f41c7b2ce8168d8c4d9681ee3600ad3a99324dcbdccbb03bd883d3e44698e409fc8ddc550db01c1723",
       "downloadUrl": "https://github.com/awesome-os/devtools/releases/download/v11-devtools-launchers-latest/holo-v11-manifest.json"
     },
     {
@@ -1318,9 +1318,9 @@
       "tag": "v11-devtools-launchers-latest",
       "filename": "SHA512SUMS.txt",
       "target": "any",
-      "sha512": "a45acfc21f6af1bd1ae10c10b99c8a059a98c48bb96d2ee0d0d045129959d8c9a47a4c4600f8190111a7ebb09219baf549fea82db1e3fefad8ca915b75cf67e6",
+      "sha512": "cd7d4bd2471d08789777ad0b95c05e3cee8fe75736b1ac54b5cbafcca05612fdc445d9bb80957ead919b95c022cf9503d7d830ea665e5f8e13deded313558957",
       "size": 331,
-      "blobPath": "v11/files/a4/a45acfc21f6af1bd1ae10c10b99c8a059a98c48bb96d2ee0d0d045129959d8c9a47a4c4600f8190111a7ebb09219baf549fea82db1e3fefad8ca915b75cf67e6",
+      "blobPath": "v11/files/cd/cd7d4bd2471d08789777ad0b95c05e3cee8fe75736b1ac54b5cbafcca05612fdc445d9bb80957ead919b95c022cf9503d7d830ea665e5f8e13deded313558957",
       "downloadUrl": "https://github.com/awesome-os/devtools/releases/download/v11-devtools-launchers-latest/SHA512SUMS.txt"
     },
     {
