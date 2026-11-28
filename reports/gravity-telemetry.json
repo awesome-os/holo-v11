@@ -1,7 +1,7 @@
 {
   "schema": "awesome-os.gravity-telemetry.v1",
   "abiMagic": "0x33564742",
-  "generatedAt": "2026-11-28T14:36:39.633Z",
+  "generatedAt": "2026-11-28T14:49:30.843Z",
   "pinning": {
     "trackedUpstreamLibs": 68,
     "atMaxCount": 68,
@@ -99,7 +99,7 @@
       "compiledBinaries": 514,
       "shardReceipts": 55
     },
-    "casForwardHash": "dddae09102bd7b7e3fbd5611597b9930c610a8cf0d39d4a9d38953fbc0f564a63bf56f1cd6ecf2da27447591e7d98c88a48adad24529f249369f3b4dc974fc39"
+    "casForwardHash": "455ad6357e63130da69565b3a50f8f16c9df731bec0f4bccad6094c82210905b8f620d202fd3d020b1592c711adbc16d509b1c4d4a70665761a0e8e7cdfac7dc"
   },
   "dedup": {
     "totalAssets": 882,
@@ -124,9 +124,9 @@
     },
     "p50DurationSec": 23,
     "p95DurationSec": 239,
-    "overallPassRatePct": 95,
+    "overallPassRatePct": 94.1,
     "latestFleetPassRatePct": 100,
-    "apiRateRemaining": 4986,
+    "apiRateRemaining": 4945,
     "apiRateLimit": 5000,
     "perRepoTelemetry": [
       {
@@ -229,16 +229,16 @@
         "repo": "holo-v11",
         "latestStatus": "in_progress",
         "latestConclusion": "running",
-        "latestWorkflow": "Update Awesome-OS v11 Ecosystem Reports",
-        "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/46155538508",
-        "latestUpdatedAt": "2026-11-28T14:36:30Z",
+        "latestWorkflow": "Sync Global Holo v11 Registry",
+        "latestUrl": "https://github.com/awesome-os/holo-v11/actions/runs/46156478342",
+        "latestUpdatedAt": "2026-11-28T14:47:43Z",
         "sampleCount": 10,
         "completedCount": 9,
-        "passingCount": 7,
-        "failingCount": 2,
-        "passRatePct": 77.8,
+        "passingCount": 6,
+        "failingCount": 3,
+        "passRatePct": 66.7,
         "p50DurationSec": 21,
-        "p95DurationSec": 220,
+        "p95DurationSec": 166,
         "lastDurationSec": 3
       },
       {

@@ -2,11 +2,11 @@
   "schema": "awesome-os-cas-v11-manifest-v1",
   "abiMagic": "0x33564742",
   "version": "v11",
-  "generatedAt": "2026-11-28T00:56:32.063Z",
+  "generatedAt": "2026-11-28T14:49:29.524Z",
   "totalRepos": 62,
   "totalAssets": 882,
   "uniqueBlobs": 870,
-  "totalBytes": 2553462553,
+  "totalBytes": 2553461626,
   "skippedLarge": 0,
   "entries": [
     {
@@ -1456,9 +1456,9 @@
       "filename": "holo-cpp-linux-amd64.oci.tar.gz",
       "target": "linux-x64",
       "executable": false,
-      "sha512": "c7de5a199cc0706a866fbf1e244d52d0997731df869c3de6aabea599a89874ca9bc3d8bb1004f34c91857bfc3a57afb15b434551378b8b5cb896bb858fcbcfb0",
-      "size": 7564759,
-      "blobPath": "v11/files/c7/c7de5a199cc0706a866fbf1e244d52d0997731df869c3de6aabea599a89874ca9bc3d8bb1004f34c91857bfc3a57afb15b434551378b8b5cb896bb858fcbcfb0",
+      "sha512": "3f67a48566f6e1a39346f2b29ddee6aba820db2df506afbd57df6bc2b997ebf41c921fdc2562992e4047e94609b1fafea4ba52178d782909ac00eee22bd35c48",
+      "size": 7564919,
+      "blobPath": "v11/files/3f/3f67a48566f6e1a39346f2b29ddee6aba820db2df506afbd57df6bc2b997ebf41c921fdc2562992e4047e94609b1fafea4ba52178d782909ac00eee22bd35c48",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/holo-cpp-linux-amd64.oci.tar.gz"
     },
     {
@@ -1468,9 +1468,9 @@
       "filename": "holo-e2e-lite-linux-amd64.oci.tar.gz",
       "target": "linux-x64",
       "executable": false,
-      "sha512": "16e43a3023cef22a60e19802a00cea101e2e7f3f05ae56614db8d5054e450f7f831125b8b93fa1cf9cfabdcded3023ca36f2d71b79c754fcb0c9edbcb87eff2b",
-      "size": 70663612,
-      "blobPath": "v11/files/16/16e43a3023cef22a60e19802a00cea101e2e7f3f05ae56614db8d5054e450f7f831125b8b93fa1cf9cfabdcded3023ca36f2d71b79c754fcb0c9edbcb87eff2b",
+      "sha512": "4934232ebd16495295daf025240262fa4bf4581836b04861fcaa7eb56a797d2398d9483ffcc42f9f53742e5083ba7de33979d18580497ef083dc543d093efd5e",
+      "size": 70664065,
+      "blobPath": "v11/files/49/4934232ebd16495295daf025240262fa4bf4581836b04861fcaa7eb56a797d2398d9483ffcc42f9f53742e5083ba7de33979d18580497ef083dc543d093efd5e",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/holo-e2e-lite-linux-amd64.oci.tar.gz"
     },
     {
@@ -1480,9 +1480,9 @@
       "filename": "holo-e2e-runner-linux-amd64.oci.tar.gz",
       "target": "linux-x64",
       "executable": false,
-      "sha512": "8ae43f2ff5bdeddba68685734560efe1fd76d53e6ae2ce2557afd11912032f7dc076acc16e6e87d8b5901337a75c87fc12e480c9c214d721073bbb7b5a0d2761",
-      "size": 258551063,
-      "blobPath": "v11/files/8a/8ae43f2ff5bdeddba68685734560efe1fd76d53e6ae2ce2557afd11912032f7dc076acc16e6e87d8b5901337a75c87fc12e480c9c214d721073bbb7b5a0d2761",
+      "sha512": "0e7353fef4a30d5f36a2b55cd017af5c2ef43ddfdbd99160ff955420138f082cb53e7dd8b05c9d494a62effcb8939937422207503a0c1391b3215c2ef7098dc6",
+      "size": 258550379,
+      "blobPath": "v11/files/0e/0e7353fef4a30d5f36a2b55cd017af5c2ef43ddfdbd99160ff955420138f082cb53e7dd8b05c9d494a62effcb8939937422207503a0c1391b3215c2ef7098dc6",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/holo-e2e-runner-linux-amd64.oci.tar.gz"
     },
     {
@@ -1492,9 +1492,9 @@
       "filename": "holo-jvm-linux-amd64.oci.tar.gz",
       "target": "linux-x64",
       "executable": false,
-      "sha512": "025dc81c21346676f0800360eb9d94edf788ee98d34b612a3f9a2518b8f727f1686c32175527f1ae7ac5f47caf533d7d9e91cae2ec445530ae3e5770ff4c5dd7",
-      "size": 76933097,
-      "blobPath": "v11/files/02/025dc81c21346676f0800360eb9d94edf788ee98d34b612a3f9a2518b8f727f1686c32175527f1ae7ac5f47caf533d7d9e91cae2ec445530ae3e5770ff4c5dd7",
+      "sha512": "afaf090a11f92da7b74a5654796133552a5c32bcd87d13ab118bfcda2f7df5a96f219a6179ac0e5dfc3e42bc347dd1392fb8f00702414802cb1fbf9f152f7de7",
+      "size": 76933023,
+      "blobPath": "v11/files/af/afaf090a11f92da7b74a5654796133552a5c32bcd87d13ab118bfcda2f7df5a96f219a6179ac0e5dfc3e42bc347dd1392fb8f00702414802cb1fbf9f152f7de7",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/holo-jvm-linux-amd64.oci.tar.gz"
     },
     {
@@ -1504,9 +1504,9 @@
       "filename": "holo-node-linux-amd64.oci.tar.gz",
       "target": "linux-x64",
       "executable": false,
-      "sha512": "fcd5d306ac13cc72f5d34d77d839d8a5fdfcbbc222784d66bcf921d99106c36ae2a522eef8b20204d174155a979cbeefdc1b6aa26874ec5f39b9452aa4c8e587",
-      "size": 59654301,
-      "blobPath": "v11/files/fc/fcd5d306ac13cc72f5d34d77d839d8a5fdfcbbc222784d66bcf921d99106c36ae2a522eef8b20204d174155a979cbeefdc1b6aa26874ec5f39b9452aa4c8e587",
+      "sha512": "e123475536eab8015f8dd013849dc7aeeebd25d2dc29bb14d78d5924906bb2495a8a610f8e80bdcd4b417dcdce82b66baea39a47de90bed9c72e20bb07e2cfb4",
+      "size": 59652823,
+      "blobPath": "v11/files/e1/e123475536eab8015f8dd013849dc7aeeebd25d2dc29bb14d78d5924906bb2495a8a610f8e80bdcd4b417dcdce82b66baea39a47de90bed9c72e20bb07e2cfb4",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/holo-node-linux-amd64.oci.tar.gz"
     },
     {
@@ -1516,9 +1516,9 @@
       "filename": "holo-php-linux-amd64.oci.tar.gz",
       "target": "linux-x64",
       "executable": false,
-      "sha512": "860dda406307ef2fb7d33ddb449762b10c2f93b1e76d1bbff70103e0c236b0632aecbb23ea1e6ff1d9092163dc7d1446593a67e7d2cd94e8205b494e3cff7413",
-      "size": 52780184,
-      "blobPath": "v11/files/86/860dda406307ef2fb7d33ddb449762b10c2f93b1e76d1bbff70103e0c236b0632aecbb23ea1e6ff1d9092163dc7d1446593a67e7d2cd94e8205b494e3cff7413",
+      "sha512": "1f071eedf446ea830e73f7246801f59abba60a1f0cfa476acd2ce09f76e3d1d316a93e814157bb7e09b84f7830f40bed65e722e624ebf0d8a6612d33721d0430",
+      "size": 52779487,
+      "blobPath": "v11/files/1f/1f071eedf446ea830e73f7246801f59abba60a1f0cfa476acd2ce09f76e3d1d316a93e814157bb7e09b84f7830f40bed65e722e624ebf0d8a6612d33721d0430",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/holo-php-linux-amd64.oci.tar.gz"
     },
     {
@@ -1528,9 +1528,9 @@
       "filename": "holo-py-linux-amd64.oci.tar.gz",
       "target": "linux-x64",
       "executable": false,
-      "sha512": "a554475c330b2f310fb099c1d004ff8452f102aaad7f10dc57edb843f25cb9833cc154279fecf7a6fb1c82bd5d00bc5806755adf1291e0a1cc25199116e78ba7",
-      "size": 19644732,
-      "blobPath": "v11/files/a5/a554475c330b2f310fb099c1d004ff8452f102aaad7f10dc57edb843f25cb9833cc154279fecf7a6fb1c82bd5d00bc5806755adf1291e0a1cc25199116e78ba7",
+      "sha512": "86f5454fc9bfb115302a8874a5c6cf08d4acf968f32ebb32f20b81ec5c32a0e19567c1786b89bad62365c2083419e856e73e61f7721bbf656fe2548c053bb3e5",
+      "size": 19645031,
+      "blobPath": "v11/files/86/86f5454fc9bfb115302a8874a5c6cf08d4acf968f32ebb32f20b81ec5c32a0e19567c1786b89bad62365c2083419e856e73e61f7721bbf656fe2548c053bb3e5",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/holo-py-linux-amd64.oci.tar.gz"
     },
     {
@@ -1540,9 +1540,9 @@
       "filename": "holo-ruby-linux-amd64.oci.tar.gz",
       "target": "linux-x64",
       "executable": false,
-      "sha512": "159d5990341184466acbd4a5500a60e3e455a9334c4251c032e1e98d8ddd2c3e597b6644e23f10a7e0e8d500a3949750c8655bd40c9d841efba3a7cd2f4ab52b",
-      "size": 53556200,
-      "blobPath": "v11/files/15/159d5990341184466acbd4a5500a60e3e455a9334c4251c032e1e98d8ddd2c3e597b6644e23f10a7e0e8d500a3949750c8655bd40c9d841efba3a7cd2f4ab52b",
+      "sha512": "97bf478a80950e898a99646de34a97de77e45cb0ce567677c3d5e9f024a4eeff4b07e3f09e4e623b235af980e93bc5bd789e77134fe73121c6c31738bfccf19e",
+      "size": 53556928,
+      "blobPath": "v11/files/97/97bf478a80950e898a99646de34a97de77e45cb0ce567677c3d5e9f024a4eeff4b07e3f09e4e623b235af980e93bc5bd789e77134fe73121c6c31738bfccf19e",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/holo-ruby-linux-amd64.oci.tar.gz"
     },
     {
@@ -1552,9 +1552,9 @@
       "filename": "SHA512SUMS-holo-cpp.txt",
       "target": "any",
       "executable": false,
-      "sha512": "8bfb780347f5a15f9ffb47f5af61a49238d8195f382354a7e7935d4fde25b33ee91b68c656e7258a0956bcc766fa16a20de1d17fc52ba105af15b7a2d782e776",
+      "sha512": "e223b4effde7a00878a877de7a417d65ff88fc13ad10b13b471b77d74e92965d58615e96646dcac317210591bf8a838e8d0949be5b09fdf584a6da078b702308",
       "size": 162,
-      "blobPath": "v11/files/8b/8bfb780347f5a15f9ffb47f5af61a49238d8195f382354a7e7935d4fde25b33ee91b68c656e7258a0956bcc766fa16a20de1d17fc52ba105af15b7a2d782e776",
+      "blobPath": "v11/files/e2/e223b4effde7a00878a877de7a417d65ff88fc13ad10b13b471b77d74e92965d58615e96646dcac317210591bf8a838e8d0949be5b09fdf584a6da078b702308",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/SHA512SUMS-holo-cpp.txt"
     },
     {
@@ -1564,9 +1564,9 @@
       "filename": "SHA512SUMS-holo-e2e-lite.txt",
       "target": "any",
       "executable": false,
-      "sha512": "ff1ba04e278cbf66d4c2d4620985988ae690e008f38ae677ec9b01ab63adb3b502042fecc518d21a3358570d23b62f3ee996b460c7984699fb458517e35aa60f",
+      "sha512": "627b30c73c56da3974b950d9845ddc4d289da2c47f3ac8656d541f75880e36ce17ff4b17c4818347a1f88b9933a1f2c8178139575014ee5cad8bc1b162e48993",
       "size": 167,
-      "blobPath": "v11/files/ff/ff1ba04e278cbf66d4c2d4620985988ae690e008f38ae677ec9b01ab63adb3b502042fecc518d21a3358570d23b62f3ee996b460c7984699fb458517e35aa60f",
+      "blobPath": "v11/files/62/627b30c73c56da3974b950d9845ddc4d289da2c47f3ac8656d541f75880e36ce17ff4b17c4818347a1f88b9933a1f2c8178139575014ee5cad8bc1b162e48993",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/SHA512SUMS-holo-e2e-lite.txt"
     },
     {
@@ -1576,9 +1576,9 @@
       "filename": "SHA512SUMS-holo-e2e-runner.txt",
       "target": "any",
       "executable": false,
-      "sha512": "d174aba272d7ed982dc89a6851ad7d0d5259f80197cd39b0d59cdd783840679f48cab156040364668a4ad9d2965b48c751b10ae858cfd4e895f54d16cb14d6af",
+      "sha512": "11b91d730e2ddc4fa9e5a61126656f8b0674e11056266fdb9c70146227f18b147e3eeea174281d2af0a96933a07ec40803f775cdb1770526789a16b5913011c5",
       "size": 169,
-      "blobPath": "v11/files/d1/d174aba272d7ed982dc89a6851ad7d0d5259f80197cd39b0d59cdd783840679f48cab156040364668a4ad9d2965b48c751b10ae858cfd4e895f54d16cb14d6af",
+      "blobPath": "v11/files/11/11b91d730e2ddc4fa9e5a61126656f8b0674e11056266fdb9c70146227f18b147e3eeea174281d2af0a96933a07ec40803f775cdb1770526789a16b5913011c5",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/SHA512SUMS-holo-e2e-runner.txt"
     },
     {
@@ -1588,9 +1588,9 @@
       "filename": "SHA512SUMS-holo-jvm.txt",
       "target": "any",
       "executable": false,
-      "sha512": "3347084be1f2f3ec47dc03fd08fe6bb0f8c0343f0dbae271afcc03d2ebf0e7075330514401cb6503c736bb6789216f14a8e68d51ec8055e470ee9cae220c353c",
+      "sha512": "3b3492ada39b188e1ccbbe8f23d5b15c974d7838ae7b6eb250ced2b05537ed339997e2c628fb7fd701a9554e85e29d4a53ffa46081d87db811c5b70f8b124ebe",
       "size": 162,
-      "blobPath": "v11/files/33/3347084be1f2f3ec47dc03fd08fe6bb0f8c0343f0dbae271afcc03d2ebf0e7075330514401cb6503c736bb6789216f14a8e68d51ec8055e470ee9cae220c353c",
+      "blobPath": "v11/files/3b/3b3492ada39b188e1ccbbe8f23d5b15c974d7838ae7b6eb250ced2b05537ed339997e2c628fb7fd701a9554e85e29d4a53ffa46081d87db811c5b70f8b124ebe",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/SHA512SUMS-holo-jvm.txt"
     },
     {
@@ -1600,9 +1600,9 @@
       "filename": "SHA512SUMS-holo-node.txt",
       "target": "any",
       "executable": false,
-      "sha512": "2f57ed5566527b63caccfe5f9a05e865963d037bea479b7f7fea3d78442b84aa9225cc4d942e78693afe5f3d84084835d1966f8795b0f856c30fa9475570bb71",
+      "sha512": "819cedc30d11c78e70daaecd19ad4793a6f504fa616e0b21ad6653256c12bfb48643a9da2a3cfc9123e66539afb55a999a399f58d1a0d6ce97333c9f69a8b869",
       "size": 163,
-      "blobPath": "v11/files/2f/2f57ed5566527b63caccfe5f9a05e865963d037bea479b7f7fea3d78442b84aa9225cc4d942e78693afe5f3d84084835d1966f8795b0f856c30fa9475570bb71",
+      "blobPath": "v11/files/81/819cedc30d11c78e70daaecd19ad4793a6f504fa616e0b21ad6653256c12bfb48643a9da2a3cfc9123e66539afb55a999a399f58d1a0d6ce97333c9f69a8b869",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/SHA512SUMS-holo-node.txt"
     },
     {
@@ -1612,9 +1612,9 @@
       "filename": "SHA512SUMS-holo-php.txt",
       "target": "any",
       "executable": false,
-      "sha512": "9a3cca342646ca70f022a1a4172fb55f7f6b47694688bf2de0a895f2a72261005d2f6a3ceb6a97576cf23d4a120d80516b084d37f1c806933a59a1a324e23183",
+      "sha512": "5e926229320be1a89db0842a9eb8f25af5b748aeb075a69c6e92458b1fdc66d25c4060458eee350f7b09154d02477aee7ecbe0f8ad893b45b0d3eff67b1b6cc5",
       "size": 162,
-      "blobPath": "v11/files/9a/9a3cca342646ca70f022a1a4172fb55f7f6b47694688bf2de0a895f2a72261005d2f6a3ceb6a97576cf23d4a120d80516b084d37f1c806933a59a1a324e23183",
+      "blobPath": "v11/files/5e/5e926229320be1a89db0842a9eb8f25af5b748aeb075a69c6e92458b1fdc66d25c4060458eee350f7b09154d02477aee7ecbe0f8ad893b45b0d3eff67b1b6cc5",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/SHA512SUMS-holo-php.txt"
     },
     {
@@ -1624,9 +1624,9 @@
       "filename": "SHA512SUMS-holo-py.txt",
       "target": "any",
       "executable": false,
-      "sha512": "0bbbcf60c97da3a1b0aff3e4c5a9bb194cac2dc4043fac38ffc53cc813bded4a5973138de4787ea13a8acb5c8d0ffcf5692bbb91efc910d857cb160ec3d368ae",
+      "sha512": "b3abb562cce90f8c3e0e1ae4abbcdc9e471a245dddb2be0e81085abc03ea2f8da0dd19bf2472ab553cc989daa86f6032f78b2e06cad334d374062dd376d0b584",
       "size": 161,
-      "blobPath": "v11/files/0b/0bbbcf60c97da3a1b0aff3e4c5a9bb194cac2dc4043fac38ffc53cc813bded4a5973138de4787ea13a8acb5c8d0ffcf5692bbb91efc910d857cb160ec3d368ae",
+      "blobPath": "v11/files/b3/b3abb562cce90f8c3e0e1ae4abbcdc9e471a245dddb2be0e81085abc03ea2f8da0dd19bf2472ab553cc989daa86f6032f78b2e06cad334d374062dd376d0b584",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/SHA512SUMS-holo-py.txt"
     },
     {
@@ -1636,9 +1636,9 @@
       "filename": "SHA512SUMS-holo-ruby.txt",
       "target": "any",
       "executable": false,
-      "sha512": "36aecd5ba883298897f4ba55294591c38b787c9b767cd523d966fbfe0f1199b26be3a8fbb40f671a713fc9bbcc45ab2bfab6f4150d2428b7967ccc8f0e93c41b",
+      "sha512": "78ee8381d94dca69820e316bff8a6c7a2ca08cf97481bb179fdea051dd65ad912ac62ea27c0801767be9150bdf9dbb4bd816ac8ae2ca9a310433153e08ca147c",
       "size": 163,
-      "blobPath": "v11/files/36/36aecd5ba883298897f4ba55294591c38b787c9b767cd523d966fbfe0f1199b26be3a8fbb40f671a713fc9bbcc45ab2bfab6f4150d2428b7967ccc8f0e93c41b",
+      "blobPath": "v11/files/78/78ee8381d94dca69820e316bff8a6c7a2ca08cf97481bb179fdea051dd65ad912ac62ea27c0801767be9150bdf9dbb4bd816ac8ae2ca9a310433153e08ca147c",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/SHA512SUMS-holo-ruby.txt"
     },
     {
@@ -1648,9 +1648,9 @@
       "filename": "SHA512SUMS-t2linux.txt",
       "target": "linux-x64",
       "executable": false,
-      "sha512": "b1c3ec48c14da4553ccf789b32eb991bd6343ee7250ec4c0b25d03f52ba08ccf256c8a567b5b831f7a06ad44bdae14ea4e5accbab1a67cfad531fead9ebbb057",
+      "sha512": "385be496b0e22010d9a4d86381a2b3ef8195dd7dadd33ab8253ee1ec9108a1d76e12293ecced9d0b98e715874920dd28191865e77324d0b5c1c703d0d8f8667e",
       "size": 161,
-      "blobPath": "v11/files/b1/b1c3ec48c14da4553ccf789b32eb991bd6343ee7250ec4c0b25d03f52ba08ccf256c8a567b5b831f7a06ad44bdae14ea4e5accbab1a67cfad531fead9ebbb057",
+      "blobPath": "v11/files/38/385be496b0e22010d9a4d86381a2b3ef8195dd7dadd33ab8253ee1ec9108a1d76e12293ecced9d0b98e715874920dd28191865e77324d0b5c1c703d0d8f8667e",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/SHA512SUMS-t2linux.txt"
     },
     {
@@ -1660,9 +1660,9 @@
       "filename": "t2linux-linux-amd64.oci.tar.gz",
       "target": "linux-x64",
       "executable": false,
-      "sha512": "693258c07b42d7869dd9fe0740d38daec9fa6fe12856dded0a3151c3d681a2a917e0ff8e4f2f85196264c890788a8b12485351b84eac6b629ed755266da38b21",
-      "size": 5177725,
-      "blobPath": "v11/files/69/693258c07b42d7869dd9fe0740d38daec9fa6fe12856dded0a3151c3d681a2a917e0ff8e4f2f85196264c890788a8b12485351b84eac6b629ed755266da38b21",
+      "sha512": "cd0668ac765b08dc6fed10a5c55f7861e3f82941747869e978fe8947e0f9fed557455069d449d7b17d09a77bc11adcf32205671e2160fbfd5fa8334def303d32",
+      "size": 5178091,
+      "blobPath": "v11/files/cd/cd0668ac765b08dc6fed10a5c55f7861e3f82941747869e978fe8947e0f9fed557455069d449d7b17d09a77bc11adcf32205671e2160fbfd5fa8334def303d32",
       "downloadUrl": "https://github.com/awesome-os/dockerimages/releases/download/v11-oci-latest/t2linux-linux-amd64.oci.tar.gz"
     },
     {
@@ -10598,8 +10598,8 @@
     "scheme": "ed25519-sha512-v1",
     "keyId": "awesomeos-root-v11",
     "publicKeyHex": "8706ca1108354453755a32bc0d450a697b084cb5fb18a9a1ed1f4a31eb82a081",
-    "payloadSha512": "856f50a08c8605467163b51ee9254de3d389a998be2a43c1229b48c019e20dc0228ab6b3ed38b430cfe7e3ac30e180b793ac5bd69224f746607aff57301639c1",
-    "signatureHex": "582fdc2408403ff6b7e618b0afabf9c3f6ff040a726f9b9de4acea67468ee5b50739b0a5d7797d78e8c642ad77db8d99376755839fed62af57fbd2d8460efb04",
-    "signedAt": "2026-11-28T00:56:32.064Z"
+    "payloadSha512": "30fbeb7dd866163f1e2d3b483bd2ee613a8fc1a8101ba82c874335946de2c681570e02fdf8fe1854ab8a90eeb9301d7e718da778e7b9a30ceb9e3740bb1fe768",
+    "signatureHex": "8776bcbdb71db250d31b05c65830dc8489a87e6f01851d45ae2a464ce644f0a441076aabe0d260c4faa080935fead2022f4d299640ff923da2fcf878be58260d",
+    "signedAt": "2026-11-28T14:49:29.525Z"
   }
 }
