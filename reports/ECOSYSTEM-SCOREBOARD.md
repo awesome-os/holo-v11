@@ -1,8 +1,6 @@
-<!-- DOC-STATIC-CORPUS -->
-
 # AwesomeOS `v11` Ecosystem Scoreboard (`v1.0-v11`)
 
-> Auto-updated by [`os/bootstrap/holo-distro-bootstrap.mts`](https://github.com/awesome-os/awesome-os/blob/main/os/bootstrap/holo-distro-bootstrap.mts) · Last sync: `2026-11-27T15:40:29.589Z`
+> Auto-updated by [`os/bootstrap/holo-distro-bootstrap.mts`](https://github.com/awesome-os/awesome-os/blob/main/os/bootstrap/holo-distro-bootstrap.mts) · Last sync: `2026-11-28T14:36:38.175Z`
 
 ## 1. 24-Runtime Big Boys `v11` CAS Coverage
 
